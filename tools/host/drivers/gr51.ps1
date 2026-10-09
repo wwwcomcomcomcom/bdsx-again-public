@@ -1,0 +1,1 @@
+& "$env:BDSX_REPO\tools\run-full.ps1" -Root "$env:BDSX_LAB\inst51" -Tag gr51 -AfterReady 12 -Commands @("grprobe", "gamerule randomtickspeed 7", "gamerule keepinventory true", "grprobe", "weather rain", "wxprobe", "weather thunder", "gamerule randomtickspeed 1", "gamerule keepinventory false", "weather clear")

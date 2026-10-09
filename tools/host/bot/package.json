@@ -1,0 +1,9 @@
+{
+  "name": "bdsx-lab-bot",
+  "private": true,
+  "description": "node_modules for tools/livebot.cjs; tools/host/setup-lab.mjs installs it into <lab>/bot with npm ci",
+  "dependencies": {
+    "bedrock-protocol": "^3.60.1",
+    "minecraft-data": "^3.117.0"
+  }
+}

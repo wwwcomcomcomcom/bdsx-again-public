@@ -1,0 +1,188 @@
+{
+ "_comment": "Level virtuals on 1.26.51.1 from Endstone's ILevel/Level header order anchored on the confirmed slots (docs/findings-slots.md, route 9): between header slot 0 and 380 every confirmed name sits one slot above its header index (getDifficulty 36, getBlockPalette 86, getStructureManager 96, tick 119, getSeed 134, setDefaultSpawn 137, getLevelData 172, getActorFactory 288, getGameRules 342/343, getScoreboard 361 on 1.26.40.8), so the names in that region are read at header+1 and nothing outside it. The region first stopped at 288 on a wrong anchor: slot 348, shipped as getGameRules, is getDefaultAbilities (docs/findings-slots.md). Second route: the other 1.26 build, with its own header revision, puts every one of these at the same live slot with the same function size. Never hook targets from this file: save fired once at stop and getDifficulty returned the difficulty on 1.26.40.8 (data/resolved); levelCleanupQueueEntityRemoval did not fire under a pig kill and stays a call-only name. getTime/setTime are left out: an earlier execution found getTime not a pure slot of this table. 2026-09-19: the region below 35 was never wrong, only unchecked: the header's pairs (forEachDimension 8/9, getDimensionManager 10/11, getCameraPresets 29/30) are the live table's same-function pairs and get/setDisablePlayerInteractions are the byte getter and setter on one offset at 32/33.",
+ "table": 175155968,
+ "symbols": {
+  "?destroyBlock@Level@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z": 8219264,
+  "?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z": 8197296,
+  "?getActivePlayerCount@Level@@UEBAHXZ": 8211872,
+  "?getCurrentTick@Level@@UEBAAEBUTick@@XZ": 8230976,
+  "?getDifficulty@Level@@UEBA?AW4Difficulty@@XZ": 8228560,
+  "?getEntities@Level@@UEBAAEBV?$vector@V?$OwnerPtr@VEntityContext@@@@V?$allocator@V?$OwnerPtr@VEntityContext@@@@@std@@@std@@XZ": 8219248,
+  "?getNewUniqueID@Level@@UEAA?AUActorUniqueID@@XZ": 8229360,
+  "?getNextRuntimeID@Level@@UEAA?AVActorRuntimeID@@XZ": 8229392,
+  "?getPlayerByXuid@Level@@UEBAPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z": 8211984,
+  "?getRuntimeEntity@Level@@UEBAPEAVActor@@VActorRuntimeID@@_N@Z": 8198496,
+  "?getRuntimePlayer@Level@@UEBAPEAVPlayer@@VActorRuntimeID@@@Z": 8212880,
+  "?getUsers@Level@@UEBAAEBV?$vector@V?$OwnerPtr@VEntityContext@@@@V?$allocator@V?$OwnerPtr@VEntityContext@@@@@std@@@std@@XZ": 8219232,
+  "?hasCommandsEnabled@Level@@UEBA_NXZ": 8228592,
+  "?levelCleanupQueueEntityRemoval@Level@@UEAAXV?$OwnerPtr@VEntityContext@@@@@Z": 8198944,
+  "?save@Level@@UEAAXXZ": 8227200,
+  "?setCommandsEnabled@ServerLevel@@UEAAX_N@Z": 7634288,
+  "?setDifficulty@Level@@UEAAXW4Difficulty@@@Z": 8203360,
+  "?spawnParticleEffect@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@PEAVDimension@@@Z": 8202592,
+  "?explode@Level@@UEAA_NAEAVBlockSource@@PEAVActor@@AEBVVec3@@M_N3M3@Z": 8201776,
+  "?updateWeather@Level@@UEAAXMHMH@Z": 8226336,
+  "?sendAllPlayerAbilities@Level@@UEAAXAEBVPlayer@@@Z": 8233040,
+  "?getActiveUsers@Level@@UEBAAEBV?$vector@VWeakEntityRef@@V?$allocator@VWeakEntityRef@@@std@@@std@@XZ": 8221376,
+  "?getDimension@Level@@UEBA?AV?$WeakRef@VDimension@@@@V?$AutomaticID@VDimension@@H@@@Z": 8170704,
+  "?getOrCreateDimension@Level@@UEAA?AV?$WeakRef@VDimension@@@@V?$AutomaticID@VDimension@@H@@@Z": 8170656,
+  "?getSpawner@Level@@UEBAAEAVSpawner@@XZ": 8220000
+ },
+ "evidence": {
+  "?destroyBlock@Level@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z": {
+   "slot": 249,
+   "headerSlot": 248,
+   "size": 515,
+   "note": "515B on both builds"
+  },
+  "?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z": {
+   "slot": 62,
+   "headerSlot": 61,
+   "size": 0,
+   "note": "a leaf with no .pdata entry on both builds (a getter too small to size)"
+  },
+  "?getActivePlayerCount@Level@@UEBAHXZ": {
+   "slot": 220,
+   "headerSlot": 219,
+   "size": 69,
+   "note": "69B on both builds"
+  },
+  "?getCurrentTick@Level@@UEBAAEBUTick@@XZ": {
+   "slot": 79,
+   "headerSlot": 78,
+   "size": 31,
+   "note": "31B on both builds"
+  },
+  "?getDifficulty@Level@@UEBA?AW4Difficulty@@XZ": {
+   "slot": 36,
+   "headerSlot": 35,
+   "size": 31,
+   "note": "31B on both builds"
+  },
+  "?getEntities@Level@@UEBAAEBV?$vector@V?$OwnerPtr@VEntityContext@@@@V?$allocator@V?$OwnerPtr@VEntityContext@@@@@std@@@std@@XZ": {
+   "slot": 231,
+   "headerSlot": 230,
+   "size": 0,
+   "note": "a leaf with no .pdata entry on both builds (a getter too small to size)"
+  },
+  "?getNewUniqueID@Level@@UEAA?AUActorUniqueID@@XZ": {
+   "slot": 259,
+   "headerSlot": 258,
+   "size": 0,
+   "note": "a leaf with no .pdata entry on both builds (a getter too small to size)"
+  },
+  "?getNextRuntimeID@Level@@UEAA?AVActorRuntimeID@@XZ": {
+   "slot": 260,
+   "headerSlot": 259,
+   "size": 0,
+   "note": "a leaf with no .pdata entry on both builds (a getter too small to size)"
+  },
+  "?getPlayerByXuid@Level@@UEBAPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z": {
+   "slot": 70,
+   "headerSlot": 69,
+   "size": 148,
+   "note": "148B on both builds"
+  },
+  "?getRuntimeEntity@Level@@UEBAPEAVActor@@VActorRuntimeID@@_N@Z": {
+   "slot": 64,
+   "headerSlot": 63,
+   "size": 0,
+   "note": "a leaf with no .pdata entry on both builds (a getter too small to size)"
+  },
+  "?getRuntimePlayer@Level@@UEBAPEAVPlayer@@VActorRuntimeID@@@Z": {
+   "slot": 74,
+   "headerSlot": 73,
+   "size": 53,
+   "note": "53B on both builds"
+  },
+  "?getUsers@Level@@UEBAAEBV?$vector@V?$OwnerPtr@VEntityContext@@@@V?$allocator@V?$OwnerPtr@VEntityContext@@@@@std@@@std@@XZ": {
+   "slot": 230,
+   "headerSlot": 229,
+   "size": 0,
+   "note": "a leaf with no .pdata entry on both builds (a getter too small to size)"
+  },
+  "?hasCommandsEnabled@Level@@UEBA_NXZ": {
+   "slot": 40,
+   "headerSlot": 39,
+   "size": 32,
+   "note": "32B on both builds"
+  },
+  "?levelCleanupQueueEntityRemoval@Level@@UEAAXV?$OwnerPtr@VEntityContext@@@@@Z": {
+   "slot": 245,
+   "headerSlot": 244,
+   "size": 112,
+   "note": "112B on both builds"
+  },
+  "?save@Level@@UEAAXXZ": {
+   "slot": 180,
+   "headerSlot": 179,
+   "size": 232,
+   "note": "232B on both builds"
+  },
+  "?setCommandsEnabled@ServerLevel@@UEAAX_N@Z": {
+   "slot": 167,
+   "headerSlot": 166,
+   "size": 340,
+   "note": "340B on both builds"
+  },
+  "?setDifficulty@Level@@UEAAXW4Difficulty@@@Z": {
+   "slot": 141,
+   "headerSlot": 140,
+   "size": 100,
+   "note": "100B on both builds"
+  },
+  "?spawnParticleEffect@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@PEAVDimension@@@Z": {
+   "slot": 122,
+   "headerSlot": 121,
+   "size": 106,
+   "note": "106B on both builds"
+  },
+  "?explode@Level@@UEAA_NAEAVBlockSource@@PEAVActor@@AEBVVec3@@M_N3M3@Z": {
+   "slot": 121,
+   "headerSlot": 120,
+   "note": "the two explode overloads sit at live 120/121; 121 reads r8 (Actor*), r9 (Vec3 const&) and a float from the stack, the eight-argument overload bdsx names; 120 is the Explosion& forwarder, which is what a summoned TNT called once on 1.26.40.8 (slot 121 stayed at 0, as TNT builds its own Explosion)"
+  },
+  "?updateWeather@Level@@UEAAXMHMH@Z": {
+   "slot": 360,
+   "headerSlot": 359,
+   "size": 0,
+   "head": "488b8918070000",
+   "note": "forwarder `mov rcx,[rcx+0x718]; jmp` to a 2 KB function that reads xmm1, r8d, xmm3 and a stack int -- (float, int, float, int) -- on both builds"
+  },
+  "?sendAllPlayerAbilities@Level@@UEAAXAEBVPlayer@@@Z": {
+   "slot": 367,
+   "headerSlot": 366,
+   "size": 0,
+   "head": "488b8970060000",
+   "note": "forwarder `mov rcx,[rcx+0x670]; jmp` to a 1,296-byte function on both builds; get/setPlayerAbilities beside it go through the same member, as the baseline's three went through one manager"
+  },
+  "?getActiveUsers@Level@@UEBAAEBV?$vector@VWeakEntityRef@@V?$allocator@VWeakEntityRef@@@std@@@std@@XZ": {
+   "slot": 324,
+   "headerSlot": 323,
+   "size": 0,
+   "head": "488b8158040000",
+   "note": "leaf `mov rax,[rcx+0x458]; add rax,8; ret` on both builds, between the getPlayerListManager pair and getRuntimeActorList as in the header"
+  },
+  "?getDimension@Level@@UEBA?AV?$WeakRef@VDimension@@@@V?$AutomaticID@VDimension@@H@@@Z": {
+   "slot": 6,
+   "headerSlot": 5,
+   "size": 33,
+   "head": "564883ec204889",
+   "note": "wrapper `mgr = [[rcx+0x318]+0x18]; call; return the hidden pointer`; called on 1.26.40.8 with ids 0 / 2 / 1 it returned live references for the two loaded dimensions and null for the nether, twice 100 ticks apart -- a lookup that does not create"
+  },
+  "?getOrCreateDimension@Level@@UEAA?AV?$WeakRef@VDimension@@@@V?$AutomaticID@VDimension@@H@@@Z": {
+   "slot": 5,
+   "headerSlot": 4,
+   "size": 33,
+   "head": "564883ec204889",
+   "note": "the twin one slot below the executed getDimension, in the order both Endstone's header and the 2024 table give (getOrCreateDimension first); same wrapper, and its callee reaches an 1,818-byte function where getDimension's reaches 895. Not called: it would create a dimension in the test world"
+  },
+  "?getSpawner@Level@@UEBAAEAVSpawner@@XZ": {
+   "slot": 21,
+   "headerSlot": 20,
+   "size": 0,
+   "head": "488b8130010000",
+   "note": "leaf `mov rax,[rcx+0x130]`; called on 1.26.40.8 it returned an object whose vftable has 21 slots -- the 21 virtuals of Endstone's Spawner (spawner.h), a class that had no vftable in 2024 -- and the same 21-slot table exists on 1.26.51.1 with the same function sizes"
+  }
+ }
+}

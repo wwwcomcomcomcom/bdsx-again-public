@@ -1,0 +1,197 @@
+{
+ "_comment": "ServerNetworkHandler packet handlers (NetEventCallback virtuals) on 1.26.51.1, named by the baseline's local pattern of overrides around each (tools/netevent-align.mjs, window >= +-6 unique, longest increasing subsequence) and kept only where the other 1.26 build's candidate for the same packet sits exactly two slots away (the two tables differ by two inserted slots) -- docs/findings-instances.md \"playerJoin\". Anchors confirmed by execution: SetLocalPlayerAsInitializedPacket (the playerJoin seam) and DisconnectPacket (the second caller of _onPlayerLeft). Not hook targets bdsx names today; counter probes with the bot: see the findings. On 1.26.40.8 (netev40): of the 26 probed, exactly the two packets the bot's session carried fired, once each -- RequestNetworkSettings (its first packet) and SetLocalPlayerAsInitialized; the bot was kicked after 8 s, so no PlayerAction, Disconnect or movement packets were sent, and those handlers stayed at 0, as they should.",
+ "table": 175199040,
+ "symbols": {
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVGameTestRequestPacket@@@Z": 9958992,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestNetworkSettingsPacket@@@Z": 10042912,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestPermissionsPacket@@@Z": 10143344,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestAbilityPacket@@@Z": 10142096,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVCodeBuilderSourcePacket@@@Z": 10140832,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVScriptMessagePacket@@@Z": 9933504,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSetLocalPlayerAsInitializedPacket@@@Z": 9963888,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVNetworkStackLatencyPacket@@@Z": 9963840,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVLabTablePacket@@@Z": 10133152,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVNpcRequestPacket@@@Z": 10132512,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVBookEditPacket@@@Z": 10125088,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVLecternUpdatePacket@@@Z": 10124288,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerToggleCrafterSlotRequestPacket@@@Z": 10123808,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVModalFormResponsePacket@@@Z": 9959408,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VInventoryTransactionPacket@@@std@@@Z": 10109824,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVMapCreateLockedCopyPacket@@@Z": 9930064,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSetDifficultyPacket@@@Z": 9954672,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVClientCacheBlobStatusPacket@@@Z": 10039056,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSubChunkRequestPacket@@@Z": 10134096,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerInputPacket@@@Z": 10042304,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerAuthInputPacket@@@Z": 10114832,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VBlockActorDataPacket@@@std@@@Z": 10110720,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerActionPacket@@@Z": 10104608,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInteractPacket@@@Z": 10102320,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextPacket@@@Z": 9911088,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPositionTrackingDBClientRequestPacket@@@Z": 10124848,
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z": 10036816
+ },
+ "evidence": {
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVGameTestRequestPacket@@@Z": {
+   "slot": 52,
+   "baselineSlot": 23,
+   "size": 244,
+   "baselineSize": 230
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestNetworkSettingsPacket@@@Z": {
+   "slot": 53,
+   "baselineSlot": 24,
+   "size": 925,
+   "baselineSize": 850
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestPermissionsPacket@@@Z": {
+   "slot": 56,
+   "baselineSlot": 27,
+   "size": 2296,
+   "baselineSize": 738
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestAbilityPacket@@@Z": {
+   "slot": 57,
+   "baselineSlot": 28,
+   "size": 954,
+   "baselineSize": 557
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVCodeBuilderSourcePacket@@@Z": {
+   "slot": 60,
+   "baselineSlot": 31,
+   "size": 1125,
+   "baselineSize": 64
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVScriptMessagePacket@@@Z": {
+   "slot": 83,
+   "baselineSlot": 54,
+   "size": 1130,
+   "baselineSize": 480
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSetLocalPlayerAsInitializedPacket@@@Z": {
+   "slot": 84,
+   "baselineSlot": 55,
+   "size": 521,
+   "baselineSize": 49
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVNetworkStackLatencyPacket@@@Z": {
+   "slot": 86,
+   "baselineSlot": 57,
+   "size": 0,
+   "baselineSize": 49
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVLabTablePacket@@@Z": {
+   "slot": 88,
+   "baselineSlot": 59,
+   "size": 375,
+   "baselineSize": 78
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVNpcRequestPacket@@@Z": {
+   "slot": 90,
+   "baselineSlot": 61,
+   "size": 631,
+   "baselineSize": 337
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVBookEditPacket@@@Z": {
+   "slot": 93,
+   "baselineSlot": 64,
+   "size": 2670,
+   "baselineSize": 1265
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVLecternUpdatePacket@@@Z": {
+   "slot": 94,
+   "baselineSlot": 65,
+   "size": 524,
+   "baselineSize": 37
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerToggleCrafterSlotRequestPacket@@@Z": {
+   "slot": 98,
+   "baselineSlot": 69,
+   "size": 433,
+   "baselineSize": 49
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVModalFormResponsePacket@@@Z": {
+   "slot": 119,
+   "baselineSlot": 90,
+   "size": 2145,
+   "baselineSize": 1910
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VInventoryTransactionPacket@@@std@@@Z": {
+   "slot": 127,
+   "baselineSlot": 98,
+   "size": 630,
+   "baselineSize": 283
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVMapCreateLockedCopyPacket@@@Z": {
+   "slot": 162,
+   "baselineSlot": 126,
+   "size": 1401,
+   "baselineSize": 504
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSetDifficultyPacket@@@Z": {
+   "slot": 175,
+   "baselineSlot": 138,
+   "size": 1224,
+   "baselineSize": 69
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVClientCacheBlobStatusPacket@@@Z": {
+   "slot": 178,
+   "baselineSlot": 141,
+   "size": 2910,
+   "baselineSize": 1535
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSubChunkRequestPacket@@@Z": {
+   "slot": 179,
+   "baselineSlot": 142,
+   "size": 5034,
+   "baselineSize": 772
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerInputPacket@@@Z": {
+   "slot": 182,
+   "baselineSlot": 145,
+   "size": 606,
+   "baselineSize": 127
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerAuthInputPacket@@@Z": {
+   "slot": 183,
+   "baselineSlot": 146,
+   "size": 1520,
+   "baselineSize": 58
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VBlockActorDataPacket@@@std@@@Z": {
+   "slot": 184,
+   "baselineSlot": 147,
+   "size": 1854,
+   "baselineSize": 1237
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerActionPacket@@@Z": {
+   "slot": 199,
+   "baselineSlot": 161,
+   "size": 3757,
+   "baselineSize": 3904
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInteractPacket@@@Z": {
+   "slot": 200,
+   "baselineSlot": 162,
+   "size": 1158,
+   "baselineSize": 1072
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextPacket@@@Z": {
+   "slot": 236,
+   "baselineSlot": 200,
+   "size": 4722,
+   "baselineSize": 541
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPositionTrackingDBClientRequestPacket@@@Z": {
+   "slot": 240,
+   "baselineSlot": 204,
+   "size": 237,
+   "baselineSize": 59
+  },
+  "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z": {
+   "slot": 253,
+   "baselineSlot": 214,
+   "size": 786,
+   "baselineSize": 204
+  }
+ }
+}

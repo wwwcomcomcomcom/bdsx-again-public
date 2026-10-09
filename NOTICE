@@ -1,0 +1,17 @@
+This repository is MIT-licensed (LICENSE), with these exceptions and notes:
+
+- data/oracle/endstone-windows-1.26.44.h and data/oracle/endstone-signatures-1.26.44.toml are
+  unmodified files from Endstone (https://github.com/EndstoneMC/endstone), Copyright EndstoneMC,
+  licensed under the Apache License 2.0 (data/oracle/LICENSE-endstone). Several tools read
+  Endstone's headers from a local clone (work/endstone*); nothing else from Endstone is included.
+
+- bdsx/ is a git submodule: the bdsx fork at https://github.com/wwwcomcomcomcom/bdsx, MIT,
+  Copyright (c) 2019 karikera and contributors.
+
+- No Mojang code or binary is included. The data files hold function addresses (RVAs), field
+  offsets, a few constant values and the evidence for each. Minecraft and Bedrock Dedicated Server
+  are Mojang's; downloading BDS (bdsx's installer and tools/fetch-baseline.mjs do) means accepting
+  the Minecraft EULA (https://account.mojang.com/terms).
+
+- LeviLamina (LGPL/GPL) was consulted as a reference and run in experiments; nothing from its code
+  is included.

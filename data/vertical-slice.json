@@ -1,0 +1,1130 @@
+{
+ "_comment": "Resolution order for the vertical slice. baselineRva is the 1.21.3.01 value, for diff seeding only -- never the committed answer for the target build.",
+ "baseline": {
+  "bdsVersion": "1.21.3.01",
+  "exeMd5": "d0325bef148590e30f926dc2f2a46301"
+ },
+ "tiers": [
+  {
+   "tier": 0,
+   "label": "boot path - bdsx cannot start without these",
+   "symbols": [
+    {
+     "name": "??_7MinecraftCommands@@6B@",
+     "kinds": [
+      "proc"
+     ],
+     "virtual": true,
+     "vftable": true,
+     "baselineRva": 46748864
+    },
+    {
+     "name": "??_7RakNetConnector@@6BConnector@@@",
+     "kinds": [
+      "proc"
+     ],
+     "virtual": true,
+     "vftable": true,
+     "baselineRva": 46533192
+    },
+    {
+     "name": "??_7RakPeer@RakNet@@6BRakPeerInterface@1@@",
+     "kinds": [
+      "jsv",
+      "literal",
+      "proc"
+     ],
+     "virtual": true,
+     "vftable": true,
+     "baselineRva": 48895568
+    },
+    {
+     "name": "??_7ServerNetworkHandler@@6BEnableQueueForMainThread@Threading@Bedrock@@@",
+     "kinds": [
+      "proc"
+     ],
+     "virtual": true,
+     "vftable": true,
+     "baselineRva": 46513592
+    },
+    {
+     "name": "??_7StructureManager@@6B@",
+     "kinds": [
+      "proc"
+     ],
+     "virtual": true,
+     "vftable": true,
+     "baselineRva": 48704512
+    },
+    {
+     "name": "??$_Allocate@$0BA@U_Default_allocate_traits@std@@$0A@@std@@YAPEAX_K@Z",
+     "kinds": [
+      "js",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 17405200
+    },
+    {
+     "name": "??$getline@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@YAAEAV?$basic_istream@DU?$char_traits@D@std@@@0@$$QEAV10@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@D@Z",
+     "kinds": [
+      "literal",
+      "proc"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 983808
+    },
+    {
+     "name": "??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ",
+     "kinds": [
+      "proc"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 8406176
+    },
+    {
+     "name": "??0Blob@mce@@QEAA@XZ",
+     "kinds": [
+      "js"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 41527424
+    },
+    {
+     "name": "??0ConsoleInputReader@@QEAA@XZ",
+     "kinds": [
+      "write"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 752656
+    },
+    {
+     "name": "??0DedicatedServer@@QEAA@XZ",
+     "kinds": [
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 787248
+    },
+    {
+     "name": "??0Minecraft@@QEAA@AEAVIMinecraftApp@@AEAVGameCallbacks@@AEAVAllowList@@PEAVPermissionsFile@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@gsl@@V?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@AEAVIMinecraftEventing@@VClientOrServerNetworkSystemRef@@AEAVPacketSender@@W4SubClientId@@AEAVTimer@@AEAVTimer@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentTierManager@@@Bedrock@@@6@PEAVServerMetrics@@@Z",
+     "kinds": [
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 24899408
+    },
+    {
+     "name": "??0ServerInstance@@QEAA@AEAVIMinecraftApp@@AEBV?$not_null@V?$NonOwnerPointer@VServerInstanceEventCoordinator@@@Bedrock@@@gsl@@@Z",
+     "kinds": [
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 12990368
+    },
+    {
+     "name": "??0ServerNetworkSystem@@QEAA@AEAVScheduler@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBUNetworkSystemToggles@@AEBV?$NonOwnerPointer@VNetworkDebugManager@@@Bedrock@@V?$ServiceReference@VServicesManager@@@@V?$not_null@V?$NonOwnerPointer@VNetworkSessionOwner@@@Bedrock@@@gsl@@UNetworkSettingOptions@@@Z",
+     "kinds": [
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 9099392
+    },
+    {
+     "name": "??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ",
+     "kinds": [
+      "proc"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 753360
+    },
+    {
+     "name": "??1Blob@mce@@QEAA@XZ",
+     "kinds": [
+      "js"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 41527680
+    },
+    {
+     "name": "??1ConsoleInputReader@@QEAA@XZ",
+     "kinds": [
+      "write"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 753600
+    },
+    {
+     "name": "?BedrockLogOut@@YAXIPEBDZZ",
+     "kinds": [
+      "write"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 41528544
+    },
+    {
+     "name": "?generateUUID@Random@Crypto@@YA?AVUUID@mce@@XZ",
+     "kinds": [
+      "js"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 42202864
+    },
+    {
+     "name": "?getCommands@Minecraft@@QEAAAEAVMinecraftCommands@@XZ",
+     "kinds": [
+      "js",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 25099872
+    },
+    {
+     "name": "?getGameRules@Level@@UEAAAEAVGameRules@@XZ",
+     "kinds": [
+      "js"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 28044608
+    },
+    {
+     "name": "?getLevel@Minecraft@@QEBAPEAVLevel@@XZ",
+     "kinds": [
+      "js"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 25134416
+    },
+    {
+     "name": "?getLine@ConsoleInputReader@@QEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+     "kinds": [
+      "literal",
+      "patching"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 755216
+    },
+    {
+     "name": "?getPeer@RakNetConnector@@UEAAPEAVRakPeerInterface@RakNet@@XZ",
+     "kinds": [
+      "js",
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 9264992
+    },
+    {
+     "name": "?getRegistry@MinecraftCommands@@QEAAAEAVCommandRegistry@@XZ",
+     "kinds": [
+      "js",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 4823248
+    },
+    {
+     "name": "?getRemoteConnector@NetworkSystem@@QEAA?AV?$not_null@V?$NonOwnerPointer@VRemoteConnector@@@Bedrock@@@gsl@@XZ",
+     "kinds": [
+      "js",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 8506176
+    },
+    {
+     "name": "?getStructureManager@Level@@UEAA?AV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@XZ",
+     "kinds": [
+      "js",
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 28050752
+    },
+    {
+     "name": "?MajorVersion@SharedConstants@@3HB",
+     "kinds": [
+      "literal",
+      "proc"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 46327956
+    },
+    {
+     "name": "?MinorVersion@SharedConstants@@3HB",
+     "kinds": [
+      "literal",
+      "proc"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 46327972
+    },
+    {
+     "name": "?PatchVersion@SharedConstants@@3HB",
+     "kinds": [
+      "literal",
+      "proc"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 46328004
+    },
+    {
+     "name": "?RevisionVersion@SharedConstants@@3HB",
+     "kinds": [
+      "literal",
+      "proc"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 46328008
+    },
+    {
+     "name": "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z",
+     "kinds": [
+      "literal",
+      "patching"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 13440688
+    },
+    {
+     "name": "?sendEvent@ServerInstanceEventCoordinator@@QEAAXAEBV?$EventRef@U?$ServerInstanceGameplayEvent@X@@@@@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 25922176
+    },
+    {
+     "name": "?sendServerThreadStarted@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z",
+     "kinds": [
+      "hookingRawWithCallOriginal",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 25925840
+    },
+    {
+     "name": "?startLeaveGame@Minecraft@@QEAAX_N@Z",
+     "kinds": [
+      "hookingRawWithCallOriginal",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 25194464
+    },
+    {
+     "name": "?stop@DedicatedServer@@UEAA_NXZ",
+     "kinds": [
+      "js"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 867104
+    },
+    {
+     "name": "?terminate@details@gsl@@YAXXZ",
+     "kinds": [
+      "hookingRawWithoutOriginal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 867568
+    },
+    {
+     "name": "?toUtf8@StringConversions@Core@@SAHPEB_WHPEADH@Z",
+     "kinds": [
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 41525088
+    },
+    {
+     "name": "?toWide@StringConversions@Core@@SAHPEBDHPEA_WH@Z",
+     "kinds": [
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 41525520
+    },
+    {
+     "name": "?unblockReading@ConsoleInputReader@@QEAAXXZ",
+     "kinds": [
+      "write"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 755360
+    },
+    {
+     "name": "<lambda_261fc769b4b17f58193d57d5f3ee7db9>::operator()",
+     "kinds": [
+      "literal",
+      "patching",
+      "proc"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 13018640
+    },
+    {
+     "name": "std::thread::_Invoke<std::tuple<<lambda_261fc769b4b17f58193d57d5f3ee7db9> >,0>",
+     "kinds": [
+      "patching"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 12466384
+    }
+   ]
+  },
+  {
+   "tier": 1,
+   "label": "Milestone 3 first hook - virtual, zero-arg, called every tick",
+   "symbols": [
+    {
+     "name": "?tick@Level@@UEAAXXZ",
+     "kinds": [
+      "hookingRawWithCallOriginal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 28080944
+    }
+   ]
+  },
+  {
+   "tier": 2,
+   "label": "event surface - makes the slice worth running",
+   "symbols": [
+    {
+     "name": "__guard_dispatch_icall_fptr",
+     "kinds": [
+      "proc"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 45552608
+    },
+    {
+     "name": "?_announceServer@RakNetServerLocator@@AEAAXAEBUAnnounceServerData@1@@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 9162976
+    },
+    {
+     "name": "?_attachedBlockWalker@PistonBlockActor@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@EE@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 36342208
+    },
+    {
+     "name": "?_crit@Player@@UEAAXAEAVActor@@@Z",
+     "kinds": [
+      "hooking"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 27082544
+    },
+    {
+     "name": "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@M_N1@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 26244672
+    },
+    {
+     "name": "?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 8858848
+    },
+    {
+     "name": "?_sendInternal@NetworkSystem@@AEAAXAEBVNetworkIdentifier@@AEBVPacket@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+     "kinds": [
+      "hookingRaw",
+      "js",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 8468192
+    },
+    {
+     "name": "?_shriek@SculkShriekerBlockActorInternal@@YAXAEAVBlockSource@@VBlockPos@@AEAVPlayer@@@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 36360848
+    },
+    {
+     "name": "?_sortAndPacketizeEvents@NetworkSystem@@AEAA_NAEAVNetworkConnection@@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z",
+     "kinds": [
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 8469200
+    },
+    {
+     "name": "?_spawnMovingBlocks@PistonBlockActor@@AEAAXAEAVBlockSource@@@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 36364576
+    },
+    {
+     "name": "??_7ReadOnlyBinaryStream@@6B@",
+     "kinds": [
+      "jsv",
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": true,
+     "baselineRva": 46063640
+    },
+    {
+     "name": "??0PlayerListEntry@@QEAA@VUUID@mce@@@Z",
+     "kinds": [
+      "js"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 25571312
+    },
+    {
+     "name": "??0PlayerListEntry@@QEAA@XZ",
+     "kinds": [
+      "js"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 25571456
+    },
+    {
+     "name": "??1PlayerListEntry@@QEAA@XZ",
+     "kinds": [
+      "js"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 25580576
+    },
+    {
+     "name": "?addLevels@Player@@UEAAXH@Z",
+     "kinds": [
+      "hooking",
+      "js"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 27096448
+    },
+    {
+     "name": "?addObjective@Scoreboard@@QEAAPEAVObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEBVObjectiveCriteria@@@Z",
+     "kinds": [
+      "hooking",
+      "js",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 36662496
+    },
+    {
+     "name": "?attack@Block@@QEBA_NPEAVPlayer@@AEBVBlockPos@@@Z",
+     "kinds": [
+      "hooking"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 28987600
+    },
+    {
+     "name": "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 27099680
+    },
+    {
+     "name": "?change@HealthAttributeDelegate@@UEAAMMMAEBVAttributeBuff@@@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 27630880
+    },
+    {
+     "name": "?changeDimension@ServerPlayer@@UEAAXV?$AutomaticID@VDimension@@H@@@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 13377424
+    },
+    {
+     "name": "?consumeTotem@Actor@@UEAA_NXZ",
+     "kinds": [
+      "hooking",
+      "js"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 26924624
+    },
+    {
+     "name": "?createPacket@MinecraftPackets@@SA?AV?$shared_ptr@VPacket@@@std@@W4MinecraftPacketIds@@@Z",
+     "kinds": [
+      "js",
+      "literal",
+      "proc"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 8476720
+    },
+    {
+     "name": "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 26490064
+    },
+    {
+     "name": "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z",
+     "kinds": [
+      "hooking"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 26490608
+    },
+    {
+     "name": "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z",
+     "kinds": [
+      "hooking"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 26271296
+    },
+    {
+     "name": "?doOnHitEffect@SplashPotionEffectSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 6164896
+    },
+    {
+     "name": "?drop@Player@@UEAA_NAEBVItemStack@@_N@Z",
+     "kinds": [
+      "hooking"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 27118064
+    },
+    {
+     "name": "?explode@Level@@UEAA_NAEAVBlockSource@@PEAVActor@@AEBVVec3@@M_N3M3@Z",
+     "kinds": [
+      "hooking",
+      "js",
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 28035056
+    },
+    {
+     "name": "?handle@Packet@@QEAAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
+     "kinds": [
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 8521184
+    },
+    {
+     "name": "?handleJumpEffects@Player@@QEAAXXZ",
+     "kinds": [
+      "hooking"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 27131408
+    },
+    {
+     "name": "?interact@Player@@QEAA_NAEAVActor@@AEBVVec3@@@Z",
+     "kinds": [
+      "hooking"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 27134704
+    },
+    {
+     "name": "?inventoryChanged@Player@@QEAAXAEAVContainer@@HAEBVItemStack@@1_N@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 27135472
+    },
+    {
+     "name": "?knockback@Mob@@UEAAXPEAVActor@@HMMMMM@Z",
+     "kinds": [
+      "hooking",
+      "jsv",
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 26313072
+    },
+    {
+     "name": "?mayPlace@BlockSource@@QEAA_NAEBVBlock@@AEBVBlockPos@@EPEAVActor@@_NVVec3@@@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 28401008
+    },
+    {
+     "name": "?modifyScoreInObjective@ScoreboardIdentityRef@@QEAA_NAEAHAEAVObjective@@HW4PlayerScoreSetFunction@@@Z",
+     "kinds": [
+      "hooking",
+      "js",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 36671952
+    },
+    {
+     "name": "?onBlockInteractedWith@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 1510208
+    },
+    {
+     "name": "?onConnectionClosed@NetworkSystem@@EEAAXAEBVNetworkIdentifier@@W4DisconnectFailReason@Connection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z",
+     "kinds": [
+      "hookingRawWithCallOriginal",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 8525696
+    },
+    {
+     "name": "?onFallOn@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 29051040
+    },
+    {
+     "name": "?onHit@ProjectileComponent@@QEAAXAEAVActor@@AEBVHitResult@@@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 6194384
+    },
+    {
+     "name": "?onLightningHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 29053264
+    },
+    {
+     "name": "?onProjectileHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 29058016
+    },
+    {
+     "name": "?pairWith@ChestBlockActor@@QEAAXPEAV1@_N@Z",
+     "kinds": [
+      "hooking"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 34557824
+    },
+    {
+     "name": "?read@ReadOnlyBinaryStream@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@PEAX_K@Z",
+     "kinds": [
+      "jsv",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 41160640
+    },
+    {
+     "name": "?resetPlayerScore@Scoreboard@@QEAA_NAEBUScoreboardId@@AEAVObjective@@@Z",
+     "kinds": [
+      "hooking",
+      "js",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 36679488
+    },
+    {
+     "name": "?respawn@Player@@UEAAXXZ",
+     "kinds": [
+      "hooking",
+      "js"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 27160832
+    },
+    {
+     "name": "?save@Level@@UEAAXXZ",
+     "kinds": [
+      "hooking"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 28073408
+    },
+    {
+     "name": "?send@NetworkSystem@@QEAAXAEBVNetworkIdentifier@@AEBVPacket@@W4SubClientId@@@Z",
+     "kinds": [
+      "hookingRaw"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 8555136
+    },
+    {
+     "name": "?sendActorCarriedItemChanged@ActorEventCoordinator@@QEAAXAEAVActor@@AEBVItemInstance@@1W4HandSlot@@@Z",
+     "kinds": [
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": null
+    },
+    {
+     "name": "?sendActorCreated@ActorEventCoordinator@@QEAAXAEAVActor@@W4ActorInitializationMethod@@@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 25913520
+    },
+    {
+     "name": "?sendBlockDestructionStarted@BlockEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@E@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 25914528
+    },
+    {
+     "name": "?sendToClients@LoopbackPacketSender@@UEAAXAEBV?$vector@UNetworkIdentifierWithSubId@@V?$allocator@UNetworkIdentifierWithSubId@@@std@@@std@@AEBVPacket@@@Z",
+     "kinds": [
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 8557264
+    },
+    {
+     "name": "?setActivePhase@SculkSensorBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@HH@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 36304432
+    },
+    {
+     "name": "?setLocalPlayerAsInitialized@ServerPlayer@@QEAAXXZ",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 13453600
+    },
+    {
+     "name": "?shoot@ProjectileComponent@@QEAAXAEAVActor@@0@Z",
+     "kinds": [
+      "hooking",
+      "js",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 6212800
+    },
+    {
+     "name": "?simulateDisconnect@SimulatedPlayer@@QEAAXXZ",
+     "kinds": [
+      "hooking",
+      "js",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 13457328
+    },
+    {
+     "name": "?startRiding@Actor@@UEAA_NAEAV1@@Z",
+     "kinds": [
+      "hooking",
+      "jsv"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 27036928
+    },
+    {
+     "name": "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 27172976
+    },
+    {
+     "name": "?startSwimming@Actor@@UEAAXXZ",
+     "kinds": [
+      "hooking"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 27038320
+    },
+    {
+     "name": "?startSwimming@Player@@UEAAXXZ",
+     "kinds": [
+      "hooking"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 27175696
+    },
+    {
+     "name": "?stopRiding@Actor@@QEAAX_N00@Z",
+     "kinds": [
+      "hooking"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 27038352
+    },
+    {
+     "name": "?take@Player@@QEAA_NAEAVActor@@HH@Z",
+     "kinds": [
+      "hooking"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 27179184
+    },
+    {
+     "name": "?transformOnFall@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@M@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 28884112
+    },
+    {
+     "name": "?tryDouseFire@CampfireBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@_N@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 29319568
+    },
+    {
+     "name": "?tryLightFire@CampfireBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 29323792
+    },
+    {
+     "name": "?updateWeather@Level@@UEAAXMHMH@Z",
+     "kinds": [
+      "hooking",
+      "js",
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 28083312
+    },
+    {
+     "name": "?use@ButtonBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 29326240
+    },
+    {
+     "name": "?use@ChestBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 29337472
+    },
+    {
+     "name": "?use@ItemStack@@QEAAAEAV1@AEAVPlayer@@@Z",
+     "kinds": [
+      "hooking"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 28771344
+    },
+    {
+     "name": "?useItem@Player@@UEAAXAEAVItemStackBase@@W4ItemUseMethod@@_N@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": true,
+     "vftable": false,
+     "baselineRva": 27192736
+    },
+    {
+     "name": "?useOn@ItemStack@@QEAA?AVInteractionResult@@AEAVActor@@HHHEAEBVVec3@@@Z",
+     "kinds": [
+      "hooking",
+      "literal"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 28773376
+    },
+    {
+     "name": "<lambda_64a71bea114986e8e17d2f982ce4525e>::operator()",
+     "kinds": [
+      "proc"
+     ],
+     "virtual": false,
+     "vftable": false,
+     "baselineRva": 8432000
+    }
+   ]
+  }
+ ]
+}

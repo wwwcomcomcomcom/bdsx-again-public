@@ -1,0 +1,5 @@
+# LF everywhere, on every OS (git on Windows would otherwise check text out as CRLF, and the generated
+# block in docs/status.md is compared byte for byte)
+* text=auto eol=lf
+# the tables and evidence are kept byte-identical to what was verified (bdsx/symbols/ is -text too)
+/data/** -text

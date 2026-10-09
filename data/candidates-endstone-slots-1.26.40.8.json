@@ -1,0 +1,4297 @@
+{
+ "_comment": "bdsx virtuals placed by Endstone's header order (tools/endstone-slots.mjs, work/endstone-0.11.7) into each class's own table on 1.26.40.8: agree 59 / disagree 0 with the existing table, 44 new. Families: actor, scoreboard, commandorigin, connector, dimension, blocksource, gamemode, itemstack, container, blockactor, tag.",
+ "endstone": "work/endstone-0.11.7",
+ "signatureChanged": [
+  "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@M_N1@Z",
+  "?knockback@Mob@@UEAAXPEAVActor@@HMMMMM@Z",
+  "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z"
+ ],
+ "symbols": {
+  "?_crit@Player@@UEAAXAEAVActor@@@Z": 2316656,
+  "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@M_N1@Z": 37727968,
+  "?add@Actor@@UEAA_NAEAVItemStack@@@Z": 14801344,
+  "?add@Player@@UEAA_NAEAVItemStack@@@Z": 2227856,
+  "?addExperience@Player@@UEAAXH@Z": 2318544,
+  "?addLevels@Player@@UEAAXH@Z": 2320016,
+  "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z": 2266592,
+  "?consumeTotem@Actor@@UEAA_NXZ": 14680992,
+  "?consumeTotem@Player@@UEAA_NXZ": 2325392,
+  "?despawn@Actor@@UEAAXXZ": 14736848,
+  "?die@Actor@@UEAAXAEBVActorDamageSource@@@Z": 14767360,
+  "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z": 37735472,
+  "?drop@Player@@UEAA_NAEBVItemStack@@_N@Z": 2302400,
+  "?getArmorValue@Mob@@UEBAHXZ": 37770832,
+  "?getCarriedItem@Actor@@UEBAAEBVItemStack@@XZ": 14680048,
+  "?getCarriedItem@Player@@UEBAAEBVItemStack@@XZ": 2304416,
+  "?getCommandPermissionLevel@Actor@@UEBA?AW4CommandPermissionLevel@@XZ": 14616992,
+  "?getCommandPermissionLevel@Player@@UEBA?AW4CommandPermissionLevel@@XZ": 2228288,
+  "?getEquippedTotem@Actor@@UEBAAEBVItemStack@@XZ": 14680400,
+  "?getEquippedTotem@Player@@UEBAAEBVItemStack@@XZ": 2324640,
+  "?getLastDeathDimension@Actor@@UEBA?AV?$optional@V?$AutomaticID@VDimension@@H@@@std@@XZ": 1529088,
+  "?getLastDeathPos@Actor@@UEBA?AV?$optional@VBlockPos@@@std@@XZ": 14818544,
+  "?getSpeed@Mob@@UEBAMXZ": 37764032,
+  "?getSpeed@Player@@UEBAMXZ": 2177152,
+  "?getXuid@Player@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": 2344400,
+  "?hurtEffects@Mob@@UEAAXAEBVActorDamageSource@@M_N1@Z": 37730640,
+  "?isAlive@Actor@@UEBA_NXZ": 14672304,
+  "?isAlive@Mob@@UEBA_NXZ": 37754736,
+  "?isBlocking@Mob@@UEBA_NXZ": 37769328,
+  "?isImmobile@Actor@@UEBA_NXZ": 14739872,
+  "?isInvisible@Actor@@UEBA_NXZ": 14738992,
+  "?isInvulnerableTo@Actor@@UEBA_NAEBVActorDamageSource@@@Z": 14656208,
+  "?isLoading@ServerPlayer@@UEBA_NXZ": 6907584,
+  "?isPlayerInitialized@ServerPlayer@@UEBA_NXZ": 6907600,
+  "?isSleeping@Player@@UEBA_NXZ": 2181536,
+  "?isValidTarget@ServerPlayer@@UEBA_NPEAVActor@@@Z": 6866432,
+  "?kill@Actor@@UEAAXXZ": 14765776,
+  "?knockback@Mob@@UEAAXPEAVActor@@HMMMMM@Z": 37732912,
+  "?load@Actor@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z": 14713328,
+  "?openInventory@ServerPlayer@@UEAAXXZ": 6894016,
+  "?readAdditionalSaveData@Actor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z": 14576192,
+  "?remove@Actor@@UEAAXXZ": 14598336,
+  "?respawn@Player@@UEAAXXZ": 2298048,
+  "?sendArmor@ServerPlayer@@UEAAXV?$bitset@$03@std@@@Z": 6872672,
+  "?sendInventory@Mob@@UEAAX_N@Z": 37779664,
+  "?sendInventory@Player@@UEAAX_N@Z": 483568,
+  "?sendInventory@ServerPlayer@@UEAAX_N@Z": 6890080,
+  "?sendNetworkPacket@ServerPlayer@@UEBAXAEAVPacket@@@Z": 6891904,
+  "?setArmor@ServerPlayer@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z": 6903328,
+  "?setCarriedItem@Actor@@UEAAXAEBVItemStack@@@Z": 14680096,
+  "?setOffhandSlot@Actor@@UEAAXAEBVItemStack@@@Z": 14680112,
+  "?setOffhandSlot@Player@@UEAAXAEBVItemStack@@@Z": 2317136,
+  "?setOffhandSlot@ServerPlayer@@UEAAXAEBVItemStack@@@Z": 6904720,
+  "?setOwner@Actor@@UEAAXUActorUniqueID@@@Z": 14589440,
+  "?setPlayerGameType@ServerPlayer@@UEAAXW4GameType@@@Z": 6906096,
+  "?setSleeping@Player@@UEAAX_N@Z": 2181712,
+  "?setSneaking@Actor@@UEAAX_N@Z": 14682272,
+  "?setSpeed@Mob@@UEAAXM@Z": 37764048,
+  "?setSpeed@Player@@UEAAXM@Z": 2306272,
+  "?setSprinting@Mob@@UEAAX_N@Z": 37765472,
+  "?setTarget@Actor@@UEAAXPEAV1@@Z": 14584240,
+  "?shouldDropDeathLoot@Mob@@UEBA_NXZ": 37742416,
+  "?startRiding@Actor@@UEAA_NAEAV1@@Z": 14630080,
+  "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z": 2182176,
+  "?startSwimming@Actor@@UEAAXXZ": 14634768,
+  "?startSwimming@Player@@UEAAXXZ": 2327664,
+  "?teleportTo@Actor@@UEAAXAEBVVec3@@_NHH1@Z": 14649472,
+  "?useItem@Player@@UEAAXAEAVItemStackBase@@W4ItemUseMethod@@_N@Z": 2214800,
+  "?clearDisplayObjective@ServerScoreboard@@UEAAPEAVObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z": 1307296,
+  "?createScoreboardId@ServerScoreboard@@UEAAAEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z": 1312336,
+  "?createScoreboardId@ServerScoreboard@@UEAAAEBUScoreboardId@@AEBVActor@@@Z": 1312032,
+  "?createScoreboardId@ServerScoreboard@@UEAAAEBUScoreboardId@@AEBVPlayer@@@Z": 1311856,
+  "?onScoreChanged@ServerScoreboard@@UEAAXAEBUScoreboardId@@AEBVObjective@@@Z": 1299088,
+  "?setDisplayObjective@ServerScoreboard@@UEAAPEBVDisplayObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVObjective@@W4ObjectiveSortOrder@@@Z": 1301792,
+  "?getBlockPosition@ServerCommandOrigin@@UEBA?AVBlockPos@@XZ": 10554464,
+  "?getDimension@ServerCommandOrigin@@UEBAPEAVDimension@@XZ": 19816352,
+  "?getEntity@ServerCommandOrigin@@UEBAPEAVActor@@XZ": 483664,
+  "?getLevel@ServerCommandOrigin@@UEBAPEAVLevel@@XZ": 14171152,
+  "?getName@ServerCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": 19815776,
+  "?getOriginType@ServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ": 4184768,
+  "?getRequestId@ServerCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": 1546112,
+  "?getWorldPosition@ServerCommandOrigin@@UEBA?AVVec3@@XZ": 10554464,
+  "?serialize@ServerCommandOrigin@@UEBA?AVCompoundTag@@XZ": 19816544,
+  "?getPeer@RakNetConnector@@UEAAPEAVRakPeerInterface@RakNet@@XZ": 12704288,
+  "?getPort@RakNetConnector@@UEBAGXZ": 12703840,
+  "?getDefaultBiome@NetherDimension@@UEBA?AVHashedString@@XZ": 135337584,
+  "?getDimensionId@Dimension@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ": 24690240,
+  "?getSpawnPos@Dimension@@UEBA?AVBlockPos@@XZ": 10554464,
+  "?getBrightness@BlockSource@@UEBAMAEBVBlockPos@@@Z": 21984704,
+  "?getChunk@BlockSource@@UEBAPEAVLevelChunk@@AEBVChunkPos@@@Z": 19852976,
+  "?getChunkAt@BlockSource@@UEBAPEAVLevelChunk@@AEBVBlockPos@@@Z": 19852976,
+  "?getChunkSource@BlockSource@@UEAAAEAVChunkSource@@XZ": 21969744,
+  "?getDimension@BlockSource@@UEAAAEAVDimension@@XZ": 19852976,
+  "?getDimensionId@BlockSource@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ": 21971904,
+  "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z": 32725808,
+  "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z": 32747904,
+  "?useItemOn@GameMode@@UEAA?AVInteractionResult@@AEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z": 32735424,
+  "?setNull@ItemStackBase@@UEAAXV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z": 29095792,
+  "?toDebugString@ItemStackBase@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": 29098112,
+  "?toString@ItemStackBase@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": 29096768,
+  "?equals@CompoundTag@@UEBA_NAEBVTag@@@Z": 29295984,
+  "?getId@CompoundTag@@UEBA?AW4Type@Tag@@XZ": 13933616,
+  "?toString@CompoundTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": 29292032
+ },
+ "evidence": {
+  "?_crit@Player@@UEAAXAEAVActor@@@Z": {
+   "family": "actor",
+   "slot": 213,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Player",
+   "decl": "protected: virtual void _crit(Actor &) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@M_N1@Z": {
+   "family": "actor",
+   "slot": 134,
+   "table": "??_7Mob@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual ActorHurtResult _hurt(ActorDamageSource const &, float, bool, bool) = 0;",
+   "verdict": "AGREE with resolved"
+  },
+  "?add@Actor@@UEAA_NAEAVItemStack@@@Z": {
+   "family": "actor",
+   "slot": 115,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual bool add(ItemStack &) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?add@Player@@UEAA_NAEAVItemStack@@@Z": {
+   "family": "actor",
+   "slot": 115,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual bool add(ItemStack &) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?addExperience@Player@@UEAAXH@Z": {
+   "family": "actor",
+   "slot": 216,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Player",
+   "decl": "virtual void addExperience(int) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?addLevels@Player@@UEAAXH@Z": {
+   "family": "actor",
+   "slot": 217,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Player",
+   "decl": "virtual void addLevels(int) = 0;",
+   "verdict": "AGREE with resolved"
+  },
+  "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z": {
+   "family": "actor",
+   "slot": 52,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual ActorHurtResult attack(Actor &, ActorDamageCause const &) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?consumeTotem@Actor@@UEAA_NXZ": {
+   "family": "actor",
+   "slot": 80,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual bool consumeTotem() = 0;",
+   "verdict": "new"
+  },
+  "?consumeTotem@Player@@UEAA_NXZ": {
+   "family": "actor",
+   "slot": 80,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual bool consumeTotem() = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?despawn@Actor@@UEAAXXZ": {
+   "family": "actor",
+   "slot": 70,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual void despawn() = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?die@Actor@@UEAAXAEBVActorDamageSource@@@Z": {
+   "family": "actor",
+   "slot": 122,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual void die(ActorDamageSource const &) = 0;",
+   "verdict": "new"
+  },
+  "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z": {
+   "family": "actor",
+   "slot": 122,
+   "table": "??_7Mob@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual void die(ActorDamageSource const &) = 0;",
+   "verdict": "AGREE with resolved"
+  },
+  "?drop@Player@@UEAA_NAEBVItemStack@@_N@Z": {
+   "family": "actor",
+   "slot": 116,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual bool drop(ItemStack const &, bool) = 0;",
+   "verdict": "AGREE with resolved"
+  },
+  "?getArmorValue@Mob@@UEBAHXZ": {
+   "family": "actor",
+   "slot": 154,
+   "table": "??_7Mob@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Mob",
+   "decl": "virtual int getArmorValue() = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?getCarriedItem@Actor@@UEBAAEBVItemStack@@XZ": {
+   "family": "actor",
+   "slot": 77,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "[[nodiscard]] virtual ItemStack const &getCarriedItem() const = 0;",
+   "verdict": "new"
+  },
+  "?getCarriedItem@Player@@UEBAAEBVItemStack@@XZ": {
+   "family": "actor",
+   "slot": 77,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "[[nodiscard]] virtual ItemStack const &getCarriedItem() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?getCommandPermissionLevel@Actor@@UEBA?AW4CommandPermissionLevel@@XZ": {
+   "family": "actor",
+   "slot": 102,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "[[nodiscard]] virtual CommandPermissionLevel getCommandPermissionLevel() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?getCommandPermissionLevel@Player@@UEBA?AW4CommandPermissionLevel@@XZ": {
+   "family": "actor",
+   "slot": 102,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "[[nodiscard]] virtual CommandPermissionLevel getCommandPermissionLevel() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?getEquippedTotem@Actor@@UEBAAEBVItemStack@@XZ": {
+   "family": "actor",
+   "slot": 79,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "[[nodiscard]] virtual ItemStack const &getEquippedTotem() const = 0;",
+   "verdict": "new"
+  },
+  "?getEquippedTotem@Player@@UEBAAEBVItemStack@@XZ": {
+   "family": "actor",
+   "slot": 79,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "[[nodiscard]] virtual ItemStack const &getEquippedTotem() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?getLastDeathDimension@Actor@@UEBA?AV?$optional@V?$AutomaticID@VDimension@@H@@@std@@XZ": {
+   "family": "actor",
+   "slot": 127,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "[[nodiscard]] virtual std::optional<DimensionType> getLastDeathDimension() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?getLastDeathPos@Actor@@UEBA?AV?$optional@VBlockPos@@@std@@XZ": {
+   "family": "actor",
+   "slot": 126,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "[[nodiscard]] virtual std::optional<BlockPos> getLastDeathPos() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?getSpeed@Mob@@UEBAMXZ": {
+   "family": "actor",
+   "slot": 140,
+   "table": "??_7Mob@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Mob",
+   "decl": "[[nodiscard]] virtual float getSpeed() const = 0;",
+   "verdict": "new"
+  },
+  "?getSpeed@Player@@UEBAMXZ": {
+   "family": "actor",
+   "slot": 140,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Mob",
+   "decl": "[[nodiscard]] virtual float getSpeed() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?getXuid@Player@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "family": "actor",
+   "slot": 231,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Player",
+   "decl": "[[nodiscard]] virtual std::string getXuid() const = 0;",
+   "verdict": "new"
+  },
+  "?hurtEffects@Mob@@UEAAXAEBVActorDamageSource@@M_N1@Z": {
+   "family": "actor",
+   "slot": 142,
+   "table": "??_7Mob@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Mob",
+   "decl": "virtual void hurtEffects(ActorDamageSource const &, float, HurtEffectsSettings const &) = 0;",
+   "verdict": "new"
+  },
+  "?isAlive@Actor@@UEBA_NXZ": {
+   "family": "actor",
+   "slot": 46,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "[[nodiscard]] virtual bool isAlive() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?isAlive@Mob@@UEBA_NXZ": {
+   "family": "actor",
+   "slot": 46,
+   "table": "??_7Mob@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "[[nodiscard]] virtual bool isAlive() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?isBlocking@Mob@@UEBA_NXZ": {
+   "family": "actor",
+   "slot": 44,
+   "table": "??_7Mob@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "[[nodiscard]] virtual bool isBlocking() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?isImmobile@Actor@@UEBA_NXZ": {
+   "family": "actor",
+   "slot": 39,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "[[nodiscard]] virtual bool isImmobile() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?isInvisible@Actor@@UEBA_NXZ": {
+   "family": "actor",
+   "slot": 31,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "[[nodiscard]] virtual bool isInvisible() const = 0;",
+   "verdict": "new"
+  },
+  "?isInvulnerableTo@Actor@@UEBA_NAEBVActorDamageSource@@@Z": {
+   "family": "actor",
+   "slot": 63,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "[[nodiscard]] virtual bool isInvulnerableTo(ActorDamageSource const &) const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?isLoading@ServerPlayer@@UEBA_NXZ": {
+   "family": "actor",
+   "slot": 208,
+   "table": "??_7ServerPlayer@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Player",
+   "decl": "[[nodiscard]] virtual bool isLoading() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?isPlayerInitialized@ServerPlayer@@UEBA_NXZ": {
+   "family": "actor",
+   "slot": 209,
+   "table": "??_7ServerPlayer@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Player",
+   "decl": "[[nodiscard]] virtual bool isPlayerInitialized() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?isSleeping@Player@@UEBA_NXZ": {
+   "family": "actor",
+   "slot": 41,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "[[nodiscard]] virtual bool isSleeping() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?isValidTarget@ServerPlayer@@UEBA_NPEAVActor@@@Z": {
+   "family": "actor",
+   "slot": 51,
+   "table": "??_7ServerPlayer@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual bool isValidTarget(Actor *) const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?kill@Actor@@UEAAXXZ": {
+   "family": "actor",
+   "slot": 121,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual void kill() = 0;",
+   "verdict": "AGREE with propagation"
+  },
+  "?knockback@Mob@@UEAAXPEAVActor@@HMMMMM@Z": {
+   "family": "actor",
+   "slot": 137,
+   "table": "??_7Mob@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Mob",
+   "decl": "ENDSTONE_HOOK virtual void knockback(Actor *, float damage, float xd, float zd, const KnockbackParameters &parameters);",
+   "verdict": "new"
+  },
+  "?load@Actor@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z": {
+   "family": "actor",
+   "slot": 81,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual bool load(CompoundTag const &, DataLoadHelper &) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?openInventory@ServerPlayer@@UEAAXXZ": {
+   "family": "actor",
+   "slot": 196,
+   "table": "??_7ServerPlayer@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Player",
+   "decl": "virtual void openInventory() = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?readAdditionalSaveData@Actor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z": {
+   "family": "actor",
+   "slot": 135,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "public: virtual void readAdditionalSaveData(CompoundTag const &, DataLoadHelper &) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?remove@Actor@@UEAAXXZ": {
+   "family": "actor",
+   "slot": 11,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual void remove() = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?respawn@Player@@UEAAXXZ": {
+   "family": "actor",
+   "slot": 188,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Player",
+   "decl": "virtual void respawn() = 0;",
+   "verdict": "AGREE with resolved"
+  },
+  "?sendArmor@ServerPlayer@@UEAAXV?$bitset@$03@std@@@Z": {
+   "family": "actor",
+   "slot": 158,
+   "table": "??_7ServerPlayer@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Mob",
+   "decl": "virtual void sendArmor(std::bitset<4>) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?sendInventory@Mob@@UEAAX_N@Z": {
+   "family": "actor",
+   "slot": 164,
+   "table": "??_7Mob@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Mob",
+   "decl": "virtual void sendInventory(bool should_select_slot) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?sendInventory@Player@@UEAAX_N@Z": {
+   "family": "actor",
+   "slot": 164,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Mob",
+   "decl": "virtual void sendInventory(bool should_select_slot) = 0;",
+   "verdict": "new"
+  },
+  "?sendInventory@ServerPlayer@@UEAAX_N@Z": {
+   "family": "actor",
+   "slot": 164,
+   "table": "??_7ServerPlayer@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Mob",
+   "decl": "virtual void sendInventory(bool should_select_slot) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?sendNetworkPacket@ServerPlayer@@UEBAXAEAVPacket@@@Z": {
+   "family": "actor",
+   "slot": 228,
+   "table": "??_7ServerPlayer@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Player",
+   "decl": "virtual void sendNetworkPacket(Packet &) const = 0;",
+   "verdict": "new"
+  },
+  "?setArmor@ServerPlayer@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z": {
+   "family": "actor",
+   "slot": 71,
+   "table": "??_7ServerPlayer@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual void setArmor(ArmorSlot, ItemStack const &) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?setCarriedItem@Actor@@UEAAXAEBVItemStack@@@Z": {
+   "family": "actor",
+   "slot": 76,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual void setCarriedItem(ItemStack const &) = 0;",
+   "verdict": "new"
+  },
+  "?setOffhandSlot@Actor@@UEAAXAEBVItemStack@@@Z": {
+   "family": "actor",
+   "slot": 78,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual void setOffhandSlot(ItemStack const &) = 0;",
+   "verdict": "new"
+  },
+  "?setOffhandSlot@Player@@UEAAXAEBVItemStack@@@Z": {
+   "family": "actor",
+   "slot": 78,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual void setOffhandSlot(ItemStack const &) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?setOffhandSlot@ServerPlayer@@UEAAXAEBVItemStack@@@Z": {
+   "family": "actor",
+   "slot": 78,
+   "table": "??_7ServerPlayer@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual void setOffhandSlot(ItemStack const &) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?setOwner@Actor@@UEAAXUActorUniqueID@@@Z": {
+   "family": "actor",
+   "slot": 54,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual void setOwner(ActorUniqueID) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?setPlayerGameType@ServerPlayer@@UEAAXW4GameType@@@Z": {
+   "family": "actor",
+   "slot": 211,
+   "table": "??_7ServerPlayer@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Player",
+   "decl": "virtual void setPlayerGameType(GameType) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?setSleeping@Player@@UEAAX_N@Z": {
+   "family": "actor",
+   "slot": 42,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual void setSleeping(bool) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?setSneaking@Actor@@UEAAX_N@Z": {
+   "family": "actor",
+   "slot": 43,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual void setSneaking(bool) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?setSpeed@Mob@@UEAAXM@Z": {
+   "family": "actor",
+   "slot": 141,
+   "table": "??_7Mob@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Mob",
+   "decl": "virtual void setSpeed(float) = 0;",
+   "verdict": "new"
+  },
+  "?setSpeed@Player@@UEAAXM@Z": {
+   "family": "actor",
+   "slot": 141,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Mob",
+   "decl": "virtual void setSpeed(float) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?setSprinting@Mob@@UEAAX_N@Z": {
+   "family": "actor",
+   "slot": 139,
+   "table": "??_7Mob@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Mob",
+   "decl": "virtual void setSprinting(bool) = 0;",
+   "verdict": "new"
+  },
+  "?setTarget@Actor@@UEAAXPEAV1@@Z": {
+   "family": "actor",
+   "slot": 50,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual void setTarget(Actor *) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?shouldDropDeathLoot@Mob@@UEBA_NXZ": {
+   "family": "actor",
+   "slot": 123,
+   "table": "??_7Mob@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "[[nodiscard]] virtual bool shouldDropDeathLoot() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?startRiding@Actor@@UEAA_NAEAV1@@Z": {
+   "family": "actor",
+   "slot": 27,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual bool startRiding(Actor &) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z": {
+   "family": "actor",
+   "slot": 203,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Player",
+   "decl": "ENDSTONE_HOOK virtual BedSleepingResult startSleepInBed(BlockPos const &bed_block_pos, bool a2, float a3);",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?startSwimming@Actor@@UEAAXXZ": {
+   "family": "actor",
+   "slot": 99,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual void startSwimming() = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?startSwimming@Player@@UEAAXXZ": {
+   "family": "actor",
+   "slot": 99,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual void startSwimming() = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?teleportTo@Actor@@UEAAXAEBVVec3@@_NHH1@Z": {
+   "family": "actor",
+   "slot": 21,
+   "table": "??_7Actor@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "ENDSTONE_HOOK virtual void teleportTo(Vec3 const &pos, bool should_stop_riding, int cause, int source_entity_type, bool ",
+   "verdict": "AGREE with resolved"
+  },
+  "?useItem@Player@@UEAAXAEAVItemStackBase@@W4ItemUseMethod@@_N@Z": {
+   "family": "actor",
+   "slot": 111,
+   "table": "??_7Player@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Actor",
+   "decl": "virtual void useItem(ItemStackBase &, ItemUseMethod, bool) = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?clearDisplayObjective@ServerScoreboard@@UEAAPEAVObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z": {
+   "family": "scoreboard",
+   "slot": 2,
+   "table": "??_7ServerScoreboard@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Scoreboard",
+   "decl": "virtual Objective *clearDisplayObjective(std::string const &) = 0;",
+   "verdict": "new"
+  },
+  "?createScoreboardId@ServerScoreboard@@UEAAAEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z": {
+   "family": "scoreboard",
+   "slot": 3,
+   "table": "??_7ServerScoreboard@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Scoreboard",
+   "decl": "virtual ScoreboardId const &createScoreboardId(std::string const &) = 0;",
+   "verdict": "new [1 of 3 overloads (slots 3,4,5)]"
+  },
+  "?createScoreboardId@ServerScoreboard@@UEAAAEBUScoreboardId@@AEBVActor@@@Z": {
+   "family": "scoreboard",
+   "slot": 4,
+   "table": "??_7ServerScoreboard@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Scoreboard",
+   "decl": "virtual ScoreboardId const &createScoreboardId(Actor const &) = 0;",
+   "verdict": "new [2 of 3 overloads (slots 3,4,5)]"
+  },
+  "?createScoreboardId@ServerScoreboard@@UEAAAEBUScoreboardId@@AEBVPlayer@@@Z": {
+   "family": "scoreboard",
+   "slot": 5,
+   "table": "??_7ServerScoreboard@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Scoreboard",
+   "decl": "virtual ScoreboardId const &createScoreboardId(Player const &) = 0;",
+   "verdict": "new [3 of 3 overloads (slots 3,4,5)]"
+  },
+  "?onScoreChanged@ServerScoreboard@@UEAAXAEBUScoreboardId@@AEBVObjective@@@Z": {
+   "family": "scoreboard",
+   "slot": 8,
+   "table": "??_7ServerScoreboard@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Scoreboard",
+   "decl": "virtual void onScoreChanged(ScoreboardId const &, Objective const &) = 0;",
+   "verdict": "new"
+  },
+  "?setDisplayObjective@ServerScoreboard@@UEAAPEBVDisplayObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVObjective@@W4ObjectiveSortOrder@@@Z": {
+   "family": "scoreboard",
+   "slot": 1,
+   "table": "??_7ServerScoreboard@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Scoreboard",
+   "decl": "virtual DisplayObjective const *setDisplayObjective(std::string const &, Objective const &, ObjectiveSortOrder) = 0;",
+   "verdict": "new"
+  },
+  "?getBlockPosition@ServerCommandOrigin@@UEBA?AVBlockPos@@XZ": {
+   "family": "commandorigin",
+   "slot": 3,
+   "table": "??_7ServerCommandOrigin@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "CommandOrigin",
+   "decl": "[[nodiscard]] virtual BlockPos getBlockPosition() const = 0;",
+   "verdict": "new; that slot is named ?getWorldPosition@ClientAutomationComman by vftable-walk"
+  },
+  "?getDimension@ServerCommandOrigin@@UEBAPEAVDimension@@XZ": {
+   "family": "commandorigin",
+   "slot": 7,
+   "table": "??_7ServerCommandOrigin@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "CommandOrigin",
+   "decl": "[[nodiscard]] virtual Dimension *getDimension() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?getEntity@ServerCommandOrigin@@UEBAPEAVActor@@XZ": {
+   "family": "commandorigin",
+   "slot": 8,
+   "table": "??_7ServerCommandOrigin@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "CommandOrigin",
+   "decl": "[[nodiscard]] virtual Actor *getEntity() const = 0;",
+   "verdict": "new"
+  },
+  "?getLevel@ServerCommandOrigin@@UEBAPEAVLevel@@XZ": {
+   "family": "commandorigin",
+   "slot": 6,
+   "table": "??_7ServerCommandOrigin@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "CommandOrigin",
+   "decl": "[[nodiscard]] virtual Level *getLevel() const = 0;",
+   "verdict": "new"
+  },
+  "?getName@ServerCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "family": "commandorigin",
+   "slot": 2,
+   "table": "??_7ServerCommandOrigin@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "CommandOrigin",
+   "decl": "[[nodiscard]] virtual std::string getName() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?getOriginType@ServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ": {
+   "family": "commandorigin",
+   "slot": 24,
+   "table": "??_7ServerCommandOrigin@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "CommandOrigin",
+   "decl": "[[nodiscard]] virtual CommandOriginType getOriginType() const = 0;",
+   "verdict": "new"
+  },
+  "?getRequestId@ServerCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "family": "commandorigin",
+   "slot": 1,
+   "table": "??_7ServerCommandOrigin@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "CommandOrigin",
+   "decl": "[[nodiscard]] virtual const std::string &getRequestId() const = 0;",
+   "verdict": "new"
+  },
+  "?getWorldPosition@ServerCommandOrigin@@UEBA?AVVec3@@XZ": {
+   "family": "commandorigin",
+   "slot": 4,
+   "table": "??_7ServerCommandOrigin@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "CommandOrigin",
+   "decl": "[[nodiscard]] virtual Vec3 getWorldPosition() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?serialize@ServerCommandOrigin@@UEBA?AVCompoundTag@@XZ": {
+   "family": "commandorigin",
+   "slot": 30,
+   "table": "??_7ServerCommandOrigin@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "CommandOrigin",
+   "decl": "[[nodiscard]] virtual CompoundTag serialize() const = 0;",
+   "verdict": "AGREE with vftable-walk"
+  },
+  "?getPeer@RakNetConnector@@UEAAPEAVRakPeerInterface@RakNet@@XZ": {
+   "family": "connector",
+   "slot": 21,
+   "table": "??_7RakNetConnector@@6BConnector@@@",
+   "fallbackTable": false,
+   "declaredIn": "RakNetConnector",
+   "decl": "virtual RakNet::RakPeerInterface *getPeer();",
+   "verdict": "new [2 of 2 overloads (slots 20,21)]"
+  },
+  "?getPort@RakNetConnector@@UEBAGXZ": {
+   "family": "connector",
+   "slot": 2,
+   "table": "??_7RakNetConnector@@6BConnector@@@",
+   "fallbackTable": false,
+   "declaredIn": "Connector",
+   "decl": "[[nodiscard]] virtual uint16_t getPort() const;",
+   "verdict": "new"
+  },
+  "?getDefaultBiome@NetherDimension@@UEBA?AVHashedString@@XZ": {
+   "family": "dimension",
+   "slot": 25,
+   "table": "??_7NetherDimension@@6BIDimension@@@",
+   "fallbackTable": false,
+   "declaredIn": "Dimension",
+   "decl": "[[nodiscard]] virtual HashedString getDefaultBiome() const = 0;",
+   "verdict": "new"
+  },
+  "?getDimensionId@Dimension@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ": {
+   "family": "dimension",
+   "slot": 2,
+   "table": "??_7OverworldDimension@@6BIDimension@@@",
+   "fallbackTable": true,
+   "declaredIn": "IDimension",
+   "decl": "virtual DimensionType getDimensionId() const = 0;",
+   "verdict": "new [fallback table: a derived override would show here]"
+  },
+  "?getSpawnPos@Dimension@@UEBA?AVBlockPos@@XZ": {
+   "family": "dimension",
+   "slot": 27,
+   "table": "??_7OverworldDimension@@6BIDimension@@@",
+   "fallbackTable": true,
+   "declaredIn": "Dimension",
+   "decl": "[[nodiscard]] virtual BlockPos getSpawnPos() const = 0;",
+   "verdict": "new; that slot is named ?getWorldPosition@ClientAutomationComman by vftable-walk [fallback table: a derived override would show here]"
+  },
+  "?getBrightness@BlockSource@@UEBAMAEBVBlockPos@@@Z": {
+   "family": "blocksource",
+   "slot": 24,
+   "table": "??_7BlockSource@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "IConstBlockSource",
+   "decl": "[[nodiscard]] virtual float getBrightness(BlockPos const &) const = 0;",
+   "verdict": "new"
+  },
+  "?getChunk@BlockSource@@UEBAPEAVLevelChunk@@AEBVChunkPos@@@Z": {
+   "family": "blocksource",
+   "slot": 39,
+   "table": "??_7BlockSource@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "IBlockSource",
+   "decl": "[[nodiscard]] virtual LevelChunk *getChunk(ChunkPos const &) const = 0;",
+   "verdict": "new; that slot is named ?getDimension@BlockSource@@UEAAAEAVDimen by vftable-walk [1 of 2 overloads (slots 39,40)]"
+  },
+  "?getChunkAt@BlockSource@@UEBAPEAVLevelChunk@@AEBVBlockPos@@@Z": {
+   "family": "blocksource",
+   "slot": 38,
+   "table": "??_7BlockSource@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "IBlockSource",
+   "decl": "[[nodiscard]] virtual LevelChunk *getChunkAt(BlockPos const &) const = 0;",
+   "verdict": "new; that slot is named ?getDimension@BlockSource@@UEAAAEAVDimen by vftable-walk"
+  },
+  "?getChunkSource@BlockSource@@UEAAAEAVChunkSource@@XZ": {
+   "family": "blocksource",
+   "slot": 52,
+   "table": "??_7BlockSource@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "IBlockSource",
+   "decl": "virtual ChunkSource &getChunkSource() = 0;",
+   "verdict": "new; that slot is named ?prepare_pong@?$hybi13@Uasio_client@conf by vftable-walk"
+  },
+  "?getDimension@BlockSource@@UEAAAEAVDimension@@XZ": {
+   "family": "blocksource",
+   "slot": 37,
+   "table": "??_7BlockSource@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "IBlockSource",
+   "decl": "virtual Dimension &getDimension() = 0;",
+   "verdict": "AGREE with vftable-walk [2 of 2 overloads (slots 35,37)]"
+  },
+  "?getDimensionId@BlockSource@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ": {
+   "family": "blocksource",
+   "slot": 18,
+   "table": "??_7BlockSource@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "IConstBlockSource",
+   "decl": "[[nodiscard]] virtual DimensionType getDimensionId() const = 0;",
+   "verdict": "new"
+  },
+  "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z": {
+   "family": "gamemode",
+   "slot": 2,
+   "table": "??_7GameMode@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "GameMode",
+   "decl": "virtual bool destroyBlock(BlockPos const &, FacingID) = 0;",
+   "verdict": "new"
+  },
+  "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z": {
+   "family": "gamemode",
+   "slot": 2,
+   "table": "??_7SurvivalMode@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "GameMode",
+   "decl": "virtual bool destroyBlock(BlockPos const &, FacingID) = 0;",
+   "verdict": "new"
+  },
+  "?useItemOn@GameMode@@UEAA?AVInteractionResult@@AEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z": {
+   "family": "gamemode",
+   "slot": 13,
+   "table": "??_7GameMode@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "GameMode",
+   "decl": "virtual InteractionResult useItemOn(ItemStack &, BlockPos const &, FacingID, Vec3 const &, Block const *, bool) = 0;",
+   "verdict": "new"
+  },
+  "?setNull@ItemStackBase@@UEAAXV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z": {
+   "family": "itemstack",
+   "slot": 4,
+   "table": "??_7ItemStackBase@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "ItemStackBase",
+   "decl": "virtual void setNull(std::optional<std::string>);",
+   "verdict": "new"
+  },
+  "?toDebugString@ItemStackBase@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "family": "itemstack",
+   "slot": 6,
+   "table": "??_7ItemStackBase@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "ItemStackBase",
+   "decl": "[[nodiscard]] virtual std::string toDebugString() const;",
+   "verdict": "AGREE with propagation"
+  },
+  "?toString@ItemStackBase@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "family": "itemstack",
+   "slot": 5,
+   "table": "??_7ItemStackBase@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "ItemStackBase",
+   "decl": "[[nodiscard]] virtual std::string toString() const;",
+   "verdict": "new"
+  },
+  "?equals@CompoundTag@@UEBA_NAEBVTag@@@Z": {
+   "family": "tag",
+   "slot": 6,
+   "table": "??_7CompoundTag@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Tag",
+   "decl": "[[nodiscard]] virtual bool equals(Tag const &other) const;",
+   "verdict": "new"
+  },
+  "?getId@CompoundTag@@UEBA?AW4Type@Tag@@XZ": {
+   "family": "tag",
+   "slot": 5,
+   "table": "??_7CompoundTag@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Tag",
+   "decl": "[[nodiscard]] virtual Type getId() const = 0;",
+   "verdict": "new"
+  },
+  "?toString@CompoundTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "family": "tag",
+   "slot": 4,
+   "table": "??_7CompoundTag@@6B@",
+   "fallbackTable": false,
+   "declaredIn": "Tag",
+   "decl": "[[nodiscard]] virtual std::string toString() const = 0;",
+   "verdict": "new"
+  }
+ },
+ "families": {
+  "actor": {
+   "headerSlots": 245,
+   "tables": {
+    "ServerPlayer": "??_7ServerPlayer@@6B@",
+    "Player": "??_7Player@@6B@",
+    "Mob": "??_7Mob@@6B@",
+    "Actor": "??_7Actor@@6B@"
+   },
+   "slots": [
+    {
+     "cls": "Actor",
+     "name": "outOfWorld",
+     "params": 0,
+     "decl": "virtual void outOfWorld() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "reloadHardcoded",
+     "params": 2,
+     "decl": "virtual void reloadHardcoded(ActorInitializationMethod, VariantParameterList const &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "reloadHardcodedClient",
+     "params": 2,
+     "decl": "virtual void reloadHardcodedClient(ActorInitializationMethod, VariantParameterList const &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "initializeComponents",
+     "params": 2,
+     "decl": "virtual void initializeComponents(ActorInitializationMethod, VariantParameterList const &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "reloadComponents",
+     "params": 2,
+     "decl": "virtual void reloadComponents(ActorInitializationMethod, VariantParameterList const &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "_serverInitItemStackIds",
+     "params": 0,
+     "decl": "protected: virtual void _serverInitItemStackIds() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "_doInitialMove",
+     "params": 0,
+     "decl": "virtual void _doInitialMove() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "hasComponent",
+     "params": 1,
+     "decl": "public: virtual bool hasComponent(HashedString const &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "~",
+     "params": 0,
+     "decl": "virtual ~Actor() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "resetUserPos",
+     "params": 1,
+     "decl": "virtual void resetUserPos(bool) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getOwnerEntityType",
+     "params": 0,
+     "decl": "virtual ActorType getOwnerEntityType() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "remove",
+     "params": 0,
+     "decl": "virtual void remove() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getFiringPos",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual Vec3 getFiringPos() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getInterpolatedBodyRot",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual float getInterpolatedBodyRot(float) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getInterpolatedHeadRot",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual float getInterpolatedHeadRot(float) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getInterpolatedBodyYaw",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual float getInterpolatedBodyYaw(float) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getYawSpeedInDegreesPerSecond",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual float getYawSpeedInDegreesPerSecond() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getInterpolatedRidingOffset",
+     "params": 2,
+     "decl": "[[nodiscard]] virtual Vec3 getInterpolatedRidingOffset(float, int) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "isFireImmune",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isFireImmune() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "blockedByShield",
+     "params": 2,
+     "decl": "virtual void blockedByShield(ActorDamageSource const &, Actor &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "canDisableShield",
+     "params": 0,
+     "decl": "virtual bool canDisableShield() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "teleportTo",
+     "params": 5,
+     "decl": "ENDSTONE_HOOK virtual void teleportTo(Vec3 const &pos, bool should_stop_riding, int cause, int source_entity_type, bool "
+    },
+    {
+     "cls": "Actor",
+     "name": "lerpMotion",
+     "params": 1,
+     "decl": "virtual Vec3 lerpMotion(Vec3 const &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "tryCreateAddActorPacket",
+     "params": 0,
+     "decl": "virtual std::unique_ptr<Packet> tryCreateAddActorPacket() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "normalTick",
+     "params": 0,
+     "decl": "virtual void normalTick() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "baseTick",
+     "params": 0,
+     "decl": "virtual void baseTick() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "passengerTick",
+     "params": 0,
+     "decl": "virtual void passengerTick() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "startRiding",
+     "params": 1,
+     "decl": "virtual bool startRiding(Actor &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "addPassenger",
+     "params": 1,
+     "decl": "virtual void addPassenger(Actor &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getExitTip",
+     "params": 3,
+     "decl": "[[nodiscard]] virtual std::string getExitTip(std::string const &, InputMode, NewInteractionModel) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getEntityLocNameString",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::string getEntityLocNameString() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "isInvisible",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isInvisible() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "canShowNameTag",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool canShowNameTag() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getNameTagTextColor",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual mce::Color getNameTagTextColor() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getShadowRadius",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual float getShadowRadius() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getHeadLookVector",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual Vec3 getHeadLookVector(float) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "canInteractWithOtherEntitiesInGame",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool canInteractWithOtherEntitiesInGame() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getBrightness",
+     "params": 2,
+     "decl": "virtual float getBrightness(float, IConstBlockSource const &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "playerTouch",
+     "params": 1,
+     "decl": "virtual void playerTouch(Player &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "isImmobile",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isImmobile() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "isSilentObserver",
+     "params": 0,
+     "decl": "virtual bool isSilentObserver() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "isSleeping",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isSleeping() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "setSleeping",
+     "params": 1,
+     "decl": "virtual void setSleeping(bool) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "setSneaking",
+     "params": 1,
+     "decl": "virtual void setSneaking(bool) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "isBlocking",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isBlocking() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "isDamageBlocked",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool isDamageBlocked(ActorDamageSource const &) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "isAlive",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isAlive() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "isOnFire",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isOnFire() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "isSurfaceMob",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isSurfaceMob() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "isTargetable",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isTargetable() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "setTarget",
+     "params": 1,
+     "decl": "virtual void setTarget(Actor *) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "isValidTarget",
+     "params": 1,
+     "decl": "virtual bool isValidTarget(Actor *) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "attack",
+     "params": 2,
+     "decl": "virtual ActorHurtResult attack(Actor &, ActorDamageCause const &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "performRangedAttack",
+     "params": 2,
+     "decl": "virtual void performRangedAttack(Actor &, float) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "setOwner",
+     "params": 1,
+     "decl": "virtual void setOwner(ActorUniqueID) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "setSitting",
+     "params": 1,
+     "decl": "virtual void setSitting(bool) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "onTame",
+     "params": 0,
+     "decl": "virtual void onTame() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "onFailedTame",
+     "params": 0,
+     "decl": "virtual void onFailedTame() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "setStanding",
+     "params": 1,
+     "decl": "virtual void setStanding(bool) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "canPowerJump",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool canPowerJump() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "isEnchanted",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isEnchanted() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "playAmbientSound",
+     "params": 0,
+     "decl": "virtual void playAmbientSound() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getAmbientSound",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual LevelSoundEvent getAmbientSound() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "isInvulnerableTo",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool isInvulnerableTo(ActorDamageSource const &) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getBlockDamageCause",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual ActorDamageCause getBlockDamageCause(Block const &) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "doFireHurt",
+     "params": 1,
+     "decl": "virtual ActorHurtResult doFireHurt(int) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "onLightningHit",
+     "params": 0,
+     "decl": "virtual void onLightningHit() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "feed",
+     "params": 1,
+     "decl": "virtual void feed(int) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "handleEntityEvent",
+     "params": 2,
+     "decl": "virtual void handleEntityEvent(ActorEvent, int) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getActorRendererId",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual HashedString const &getActorRendererId() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "despawn",
+     "params": 0,
+     "decl": "virtual void despawn() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "setArmor",
+     "params": 2,
+     "decl": "virtual void setArmor(ArmorSlot, ItemStack const &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getArmorMaterialTypeInSlot",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual ArmorMaterialType getArmorMaterialTypeInSlot(ArmorSlot) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getArmorTextureIndexInSlot",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual int getArmorTextureIndexInSlot(ArmorSlot) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getArmorColorInSlot",
+     "params": 2,
+     "decl": "[[nodiscard]] virtual float getArmorColorInSlot(ArmorSlot, int) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "setEquippedSlot",
+     "params": 2,
+     "decl": "virtual void setEquippedSlot(EquipmentSlot, ItemStack const &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "setCarriedItem",
+     "params": 1,
+     "decl": "virtual void setCarriedItem(ItemStack const &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getCarriedItem",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual ItemStack const &getCarriedItem() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "setOffhandSlot",
+     "params": 1,
+     "decl": "virtual void setOffhandSlot(ItemStack const &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getEquippedTotem",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual ItemStack const &getEquippedTotem() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "consumeTotem",
+     "params": 0,
+     "decl": "virtual bool consumeTotem() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "load",
+     "params": 2,
+     "decl": "virtual bool load(CompoundTag const &, DataLoadHelper &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "queryEntityRenderer",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual HashedString const &queryEntityRenderer() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getSourceUniqueID",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual ActorUniqueID getSourceUniqueID() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "canFreeze",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool canFreeze() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getLiquidAABB",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual AABB getLiquidAABB(MaterialType) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "handleInsidePortal",
+     "params": 1,
+     "decl": "virtual void handleInsidePortal(BlockPos const &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "canChangeDimensionsUsingPortal",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool canChangeDimensionsUsingPortal() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "changeDimension",
+     "params": 1,
+     "decl": "virtual void changeDimension(ChangeDimensionPacket const &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "changeDimension",
+     "params": 1,
+     "decl": "virtual void changeDimension(DimensionType) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getControllingPlayer",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual ActorUniqueID getControllingPlayer() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "causeFallDamageToActor",
+     "params": 3,
+     "decl": "virtual float causeFallDamageToActor(float, float, ActorDamageSource) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "onSyncedDataUpdate",
+     "params": 1,
+     "decl": "virtual void onSyncedDataUpdate(int) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "canAddPassenger",
+     "params": 1,
+     "decl": "virtual bool canAddPassenger(Actor &) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "canPickupItem",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool canPickupItem(ItemStack const &) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "canBePulledIntoVehicle",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool canBePulledIntoVehicle() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "inCaravan",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool inCaravan() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "sendMotionPacketIfNeeded",
+     "params": 0,
+     "decl": "virtual void sendMotionPacketIfNeeded() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "canSynchronizeNewEntity",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool canSynchronizeNewEntity() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "startSwimming",
+     "params": 0,
+     "decl": "virtual void startSwimming() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "stopSwimming",
+     "params": 0,
+     "decl": "virtual void stopSwimming() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "buildDebugInfo",
+     "params": 1,
+     "decl": "virtual void buildDebugInfo(std::string &) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getCommandPermissionLevel",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual CommandPermissionLevel getCommandPermissionLevel() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getDeathTime",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual int getDeathTime() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "canBeAffected",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool canBeAffected(std::uint32_t) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "canBeAffectedByArrow",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool canBeAffectedByArrow(MobEffectInstance const &) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "onEffectRemoved",
+     "params": 1,
+     "decl": "virtual void onEffectRemoved(MobEffectInstance &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "canObstructSpawningAndBlockPlacement",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool canObstructSpawningAndBlockPlacement() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getAnimationComponent",
+     "params": 0,
+     "decl": "virtual AnimationComponent &getAnimationComponent() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "openContainerComponent",
+     "params": 1,
+     "decl": "virtual void openContainerComponent(Player &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "swing",
+     "params": 1,
+     "decl": "virtual bool swing(ActorSwingSource swing_source) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "useItem",
+     "params": 3,
+     "decl": "virtual void useItem(ItemStackBase &, ItemUseMethod, bool) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getDebugText",
+     "params": 1,
+     "decl": "virtual void getDebugText(std::vector<std::string> &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getMapDecorationRotation",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual float getMapDecorationRotation() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getPassengerYRotation",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual float getPassengerYRotation(Actor const &) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "add",
+     "params": 1,
+     "decl": "virtual bool add(ItemStack &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "drop",
+     "params": 2,
+     "decl": "virtual bool drop(ItemStack const &, bool) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getInteraction",
+     "params": 3,
+     "decl": "virtual InteractionResult getInteraction(Player &, ActorInteraction &, Vec3 const &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "canDestroyBlock",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool canDestroyBlock(Block const &) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "setAuxValue",
+     "params": 1,
+     "decl": "virtual void setAuxValue(int) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "renderDebugServerState",
+     "params": 1,
+     "decl": "virtual void renderDebugServerState(const IOptionsReader &options) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "kill",
+     "params": 0,
+     "decl": "virtual void kill() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "die",
+     "params": 1,
+     "decl": "virtual void die(ActorDamageSource const &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "shouldDropDeathLoot",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool shouldDropDeathLoot() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "applySnapshot",
+     "params": 2,
+     "decl": "virtual void applySnapshot(EntityContext const &, EntityContext const &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "onPush",
+     "params": 1,
+     "decl": "virtual void onPush(Actor &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getLastDeathPos",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::optional<BlockPos> getLastDeathPos() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "getLastDeathDimension",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::optional<DimensionType> getLastDeathDimension() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "hasDiedBefore",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool hasDiedBefore() const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "doEnterWaterSplashEffect",
+     "params": 0,
+     "decl": "virtual void doEnterWaterSplashEffect() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "doExitWaterSplashEffect",
+     "params": 0,
+     "decl": "virtual void doExitWaterSplashEffect() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "doWaterSplashEffect",
+     "params": 0,
+     "decl": "virtual void doWaterSplashEffect() = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "_shouldProvideFeedbackOnHandContainerItemSet",
+     "params": 2,
+     "decl": "protected: [[nodiscard]] virtual bool _shouldProvideFeedbackOnHandContainerItemSet(HandSlot, ItemStack const &) const = "
+    },
+    {
+     "cls": "Actor",
+     "name": "_shouldProvideFeedbackOnArmorSet",
+     "params": 2,
+     "decl": "[[nodiscard]] virtual bool _shouldProvideFeedbackOnArmorSet(ArmorSlot, ItemStack const &) const = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "_hurt",
+     "params": 4,
+     "decl": "virtual ActorHurtResult _hurt(ActorDamageSource const &, float, bool, bool) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "readAdditionalSaveData",
+     "params": 2,
+     "decl": "public: virtual void readAdditionalSaveData(CompoundTag const &, DataLoadHelper &) = 0;"
+    },
+    {
+     "cls": "Actor",
+     "name": "addAdditionalSaveData",
+     "params": 1,
+     "decl": "virtual void addAdditionalSaveData(CompoundTag &) = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "knockback",
+     "params": 5,
+     "decl": "ENDSTONE_HOOK virtual void knockback(Actor *, float damage, float xd, float zd, const KnockbackParameters &parameters);"
+    },
+    {
+     "cls": "Mob",
+     "name": "spawnAnim",
+     "params": 0,
+     "decl": "virtual void spawnAnim() = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "setSprinting",
+     "params": 1,
+     "decl": "virtual void setSprinting(bool) = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "getSpeed",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual float getSpeed() const = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "setSpeed",
+     "params": 1,
+     "decl": "virtual void setSpeed(float) = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "hurtEffects",
+     "params": 3,
+     "decl": "virtual void hurtEffects(ActorDamageSource const &, float, HurtEffectsSettings const &) = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "damageCarriedItemOnAttack",
+     "params": 2,
+     "decl": "virtual void damageCarriedItemOnAttack(Actor &target, float) = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "aiStep",
+     "params": 0,
+     "decl": "virtual void aiStep() = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "pushActors",
+     "params": 0,
+     "decl": "virtual void pushActors() = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "checkSpawnRules",
+     "params": 1,
+     "decl": "virtual bool checkSpawnRules(bool) = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "checkSpawnObstruction",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool checkSpawnObstruction() const = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "getItemUseDuration",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual int getItemUseDuration() const = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "getItemUseStartupProgress",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual float getItemUseStartupProgress() const = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "getItemUseIntervalProgress",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual float getItemUseIntervalProgress() const = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "getMaxHeadXRot",
+     "params": 0,
+     "decl": "virtual float getMaxHeadXRot() = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "isAlliedTo",
+     "params": 1,
+     "decl": "virtual bool isAlliedTo(Mob *) const = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "doHurtTarget",
+     "params": 2,
+     "decl": "virtual bool doHurtTarget(Actor *, ActorDamageCause const &) = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "getArmorValue",
+     "params": 0,
+     "decl": "virtual int getArmorValue() = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "hurtArmorSlots",
+     "params": 3,
+     "decl": "virtual void hurtArmorSlots(ActorDamageSource const &, int, std::bitset<4>) = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "setDamagedArmor",
+     "params": 2,
+     "decl": "virtual void setDamagedArmor(ArmorSlot, ItemStack const &) = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "sendArmorDamage",
+     "params": 1,
+     "decl": "virtual void sendArmorDamage(std::bitset<4>) = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "sendArmor",
+     "params": 1,
+     "decl": "virtual void sendArmor(std::bitset<4>) = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "getAllHandEquipment",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::vector<ItemStack const *> getAllHandEquipment() const = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "getAllEquipment",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::vector<ItemStack const *> getAllEquipment() const = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "dropEquipmentOnDeath",
+     "params": 0,
+     "decl": "virtual void dropEquipmentOnDeath() = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "dropEquipmentOnDeath",
+     "params": 2,
+     "decl": "virtual void dropEquipmentOnDeath(ActorDamageSource const &, int) = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "clearVanishEnchantedItemsOnDeath",
+     "params": 0,
+     "decl": "virtual void clearVanishEnchantedItemsOnDeath() = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "sendInventory",
+     "params": 1,
+     "decl": "virtual void sendInventory(bool should_select_slot) = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "getDamageAfterEnchantReduction",
+     "params": 2,
+     "decl": "[[nodiscard]] virtual float getDamageAfterEnchantReduction(ActorDamageSource const &, float) const = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "createAIGoals",
+     "params": 0,
+     "decl": "virtual bool createAIGoals() = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "onBorn",
+     "params": 2,
+     "decl": "virtual void onBorn(Actor &, Actor &) = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "setItemSlot",
+     "params": 2,
+     "decl": "virtual bool setItemSlot(EquipmentSlot, ItemStack const &) = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "setTransitioningSitting",
+     "params": 1,
+     "decl": "virtual void setTransitioningSitting(bool) = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "_getWalkTargetValue",
+     "params": 1,
+     "decl": "protected: [[nodiscard]] virtual float _getWalkTargetValue(BlockPos const &) const = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "canExistWhenDisallowMob",
+     "params": 0,
+     "decl": "public: virtual bool canExistWhenDisallowMob() = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "initBodyControl",
+     "params": 0,
+     "decl": "protected: virtual std::unique_ptr<BodyControl> initBodyControl() = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "newServerAiStep",
+     "params": 0,
+     "decl": "virtual void newServerAiStep() = 0;"
+    },
+    {
+     "cls": "Mob",
+     "name": "_getAdjustedAABBForSpawnCheck",
+     "params": 2,
+     "decl": "[[nodiscard]] virtual AABB _getAdjustedAABBForSpawnCheck(AABB const &, Vec3 const &) const = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "prepareRegion",
+     "params": 1,
+     "decl": "virtual void prepareRegion(ChunkSource &) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "destroyRegion",
+     "params": 0,
+     "decl": "virtual void destroyRegion() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "suspendRegion",
+     "params": 0,
+     "decl": "virtual void suspendRegion() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "_fireDimensionChanged",
+     "params": 0,
+     "decl": "protected: virtual void _fireDimensionChanged() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "changeDimensionWithCredits",
+     "params": 1,
+     "decl": "public: virtual void changeDimensionWithCredits(DimensionType) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "tickWorld",
+     "params": 1,
+     "decl": "virtual void tickWorld(Tick const &) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "frameUpdate",
+     "params": 1,
+     "decl": "virtual void frameUpdate(FrameUpdateContextBase &) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "getTickingOffsets",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::vector<ChunkPos> const &getTickingOffsets() const = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "moveView",
+     "params": 0,
+     "decl": "virtual void moveView() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "moveSpawnView",
+     "params": 2,
+     "decl": "virtual void moveSpawnView(Vec3 const &, DimensionType) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "checkMovementStats",
+     "params": 1,
+     "decl": "virtual void checkMovementStats(Vec3 const &) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "getCurrentStructureFeature",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual StructureFeatureType getCurrentStructureFeature() const = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "isAutoJumpEnabled",
+     "params": 0,
+     "decl": "virtual bool isAutoJumpEnabled() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "respawn",
+     "params": 0,
+     "decl": "virtual void respawn() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "resetRot",
+     "params": 0,
+     "decl": "virtual void resetRot() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "isInTrialMode",
+     "params": 0,
+     "decl": "virtual bool isInTrialMode() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "openPortfolio",
+     "params": 0,
+     "decl": "virtual void openPortfolio() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "openBook",
+     "params": 4,
+     "decl": "virtual void openBook(int, bool, int, BlockActor *) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "openTrading",
+     "params": 2,
+     "decl": "virtual void openTrading(ActorUniqueID const &, bool) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "openChalkboard",
+     "params": 2,
+     "decl": "virtual void openChalkboard(ChalkboardBlockActor &, bool) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "openNpcInteractScreen",
+     "params": 1,
+     "decl": "virtual void openNpcInteractScreen(std::shared_ptr<INpcDialogueData>) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "openInventory",
+     "params": 0,
+     "decl": "virtual void openInventory() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "displayChatMessage",
+     "params": 2,
+     "decl": "virtual void displayChatMessage(std::string const &, std::string const &) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "displayClientMessage",
+     "params": 1,
+     "decl": "virtual void displayClientMessage(std::string const &) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "displayTextObjectMessage",
+     "params": 3,
+     "decl": "virtual void displayTextObjectMessage(TextObjectRoot const &, std::string const &, std::string const &) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "displayTextObjectWhisperMessage",
+     "params": 3,
+     "decl": "virtual void displayTextObjectWhisperMessage(std::string const &, std::string const &, std::string const &) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "displayTextObjectWhisperMessage",
+     "params": 3,
+     "decl": "virtual void displayTextObjectWhisperMessage(ResolvedTextObject const &, std::string const &, std::string const &) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "displayWhisperMessage",
+     "params": 4,
+     "decl": "virtual void displayWhisperMessage(std::string const &, std::string const &, std::string const &, std::string const &) ="
+    },
+    {
+     "cls": "Player",
+     "name": "startSleepInBed",
+     "params": 3,
+     "decl": "ENDSTONE_HOOK virtual BedSleepingResult startSleepInBed(BlockPos const &bed_block_pos, bool a2, float a3);"
+    },
+    {
+     "cls": "Player",
+     "name": "stopSleepInBed",
+     "params": 2,
+     "decl": "virtual void stopSleepInBed(bool, bool) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "canStartSleepInBed",
+     "params": 0,
+     "decl": "virtual bool canStartSleepInBed() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "openSign",
+     "params": 2,
+     "decl": "virtual void openSign(BlockPos const &, bool) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "playEmote",
+     "params": 2,
+     "decl": "virtual void playEmote(std::string const &, bool) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "isLoading",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isLoading() const = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "isPlayerInitialized",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isPlayerInitialized() const = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "stopLoading",
+     "params": 0,
+     "decl": "virtual void stopLoading() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "setPlayerGameType",
+     "params": 1,
+     "decl": "virtual void setPlayerGameType(GameType) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "initHUDContainerManager",
+     "params": 0,
+     "decl": "virtual void initHUDContainerManager() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "_crit",
+     "params": 1,
+     "decl": "protected: virtual void _crit(Actor &) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "getEventing",
+     "params": 0,
+     "decl": "public: [[nodiscard]] virtual IMinecraftEventing *getEventing() const = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "getUserId",
+     "params": 0,
+     "decl": "virtual std::string getUserId() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "addExperience",
+     "params": 1,
+     "decl": "virtual void addExperience(int) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "addLevels",
+     "params": 1,
+     "decl": "virtual void addLevels(int) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "setContainerData",
+     "params": 3,
+     "decl": "virtual void setContainerData(IContainerManager &, int, int) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "slotChanged",
+     "params": 6,
+     "decl": "virtual void slotChanged(IContainerManager &, Container &, int, ItemStack const &, ItemStack const &, bool) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "refreshContainer",
+     "params": 1,
+     "decl": "virtual void refreshContainer(IContainerManager &) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "deleteContainerManager",
+     "params": 0,
+     "decl": "virtual void deleteContainerManager() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "isActorRelevant",
+     "params": 1,
+     "decl": "virtual bool isActorRelevant(Actor const &) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "isTeacher",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isTeacher() const = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "onSuspension",
+     "params": 0,
+     "decl": "virtual void onSuspension() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "onLinkedSlotsChanged",
+     "params": 0,
+     "decl": "virtual void onLinkedSlotsChanged() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "sendInventoryTransaction",
+     "params": 1,
+     "decl": "virtual void sendInventoryTransaction(InventoryTransaction const &) const = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "sendComplexInventoryTransaction",
+     "params": 1,
+     "decl": "virtual void sendComplexInventoryTransaction(std::unique_ptr<ComplexInventoryTransaction>) const = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "sendNetworkPacket",
+     "params": 1,
+     "decl": "virtual void sendNetworkPacket(Packet &) const = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "getPlayerEventCoordinator",
+     "params": 0,
+     "decl": "virtual PlayerEventCoordinator &getPlayerEventCoordinator() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "isSimulated",
+     "params": 0,
+     "decl": "virtual bool isSimulated() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "getXuid",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::string getXuid() const = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "getMovementSettings",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual PlayerMovementSettings getMovementSettings() const = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "unknown234",
+     "params": 0,
+     "decl": "virtual void unknown234() const = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "requestMissingSubChunk",
+     "params": 1,
+     "decl": "virtual void requestMissingSubChunk(SubChunkPos const &) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "getMaxChunkBuildRadius",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::uint8_t getMaxChunkBuildRadius() const = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "setBehaviorCommandStatus",
+     "params": 2,
+     "decl": "virtual void setBehaviorCommandStatus(const std::string &, BehaviorStatus) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "setRemotePlayerTicked",
+     "params": 1,
+     "decl": "virtual void setRemotePlayerTicked(bool) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "unknown239",
+     "params": 0,
+     "decl": "virtual void unknown239() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "unknown240",
+     "params": 0,
+     "decl": "protected: virtual void unknown240() = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "onMovePlayerPacketNormal",
+     "params": 3,
+     "decl": "virtual void onMovePlayerPacketNormal(Vec3 const &, Vec2 const &, float) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "_createChunkSource",
+     "params": 1,
+     "decl": "virtual std::shared_ptr<ChunkViewSource> _createChunkSource(ChunkSource &) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "setAbilities",
+     "params": 1,
+     "decl": "public: virtual void setAbilities(LayeredAbilities const &) = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "getEditorPlayer",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual void *getEditorPlayer() const = 0;"
+    },
+    {
+     "cls": "Player",
+     "name": "destroyEditorPlayer",
+     "params": 0,
+     "decl": "virtual void destroyEditorPlayer() = 0;"
+    }
+   ],
+   "agree": 53,
+   "disagree": 0,
+   "exactAgree": 6,
+   "exactDisagree": 0,
+   "new": 15,
+   "ambiguous": 2,
+   "noSlot": 4,
+   "tableSlots": {
+    "ServerPlayer": 247,
+    "Player": 245,
+    "Mob": 175,
+    "Actor": 137
+   }
+  },
+  "scoreboard": {
+   "headerSlots": 16,
+   "tables": {
+    "ServerScoreboard": "??_7ServerScoreboard@@6B@"
+   },
+   "slots": [
+    {
+     "cls": "Scoreboard",
+     "name": "~",
+     "params": 0,
+     "decl": "virtual ~Scoreboard();"
+    },
+    {
+     "cls": "Scoreboard",
+     "name": "setDisplayObjective",
+     "params": 3,
+     "decl": "virtual DisplayObjective const *setDisplayObjective(std::string const &, Objective const &, ObjectiveSortOrder) = 0;"
+    },
+    {
+     "cls": "Scoreboard",
+     "name": "clearDisplayObjective",
+     "params": 1,
+     "decl": "virtual Objective *clearDisplayObjective(std::string const &) = 0;"
+    },
+    {
+     "cls": "Scoreboard",
+     "name": "createScoreboardId",
+     "params": 1,
+     "decl": "virtual ScoreboardId const &createScoreboardId(std::string const &) = 0;"
+    },
+    {
+     "cls": "Scoreboard",
+     "name": "createScoreboardId",
+     "params": 1,
+     "decl": "virtual ScoreboardId const &createScoreboardId(Actor const &) = 0;"
+    },
+    {
+     "cls": "Scoreboard",
+     "name": "createScoreboardId",
+     "params": 1,
+     "decl": "virtual ScoreboardId const &createScoreboardId(Player const &) = 0;"
+    },
+    {
+     "cls": "Scoreboard",
+     "name": "onObjectiveAdded",
+     "params": 1,
+     "decl": "virtual void onObjectiveAdded(Objective const &) = 0;"
+    },
+    {
+     "cls": "Scoreboard",
+     "name": "onObjectiveRemoved",
+     "params": 1,
+     "decl": "virtual void onObjectiveRemoved(Objective &) = 0;"
+    },
+    {
+     "cls": "Scoreboard",
+     "name": "onScoreChanged",
+     "params": 2,
+     "decl": "virtual void onScoreChanged(ScoreboardId const &, Objective const &) = 0;"
+    },
+    {
+     "cls": "Scoreboard",
+     "name": "onPlayerScoreRemoved",
+     "params": 2,
+     "decl": "virtual void onPlayerScoreRemoved(ScoreboardId const &, Objective const &) = 0;"
+    },
+    {
+     "cls": "Scoreboard",
+     "name": "onPlayerJoined",
+     "params": 1,
+     "decl": "virtual void onPlayerJoined(Player const &) = 0;"
+    },
+    {
+     "cls": "Scoreboard",
+     "name": "onPlayerIdentityUpdated",
+     "params": 1,
+     "decl": "virtual void onPlayerIdentityUpdated(PlayerScoreboardId const &) = 0;"
+    },
+    {
+     "cls": "Scoreboard",
+     "name": "tick",
+     "params": 0,
+     "decl": "virtual void tick() = 0;"
+    },
+    {
+     "cls": "Scoreboard",
+     "name": "setPacketSender",
+     "params": 1,
+     "decl": "virtual void setPacketSender(PacketSender *sender) = 0;"
+    },
+    {
+     "cls": "Scoreboard",
+     "name": "writeToLevelStorage",
+     "params": 0,
+     "decl": "virtual void writeToLevelStorage() = 0;"
+    },
+    {
+     "cls": "Scoreboard",
+     "name": "isClientSide",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isClientSide() const = 0;"
+    }
+   ],
+   "agree": 0,
+   "disagree": 0,
+   "exactAgree": 0,
+   "exactDisagree": 0,
+   "new": 6,
+   "ambiguous": 0,
+   "noSlot": 0,
+   "tableSlots": {
+    "ServerScoreboard": 16
+   }
+  },
+  "commandorigin": {
+   "headerSlots": 34,
+   "tables": {
+    "ServerCommandOrigin": "??_7ServerCommandOrigin@@6B@"
+   },
+   "slots": [
+    {
+     "cls": "CommandOrigin",
+     "name": "~",
+     "params": 0,
+     "decl": "virtual ~CommandOrigin() = default;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "getRequestId",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual const std::string &getRequestId() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "getName",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::string getName() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "getBlockPosition",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual BlockPos getBlockPosition() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "getWorldPosition",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual Vec3 getWorldPosition() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "getRotation",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::optional<Vec2> getRotation() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "getLevel",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual Level *getLevel() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "getDimension",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual Dimension *getDimension() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "getEntity",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual Actor *getEntity() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "getPermissionsLevel",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual CommandPermissionLevel getPermissionsLevel() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "clone",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::unique_ptr<CommandOrigin> clone() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "getCursorHitBlockPos",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::optional<BlockPos> getCursorHitBlockPos() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "getCursorHitPos",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::optional<Vec3> getCursorHitPos() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "hasChatPerms",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool hasChatPerms() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "hasTellPerms",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool hasTellPerms() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "canUseAbility",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool canUseAbility(AbilitiesIndex ability) const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "isWorldBuilder",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isWorldBuilder() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "canUseCommandsWithoutCheatsEnabled",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool canUseCommandsWithoutCheatsEnabled() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "unknown18",
+     "params": 0,
+     "decl": "virtual void unknown18() = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "isSelectorExpansionAllowed",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isSelectorExpansionAllowed() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "getSourceId",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual const NetworkIdentifier &getSourceId() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "getSourceSubId",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual SubClientId getSourceSubId() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "getOutputReceiver",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual CommandOrigin &getOutputReceiver() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "getIdentity",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual CommandOriginIdentity getIdentity() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "getOriginType",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual CommandOriginType getOriginType() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "toCommandOriginData",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual CommandOriginData toCommandOriginData() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "getUUID",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual const mce::UUID &getUUID() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "handleCommandOutputCallback",
+     "params": 3,
+     "decl": "virtual void handleCommandOutputCallback(int, std::string &&, Json::Value &&) const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "updateValues",
+     "params": 0,
+     "decl": "virtual void updateValues() = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "getExecutePosition",
+     "params": 2,
+     "decl": "[[nodiscard]] virtual Vec3 getExecutePosition(int, const CommandPositionFloat &) const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "serialize",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual CompoundTag serialize() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "isValid",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isValid() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "requiresValidLevel",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool requiresValidLevel() const = 0;"
+    },
+    {
+     "cls": "CommandOrigin",
+     "name": "_setUUID",
+     "params": 1,
+     "decl": "protected: virtual void _setUUID(const mce::UUID &uuid) = 0;"
+    }
+   ],
+   "agree": 4,
+   "disagree": 0,
+   "exactAgree": 0,
+   "exactDisagree": 0,
+   "new": 5,
+   "ambiguous": 0,
+   "noSlot": 0,
+   "tableSlots": {
+    "ServerCommandOrigin": 34
+   }
+  },
+  "connector": {
+   "headerSlots": 22,
+   "tables": {
+    "RakNetConnector": "??_7RakNetConnector@@6BConnector@@@"
+   },
+   "slots": [
+    {
+     "cls": "Connector",
+     "name": "~",
+     "params": 0,
+     "decl": "virtual ~Connector();"
+    },
+    {
+     "cls": "Connector",
+     "name": "getLocalIp",
+     "params": 0,
+     "decl": "virtual std::string getLocalIp();"
+    },
+    {
+     "cls": "Connector",
+     "name": "getPort",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual uint16_t getPort() const;"
+    },
+    {
+     "cls": "Connector",
+     "name": "getConnectedGameInfo",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual const Social::GameConnectionInfo &getConnectedGameInfo() const;"
+    },
+    {
+     "cls": "Connector",
+     "name": "unknown5",
+     "params": 0,
+     "decl": "virtual void unknown5() = 0;"
+    },
+    {
+     "cls": "Connector",
+     "name": "isIPv4Supported",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isIPv4Supported() const;"
+    },
+    {
+     "cls": "Connector",
+     "name": "isIPv6Supported",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isIPv6Supported() const;"
+    },
+    {
+     "cls": "Connector",
+     "name": "getIPv4Port",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual uint16_t getIPv4Port() const;"
+    },
+    {
+     "cls": "Connector",
+     "name": "getIPv6Port",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual uint16_t getIPv6Port() const;"
+    },
+    {
+     "cls": "Connector",
+     "name": "getNetworkType",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual TransportLayer getNetworkType() const;"
+    },
+    {
+     "cls": "RemoteConnector",
+     "name": "host",
+     "params": 1,
+     "decl": "virtual bool host(const ConnectionDefinition &) = 0;"
+    },
+    {
+     "cls": "RemoteConnector",
+     "name": "connect",
+     "params": 2,
+     "decl": "virtual bool connect(const Social::GameConnectionInfo &, const Social::GameConnectionInfo &) = 0;"
+    },
+    {
+     "cls": "RemoteConnector",
+     "name": "disconnect",
+     "params": 0,
+     "decl": "virtual void disconnect() = 0;"
+    },
+    {
+     "cls": "RemoteConnector",
+     "name": "tick",
+     "params": 0,
+     "decl": "virtual void tick() = 0;"
+    },
+    {
+     "cls": "RemoteConnector",
+     "name": "runEvents",
+     "params": 0,
+     "decl": "virtual void runEvents() = 0;"
+    },
+    {
+     "cls": "RemoteConnector",
+     "name": "isServer",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isServer() const = 0;"
+    },
+    {
+     "cls": "RemoteConnector",
+     "name": "closeNetworkConnection",
+     "params": 1,
+     "decl": "virtual void closeNetworkConnection(const NetworkIdentifier &) = 0;"
+    },
+    {
+     "cls": "RemoteConnector",
+     "name": "getNetworkIdentifier",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual NetworkIdentifier getNetworkIdentifier() const = 0;"
+    },
+    {
+     "cls": "RemoteConnector",
+     "name": "setApplicationHandshakeCompleted",
+     "params": 1,
+     "decl": "virtual bool setApplicationHandshakeCompleted(const NetworkIdentifier &) = 0;"
+    },
+    {
+     "cls": "RemoteConnector",
+     "name": "setDisableLanSignaling",
+     "params": 1,
+     "decl": "virtual void setDisableLanSignaling(bool) = 0;"
+    },
+    {
+     "cls": "RakNetConnector",
+     "name": "getPeer",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual const RakNet::RakPeerInterface *getPeer() const;"
+    },
+    {
+     "cls": "RakNetConnector",
+     "name": "getPeer",
+     "params": 0,
+     "decl": "virtual RakNet::RakPeerInterface *getPeer();"
+    }
+   ],
+   "agree": 0,
+   "disagree": 0,
+   "exactAgree": 0,
+   "exactDisagree": 0,
+   "new": 2,
+   "ambiguous": 0,
+   "noSlot": 0,
+   "tableSlots": {
+    "RakNetConnector": 22
+   }
+  },
+  "dimension": {
+   "headerSlots": 29,
+   "tables": {
+    "Dimension": "??_7OverworldDimension@@6BIDimension@@@",
+    "OverworldDimension": "??_7OverworldDimension@@6BIDimension@@@",
+    "NetherDimension": "??_7NetherDimension@@6BIDimension@@@",
+    "TheEndDimension": "??_7TheEndDimension@@6BIDimension@@@"
+   },
+   "slots": [
+    {
+     "cls": "IDimension",
+     "name": "~",
+     "params": 0,
+     "decl": "public: virtual ~IDimension() = 0;"
+    },
+    {
+     "cls": "IDimension",
+     "name": "isNaturalDimension",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isNaturalDimension() const = 0;"
+    },
+    {
+     "cls": "IDimension",
+     "name": "getDimensionId",
+     "params": 0,
+     "decl": "virtual DimensionType getDimensionId() const = 0;"
+    },
+    {
+     "cls": "IDimension",
+     "name": "sendPacketForPosition",
+     "params": 3,
+     "decl": "virtual void sendPacketForPosition(BlockPos const &, Packet const &, Player const *) = 0;"
+    },
+    {
+     "cls": "IDimension",
+     "name": "sendPacketForEntity",
+     "params": 3,
+     "decl": "virtual void sendPacketForEntity(Actor const &actor, Packet const &packet, Player const *except) = 0;"
+    },
+    {
+     "cls": "IDimension",
+     "name": "flushLevelChunkGarbageCollector",
+     "params": 0,
+     "decl": "virtual void flushLevelChunkGarbageCollector() = 0;"
+    },
+    {
+     "cls": "IDimension",
+     "name": "initializeWithLevelStorageManagerConnector",
+     "params": 1,
+     "decl": "virtual void initializeWithLevelStorageManagerConnector(ILevelStorageManagerConnector &) = 0;"
+    },
+    {
+     "cls": "IDimension",
+     "name": "getBiomeRegistry",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual BiomeRegistry const &getBiomeRegistry() const = 0;"
+    },
+    {
+     "cls": "IDimension",
+     "name": "getBiomeRegistry",
+     "params": 0,
+     "decl": "virtual BiomeRegistry &getBiomeRegistry() = 0;"
+    },
+    {
+     "cls": "IDimension",
+     "name": "translatePosAcrossDimension",
+     "params": 2,
+     "decl": "virtual Vec3 translatePosAcrossDimension(Vec3 const &, DimensionType) = 0;"
+    },
+    {
+     "cls": "IDimension",
+     "name": "forEachPlayer",
+     "params": 1,
+     "decl": "virtual void forEachPlayer(std::function<bool(Player &)>) = 0;"
+    },
+    {
+     "cls": "IDimension",
+     "name": "fetchEntity",
+     "params": 2,
+     "decl": "virtual Actor *fetchEntity(ActorUniqueID, bool) = 0;"
+    },
+    {
+     "cls": "IDimension",
+     "name": "getBlockSourceFromMainChunkSource",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual BlockSource &getBlockSourceFromMainChunkSource() const = 0;"
+    },
+    {
+     "cls": "IDimension",
+     "name": "buildPlayersForPositionPacket",
+     "params": 3,
+     "decl": "virtual void buildPlayersForPositionPacket(const BlockPos &, const Player *, std::vector<NetworkIdentifierWithSubId> &) "
+    },
+    {
+     "cls": "IDimension",
+     "name": "updatePoiBlockStateChange",
+     "params": 3,
+     "decl": "virtual void updatePoiBlockStateChange(const BlockPos &, const Block &, const Block &) const = 0;"
+    },
+    {
+     "cls": "Dimension",
+     "name": "init",
+     "params": 1,
+     "decl": "virtual void init(const br::worldgen::StructureSetRegistry &) = 0;"
+    },
+    {
+     "cls": "Dimension",
+     "name": "tick",
+     "params": 0,
+     "decl": "virtual void tick() = 0;"
+    },
+    {
+     "cls": "Dimension",
+     "name": "tickRedstone",
+     "params": 0,
+     "decl": "virtual void tickRedstone() = 0;"
+    },
+    {
+     "cls": "Dimension",
+     "name": "createGenerator",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual std::unique_ptr<WorldGenerator> createGenerator( const br::worldgen::StructureSetRegistry &) = 0;"
+    },
+    {
+     "cls": "Dimension",
+     "name": "upgradeLevelChunk",
+     "params": 3,
+     "decl": "virtual void upgradeLevelChunk(ChunkSource &, LevelChunk &, LevelChunk &) = 0;"
+    },
+    {
+     "cls": "Dimension",
+     "name": "fixWallChunk",
+     "params": 2,
+     "decl": "virtual void fixWallChunk(ChunkSource &, LevelChunk &) = 0;"
+    },
+    {
+     "cls": "Dimension",
+     "name": "levelChunkNeedsUpgrade",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool levelChunkNeedsUpgrade(const LevelChunk &) const = 0;"
+    },
+    {
+     "cls": "Dimension",
+     "name": "isValidSpawn",
+     "params": 2,
+     "decl": "[[nodiscard]] virtual bool isValidSpawn(int, int) const = 0;"
+    },
+    {
+     "cls": "Dimension",
+     "name": "getBrightnessDependentFogColor",
+     "params": 2,
+     "decl": "[[nodiscard]] virtual Color getBrightnessDependentFogColor(const Color &, float) const = 0;"
+    },
+    {
+     "cls": "Dimension",
+     "name": "getCloudHeight",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual Height getCloudHeight() const = 0;"
+    },
+    {
+     "cls": "Dimension",
+     "name": "getDefaultBiome",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual HashedString getDefaultBiome() const = 0;"
+    },
+    {
+     "cls": "Dimension",
+     "name": "mayRespawnViaBed",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool mayRespawnViaBed() const = 0;"
+    },
+    {
+     "cls": "Dimension",
+     "name": "getSpawnPos",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual BlockPos getSpawnPos() const = 0;"
+    },
+    {
+     "cls": "Dimension",
+     "name": "getSpawnYPosition",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual int getSpawnYPosition() const = 0;"
+    }
+   ],
+   "agree": 0,
+   "disagree": 0,
+   "exactAgree": 0,
+   "exactDisagree": 0,
+   "new": 3,
+   "ambiguous": 0,
+   "noSlot": 1,
+   "tableSlots": {
+    "Dimension": 43,
+    "OverworldDimension": 43,
+    "NetherDimension": 43,
+    "TheEndDimension": 43
+   }
+  },
+  "blocksource": {
+   "headerSlots": 66,
+   "tables": {
+    "BlockSource": "??_7BlockSource@@6B@"
+   },
+   "slots": [
+    {
+     "cls": "IConstBlockSource",
+     "name": "~",
+     "params": 0,
+     "decl": "public: virtual ~IConstBlockSource() = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "getBlock",
+     "params": 2,
+     "decl": "[[nodiscard]] virtual Block const &getBlock(BlockPos const &, std::uint32_t) const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "getBlock",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual Block const &getBlock(BlockPos const &) const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "getBlockEntity",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual BlockActor const *getBlockEntity(BlockPos const &) const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "getExtraBlock",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual Block const &getExtraBlock(BlockPos const &) const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "getLiquidBlock",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual Block const &getLiquidBlock(BlockPos const &) const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "hasBlock",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool hasBlock(BlockPos const &) const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "containsAnyLiquid",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool containsAnyLiquid(AABB const &) const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "containsMaterial",
+     "params": 2,
+     "decl": "[[nodiscard]] virtual bool containsMaterial(AABB const &, MaterialType) const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "isInWall",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool isInWall(const Vec3 &) const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "isUnderWater",
+     "params": 2,
+     "decl": "[[nodiscard]] virtual bool isUnderWater(BlockPos const &, Block const &) const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "getMaterial",
+     "params": 3,
+     "decl": "[[nodiscard]] virtual Material const &getMaterial(int, int, int) const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "getMaterial",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual Material const &getMaterial(BlockPos const &) const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "hasBorderBlock",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool hasBorderBlock(BlockPos) const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "hasChunk",
+     "params": 2,
+     "decl": "[[nodiscard]] virtual bool hasChunk(ChunkPos const &, bool) const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "hasChunksAt",
+     "params": 2,
+     "decl": "[[nodiscard]] virtual bool hasChunksAt(AABB const &, bool) const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "hasChunksAt",
+     "params": 3,
+     "decl": "[[nodiscard]] virtual bool hasChunksAt(BlockPos const &, int, bool) const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "hasChunksAt",
+     "params": 2,
+     "decl": "[[nodiscard]] virtual bool hasChunksAt(Bounds const &, bool) const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "getDimensionId",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual DimensionType getDimensionId() const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "shouldFireEvents",
+     "params": 1,
+     "decl": "virtual bool shouldFireEvents(const LevelChunk &) = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "fetchAABBs",
+     "params": 3,
+     "decl": "virtual void fetchAABBs(std::vector<AABB> &, AABB const &, bool) const = 0;"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "fetchCollisionShapes",
+     "params": 5,
+     "decl": "virtual void fetchCollisionShapes(std::vector<AABB> &, AABB const &, bool, optional_ref<GetCollisionShapeInterface const"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "fetchCollisionShapesAndBlocks",
+     "params": 5,
+     "decl": "virtual void fetchCollisionShapesAndBlocks(std::vector<BlockSourceVisitor::CollisionShape> &, AABB const &, bool, option"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "getTallestCollisionShape",
+     "params": 4,
+     "decl": "virtual AABB getTallestCollisionShape(AABB const &, float *, bool, optional_ref<GetCollisionShapeInterface const>) const"
+    },
+    {
+     "cls": "IConstBlockSource",
+     "name": "getBrightness",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual float getBrightness(BlockPos const &) const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "getWeakRef",
+     "params": 0,
+     "decl": "virtual WeakRef<BlockSource> getWeakRef() = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "addListener",
+     "params": 1,
+     "decl": "virtual void addListener(Listener &) = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "removeListener",
+     "params": 1,
+     "decl": "virtual void removeListener(Listener &) = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "fetchEntities",
+     "params": 4,
+     "decl": "virtual ActorSpan fetchEntities(ActorType, AABB const &, Actor const *, std::function<bool(Actor *)>) = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "fetchEntities",
+     "params": 4,
+     "decl": "virtual ActorSpan fetchEntities(Actor const *, AABB const &, bool, bool) = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "setBlock",
+     "params": 5,
+     "decl": "virtual bool setBlock(const BlockPos &, const Block &, int, const ActorBlockSyncMessage *, const BlockChangeContext &) ="
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "setExtraBlock",
+     "params": 3,
+     "decl": "virtual bool setExtraBlock(const BlockPos &, const Block &, int) = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "removeBlock",
+     "params": 2,
+     "decl": "virtual bool removeBlock(const BlockPos &, const BlockChangeContext &) = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "getMinHeight",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual Height getMinHeight() const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "getMaxHeight",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual Height getMaxHeight() const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "getDimension",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual Dimension &getDimension() const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "getDimensionConst",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual const Dimension &getDimensionConst() const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "getDimension",
+     "params": 0,
+     "decl": "virtual Dimension &getDimension() = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "getChunkAt",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual LevelChunk *getChunkAt(BlockPos const &) const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "getChunk",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual LevelChunk *getChunk(ChunkPos const &) const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "getChunk",
+     "params": 2,
+     "decl": "[[nodiscard]] virtual LevelChunk *getChunk(int, int) const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "getLevel",
+     "params": 0,
+     "decl": "virtual Level &getLevel() = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "getILevel",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual ILevel &getILevel() const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "getLevelSeed64",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual LevelSeed64 getLevelSeed64() const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "getAboveTopSolidBlock",
+     "params": 4,
+     "decl": "[[nodiscard]] virtual Height getAboveTopSolidBlock(const BlockPos &, bool, bool, bool) const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "getAboveTopSolidBlock",
+     "params": 4,
+     "decl": "[[nodiscard]] virtual Height getAboveTopSolidBlock(int, int, bool, bool) const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "getHeight",
+     "params": 3,
+     "decl": "[[nodiscard]] virtual Height getHeight(brstd::function_ref<bool(const Block &)> const &, int, int) const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "getHeight",
+     "params": 2,
+     "decl": "[[nodiscard]] virtual Height getHeight(brstd::function_ref<bool(const Block &)> const &, BlockPos const &) const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "fetchAABBs",
+     "params": 2,
+     "decl": "virtual std::vector<AABB> &fetchAABBs(AABB const &, bool) = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "fetchCollisionShapes",
+     "params": 4,
+     "decl": "virtual std::vector<AABB> &fetchCollisionShapes(AABB const &, bool, std::optional<EntityContext const>, std::vector<AABB"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "clip",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual HitResult clip(const ClipParameters &) const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "clip",
+     "params": 10,
+     "decl": "virtual HitResult clip(Vec3 const &, Vec3 const &, bool, ShapeType, int, bool, bool, Actor *, std::function<bool(BlockSo"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "getChunkSource",
+     "params": 0,
+     "decl": "virtual ChunkSource &getChunkSource() = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "isSolidBlockingBlock",
+     "params": 3,
+     "decl": "[[nodiscard]] virtual bool isSolidBlockingBlock(int, int, int) const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "isSolidBlockingBlock",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool isSolidBlockingBlock(BlockPos const &) const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "areChunksFullyLoaded",
+     "params": 2,
+     "decl": "[[nodiscard]] virtual bool areChunksFullyLoaded(BlockPos const &, int) const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "mayPlace",
+     "params": 6,
+     "decl": "virtual bool mayPlace(const Block &, const BlockPos &, FacingID, Actor *, bool, Vec3) = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "canDoBlockDrops",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool canDoBlockDrops(const Actor *instigating_actor) const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "canDoContainedItemDrops",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool canDoContainedItemDrops(const Actor *instigating_actor) const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "isInstaticking",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool isInstaticking(BlockPos const &) const = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "checkBlockDestroyPermissions",
+     "params": 4,
+     "decl": "virtual bool checkBlockDestroyPermissions(Actor &, const BlockPos &, const ItemStackBase &, bool) = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "checkBlockPermissions",
+     "params": 5,
+     "decl": "virtual bool checkBlockPermissions(Actor &, BlockPos const &, FacingID, ItemStackBase const &, bool) = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "postGameEvent",
+     "params": 4,
+     "decl": "virtual void postGameEvent(Actor *, const GameEvent &, const BlockPos &, const Block *) = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "fireBlockChanged",
+     "params": 8,
+     "decl": "virtual void fireBlockChanged(const BlockPos &, uint32_t, const Block &, const Block &, int, BlockChangedEventTarget, co"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "fireBlockEntityChanged",
+     "params": 1,
+     "decl": "virtual void fireBlockEntityChanged(BlockActor &) = 0;"
+    },
+    {
+     "cls": "IBlockSource",
+     "name": "blockEvent",
+     "params": 3,
+     "decl": "virtual void blockEvent(const BlockPos &, int, int) = 0;"
+    }
+   ],
+   "agree": 1,
+   "disagree": 0,
+   "exactAgree": 0,
+   "exactDisagree": 0,
+   "new": 5,
+   "ambiguous": 1,
+   "noSlot": 0,
+   "tableSlots": {
+    "BlockSource": 66
+   }
+  },
+  "gamemode": {
+   "headerSlots": 20,
+   "tables": {
+    "GameMode": "??_7GameMode@@6B@",
+    "SurvivalMode": "??_7SurvivalMode@@6B@"
+   },
+   "slots": [
+    {
+     "cls": "GameMode",
+     "name": "~",
+     "params": 0,
+     "decl": "public: virtual ~GameMode() = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "startDestroyBlock",
+     "params": 3,
+     "decl": "virtual bool startDestroyBlock(BlockPos const &, FacingID face, bool &) = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "destroyBlock",
+     "params": 2,
+     "decl": "virtual bool destroyBlock(BlockPos const &, FacingID) = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "continueDestroyBlock",
+     "params": 4,
+     "decl": "virtual bool continueDestroyBlock(BlockPos const &, FacingID, Vec3 const &, bool &) = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "stopDestroyBlock",
+     "params": 1,
+     "decl": "virtual void stopDestroyBlock(BlockPos const &) = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "startBuildBlock",
+     "params": 2,
+     "decl": "virtual void startBuildBlock(BlockPos const &, FacingID) = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "buildBlock",
+     "params": 3,
+     "decl": "virtual bool buildBlock(BlockPos const &, FacingID, bool) = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "continueBuildBlock",
+     "params": 2,
+     "decl": "virtual void continueBuildBlock(BlockPos const &, FacingID) = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "stopBuildBlock",
+     "params": 0,
+     "decl": "virtual void stopBuildBlock() = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "tick",
+     "params": 0,
+     "decl": "virtual void tick() = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "getPickRange",
+     "params": 2,
+     "decl": "virtual float getPickRange(InputMode const &, bool) = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "useItem",
+     "params": 1,
+     "decl": "virtual bool useItem(ItemStack &) = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "useItemAsAttack",
+     "params": 2,
+     "decl": "virtual bool useItemAsAttack(ItemStack &, Vec3 const &) = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "useItemOn",
+     "params": 6,
+     "decl": "virtual InteractionResult useItemOn(ItemStack &, BlockPos const &, FacingID, Vec3 const &, Block const *, bool) = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "interact",
+     "params": 2,
+     "decl": "virtual bool interact(Actor &, Vec3 const &) = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "attack",
+     "params": 1,
+     "decl": "virtual bool attack(Actor &) = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "releaseUsingItem",
+     "params": 0,
+     "decl": "virtual void releaseUsingItem() = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "setTrialMode",
+     "params": 1,
+     "decl": "virtual void setTrialMode(bool) = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "isInTrialMode",
+     "params": 0,
+     "decl": "virtual bool isInTrialMode() = 0;"
+    },
+    {
+     "cls": "GameMode",
+     "name": "registerUpsellScreenCallback",
+     "params": 1,
+     "decl": "virtual void registerUpsellScreenCallback(std::function<void(bool)>) = 0;"
+    }
+   ],
+   "agree": 0,
+   "disagree": 0,
+   "exactAgree": 0,
+   "exactDisagree": 0,
+   "new": 3,
+   "ambiguous": 0,
+   "noSlot": 0,
+   "tableSlots": {
+    "GameMode": 20,
+    "SurvivalMode": 20
+   }
+  },
+  "itemstack": {
+   "headerSlots": 7,
+   "tables": {
+    "ItemStackBase": "??_7ItemStackBase@@6B@",
+    "ItemStack": "??_7ItemStack@@6B@"
+   },
+   "slots": [
+    {
+     "cls": "ItemStackBase",
+     "name": "~",
+     "params": 0,
+     "decl": "public: virtual ~ItemStackBase();"
+    },
+    {
+     "cls": "ItemStackBase",
+     "name": "reinit",
+     "params": 3,
+     "decl": "virtual void reinit(std::string_view name, int count, int aux_value);"
+    },
+    {
+     "cls": "ItemStackBase",
+     "name": "reinit",
+     "params": 2,
+     "decl": "virtual void reinit(BlockType const &, int);"
+    },
+    {
+     "cls": "ItemStackBase",
+     "name": "reinit",
+     "params": 3,
+     "decl": "virtual void reinit(Item const &, int, int);"
+    },
+    {
+     "cls": "ItemStackBase",
+     "name": "setNull",
+     "params": 1,
+     "decl": "virtual void setNull(std::optional<std::string>);"
+    },
+    {
+     "cls": "ItemStackBase",
+     "name": "toString",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::string toString() const;"
+    },
+    {
+     "cls": "ItemStackBase",
+     "name": "toDebugString",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::string toDebugString() const;"
+    }
+   ],
+   "agree": 1,
+   "disagree": 0,
+   "exactAgree": 0,
+   "exactDisagree": 0,
+   "new": 2,
+   "ambiguous": 0,
+   "noSlot": 0,
+   "tableSlots": {
+    "ItemStackBase": 7,
+    "ItemStack": 7
+   }
+  },
+  "container": {
+   "headerSlots": 55,
+   "tables": {
+    "Inventory": "??_7Inventory@@6B@"
+   },
+   "slots": [
+    {
+     "cls": "Container",
+     "name": "~",
+     "params": 0,
+     "decl": "virtual ~Container() = default;"
+    },
+    {
+     "cls": "Container",
+     "name": "init",
+     "params": 0,
+     "decl": "virtual void init();"
+    },
+    {
+     "cls": "Container",
+     "name": "serverInitItemStackIds",
+     "params": 3,
+     "decl": "virtual void serverInitItemStackIds(int, int, ItemStackNetIdChangedCallback) = 0;"
+    },
+    {
+     "cls": "Container",
+     "name": "addContentChangeListener",
+     "params": 1,
+     "decl": "virtual void addContentChangeListener(ContainerContentChangeListener *);"
+    },
+    {
+     "cls": "Container",
+     "name": "removeContentChangeListener",
+     "params": 1,
+     "decl": "virtual void removeContentChangeListener(ContainerContentChangeListener *);"
+    },
+    {
+     "cls": "Container",
+     "name": "void",
+     "params": 1,
+     "decl": "virtual Bedrock::PubSub::Connector<void()> *getContainerRemovedConnector();"
+    },
+    {
+     "cls": "Container",
+     "name": "hasRemovedSubscribers",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool hasRemovedSubscribers() const;"
+    },
+    {
+     "cls": "Container",
+     "name": "getItem",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual ItemStack const &getItem(int) const = 0;"
+    },
+    {
+     "cls": "Container",
+     "name": "hasRoomForItem",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool hasRoomForItem(ItemStack const &) const;"
+    },
+    {
+     "cls": "Container",
+     "name": "addItem",
+     "params": 1,
+     "decl": "virtual bool addItem(ItemStack &);"
+    },
+    {
+     "cls": "Container",
+     "name": "addItemWithForceBalance",
+     "params": 1,
+     "decl": "virtual bool addItemWithForceBalance(ItemStack &);"
+    },
+    {
+     "cls": "Container",
+     "name": "addItemToFirstEmptySlot",
+     "params": 1,
+     "decl": "virtual bool addItemToFirstEmptySlot(ItemStack const &);"
+    },
+    {
+     "cls": "Container",
+     "name": "setItem",
+     "params": 2,
+     "decl": "virtual void setItem(int, ItemStack const &) = 0;"
+    },
+    {
+     "cls": "Container",
+     "name": "setItemWithForceBalance",
+     "params": 3,
+     "decl": "virtual void setItemWithForceBalance(int, ItemStack const &, bool);"
+    },
+    {
+     "cls": "Container",
+     "name": "removeItem",
+     "params": 2,
+     "decl": "virtual void removeItem(int, int);"
+    },
+    {
+     "cls": "Container",
+     "name": "removeAllItems",
+     "params": 0,
+     "decl": "virtual void removeAllItems();"
+    },
+    {
+     "cls": "Container",
+     "name": "removeAllItemsWithForceBalance",
+     "params": 0,
+     "decl": "virtual void removeAllItemsWithForceBalance();"
+    },
+    {
+     "cls": "Container",
+     "name": "containerRemoved",
+     "params": 0,
+     "decl": "virtual void containerRemoved();"
+    },
+    {
+     "cls": "Container",
+     "name": "dropSlotContent",
+     "params": 4,
+     "decl": "virtual void dropSlotContent(BlockSource &, Vec3 const &, bool, int);"
+    },
+    {
+     "cls": "Container",
+     "name": "dropContents",
+     "params": 3,
+     "decl": "virtual void dropContents(BlockSource &, Vec3 const &, bool);"
+    },
+    {
+     "cls": "Container",
+     "name": "getContainerSize",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual int getContainerSize() const = 0;"
+    },
+    {
+     "cls": "Container",
+     "name": "getMaxStackSize",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual int getMaxStackSize() const = 0;"
+    },
+    {
+     "cls": "Container",
+     "name": "startOpen",
+     "params": 1,
+     "decl": "virtual void startOpen(Actor &) = 0;"
+    },
+    {
+     "cls": "Container",
+     "name": "stopOpen",
+     "params": 1,
+     "decl": "virtual void stopOpen(Actor &);"
+    },
+    {
+     "cls": "Container",
+     "name": "getSlotCopies",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::vector<ItemStack> getSlotCopies() const;"
+    },
+    {
+     "cls": "Container",
+     "name": "getSlots",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::vector<const ItemStack *> const getSlots() const;"
+    },
+    {
+     "cls": "Container",
+     "name": "getEmptySlotsCount",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual int getEmptySlotsCount() const;"
+    },
+    {
+     "cls": "Container",
+     "name": "getItemCount",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual int getItemCount(const ItemStack &) const;"
+    },
+    {
+     "cls": "Container",
+     "name": "firstEmptySlot",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual int firstEmptySlot() const;"
+    },
+    {
+     "cls": "Container",
+     "name": "firstItem",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual int firstItem() const;"
+    },
+    {
+     "cls": "Container",
+     "name": "findFirstSlotForItem",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual int findFirstSlotForItem(ItemStack const &item) const;"
+    },
+    {
+     "cls": "Container",
+     "name": "reverseFindFirstSlotForItem",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual int reverseFindFirstSlotForItem(const ItemStack &) const;"
+    },
+    {
+     "cls": "Container",
+     "name": "canPushInItem",
+     "params": 3,
+     "decl": "[[nodiscard]] virtual bool canPushInItem(int, int, ItemStack const &) const;"
+    },
+    {
+     "cls": "Container",
+     "name": "canPullOutItem",
+     "params": 3,
+     "decl": "[[nodiscard]] virtual bool canPullOutItem(int, int, ItemStack const &) const;"
+    },
+    {
+     "cls": "Container",
+     "name": "setContainerChanged",
+     "params": 1,
+     "decl": "virtual void setContainerChanged(int slot);"
+    },
+    {
+     "cls": "Container",
+     "name": "setContainerMoved",
+     "params": 0,
+     "decl": "virtual void setContainerMoved();"
+    },
+    {
+     "cls": "Container",
+     "name": "setCustomName",
+     "params": 1,
+     "decl": "virtual void setCustomName(std::string const &name);"
+    },
+    {
+     "cls": "Container",
+     "name": "hasCustomName",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool hasCustomName() const;"
+    },
+    {
+     "cls": "Container",
+     "name": "readAdditionalSaveData",
+     "params": 1,
+     "decl": "virtual void readAdditionalSaveData(CompoundTag const &tag);"
+    },
+    {
+     "cls": "Container",
+     "name": "addAdditionalSaveData",
+     "params": 1,
+     "decl": "virtual void addAdditionalSaveData(CompoundTag &tag);"
+    },
+    {
+     "cls": "Container",
+     "name": "createTransactionContext",
+     "params": 2,
+     "decl": "virtual void createTransactionContext( std::function<void(Container &, int, const ItemStack &, const ItemStack &)> callb"
+    },
+    {
+     "cls": "Container",
+     "name": "initializeContainerContents",
+     "params": 1,
+     "decl": "virtual void initializeContainerContents(BlockSource &region);"
+    },
+    {
+     "cls": "Container",
+     "name": "isEmpty",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual bool isEmpty() const;"
+    },
+    {
+     "cls": "Container",
+     "name": "isSlotDisabled",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool isSlotDisabled(int) const;"
+    },
+    {
+     "cls": "FillingContainer",
+     "name": "removeResource",
+     "params": 4,
+     "decl": "virtual int removeResource(const ItemStack &, bool, bool, int);"
+    },
+    {
+     "cls": "FillingContainer",
+     "name": "swapSlots",
+     "params": 2,
+     "decl": "virtual void swapSlots(int, int);"
+    },
+    {
+     "cls": "FillingContainer",
+     "name": "add",
+     "params": 1,
+     "decl": "virtual bool add(ItemStack &);"
+    },
+    {
+     "cls": "FillingContainer",
+     "name": "canAdd",
+     "params": 1,
+     "decl": "virtual bool canAdd(const ItemStack &) const;"
+    },
+    {
+     "cls": "FillingContainer",
+     "name": "clearSlot",
+     "params": 1,
+     "decl": "virtual void clearSlot(int);"
+    },
+    {
+     "cls": "FillingContainer",
+     "name": "clearInventory",
+     "params": 1,
+     "decl": "virtual int clearInventory(int);"
+    },
+    {
+     "cls": "FillingContainer",
+     "name": "saveToTag",
+     "params": 1,
+     "decl": "virtual std::unique_ptr<ListTag> saveToTag(const SaveContext &) const;"
+    },
+    {
+     "cls": "FillingContainer",
+     "name": "loadFromTag",
+     "params": 1,
+     "decl": "virtual void loadFromTag(const ListTag &);"
+    },
+    {
+     "cls": "FillingContainer",
+     "name": "_trySetInSlot",
+     "params": 4,
+     "decl": "private: virtual void _trySetInSlot(ItemStack &, const int &, const int &, int &);"
+    },
+    {
+     "cls": "Inventory",
+     "name": "getFirstEmptySlot",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual int getFirstEmptySlot() const;"
+    },
+    {
+     "cls": "Inventory",
+     "name": "setContainerSize",
+     "params": 1,
+     "decl": "virtual void setContainerSize(int);"
+    }
+   ],
+   "agree": 0,
+   "disagree": 0,
+   "exactAgree": 0,
+   "exactDisagree": 0,
+   "new": 0,
+   "ambiguous": 0,
+   "noSlot": 0,
+   "tableSlots": {
+    "Inventory": 55
+   }
+  },
+  "blockactor": {
+   "headerSlots": 1,
+   "tables": {
+    "ChestBlockActor": "??_7ChestBlockActor@@6BRandomizableBlockActorContainerBase@@@"
+   },
+   "slots": [
+    {
+     "cls": "BlockActor",
+     "name": "~",
+     "params": 0,
+     "decl": "virtual ~BlockActor() = default;"
+    }
+   ],
+   "agree": 0,
+   "disagree": 0,
+   "exactAgree": 0,
+   "exactDisagree": 0,
+   "new": 0,
+   "ambiguous": 0,
+   "noSlot": 6,
+   "tableSlots": {
+    "ChestBlockActor": 35
+   }
+  },
+  "tag": {
+   "headerSlots": 11,
+   "tables": {
+    "CompoundTag": "??_7CompoundTag@@6B@",
+    "Tag": "??_7CompoundTag@@6B@"
+   },
+   "slots": [
+    {
+     "cls": "Tag",
+     "name": "~",
+     "params": 0,
+     "decl": "virtual ~Tag() = default;"
+    },
+    {
+     "cls": "Tag",
+     "name": "deleteChildren",
+     "params": 0,
+     "decl": "virtual void deleteChildren() {"
+    },
+    {
+     "cls": "Tag",
+     "name": "write",
+     "params": 1,
+     "decl": "virtual void write(IDataOutput &) const = 0;"
+    },
+    {
+     "cls": "Tag",
+     "name": "load",
+     "params": 1,
+     "decl": "virtual Bedrock::Result<void> load(IDataInput &) = 0;"
+    },
+    {
+     "cls": "Tag",
+     "name": "toString",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::string toString() const = 0;"
+    },
+    {
+     "cls": "Tag",
+     "name": "getId",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual Type getId() const = 0;"
+    },
+    {
+     "cls": "Tag",
+     "name": "equals",
+     "params": 1,
+     "decl": "[[nodiscard]] virtual bool equals(Tag const &other) const;"
+    },
+    {
+     "cls": "Tag",
+     "name": "print",
+     "params": 2,
+     "decl": "virtual void print(std::string const &, PrintStream &stream) const;"
+    },
+    {
+     "cls": "Tag",
+     "name": "print",
+     "params": 1,
+     "decl": "virtual void print(PrintStream &stream) const;"
+    },
+    {
+     "cls": "Tag",
+     "name": "copy",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::unique_ptr<Tag> copy() const = 0;"
+    },
+    {
+     "cls": "Tag",
+     "name": "hash",
+     "params": 0,
+     "decl": "[[nodiscard]] virtual std::size_t hash() const = 0;"
+    }
+   ],
+   "agree": 0,
+   "disagree": 0,
+   "exactAgree": 0,
+   "exactDisagree": 0,
+   "new": 3,
+   "ambiguous": 0,
+   "noSlot": 0,
+   "tableSlots": {
+    "CompoundTag": 11,
+    "Tag": 11
+   }
+  }
+ }
+}

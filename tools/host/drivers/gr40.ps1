@@ -1,0 +1,1 @@
+& "$env:BDSX_REPO\tools\run-full.ps1" -Root "$env:BDSX_LAB\inst40" -Tag gr40 -AfterReady 12 -Commands @("weather clear", "weather query", "weather rain", "weather query", "wxprobe", "weather query", "weather thunder", "weather query", "weather clear", "weather query")

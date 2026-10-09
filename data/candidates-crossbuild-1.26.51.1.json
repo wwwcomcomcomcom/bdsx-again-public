@@ -1,0 +1,30 @@
+{
+ "_comment": "Required names 1.26.40.8 ships and 1.26.51.1 lacked, carried by tools/cross-build-fill.mjs: the pair map and the body must agree, or the body must be unique in the image where the pair map is silent. Never hook targets; a name is only as good as its source on 1.26.40.8 (evidence.origin).",
+ "from": "1.26.40.8",
+ "to": "1.26.51.1",
+ "symbols": {
+  "?fromTag@ItemStack@@SA?AV1@AEBVCompoundTag@@@Z": 27596928,
+  "?isValidAuxValue@ItemStackBase@@QEBA_NH@Z": 27610352,
+  "?removeAllEffects@Actor@@QEAAXXZ": 30222448
+ },
+ "evidence": {
+  "?fromTag@ItemStack@@SA?AV1@AEBVCompoundTag@@@Z": {
+   "from": 29093776,
+   "size": 311,
+   "origin": "propagation",
+   "why": "pair map and body agree (1 body hit)"
+  },
+  "?isValidAuxValue@ItemStackBase@@QEBA_NH@Z": {
+   "from": 29073616,
+   "size": 131,
+   "origin": "propagation",
+   "why": "pair map and body agree (1 body hit)"
+  },
+  "?removeAllEffects@Actor@@QEAAXXZ": {
+   "from": 28098528,
+   "size": 255,
+   "origin": "propagation",
+   "why": "pair map and body agree (1 body hit)"
+  }
+ }
+}

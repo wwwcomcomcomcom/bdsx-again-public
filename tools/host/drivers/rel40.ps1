@@ -1,0 +1,9 @@
+# The release check (docs/findings-inventory.md section 29): tools/host/index-release.ts as the instance's index.ts (pass
+# --upload=tools/host/index-release.ts:inst40/index.ts), so every stock example loads and no probe does.
+# A live bot joins; the console then runs each example command (the player-origin ones through "execute as @a"), and
+# the bot's six "test" chats after the runner's "kill @a" (-AfterKill 60 keeps the server up for them) drive test.ts's chat
+# test, which stops the server itself after the sixth. BP_DEVICE_OS/BP_DEVICE_ID are what net-login.ts and test.ts read back.
+& "$env:BDSX_REPO\tools\run-client-probe.ps1" -Root "$env:BDSX_LAB\inst40" -Launcher "$env:BDSX_LAB\inst40\full-launcher.js" -Tag rel40 `
+  -Bot "$env:BDSX_REPO\tools\livebot.cjs" -BotModules "$env:BDSX_LAB\bot\node_modules" -BotPort 19132 -BotSecs 460 -JoinSecs 120 -AfterJoin 8 -AfterKill 60 `
+  -Env @{ BP_VERSION = "1.26.40"; BP_FORM_REPLY = "true"; BP_DEVICE_OS = "7"; BP_DEVICE_ID = "rel-device-0001"; BP_CHAT = "292000:test;297000:test;302000:test;307000:test;312000:test;317000:test" } `
+  -Commands @("tp @a -2990 70 2990", "list", "aaa hello world", "bbb 7 second", "ccc", "ddd ~1 ~ ~-1", "eee @e[type=player] @a", "fff true", "ggg enum1 Overworld", 'hhh {"a":1}', "iii ~ ~1 ~", "jjj stone", "kkk add name1", "kkk remove 3", "lll add foo", "lll list hello", "nnn 1..5", "whoami", "ping", "execute as @a at @s run ping", "execute as @a at @s run furnace", "execute as @a at @s run sign", "execute as @a at @s run example_score", "execute as @a at @s run bdsxtitle hello 40", "execute as @a at @s run set-hud PaperDoll Hide", "execute as @a at @s run form", "execute as @a at @s run form2", "shoot-projectile snowball @a", "execute as @a at @s run summon-entity pig", "execute as @a at @s run spawnsimulatedplayer relsim", "effect @a clear", "gamemode survival @a", "clear @a", "list")

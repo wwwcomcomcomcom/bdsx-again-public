@@ -1,0 +1,1235 @@
+{
+ "_comment": "Hand verdicts for tools/arch-inventory.mjs (A1, docs/plan-architecture.md section 4). A key is a full decorated name or a unique prefix of one (e.g. `?use@ChestBlock@@`); the tool fails on a key that matches nothing. `gone` needs one of the plan's section 4 evidence kinds, written out in `evidence`; 'searched and not found' is `unknown`, never `gone`. Every verdict cites where its evidence is. An entry with `notRequired` is a name outside the required set (bdsx mentions it only in comments, or binds a successor instead): kept for its evidence (A2 may still drop the TS API around it), listed under `notRequired` in the output, not counted in the classes.",
+ "names": {
+  "?destroyBlock@SurvivalMode@@": {
+   "class": "live",
+   "evidence": "the Endstone slot holds it on both builds as two adjacent .pdata-less leaves (40 0x1f3b180/0x1f3b1a0, 51 0x2537950/0x2537970); the first is the vftable entry and jumps to GameMode::destroyBlock -- exists, but not hookable through the .pdata-gated route (findings-blocks.md, 'canDestroy and getDestroyProgress')"
+  },
+  "?getName@ItemStackBase@@": {
+   "class": "live",
+   "evidence": "derived() over the item's user data (and the buildDescriptionName slot 93) and executed on both builds 2026-09-29 (names40/51); docs/findings-containers.md section 20"
+  },
+  "?getBlockEntityType@Block@@": {
+   "class": "moved",
+   "evidence": "2024 was a tail call into the legacy. docs/findings-blocks.md \"BlockType and Block fields on 1.26\"; derived() and executed on both builds 2026-09-29 (bfield40/51)",
+   "impl": "derived",
+   "target": "BlockType::getBlockEntityType (block_type_ +0x68)"
+  },
+  "?getCriteria@Scoreboard@@": {
+   "class": "live",
+   "evidence": "gap-agreement candidate on 1.26.40.8, execution queue (findings-gaps-agree.md); not executed"
+  },
+  "?isHumanoidArmorItem@ItemStackBase@@": {
+   "class": "live",
+   "evidence": "derived() over the item's isHumanoidArmor slot 10 and executed on both builds 2026-09-29 (armor40/51); docs/findings-audit.md \"isHumanoidWearableItem\""
+  },
+  "?getBlockPos@CommandPosition@@": {
+   "class": "live",
+   "evidence": "gap-agreement candidate on 1.26.51.1, execution queue (findings-gaps-agree.md); not executed"
+  },
+  "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z": {
+   "class": "moved",
+   "target": "bdsx:Actor::attack",
+   "evidence": "2024's non-virtual bool Player::attack became a pure virtual on Actor returning ActorHurtResult; served under bdsx:Actor::attack on both builds, address and prototype confirmed (findings-audit.md 'attack', findings-slots.md 'Changed signatures')"
+  },
+  "?canDestroySpecial@ItemStackBase@@": {
+   "class": "moved",
+   "target": "Item vftable slot 33, canDestroySpecial(Block const&)",
+   "evidence": "derived() and executed on both builds 2026-09-29 (mine40/51); docs/findings-containers.md section 21",
+   "impl": "derived"
+  },
+  "?use@Block@@": {
+   "class": "moved",
+   "target": "GameMode::useItemOn or the block components (not yet chosen)",
+   "evidence": "Endstone block_type.h comments out both BlockType::use overloads -- no `use` in the 1.26 BlockType vtable; block interaction still happens, so the seam moved (findings-reach.md 'What did not settle', findings-blocks.md section 6)"
+  },
+  "?use@ButtonBlock@@": {
+   "class": "moved",
+   "target": "GameMode::useItemOn or the block components (not yet chosen)",
+   "evidence": "as ?use@Block@@: no `use` slot in 1.26, no common override slot among ChestBlock/ButtonBlock/CampfireBlock (findings-reach.md, findings-blocks.md section 6)"
+  },
+  "?use@ChestBlock@@": {
+   "class": "moved",
+   "target": "GameMode::useItemOn or the block components (not yet chosen)",
+   "evidence": "as ?use@Block@@ (findings-reach.md, findings-blocks.md section 6)"
+  },
+  "?_sortAndPacketizeEvents@NetworkSystem@@": {
+   "class": "moved",
+   "target": "Packet::handler_ dispatcher vptr swap + BatchedNetworkPeer::_receivePacket",
+   "evidence": "1.26 has no function of that name and the 2024 anchors are gone (disconnectionScreen.badPacket absent); bdsx's packet events run on the dispatcher swap and _receivePacket instead, confirmed on both builds (findings-packets.md section 1)"
+  },
+  "<lambda_64a71bea114986e8e17d2f982ce4525e>::operator()": {
+   "class": "moved",
+   "target": "Packet::handler_ dispatcher vptr swap",
+   "evidence": "the read-lambda call inside 2024's _sortAndPacketizeEvents (hook2024Receive's 'before' patch); the packet path it served moved with it (findings-packets.md section 1)"
+  },
+  "?onLightningHit@Block@@": {
+   "class": "moved",
+   "target": "the callers (LightningBolt::normalTick, 40 0x2d2caf0) or the overriding BlockType virtual",
+   "evidence": "2024's 18-byte Block forwarder is inlined away in 1.26; the BlockType default slot is an ICF-shared empty stub (0x760f0). Which seam to hook is a user decision (findings-blocks.md section 13, queue Q1-A item 1)"
+  },
+  "?onProjectileHit@Block@@": {
+   "class": "moved",
+   "target": "the callers (ProjectileComponent::onHit) or the overriding BlockType virtual",
+   "evidence": "as ?onLightningHit@Block@@ (findings-blocks.md section 13, queue Q1-A item 1)"
+  },
+  "?change@HealthAttributeDelegate@@": {
+   "class": "moved",
+   "target": "?change@HealthAttributeDelegate@@ returning std::optional<float>, bound from the live delegate vftable (entityHealthChange, commit 31f25e6)",
+   "evidence": "Endstone (both releases, world/attribute/weather_manager.h:24) declares `std::optional<float> change(float, float, AttributeBuff const&) override`; 2024's decoration returns a plain float (UEAAMMM...), so the decorated name cannot match",
+   "notRequired": "bdsx binds the 1.26 successor instead and no longer names this decoration; it left the required set when the event shipped (2026-09-25)"
+  },
+  "??$_Allocate@$0BA@U_Default_allocate_traits@std@@$0A@@std@@YAPEAX_K@Z": {
+   "class": "absorbed",
+   "impl": "import",
+   "evidence": "the default allocator is a thin wrapper over the imported ucrt malloc; bdsx's msAlloc allocates through that import instead (findings-utils.md 'std::_Allocate and the heap underneath BDS'; checked per build by queue Q6)"
+  },
+  "??0UpdateAbilitiesPacket@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "1.26 has no out-of-line constructor (none of the 23 functions storing the vftable has the 2024 shape). Built in the engine layer (bds/engine/abilities.ts writeUpdateAbilitiesPayload, A3) on the Endstone layout the 1.26 move constructor confirms; confirmed on both builds 2026-09-23: the bot decodes what bdsx sent (data/derived.json, findings-abilities.md \"UpdateAbilitiesPacket in the engine layer\")"
+  },
+  "?hasDimension@Actor@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "inlined in 1.26 (Player+0x1c8/+0x1d0 read in place of the call); candidate the WeakRef<Dimension> at +456/+464, held back until a false is seen (findings-layouts.md 'Candidates held back', queue Q1-3)"
+  },
+  "?isUsingItem@Player@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "2024 body is a field read plus isNull; candidate !isNull(Player+1840), held back until a human uses an item (findings-layouts.md 'Candidates held back', queue Q1-3/Q7)"
+  },
+  "?getType@BlockActor@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "docs/findings-layouts.md \"LevelChunk and BlockActor on 1.26\"; derived() and executed on both builds 2026-09-29 (bfield40/51)",
+   "target": "engine/blocktype.ts: type_ (+0x14, one byte)"
+  },
+  "?getDestroySpeed@Block@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "docs/findings-blocks.md \"BlockType and Block fields on 1.26\"; derived() and executed on both builds 2026-09-29 (bfield40/51)",
+   "target": "engine/blocktype.ts: direct_data_.destroy_speed (+0xb4)"
+  },
+  "?handle@Packet@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "2024 body is one line, handler_(+0x20)->vft[1](ni, cb, packet); 1.26 inlines it and bdsx's packet path calls through that slot (findings-packets.md section 1, findings-utils.md)"
+  },
+  "?CurrentVersion@CommandVersion@@2HB": {
+   "class": "absorbed",
+   "impl": "constant",
+   "evidence": "a build-specific integer compiled into its users; bdsx reads it through procConst with a default, deliberately not extracted (findings-layouts.md 'Constants')"
+  },
+  "?Invalid@IdentityDefinition@@2V1@B": {
+   "class": "absorbed",
+   "impl": "constant",
+   "evidence": "static const data with no relocation but no established width; left out of data/constants.json rather than guessed (findings-layouts.md 'Constants')"
+  },
+  "bdsx:HudElement": {
+   "class": "absorbed",
+   "impl": "bdsx",
+   "evidence": "not an engine name: a command enum bdsx registers itself (example_and_test/net-hud.ts:17), picked up by scrape-symbols as a `bdsx:` literal"
+  },
+  "bdsx:HudVisibility": {
+   "class": "absorbed",
+   "impl": "bdsx",
+   "evidence": "as bdsx:HudElement"
+  },
+  "??_7DyePowderItemComponent@@6B@": {
+   "class": "gone",
+   "evidence": "the class has no symbol at all in the 1.21.3.01 PDB (its siblings have 139-158 each, including every polymorphic ItemComponent's ??_7 vftable), is not an EnTT type name in either 1.26 build (while 36+ other *ItemComponent types are, tools/entt-typenames.mjs), and is not in Endstone; upstream bdsx already had every use commented out (implements.ts:6066/6072/6146/6152/6201) and scrape-symbols picks the name up from those comments. `minecraft:dye_powder` is absent from all three images. (docs/findings-inventory.md section 7)",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?getIdentifier@DyePowderItemComponent@@": {
+   "class": "gone",
+   "evidence": "the class has no symbol at all in the 1.21.3.01 PDB (its siblings have 139-158 each, including every polymorphic ItemComponent's ??_7 vftable), is not an EnTT type name in either 1.26 build (while 36+ other *ItemComponent types are, tools/entt-typenames.mjs), and is not in Endstone; upstream bdsx already had every use commented out (implements.ts:6066/6072/6146/6152/6201) and scrape-symbols picks the name up from those comments. `minecraft:dye_powder` is absent from all three images. (docs/findings-inventory.md section 7)",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "??_7KnockbackResistanceItemComponent@@6B@": {
+   "class": "gone",
+   "evidence": "the class has no symbol at all in the 1.21.3.01 PDB (its siblings have 139-158 each, including every polymorphic ItemComponent's ??_7 vftable), is not an EnTT type name in either 1.26 build (while 36+ other *ItemComponent types are, tools/entt-typenames.mjs), and is not in Endstone; upstream bdsx already had every use commented out (implements.ts:6066/6072/6146/6152/6201) and scrape-symbols picks the name up from those comments. `minecraft:knockback_resistance` survives, but it is SharedAttributes::KNOCKBACK_RESISTANCE's name (in the 2024 PDB), not an item component. (docs/findings-inventory.md section 7)",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?getIdentifier@KnockbackResistanceItemComponent@@": {
+   "class": "gone",
+   "evidence": "the class has no symbol at all in the 1.21.3.01 PDB (its siblings have 139-158 each, including every polymorphic ItemComponent's ??_7 vftable), is not an EnTT type name in either 1.26 build (while 36+ other *ItemComponent types are, tools/entt-typenames.mjs), and is not in Endstone; upstream bdsx already had every use commented out (implements.ts:6066/6072/6146/6152/6201) and scrape-symbols picks the name up from those comments. as ??_7KnockbackResistanceItemComponent@@6B@. (docs/findings-inventory.md section 7)",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?getProtectionValue@KnockbackResistanceItemComponent@@": {
+   "class": "gone",
+   "evidence": "the class has no symbol at all in the 1.21.3.01 PDB (its siblings have 139-158 each, including every polymorphic ItemComponent's ??_7 vftable), is not an EnTT type name in either 1.26 build (while 36+ other *ItemComponent types are, tools/entt-typenames.mjs), and is not in Endstone; upstream bdsx already had every use commented out (implements.ts:6066/6072/6146/6152/6201) and scrape-symbols picks the name up from those comments. as ??_7KnockbackResistanceItemComponent@@6B@. (docs/findings-inventory.md section 7)",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?getAnimationMode@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: movzbl +0x5a (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?getAnimationSeconds@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: movss +0x5c (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?getAnimationTicks@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: floor(+0x5c * 20) (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7"
+  },
+  "?getIgnoreBlocks@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: movzbl +0x22 (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?getIntegritySeed@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: movl +0x64 (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?getIntegrityValue@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: movss +0x60 (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?getMirror@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: movzbl +0x59 (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?getPivot@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: lea +0x40 (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?getStructureOffset@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: lea +0x34 (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?isAnimated@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: 53B over +0x5c (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7"
+  },
+  "?setAnimationMode@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: movb +0x5a (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?setAnimationSeconds@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: movss +0x5c (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?setIgnoreBlocks@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: movb +0x22 (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7"
+  },
+  "?setIgnoreJigsawBlocks@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: movb +0x24 (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7"
+  },
+  "?setIntegritySeed@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: movl +0x64 (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7"
+  },
+  "?setIntegrityValue@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: clamp 0..100 into +0x60 (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?setMirror@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: movb +0x59 (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7"
+  },
+  "?setReloadActorEquipment@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: movb +0x21 (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7"
+  },
+  "?setStructureOffset@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: BlockPos into +0x34 (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7"
+  },
+  "?setStructureSize@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: BlockPos into +0x28 (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7"
+  },
+  "?setPivot@StructureSettings@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "StructureSettings is an EnTT type name in both 1.26 builds, the /structure options these fields carry (animationMode, block_by_block/layer_by_layer, includeEntities, integrity) are strings in both images, and 40 still ships four sibling accessors out of line (get/setRotation, get/setIgnoreEntities). The 2024 body is a field access: not in the 2024 PDB (always inlined; getPivot is lea +0x40) (2024 offsets; 1.26 offsets unmeasured). docs/findings-inventory.md section 7",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?getAvoidSun@NavigationComponent@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "NavigationComponent is an EnTT type name in both 1.26 builds, and minecraft:navigation.* strings survive. Every 2024 method is a field access or a one-call forwarder: movzbl +0x2 (2024). docs/findings-inventory.md section 7"
+  },
+  "?getCanFloat@NavigationComponent@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "NavigationComponent is an EnTT type name in both 1.26 builds, and minecraft:navigation.* strings survive. Every 2024 method is a field access or a one-call forwarder: movzbl +0x5 (2024). docs/findings-inventory.md section 7"
+  },
+  "?getCanPathOverLava@NavigationComponent@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "NavigationComponent is an EnTT type name in both 1.26 builds, and minecraft:navigation.* strings survive. Every 2024 method is a field access or a one-call forwarder: movzbl +0x6 (2024). docs/findings-inventory.md section 7"
+  },
+  "?getLastStuckCheckPosition@NavigationComponent@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "NavigationComponent is an EnTT type name in both 1.26 builds, and minecraft:navigation.* strings survive. Every 2024 method is a field access or a one-call forwarder: Vec3 at +0x2c (2024). docs/findings-inventory.md section 7"
+  },
+  "?getSpeed@NavigationComponent@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "NavigationComponent is an EnTT type name in both 1.26 builds, and minecraft:navigation.* strings survive. Every 2024 method is a field access or a one-call forwarder: movss +0x24 (2024). docs/findings-inventory.md section 7"
+  },
+  "?isStuck@NavigationComponent@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "NavigationComponent is an EnTT type name in both 1.26 builds, and minecraft:navigation.* strings survive. Every 2024 method is a field access or a one-call forwarder: (+0x14 - +0x1c) > arg (2024). docs/findings-inventory.md section 7"
+  },
+  "?setAvoidSun@NavigationComponent@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "NavigationComponent is an EnTT type name in both 1.26 builds, and minecraft:navigation.* strings survive. Every 2024 method is a field access or a one-call forwarder: movb +0x2 (2024). docs/findings-inventory.md section 7"
+  },
+  "?setAvoidWater@NavigationComponent@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "NavigationComponent is an EnTT type name in both 1.26 builds, and minecraft:navigation.* strings survive. Every 2024 method is a field access or a one-call forwarder: movb +0x3 (2024). docs/findings-inventory.md section 7"
+  },
+  "?setCanFloat@NavigationComponent@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "NavigationComponent is an EnTT type name in both 1.26 builds, and minecraft:navigation.* strings survive. Every 2024 method is a field access or a one-call forwarder: movb +0x5 (2024). docs/findings-inventory.md section 7"
+  },
+  "?setSpeed@NavigationComponent@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "NavigationComponent is an EnTT type name in both 1.26 builds, and minecraft:navigation.* strings survive. Every 2024 method is a field access or a one-call forwarder: movss +0x24 (2024). docs/findings-inventory.md section 7"
+  },
+  "?createPath@NavigationComponent@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "NavigationComponent is an EnTT type name in both 1.26 builds, and minecraft:navigation.* strings survive. Every 2024 method is a field access or a one-call forwarder: the navigation object at +0x60, its vft[4] (both overloads) (2024). docs/findings-inventory.md section 7"
+  },
+  "?stop@NavigationComponent@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "NavigationComponent is an EnTT type name in both 1.26 builds, and minecraft:navigation.* strings survive. Every 2024 method is a field access or a one-call forwarder: the navigation object at +0x60, its vft[9] (2024). docs/findings-inventory.md section 7"
+  },
+  "?isDone@NavigationComponent@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "NavigationComponent is an EnTT type name in both 1.26 builds, and minecraft:navigation.* strings survive. Every 2024 method is a field access or a one-call forwarder: Path at +0x68, Path::isDone (2024). docs/findings-inventory.md section 7"
+  },
+  "?setPath@NavigationComponent@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "NavigationComponent is an EnTT type name in both 1.26 builds, and minecraft:navigation.* strings survive. Every 2024 method is a field access or a one-call forwarder: unique_ptr<Path> swap at +0x68 (2024). docs/findings-inventory.md section 7"
+  },
+  "?getMaxDistance@NavigationComponent@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "NavigationComponent is an EnTT type name in both 1.26 builds, and minecraft:navigation.* strings survive. Every 2024 method is a field access or a one-call forwarder: Actor::getAttribute(SharedAttributes::FOLLOW_RANGE).getCurrentValue() (2024). docs/findings-inventory.md section 7"
+  },
+  "?create@SimulatedPlayer@@": {
+   "class": "moved",
+   "impl": "bdsx-key",
+   "target": "bdsx:SimulatedPlayer::create (1.26's nine-argument create, reached through the GameTest wrapper; engine/simulatedplayer.ts)",
+   "evidence": "executed on both builds 2026-09-24 (simprobe create, and every simact/simmove session since); docs/findings-slots.md \"SimulatedPlayer\""
+  },
+  "?simulateDisconnect@SimulatedPlayer@@": {
+   "class": "live",
+   "evidence": "SimulatedPlayer exists in both builds: its virtuals are named in both merged tables (aiStep, teleportTo, getXuid, isSimulated...), ScriptModuleGameTest::ScriptSimulatedPlayer is an EnTT type name, and every gametest verb bdsx wraps is a string in both images (attackEntity, breakBlock/stopBreakingBlock, lookAtBlock, navigateToLocations, useItemInSlotOnBlock, ...). The 2024 function is a real body, so the search is for its address. docs/findings-inventory.md section 7"
+  },
+  "?simulateInteract@SimulatedPlayer@@": {
+   "class": "live",
+   "evidence": "SimulatedPlayer exists in both builds: its virtuals are named in both merged tables (aiStep, teleportTo, getXuid, isSimulated...), ScriptModuleGameTest::ScriptSimulatedPlayer is an EnTT type name, and every gametest verb bdsx wraps is a string in both images (attackEntity, breakBlock/stopBreakingBlock, lookAtBlock, navigateToLocations, useItemInSlotOnBlock, ...). The 2024 function is a real body, so the search is for its address. docs/findings-inventory.md section 7"
+  },
+  "?simulateSetItem@SimulatedPlayer@@": {
+   "class": "live",
+   "evidence": "SimulatedPlayer exists in both builds: its virtuals are named in both merged tables (aiStep, teleportTo, getXuid, isSimulated...), ScriptModuleGameTest::ScriptSimulatedPlayer is an EnTT type name, and every gametest verb bdsx wraps is a string in both images (attackEntity, breakBlock/stopBreakingBlock, lookAtBlock, navigateToLocations, useItemInSlotOnBlock, ...). The 2024 function is a real body, so the search is for its address. docs/findings-inventory.md section 7"
+  },
+  "?simulateStopDestroyingBlock@SimulatedPlayer@@": {
+   "class": "live",
+   "evidence": "SimulatedPlayer exists in both builds: its virtuals are named in both merged tables (aiStep, teleportTo, getXuid, isSimulated...), ScriptModuleGameTest::ScriptSimulatedPlayer is an EnTT type name, and every gametest verb bdsx wraps is a string in both images (attackEntity, breakBlock/stopBreakingBlock, lookAtBlock, navigateToLocations, useItemInSlotOnBlock, ...). The 2024 function is a real body, so the search is for its address. docs/findings-inventory.md section 7"
+  },
+  "?simulateNavigateToEntity@SimulatedPlayer@@": {
+   "class": "moved",
+   "target": "?simulateNavigateToEntity@SimulatedPlayer@@QEAA?AUScriptNavigationResult@ScriptModuleGameTest@@...",
+   "evidence": "bdsx's decoration was already stale in 2024: the 1.21.3.01 PDB has the function with the return type ScriptModuleGameTest::ScriptNavigationResult, not ::ScriptNavigationResult. docs/findings-inventory.md section 7",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?simulateNavigateToLocation@SimulatedPlayer@@": {
+   "class": "moved",
+   "target": "?simulateNavigateToLocation@SimulatedPlayer@@QEAA?AUScriptNavigationResult@ScriptModuleGameTest@@...",
+   "evidence": "bdsx's decoration was already stale in 2024: the 1.21.3.01 PDB has the function with the return type ScriptModuleGameTest::ScriptNavigationResult, not ::ScriptNavigationResult. docs/findings-inventory.md section 7",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?tryGetFromEntity@SimulatedPlayer@@": {
+   "class": "absorbed",
+   "impl": "component",
+   "target": "SimulatedPlayerFlagComponent (fnv1a 0xa83d07f5), then ActorOwnerComponent",
+   "evidence": "61B in 2024: the same component-test-then-owner shape as the Actor/Player/ServerPlayer tryGetFromEntity derived() entries; the flag component is an EnTT type name with 9 users on both builds (a lead, not measured). docs/findings-inventory.md section 3"
+  },
+  "?sendActorCarriedItemChanged@ActorEventCoordinator@@": {
+   "class": "moved",
+   "target": "ActorEventCoordinator::sendEvent with ActorCarriedItemChangedEvent",
+   "evidence": "not in the 1.21.3.01 PDB; 2024 already dispatched it as the ActorCarriedItemChangedEvent variant through sendEvent (its lambda instantiations are in the PDB). docs/findings-inventory.md section 7",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?cin@std@@": {
+   "class": "absorbed",
+   "impl": "import",
+   "evidence": "bdsx reads it from msvcp140.dll's exports (dll.ts:195, getProcAddress), never from the table; scrape-symbols counts it only because it is a decorated literal"
+  },
+  "?receivePacket@NetworkConnection@@": {
+   "class": "moved",
+   "target": "the 2024 overload (AEBV?$shared_ptr<time_point>) and in 1.26 BatchedNetworkPeer::_receivePacket",
+   "evidence": "bdsx's decoration (with NetworkSystem&) is not in the 1.21.3.01 PDB, which has the overload without it; only example_and_test/vulnerabilities.ts uses it. docs/findings-inventory.md section 7",
+   "notRequired": "bdsx names it only in comments (upstream commented the call out); it left the required set when scrape-symbols stopped reading comments, 2026-09-23"
+  },
+  "?getAttackDamage@ItemStackBase@@": {
+   "class": "moved",
+   "target": "the item's own vftable slot (engine/item.ts ITEM_SLOTS)",
+   "evidence": "derived() and executed on both builds 2026-09-29 (virt40/51); docs/findings-containers.md section 21",
+   "impl": "derived"
+  },
+  "?getEnchantValue@ItemStackBase@@": {
+   "class": "moved",
+   "target": "the item's own vftable slot (engine/item.ts ITEM_SLOTS)",
+   "evidence": "derived() and executed on both builds 2026-09-29 (virt40/51); docs/findings-containers.md section 21",
+   "impl": "derived"
+  },
+  "?getMaxDamage@ItemStackBase@@": {
+   "class": "moved",
+   "target": "the item's own vftable slot (engine/item.ts ITEM_SLOTS)",
+   "evidence": "derived() and executed on both builds 2026-09-29 (virt40/51); docs/findings-containers.md section 21",
+   "impl": "derived"
+  },
+  "?isGlint@ItemStackBase@@": {
+   "class": "moved",
+   "target": "the item's own vftable slot (engine/item.ts ITEM_SLOTS)",
+   "evidence": "derived() and executed on both builds 2026-09-29 (virt40/51); docs/findings-containers.md section 21",
+   "impl": "derived"
+  },
+  "?isPattern@ItemStackBase@@": {
+   "class": "moved",
+   "target": "the item's own vftable slot (engine/item.ts ITEM_SLOTS)",
+   "evidence": "derived() and executed on both builds 2026-09-29 (virt40/51); docs/findings-containers.md section 21",
+   "impl": "derived"
+  },
+  "?isLiquidClipItem@ItemStackBase@@": {
+   "class": "moved",
+   "target": "the item's own vftable slot (engine/item.ts ITEM_SLOTS)",
+   "evidence": "derived() and executed on both builds 2026-09-29 (virt40/51); docs/findings-containers.md section 21",
+   "impl": "derived"
+  },
+  "?isStackedByData@ItemStackBase@@": {
+   "class": "moved",
+   "target": "the item's own vftable slot (engine/item.ts ITEM_SLOTS)",
+   "evidence": "derived() and executed on both builds 2026-09-29 (virt40/51); docs/findings-containers.md section 21",
+   "impl": "derived"
+  },
+  "?setDamageValue@ItemStackBase@@": {
+   "class": "moved",
+   "target": "Item::setDamageValue(ItemStackBase&, short) (Endstone item.h:219)",
+   "evidence": "derived() and executed on both builds 2026-09-29 (mine40/51); docs/findings-containers.md section 21",
+   "impl": "derived"
+  },
+  "?startCoolDown@ItemStackBase@@": {
+   "class": "moved",
+   "target": "Player::startCooldown (queue Q1-3)",
+   "evidence": "2024 body (86B): item_ and player null checks, then ?startCooldown@Player@@ -- the job is Player::startCooldown, itself still missing. docs/findings-inventory.md section 8"
+  },
+  "?isExplodable@ItemStackBase@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "target": "engine/item.ts (Item raw_name_id_ +0xd0 / flag byte +0x152, BlockType raw_name +0x90)",
+   "evidence": "docs/findings-containers.md section 19; derived() and executed on both builds 2026-09-29 (flags40/51)"
+  },
+  "?isFireResistant@ItemStackBase@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "target": "engine/item.ts (Item raw_name_id_ +0xd0 / flag byte +0x152, BlockType raw_name +0x90)",
+   "evidence": "docs/findings-containers.md section 19; derived() and executed on both builds 2026-09-29 (flags40/51)"
+  },
+  "?isArmorItem@ItemStackBase@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "2024 body compares the item's name HashedString against VanillaItemNames constants (LeatherHorseArmor/IronHorseArmor/.../WolfArmor); the item names are strings in both 1.26 images (minecraft:potion, minecraft:iron_horse_armor, minecraft:wolf_armor ...). A name test in [2]. docs/findings-inventory.md section 8"
+  },
+  "?isHorseArmorItem@ItemStackBase@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "2024 body compares the item's name HashedString against VanillaItemNames constants (the four horse armors); the item names are strings in both 1.26 images (minecraft:potion, minecraft:iron_horse_armor, minecraft:wolf_armor ...). A name test in [2]. docs/findings-inventory.md section 8"
+  },
+  "?isPotionItem@ItemStackBase@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "derived() and executed on both builds 2026-09-29 (day40/51, sutil40/51)"
+  },
+  "?hasCustomHoverName@ItemStackBase@@": {
+   "class": "absorbed",
+   "impl": "call",
+   "evidence": "derived() over the item's user data (and the buildDescriptionName slot 93) and executed on both builds 2026-09-29 (names40/51); docs/findings-containers.md section 20"
+  },
+  "?getCustomLore@ItemStackBase@@": {
+   "class": "absorbed",
+   "impl": "call",
+   "evidence": "derived() over the item's user data (and the buildDescriptionName slot 93) and executed on both builds 2026-09-29 (names40/51); docs/findings-containers.md section 20"
+  },
+  "?setCustomLore@ItemStackBase@@": {
+   "class": "absorbed",
+   "impl": "call",
+   "evidence": "derived() over the item's user data (and the buildDescriptionName slot 93) and executed on both builds 2026-09-29 (names40/51); docs/findings-containers.md section 20"
+  },
+  "?isEnchanted@ItemStackBase@@": {
+   "class": "absorbed",
+   "impl": "call",
+   "evidence": "2024 body is CompoundTag work on userData (+0x10): contains(TAG_ENCHANTS). The NBT keys survive (`Lore`, `ench` strings in both 1.26 images); [2] rebuilds it on the CompoundTag API. docs/findings-inventory.md section 8; 2026-09-28: inlined into every \"ench\" user on both builds, derived over the user tag (findings-nbt.md section 21)"
+  },
+  "?getRawNameId@ItemStackBase@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "docs/findings-containers.md section 19; derived() and executed on both builds 2026-09-29 (flags40/51)",
+   "target": "engine/item.ts (Item raw_name_id_ +0xd0 / flag byte +0x152, BlockType raw_name +0x90)"
+  },
+  "?add@ItemStackBase@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "2024 body: count (+0x22) + n, then ?set@ItemStackBase@@. docs/findings-inventory.md section 8"
+  },
+  "?remove@ItemStackBase@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "2024 body: count (+0x22) - n, then ?set@ItemStackBase@@. docs/findings-inventory.md section 8"
+  },
+  "?isFullStack@ItemStackBase@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "derived() and executed on both builds 2026-09-29 (day40/51, sutil40/51)"
+  },
+  "?isDamaged@ItemStackBase@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "derived() and executed on both builds 2026-09-29 (day40/51, sutil40/51)"
+  },
+  "?matches@ItemStackBase@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "2024 body: matchesItem() plus the count byte (+0x22). docs/findings-inventory.md section 8"
+  },
+  "?setAuxValue@ItemStackBase@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "derived() and executed on both builds 2026-09-29 (effc40/51); docs/findings-components.md \"MobEffectInstance's constructor on 1.26\""
+  },
+  "?isBlock@ItemStackBase@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "Endstone (both releases, world/item/item_stack_base.cpp) implements ItemStackBase::isBlock itself on the 1.26 layout -- an Apache-2.0 body to follow. docs/findings-inventory.md section 8"
+  },
+  "?save@ItemStackBase@@": {
+   "class": "unknown",
+   "notGone": "2024 body is 1034B; item NBT saving exists in every build (the merge's argument-shape check vetoed the carried candidates on both builds, so the address is wrong or the signature changed). Whether a callable function survives is an address search. docs/findings-inventory.md section 8"
+  },
+  "?load@ItemStackBase@@": {
+   "class": "unknown",
+   "notGone": "2024 body: ?_loadItem@ItemStackBase@@ then ?fixupOnLoad@Item@@; loading items from NBT exists in every build. Whether a callable function survives is an address search. docs/findings-inventory.md section 8"
+  },
+  "?attack@Block@@": {
+   "class": "moved",
+   "target": "BlockType::attack (virtual, Endstone block_type.h:228)",
+   "evidence": "2024 Block::attack is a forwarder: the BlockLegacy at Block+0x30 (not_null), then its own member. 1.26's BlockLegacy is BlockType, and Endstone declares attack as a live BlockType virtual (not commented out) -- the slot is read from Endstone by name. docs/findings-inventory.md section 8"
+  },
+  "?getComparatorSignal@Block@@": {
+   "class": "moved",
+   "target": "BlockType::getComparatorSignal (virtual, Endstone block_type.h:242)",
+   "evidence": "2024 Block::getComparatorSignal is a forwarder: the BlockLegacy at Block+0x30 (not_null), then its own member. 1.26's BlockLegacy is BlockType, and Endstone declares getComparatorSignal as a live BlockType virtual (not commented out) -- the slot is read from Endstone by name. docs/findings-inventory.md section 8"
+  },
+  "?getDirectSignal@Block@@": {
+   "class": "moved",
+   "target": "BlockType::getDirectSignal (virtual slot 43 on both builds; Endstone block_type.h:184 counts 42)",
+   "evidence": "2024 Block::getDirectSignal is a forwarder to the BlockLegacy's own virtual. 1.26: derived() through BlockType slot 43, Endstone's count plus one; the engine's inlined forward names it (DiodeBlock::getAlternateSignalAt tail-calls type->vf[43](region, pos, dir)). Executed on both builds 2026-09-30 (dsig40/51). docs/findings-blocks.md \"getDirectSignal and isSignalSource\""
+  },
+  "?getVariant@Block@@": {
+   "class": "moved",
+   "target": "BlockType::getVariant (virtual, Endstone block_type.h:254)",
+   "evidence": "2024 Block::getVariant is a forwarder: the BlockLegacy at Block+0x30 (not_null), then its own member. 1.26's BlockLegacy is BlockType, and Endstone declares getVariant as a live BlockType virtual (not commented out) -- the slot is read from Endstone by name. docs/findings-inventory.md section 8"
+  },
+  "?hasComparatorSignal@Block@@": {
+   "class": "moved",
+   "target": "BlockType::hasComparatorSignal (virtual, Endstone block_type.h:241)",
+   "evidence": "2024 Block::hasComparatorSignal is a forwarder: the BlockLegacy at Block+0x30 (not_null), then its own member. 1.26's BlockLegacy is BlockType, and Endstone declares hasComparatorSignal as a live BlockType virtual (not commented out) -- the slot is read from Endstone by name. docs/findings-inventory.md section 8"
+  },
+  "?isSignalSource@Block@@": {
+   "class": "moved",
+   "target": "BlockType::isSignalSource (virtual slot 35 on both builds; Endstone block_type.h:176 counts 34)",
+   "evidence": "2024 Block::isSignalSource is a forwarder to the BlockLegacy's own virtual. 1.26: derived() through BlockType slot 35, Endstone's count plus one; the engine's inlined forward names it (calculateGoldenRailSpeedIncrease tests !type->vf[35]() (2024's isSolidBlockingBlockAndNotSignalSource)). Executed on both builds 2026-09-30 (dsig40/51). docs/findings-blocks.md \"getDirectSignal and isSignalSource\""
+  },
+  "?asItemInstance@Block@@": {
+   "class": "moved",
+   "target": "BlockType::asItemInstance (virtual, Endstone block_type.h:221)",
+   "evidence": "derived() through the block type's vftable slot 77 and executed on both builds 2026-09-29 (bfield40/51); docs/findings-blocks.md \"asItemInstance\""
+  },
+  "?popResource@Block@@": {
+   "class": "moved",
+   "target": "static BlockType::popResource(BlockSource&, BlockPos const&, ItemStack const&) (Endstone block_type.h:331)",
+   "evidence": "2024 forwards to BlockLegacy::popResource; Endstone declares it static on BlockType in 1.26, a different decoration. docs/findings-inventory.md section 8"
+  },
+  "?getDescriptionId@Block@@": {
+   "class": "moved",
+   "target": "BlockType::getDescriptionId() const (Endstone block_type.h:335)",
+   "evidence": "2024 builds it from BlockDisplayNameComponent on the block; Endstone declares the getter on BlockType in 1.26. docs/findings-inventory.md section 8"
+  },
+  "?getThickness@Block@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "target": "engine/blocktype.ts: BlockType::thickness_ (+0x158)",
+   "evidence": "docs/findings-blocks.md \"BlockType and Block fields on 1.26\"; derived() and executed on both builds 2026-09-29 (bfield40/51)"
+  },
+  "?getTranslucency@Block@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "target": "engine/blocktype.ts: BlockType::translucency_ (+0x15c)",
+   "evidence": "docs/findings-blocks.md \"BlockType and Block fields on 1.26\"; derived() and executed on both builds 2026-09-29 (bfield40/51)"
+  },
+  "?getExplosionResistance@Block@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "target": "engine/blocktype.ts: direct_data_.explosion_resistance (+0xac)",
+   "evidence": "docs/findings-blocks.md \"BlockType and Block fields on 1.26\"; derived() and executed on both builds 2026-09-29 (bfield40/51)"
+  },
+  "?getRuntimeId@Block@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "target": "engine/blocktype.ts: network_id_ (+0x114)",
+   "evidence": "docs/findings-blocks.md \"BlockType and Block fields on 1.26\"; derived() and executed on both builds 2026-09-29 (bfield40/51)"
+  },
+  "?hasBlockEntity@Block@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "target": "engine/blocktype.ts: getBlockEntityType() != 0",
+   "evidence": "docs/findings-blocks.md \"BlockType and Block fields on 1.26\"; derived() and executed on both builds 2026-09-29 (bfield40/51)"
+  },
+  "?isUnbreakable@Block@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "docs/findings-blocks.md \"BlockType and Block fields on 1.26\"; derived() and executed on both builds 2026-09-29 (bfield40/51)",
+   "target": "engine/blocktype.ts: direct_data_.destroy_speed (+0xb4) < 0"
+  },
+  "?isCropBlock@Block@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "derived(): BlockType::tags_ (+0x1a0) holds minecraft:crop; executed on both builds 2026-09-30 (blkutil40/51)"
+  },
+  "?canHurtAndBreakItem@Block@@": {
+   "class": "unknown",
+   "notGone": "2024 forwards to BlockLegacy::canHurtAndBreakItem (non-virtual, not in Endstone); tools still lose durability on blocks in 1.26 (ItemStackBase::hurtAndBreak's `Unbreakable` key survives). Read the 2024 BlockLegacy body next. docs/findings-inventory.md section 8"
+  },
+  "?onFallOn@Block@@": {
+   "class": "moved",
+   "target": "bdsx:BlockType::onFallOnBase (Block::onFallOn is inlined into Actor::checkFallDamage; bdsx/bdsx/bds/engine/fallon.ts)",
+   "evidence": "fallOnBlock confirmed on both builds through onFallOnBase and the BlockEntityFallOnEvent layout (commit bf4a5af, findings-blocks.md)",
+   "notRequired": "bdsx binds the 1.26 successor instead and no longer names this decoration; it left the required set when the event shipped (2026-09-25)"
+  },
+  "?getDisplayObjective@Scoreboard@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "Endstone (both releases) implements Scoreboard::getDisplayObjective itself in world/scores/scoreboard.cpp on the 1.26 layout -- the concept is live and there is an Apache-2.0 body to follow. docs/findings-inventory.md section 8"
+  },
+  "?getScoreboardId@Scoreboard@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "Endstone (both releases) implements Scoreboard::getScoreboardId itself in world/scores/scoreboard.cpp on the 1.26 layout -- the concept is live and there is an Apache-2.0 body to follow. docs/findings-inventory.md section 8"
+  },
+  "?getScoreboardIdentityRef@Scoreboard@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "Endstone (both releases) implements Scoreboard::getScoreboardIdentityRef itself in world/scores/scoreboard.cpp on the 1.26 layout -- the concept is live and there is an Apache-2.0 body to follow. docs/findings-inventory.md section 8"
+  },
+  "?resetPlayerScore@Scoreboard@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "Endstone (both releases) implements Scoreboard::resetPlayerScore itself in world/scores/scoreboard.cpp on the 1.26 layout -- the concept is live and there is an Apache-2.0 body to follow. docs/findings-inventory.md section 8"
+  },
+  "?getObjectives@Scoreboard@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "2024 body is a ~150B copy of one Scoreboard map into a vector (getTrackedIds: IdentityDictionary::getAllScoreboardIds on this+0x50); Endstone declares it on the 1.26 Scoreboard (scoreboard.h:61), whose layout it models. docs/findings-inventory.md section 8"
+  },
+  "?getObjectiveNames@Scoreboard@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "2024 body is a ~150B copy of one Scoreboard map into a vector (getTrackedIds: IdentityDictionary::getAllScoreboardIds on this+0x50); Endstone declares it on the 1.26 Scoreboard (scoreboard.h:63), whose layout it models. docs/findings-inventory.md section 8"
+  },
+  "?getTrackedIds@Scoreboard@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "2024 body is a ~150B copy of one Scoreboard map into a vector (getTrackedIds: IdentityDictionary::getAllScoreboardIds on this+0x50); Endstone declares it on the 1.26 Scoreboard (scoreboard.h:71), whose layout it models. docs/findings-inventory.md section 8"
+  },
+  "?getScoreboardIdentityRefs@Scoreboard@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "2024 body is a ~150B copy of one Scoreboard map into a vector (getTrackedIds: IdentityDictionary::getAllScoreboardIds on this+0x50); Endstone declares it on the 1.26 Scoreboard (scoreboard.h:84), whose layout it models. docs/findings-inventory.md section 8"
+  },
+  "?getMoonPhase@Dimension@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "derived() over 1.26's inlined moon-phase arithmetic and the unchanged brightness table, run on both builds 2026-09-29 (day40/51); docs/findings-layouts.md \"Dimension::isDay\""
+  },
+  "?getMoonBrightness@Dimension@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "derived() over 1.26's inlined moon-phase arithmetic and the unchanged brightness table, run on both builds 2026-09-29 (day40/51); docs/findings-layouts.md \"Dimension::isDay\""
+  },
+  "?getSunAngle@Dimension@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "derived() over the dimension's getTimeOfDay slot 30 and executed on both builds 2026-09-29 (day40/51); docs/findings-layouts.md \"Dimension::isDay\""
+  },
+  "?getTimeOfDay@Dimension@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "derived() over the dimension's getTimeOfDay slot 30 and executed on both builds 2026-09-29 (day40/51); docs/findings-layouts.md \"Dimension::isDay\""
+  },
+  "?isDay@Dimension@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "derived() and executed on both builds 2026-09-29 (day40/51, sutil40/51)"
+  },
+  "?distanceToNearestPlayerSqr2D@Dimension@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "2024 body (125B): a loop over the dimension's player list taking the minimum squared XZ distance. docs/findings-inventory.md section 8"
+  },
+  "?_sendBlockEntityUpdatePacket@Dimension@@": {
+   "class": "unknown",
+   "notGone": "2024 body 235B; block-entity update packets (BlockActorDataPacket) are still sent in 1.26. Whether a callable function survives is an address search. docs/findings-inventory.md section 8"
+  },
+  "?fetchNearestAttackablePlayer@Dimension@@": {
+   "class": "unknown",
+   "notGone": "2024 body 256B/176B overloads; hostile mobs still target the nearest attackable player. Whether a callable function survives is an address search. docs/findings-inventory.md section 8"
+  },
+  "?removeActorByID@Dimension@@": {
+   "class": "unknown",
+   "notGone": "2024 body 50B; actors are still removed from dimensions by id. Whether a callable function survives is an address search. docs/findings-inventory.md section 8"
+  },
+  "?transferEntityToUnloadedChunk@Dimension@@": {
+   "class": "unknown",
+   "notGone": "2024 body 1020B; entities still move into unloaded chunks (CompoundTag save, setMovedToLimbo). Section 25 (2026-10-01): inlined into the per-tick chunk-move pass on both builds (40 0x178a960, 51 0x1881c10); no out-of-line function exists, so it is not an address search. docs/findings-inventory.md section 25"
+  },
+  "??$tryGetComponent@VCommandBlockComponent@@@Actor@@": {
+   "class": "absorbed",
+   "impl": "component",
+   "evidence": "2024 body is the EnTT registry lookup inlined (or add rcx,8; jmp EntityContext::tryGetComponent) -- the whole of it. fnv1a(\"CommandBlockComponent\") has 9 users on 1.26.40.8 and 9 on 1.26.51.1 (tools/component-hash.mjs); the class is named on both builds (EnTT type list). Same shape as the shipped enttComponent() for UserEntityIdentifierComponent. Only the lookup is settled: bdsx's TS field layout of the component is 2024's. docs/findings-inventory.md section 11"
+  },
+  "??$tryGetComponent@VContainerComponent@@@Actor@@": {
+   "class": "absorbed",
+   "impl": "component",
+   "evidence": "2024 body is the EnTT registry lookup inlined (or add rcx,8; jmp EntityContext::tryGetComponent) -- the whole of it. fnv1a(\"ContainerComponent\") has 87 users on 1.26.40.8 and 87 on 1.26.51.1 (tools/component-hash.mjs); the class is named on both builds (EnTT type list). Same shape as the shipped enttComponent() for UserEntityIdentifierComponent. Only the lookup is settled: bdsx's TS field layout of the component is 2024's. docs/findings-inventory.md section 11"
+  },
+  "??$tryGetComponent@VNavigationComponent@@@Actor@@": {
+   "class": "absorbed",
+   "impl": "component",
+   "evidence": "2024 body is the EnTT registry lookup inlined (or add rcx,8; jmp EntityContext::tryGetComponent) -- the whole of it. fnv1a(\"NavigationComponent\") has 305 users on 1.26.40.8 and 306 on 1.26.51.1 (tools/component-hash.mjs); the class is named on both builds (EnTT type list). Same shape as the shipped enttComponent() for UserEntityIdentifierComponent. Only the lookup is settled: bdsx's TS field layout of the component is 2024's. docs/findings-inventory.md section 11"
+  },
+  "??$tryGetComponent@VPushableComponent@@@Actor@@": {
+   "class": "moved",
+   "target": "PushableByEntityComponent (fnv1a 0xe0f57b82, 13 users on both builds) and PushableByBlockComponent (0xdc5e610, 6 users)",
+   "evidence": "2024 has one PushableComponent (tryGetComponent, push x2, pullToRide, skipPush, PushableDescription). 1.26 has no PushableComponent: 0 users of its fnv1a on both builds, absent from the type list and from every pretty_function string, while both lists carry PushableByBlockComponent, PushableByEntityComponent and SharedTypes::v1_26_{20,30,40}::PushableByEntityComponentDefinition; \"minecraft:pushable\" is still a string. The component was split; bdsx's \"minecraft:pushable\" -> PushableComponent mapping and its push() members need remapping to the pair. docs/findings-inventory.md section 11",
+   "notRequired": "dropped 2026-09-30 (data/dropped.json): bdsx's API is now the pair, PushableByEntityComponent (\"minecraft:pushable_by_entity\") and PushableByBlockComponent (\"minecraft:pushable_by_block\"); docs/findings-components.md \"Pushable: the 1.26 split\""
+  },
+  "??$set@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@CommandOutput@@": {
+   "class": "absorbed",
+   "impl": "derived",
+   "evidence": "no set<std::string> among the five set<T>-shaped callers of Json::Value::operator[](const std::string&) on either build; derived() over set<const char*> and executed on both builds 2026-09-29 (json40/51). docs/findings-scoreboard.md section 18",
+   "target": "CommandOutput::set<const char*> (40 0xb5c40, 51 0xb6360; engine/command.ts)"
+  },
+  "??$set@VBlockPos@@@CommandOutput@@": {
+   "class": "absorbed",
+   "impl": "derived",
+   "evidence": "2024 went through CommandPropertyBag::set(key, BlockPos); no 1.26 copy. derived() and executed on both builds 2026-09-29 (json40/51). docs/findings-scoreboard.md section 18",
+   "target": "json[key].{x,y,z} through JsonValue's inserting get"
+  },
+  "??1CommandOutput@@QEAA@XZ": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "2024 body frees messages_ (+16, CommandOutputMessage: type +0, id string +8, params vector<string> +40) and deletes data_ (+8) through its virtual destructor -- the Endstone 1.26 layout. docs/findings-inventory.md section 11"
+  },
+  "?success@CommandOutput@@QEAAXXZ": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "2024 body is `inc dword [rcx+0x28]`; Endstone (both releases) implements it as ++success_count_ (+40). docs/findings-inventory.md section 11"
+  },
+  "?error@CommandOutput@@": {
+   "class": "moved",
+   "target": "CommandOutput::addMessage(id, params, CommandOutputMessageType::Error) when type_ != None",
+   "evidence": "2024 body: `cmp dword [rcx],0; je; mov r9d,1; jmp addMessage`. Endstone (both releases) declares addMessage and implements error() and addMessage() on the 1.26 layout; addMessage is out of line on both builds (40 0x12f19e0, 51 0x1211560; the propagated 51 0xed490 was a vector constructor) with a std::string_view id, and error() is inlined: derived() over bdsx:CommandOutput::addMessage, docs/findings-scoreboard.md section 10.1. docs/findings-inventory.md section 11"
+  },
+  "?getMin@LevelChunk@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "docs/findings-layouts.md \"LevelChunk and BlockActor on 1.26\"; derived() and executed on both builds 2026-09-29 (bfield40/51)",
+   "target": "engine/chunk.ts: min_ (+0x60)"
+  },
+  "?getMax@LevelChunk@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "docs/findings-layouts.md \"LevelChunk and BlockActor on 1.26\"; derived() and executed on both builds 2026-09-29 (bfield40/51)",
+   "target": "engine/chunk.ts: max_ (+0x6c)"
+  },
+  "?getPosition@LevelChunk@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "docs/findings-layouts.md \"LevelChunk and BlockActor on 1.26\"; derived() and executed on both builds 2026-09-29 (bfield40/51)",
+   "target": "engine/chunk.ts: position_ (+0x78)"
+  },
+  "?toWorldPos@LevelChunk@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "docs/findings-layouts.md \"LevelChunk and BlockActor on 1.26\"; derived() and executed on both builds 2026-09-29 (bfield40/51)",
+   "target": "engine/chunk.ts: min_ + local"
+  },
+  "?isFullyLoaded@LevelChunk@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "derived() over the load state (+0xf0), ChunkState::Loaded (13 on 40, 11 on 51), the flag (+0x1526 / +0x152e) and the redstone byte (+0x10d1), read off ten inlined copies per build; executed on both builds 2026-09-29 against BlockSource slot 55 (chload40/51)"
+  },
+  "?getChunkEntities@LevelChunk@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "derived() and executed on both builds 2026-09-29 (chent40/51); docs/findings-layouts.md \"LevelChunk and BlockActor on 1.26\"",
+   "target": "engine/chunk.ts: the vector at +0x1360"
+  },
+  "?getEntity@LevelChunk@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "derived() over getChunkEntities and executed on both builds 2026-09-29 (chent40/51)"
+  },
+  "?getBiome@LevelChunk@@": {
+   "class": "unknown",
+   "notGone": "2024 body reads the per-subchunk 3D biome storage and falls back to BiomeRegistry::lookupByHash; biomes per position obviously exist in 1.26 and Endstone declares BlockSource::getBiome(BlockPos const&) (block_source.h:144), the likely 1.26 route. Address search. docs/findings-inventory.md section 11"
+  },
+  "?asItemInstance@BlockLegacy@@": {
+   "class": "live",
+   "evidence": "derived() through the block type's vftable slot 77 and executed on both builds 2026-09-29 (bfield40/51); docs/findings-blocks.md \"asItemInstance\""
+  },
+  "?getStateFromLegacyData@BlockLegacy@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "derived(): tryGetStateFromLegacyData ?? getDefaultState; executed on both builds 2026-09-30 (blkutil40/51)"
+  },
+  "?getCreativeCategory@BlockLegacy@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "target": "engine/blocktype.ts blockTypeCreativeCategory: creative_category_ (+0x160, one byte) on both builds",
+   "evidence": "2024 body reads 4 bytes at +312 (0x138); 1.26 has no out-of-line copy. The BlockType constructor (40 0x1ee72c0 / 51 0x1a1fef0) stores the default 0 at +0x160 (Endstone block_type.h +352), and the block-item registration (40 0x154a8d0 / 51 0x1661130) copies that byte into the item's confirmed creative_category_ (+0x180). derived() and executed on both builds 2026-09-29 (ccat40/51: oak_planks Construction, stone/dirt Nature, crafting_table Items, through the item's block type and through setblock-placed blocks). docs/findings-containers.md section 18"
+  },
+  "?getBlockItemId@BlockLegacy@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "2024 body: id (+0x1a6) below 0x100 as is, else 0xff - id; Endstone (block_type.cpp) implements getBlockItemId the same way over id_ (+382) and ItemRegistry::START_ITEM_ID. docs/findings-inventory.md section 11"
+  },
+  "?setDestroyTime@BlockLegacy@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "2024 body writes the float to BlockLegacy+0x184 and +0x188. Endstone models the 1.26 BlockType from +352 to +704 with no destroy-time field, and 1.26 hardness is per Block at +0xb4 (findings-blocks.md section 12), so the setter becomes a write to every permutation in block_permutations_ (+552). docs/findings-inventory.md section 11"
+  },
+  "?getCommandNames@BlockLegacy@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "2024 body (~560B) builds a vector<CommandName> from the lower-cased names in NameInfo; Endstone's 1.26 BlockType has name_info_ at +144 (raw_name +0, full_name +80). docs/findings-inventory.md section 11"
+  },
+  "?allowsNetherVegetation@BlockUtils@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "derived(): the fourteen names NetherFungusBlock::mayPlaceOn tests, equal to the engine's answer on 22 blocks; executed on both builds 2026-09-30 (blkutil40/51)"
+  },
+  "?isBeehiveBlock@BlockUtils@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "derived(): the type name beehive or bee_nest; executed on both builds 2026-09-30 (blkutil40/51)"
+  },
+  "?isThinFenceOrWallBlock@BlockUtils@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "derived(): BlockType slots 27 and 28; executed on both builds 2026-09-30 (blkutil40/51)"
+  },
+  "?isWaterSource@BlockUtils@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "derived(): the engine's isLiquidSource and the type name water/flowing_water; executed on both builds 2026-09-30 (blkutil40/51), docs/findings-blocks.md \"BlockUtils on 1.26\""
+  },
+  "??0CommandSelectorBase@@IEAA@_N@Z": {
+   "class": "unknown",
+   "notGone": "selectors work in 1.26 (every session's `tp @a` / `kill @a` console commands on both builds); both images carry eight add*Filter methods and newResults of this class with their exact 2024 decorations as lambda scopes (tools/image-names.mjs), and CommandSelector<Actor>/<Player> as EnTT pretty_function types. The class is not in Endstone or our tables; whether this one has an out-of-line copy is an address search (anchor: newResults, whose lambdas' descriptors are in the image). docs/findings-inventory.md section 11"
+  },
+  "?getName@CommandSelectorBase@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "docs/findings-scoreboard.md section 19; derived() and executed on both builds 2026-09-29 (sel40/51)",
+   "target": "2024's body over bdsx's fields (the selector keeps 2024's layout)"
+  },
+  "?hasName@CommandSelectorBase@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "docs/findings-scoreboard.md section 19; derived() and executed on both builds 2026-09-29 (sel40/51)",
+   "target": "2024's body over bdsx's fields (the selector keeps 2024's layout)"
+  },
+  "?setType@CommandSelectorBase@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "docs/findings-scoreboard.md section 19; derived() and executed on both builds 2026-09-29 (sel40/51)",
+   "target": "2024's body over bdsx's fields (the selector keeps 2024's layout)"
+  },
+  "?setIncludeDeadPlayers@CommandSelectorBase@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "docs/findings-scoreboard.md section 19; derived() and executed on both builds 2026-09-29 (sel40/51)",
+   "target": "2024's body over bdsx's fields (the selector keeps 2024's layout)"
+  },
+  "??$getline@DU?$char_traits@D@std@@": {
+   "class": "live",
+   "evidence": "std::getline<char> instantiated in the image. Both 1.26 builds import basic_istream<char>::_Ipfx, sgetc and snextc; candidate 40 0x1135c0 / 51 0x110700 (435B each, the same instruction sequence modulo addresses): _Ipfx(true), clear the string, sgetc, then a loop comparing each char with the r8b delimiter and advancing with snextc through a register loaded from its import slot -- 2024's 467B body at 0xf0300. One static route plus cross-build identity; not shipped, not executed. bdsx's stdin handler also needs the ConsoleInputReader patches. docs/findings-inventory.md section 11 Its only bdsx consumer is the stdin handler, which needs the ConsoleInputReader patches (section 13), so it has nothing to run through yet."
+  },
+  "?BedrockLogOut@@YAXIPEBDZZ": {
+   "class": "moved",
+   "target": "the \"%s\"-specialised clone: 40 0x1c35a0, 51 0x263d70 (priority ecx, preformatted message r8; rdx unused)",
+   "evidence": "2024's only caller (LogDetails::_log_va) passes \"%s\" and the message. In 1.26 the one function referencing \"!!! ERROR: Unable to format log\" (unique in all three images) has one caller, spills only r8/r9 as the va_list and passes a constant \"%s\" to __stdio_common_vsprintf with a 0x1000 buffer: the format argument was constant-propagated away. bdsx's logHook reads rdx as the format and must read r8 instead. Not executed. docs/findings-inventory.md section 11"
+  },
+  "??$parseEnum@": {
+   "class": "moved",
+   "target": "the one shared body of any 1.26 parseEnum<4-byte enum> instantiation",
+   "evidence": "2024 folds every 4-byte enum instantiation into one body (0xfb5d0: getEnumData, then a 4-byte store) -- ActorLocation and StructureActionType are the same address, and bdsx's selectMore() already takes whichever address most names share. What bdsx needs is that body under any instantiation; lead as for parse<string>: an enum parameter's parse pointer at registerOverloadInternal. docs/findings-inventory.md section 11"
+  },
+  "??AValue@Json@@QEAAAEAV01@H@Z": {
+   "class": "moved",
+   "target": "??AValue@Json@@QEAAAEAV01@I@Z -- ships 40 0x9fdae00, 51 0xa0fb3c0",
+   "evidence": "2024 body is a single jmp to operator[](ArrayIndex), which both 1.26 tables resolve. docs/findings-inventory.md section 11"
+  },
+  "??AValue@Json@@QEAAAEAV01@PEBD@Z": {
+   "class": "unknown",
+   "notGone": "2024 body is a jmp to Json::Value::_resolveReference(const char*). JsonCpp is linked in both 1.26 builds (ctor, dtor, operator[](unsigned), get, isMember, getMemberNames, toStyledString all ship). get(const char*, Value const&) ships too but returns a copy, and bdsx's JsonValue.get returns the reference. Address search for the forwarder or _resolveReference. docs/findings-inventory.md section 11"
+  },
+  "??_7?$_Ref_count_obj2@_N@std@@6B@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "an STL control-block vftable bdsx borrows for the @deprecated CommandContext.constructSharedPtr; any make_shared control block with a trivially destructible payload serves, and bdsx can supply its own (_Destroy/_Delete_this). Not an engine concept. docs/findings-inventory.md section 11"
+  },
+  "?CreativeItemCategoryFromString@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "2024 body: a lookup in the category-name table (GetCreativeItemCategoryStrings); both 1.26 tables name the unordered_map<CreativeItemCategory, string> pair both ways. Used only by example_and_test/test.ts. docs/findings-inventory.md section 11"
+  },
+  "??0Blob@mce@@QEAA@XZ": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "2024 body stores &Blob::defaultDeleter at +0 and zeros the pointer (+8) and size (+0x10) -- Endstone's 1.26 blob.h layout (Deleter, then unique_ptr<uint8_t[]> storage, then size_). defaultDeleter is delete[], i.e. ucrt free (msAlloc's premise). docs/findings-inventory.md section 11"
+  },
+  "??1Blob@mce@@QEAA@XZ": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "2024 body calls the deleter at +0 on the pointer at +8 when it is non-null; Endstone blob.h layout. docs/findings-inventory.md section 11"
+  },
+  "??0MobEffectInstance@@QEAA@IHH_N00@Z": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "derived() and executed on both builds 2026-09-29 (effc40/51); docs/findings-components.md \"MobEffectInstance's constructor on 1.26\""
+  },
+  "?getAmplifier@MobEffectInstance@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "target": "amplifier +0x20",
+   "evidence": "derived() and executed on both builds 2026-09-29 (effc40/51); docs/findings-components.md \"MobEffectInstance's constructor on 1.26\""
+  },
+  "?getComponentName@MobEffectInstance@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "2024 body: MobEffect::mMobEffects[id] (id < 0x25) and the HashedString at +0x100 of that MobEffect, else HashedString::defaultErrorValue. 1.26 inlines the same body (bound 0x25 inclusive) into Mob::hasComponent (40 0x23f79e0 / 51 0x29e31d0) and the MobEffect constructor still builds \"minecraft:effect.\" + resourceName at +0x100. derived() and executed on both builds 2026-09-28 (effnameprobe: all 37 names, live Speed/WindCharged instances, out-of-range id -> defaultErrorValue). docs/findings-components.md \"MobEffect's fields and getComponentName\"",
+   "target": "engine/mobeffect.ts mobEffectInstanceComponentName: mMobEffects[id] + 0x100, else HashedString::defaultErrorValue (40 0xc8bf108 / 51 0xcc27060)"
+  },
+  "?addItem@ContainerComponent@@QEAA_NAEAVItemStack@@@Z": {
+   "class": "moved",
+   "target": "Container::addItem(ItemStack&) on the ContainerComponent's Container (2024 +0x10; the base body ships: 40 0x2db7d0 / 51 0x36fc40)",
+   "evidence": "2024 body is one virtual call (slot 9) on the Container at this+0x10; Endstone container.h declares addItem(ItemStack&) virtual in 1.26. ContainerComponent is in both EnTT type lists; its 1.26 Container offset is unmeasured. docs/findings-inventory.md section 12"
+  },
+  "?getEmptySlotsCount@ContainerComponent@@": {
+   "class": "moved",
+   "target": "Container::getEmptySlotsCount() on the ContainerComponent's Container (2024 +0x10; the base body ships: 40 0x2066d0 / 51 0x294440)",
+   "evidence": "2024 body is one virtual call (vft +0xd0) on the Container at this+0x10; Endstone container.h declares getEmptySlotsCount() virtual in 1.26. ContainerComponent is in both EnTT type lists; its 1.26 Container offset is unmeasured. docs/findings-inventory.md section 12"
+  },
+  "?getSlots@ContainerComponent@@": {
+   "class": "moved",
+   "target": "Container::getSlots() on the ContainerComponent's Container (2024 +0x10; the base body ships: 40 0x2dd2d0 / 51 0x3717a0)",
+   "evidence": "2024 body is one virtual call (vft +0xc8) on the Container at this+0x10; Endstone container.h declares getSlots() virtual in 1.26. ContainerComponent is in both EnTT type lists; its 1.26 Container offset is unmeasured. docs/findings-inventory.md section 12"
+  },
+  "?addItem@ContainerComponent@@QEAA_NAEAVItemActor@@@Z": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "2024 body: skip a removed ItemActor or an empty stack, then addItem(stack, 0, size) -- composition over the other overloads. docs/findings-inventory.md section 12"
+  },
+  "?canAttack@Actor@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "the virtual has no slot in 1.26 (setTarget is slot 50 in both tables); 2024 base body 0x19abf70: null -> false, PLAYING_DEAD flag -> false, else !isInstanceOf(0xb29 = Ghast), which is a low-byte equality against getEntityTypeId. Derived over getStatusFlag and getEntityTypeId, confirmed on both builds 2026-09-30. docs/findings-inventory.md section 14"
+  },
+  "?canSee@Actor@@QEBA_NAEBV1@@Z": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "2024 body: false for a spectator target (ActorPermission::getUnmappedGameType, PlayerGameTypeUtility::isSpectator), else canSee(target's attach position) -- composition over the Vec3 overload. docs/findings-inventory.md section 12"
+  },
+  "?canSee@Actor@@QEBA_NAEBVVec3@@@Z": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "2024 body: a clip from getAttachPos(eyes) to the point through the dimension's BlockSource; Endstone block_source.h declares clip(...) and clip(ClipParameters const&) virtual in 1.26. docs/findings-inventory.md section 12"
+  },
+  "?isInClouds@Actor@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "2024 body: the dimension's cloud height (a Dimension virtual, +0xa8; TheEndDimension::getCloudHeight ships on both builds) against the actor's y, within +4.0. docs/findings-inventory.md section 12"
+  },
+  "?getDestroySpeed@ItemStack@@": {
+   "class": "moved",
+   "target": "Item::getDestroySpeed(ItemStackBase const&, Block const&) const (Endstone item.h:150)",
+   "evidence": "derived() and executed on both builds 2026-09-29 (mine40/51); docs/findings-containers.md section 21",
+   "impl": "derived"
+  },
+  "?use@ItemStack@@": {
+   "class": "moved",
+   "target": "Item::use(ItemStack&, Player&) -- ships 40 0x24e2d70 / 51 0x1a87e50",
+   "evidence": "2024 body: return unchanged when Player::isItemOnCooldown(item.getCooldownCategory()), else the Item virtual use(stack, player); both are Endstone item.h virtuals (143, 166). docs/findings-inventory.md section 12"
+  },
+  "?useOn@ItemStack@@": {
+   "class": "moved",
+   "target": "Item::useOn -> Item::_useOn -- _useOn ships 40 0x24e3660 / 51 0x1a88800",
+   "evidence": "2024 body reads two game rules and calls Item::useOn; Endstone declares Item::_useOn virtual (item.h:198) and both tables ship it. docs/findings-inventory.md section 12"
+  },
+  "?getSize@StructureTemplate@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "2024 body is `lea rax,[rcx+0x34]`; StructureTemplate is in both type lists; 1.26 offset unmeasured. docs/findings-inventory.md section 12"
+  },
+  "?tryGetBlockAtPos@StructureTemplate@@": {
+   "class": "unknown",
+   "notGone": "/structure save and load exist in 1.26 (commands.structure.save/load in both images) and the class is in both type lists; 2024 bodies call _fillBlockInfo/_fillEntityList, _placeNextBlockSegmentInWorld, StructureBlockPalette::tryGetBlock. Address search. docs/findings-inventory.md section 12"
+  },
+  "?getContainer@ChestBlockActor@@": {
+   "class": "moved",
+   "target": "IVanillaMainBlockActorComponent::getContainer() const (Endstone vanilla_block_actor.h:33), a secondary vtable of VanillaBlockActor",
+   "evidence": "2024 body: this+0xf0 (the chest's own container). 1.26 BlockActor is a 48-byte base plus three IVanilla*BlockActorComponent interfaces (Endstone block_actor.h, vanilla_block_actor.h); getContainer is declared there, not on BlockActor. docs/findings-inventory.md section 12"
+  },
+  "?getPairedChestPosition@ChestBlockActor@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "2024 body is `lea rax,[rcx+0x2a8]`; 1.26 offset unmeasured (\"pairx\" and \"pairlead\" keys survive). docs/findings-inventory.md section 12"
+  },
+  "?isLargeChest@ChestBlockActor@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "2024 body: the paired-chest pointer at +0x2a0 is non-null; 1.26 offset unmeasured. docs/findings-inventory.md section 12"
+  },
+  "?openBy@ChestBlockActor@@": {
+   "class": "unknown",
+   "notGone": "chests still open (2024 body sends a PlayerEventCoordinator event and checks hasOpenContainer); not in Endstone's 1.26 interfaces. Needs Q7 to see it fire. docs/findings-inventory.md section 12"
+  },
+  "?pairWith@ChestBlockActor@@": {
+   "class": "moved",
+   "target": "bdsx:ChestBlockActor::pairWith (1.26 signature pairWith(ChestBlockActor*, BlockSource&, bool))",
+   "evidence": "chestPair confirmed on both builds (commit 8f032e0, findings-blocks.md)",
+   "notRequired": "bdsx binds the 1.26 successor instead and no longer names this decoration; it left the required set when the event shipped (2026-09-25)"
+  },
+  "?getCustomName@BlockActor@@": {
+   "class": "moved",
+   "target": "IVanillaMainBlockActorComponent::getCustomName() const -> Bedrock::Safety::RedactableString const& (vanilla_block_actor.h:39)",
+   "evidence": "2024 returned the std::string at +0x58. In 1.26 it is a virtual of VanillaBlockActor's main interface returning a RedactableString (custom_name_ +136). docs/findings-inventory.md section 12"
+  },
+  "?setCustomName@BlockActor@@": {
+   "class": "moved",
+   "target": "IVanillaMainBlockActorComponent::setCustomName(RedactableString const&) (vanilla_block_actor.h:40)",
+   "evidence": "2024 assigned the std::string at +0x58 and cleared the filtered copy at +0x78; 1.26 takes a RedactableString through the main interface. docs/findings-inventory.md section 12"
+  },
+  "?setChanged@BlockActor@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "target": "VanillaBlockActor properties_ bit Changed (+68 on 40, +76 on 51, one byte)",
+   "evidence": "2024 body is `mov byte [rcx+0xc0],1`. 1.26: derived() setting bit 0 of VanillaBlockActor::properties_ (Endstone vanilla_block_actor.h). Static: slot 22 of all 31 IVanillaMainBlockActorComponent vftables is `orb $1, 0x1c(%rcx)` on the interface sub-object (+40 / +48), and about 120 inlined `orb $1` at +0x44 / +0x4c. Executed on both builds 2026-09-30 (changed40/51): the engine's isChanged (slot 23) reads false then true across bdsx's setChanged, and replaceitem sets the same byte. docs/findings-layouts.md \"BlockActor::setChanged\""
+  },
+  "?handleJumpEffects@Player@@": {
+   "class": "moved",
+   "impl": "bdsx-key",
+   "target": "bdsx:JumpExhaustionSystem::_tickEntity (the per-entity function of the ECS system the binary registers as \"JumpExhaustion\"; engine/jump.ts)",
+   "evidence": "2024's exhaustion half is that system's body, over players holding a TriggerJumpRequestComponent; 1.26's PlayerActionPacket handler sends StartJump (case 8) to its exit on both builds. Executed on both builds 2026-10-02 by a direct call through bdsx's hook (simp jumpcall: simbot named, exhaustion +0.05 / +0.2 / 0 by flag and game type); a simulated jump never runs the system, a real client's jump is still to be seen. docs/findings-slots.md \"Q7 through a simulated player\""
+  },
+  "?interact@Player@@": {
+   "class": "moved",
+   "target": "GameMode::interact(Actor&, Vec3 const&) (Endstone game_mode.h:39, virtual) as the playerInteract seam",
+   "evidence": "2024 Player::interact (848-byte frame) is what GameMode::interact calls; Endstone declares GameMode::interact virtual in 1.26 and bdsx already reaches GameMode's vtable. Whether Player::interact itself survived is not settled. docs/findings-inventory.md section 12"
+  },
+  "?isInRaid@Player@@": {
+   "class": "unknown",
+   "notGone": "2024 body: Dimension::getVillageManager, the village at the player's BlockPos, Village::hasRaid -- raids exist in 1.26. Blocked on the village manager. docs/findings-inventory.md section 12"
+  },
+  "?GetSystemAddressFromIndex@RakPeer@RakNet@@": {
+   "class": "moved",
+   "target": "?GetSystemAddressFromGuid@RakPeer@RakNet@@ (slot 53, 40 0x3440370 / 51 0x343a640): NetworkIdentifier.getAddress looks a RakNet connection up by the identifier's GUID, as Endstone's EndstoneSocketAddress does",
+   "evidence": "RakPeer's 1.26 table (92 slots against 2024's 97) has no slot for it: slot 30 is GetIndexFromSystemAddress and slot 31 GetGUIDFromIndex on both builds (bodies read), where 2024 had GetSystemAddressFromIndex between them (slot 32). docs/findings-packets.md \"IP and ping\"",
+   "notRequired": "bdsx binds the successor and no longer names this decoration; RakPeer.GetSystemAddressFromIndex left the TS API (2026-09-27)"
+  },
+  "??_7HelpCommand@@6B@": {
+   "class": "unknown",
+   "notGone": "no existence signal names the class (type lists, pretty_function, mangled names, tables, Endstone), but /help exists (commands.help.description in all three images). docs/findings-inventory.md section 12 (the gone sweep)"
+  },
+  "??_GHelpCommand@@": {
+   "class": "unknown",
+   "notGone": "no existence signal names the class (type lists, pretty_function, mangled names, tables, Endstone), but /help exists (commands.help.description). docs/findings-inventory.md section 12 (the gone sweep)"
+  },
+  "?execute@HelpCommand@@": {
+   "class": "unknown",
+   "notGone": "no existence signal names the class (type lists, pretty_function, mangled names, tables, Endstone), but /help exists (commands.help.description). docs/findings-inventory.md section 12 (the gone sweep)"
+  },
+  "?getIdentity@ExtendedCertificate@@": {
+   "class": "unknown",
+   "notGone": "no existence signal names the class (type lists, pretty_function, mangled names, tables, Endstone), but logins still carry identity/xuid in their certificate chain (queue Q5, not started); the class name is in no image, 2024 included, so its absence says nothing. docs/findings-inventory.md section 12 (the gone sweep)"
+  },
+  "?getIdentityName@ExtendedCertificate@@": {
+   "class": "unknown",
+   "notGone": "no existence signal names the class (type lists, pretty_function, mangled names, tables, Endstone), but as getIdentity (queue Q5). docs/findings-inventory.md section 12 (the gone sweep)"
+  },
+  "?getXuid@ExtendedCertificate@@": {
+   "class": "unknown",
+   "notGone": "no existence signal names the class (type lists, pretty_function, mangled names, tables, Endstone), but as getIdentity (queue Q5). docs/findings-inventory.md section 12 (the gone sweep)"
+  },
+  "??1CommandArea@@": {
+   "class": "unknown",
+   "notGone": "no existence signal names the class (type lists, pretty_function, mangled names, tables, Endstone), but area commands (fill, clone, setblock) exist. docs/findings-inventory.md section 12 (the gone sweep)"
+  },
+  "?getDimensionBlockSource@CommandArea@@": {
+   "class": "unknown",
+   "notGone": "no existence signal names the class (type lists, pretty_function, mangled names, tables, Endstone), but area commands exist. docs/findings-inventory.md section 12 (the gone sweep)"
+  },
+  "?findArea@CommandAreaFactory@@": {
+   "class": "unknown",
+   "notGone": "no existence signal names the class (type lists, pretty_function, mangled names, tables, Endstone), but area commands exist. docs/findings-inventory.md section 12 (the gone sweep)"
+  },
+  "?createItemStack@CommandUtils@@": {
+   "class": "unknown",
+   "notGone": "no existence signal names the class (type lists, pretty_function, mangled names, tables, Endstone), but /give and friends build stacks from names. docs/findings-inventory.md section 12 (the gone sweep)"
+  },
+  "?getFeetPos@CommandUtils@@": {
+   "class": "unknown",
+   "notGone": "no existence signal names the class (type lists, pretty_function, mangled names, tables, Endstone), but command positions exist. docs/findings-inventory.md section 12 (the gone sweep)"
+  },
+  "?push@PushableComponent@@": {
+   "class": "moved",
+   "target": "PushableByEntityComponent / PushableByBlockComponent",
+   "evidence": "as ??$tryGetComponent@VPushableComponent@@@Actor@@: 1.26 split the component; fnv1a(\"PushableComponent\") has 0 users on both builds. docs/findings-inventory.md section 11",
+   "notRequired": "dropped 2026-09-30 (data/dropped.json): both overloads are PushableByEntityComponent.push over bdsx:Pushable::push(Actor&,Vec3 const&) / bdsx:Pushable::push(Actor&,Actor&,bool)"
+  },
+  "?setOnFireNoEffects@OnFireSystem@@": {
+   "class": "moved",
+   "impl": "call",
+   "target": "ScriptActor::setOnFire with useEffects=false (bdsx:ScriptActor::setOnFire, 40 0x4350fa0 / 51 0x44b11a0)",
+   "evidence": "inlined into that function's useEffects=false arm on both builds, no out-of-line copy; bdsx calls it (engine/onfire.ts, data/derived.json); executed on both builds 2026-09-27 (docs/findings-layouts.md \"OnFireSystem\")"
+  },
+  "?toUtf8@StringConversions@Core@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "a UTF-16 -> UTF-8 conversion; kernel32 WideCharToMultiByte does the same job for bdsx's launcher. docs/findings-inventory.md section 12 (the gone sweep)"
+  },
+  "?toWide@StringConversions@Core@@": {
+   "class": "absorbed",
+   "impl": "util",
+   "evidence": "a UTF-8 -> UTF-16 conversion; kernel32 MultiByteToWideChar does the same job. docs/findings-inventory.md section 12 (the gone sweep)"
+  },
+  "??0CommandIntegerRange@@QEAA@XZ": {
+   "class": "unknown",
+   "notGone": "no existence signal names the class (type lists, pretty_function, mangled names, tables, Endstone), but integer ranges exist in 1.26 selectors (CommandIntegerRange appears in the addHasItemFilter/addScoreFilter lambda-scope decorations of CommandSelectorBase). docs/findings-inventory.md section 12 (the gone sweep)"
+  },
+  "?doOnHitEffect@SplashPotionEffectSubcomponent@@": {
+   "class": "moved",
+   "target": "?doOnHitEffect@ThrownPotionEffectSubcomponent@@ (the successor class does the work)",
+   "evidence": "splashPotionHit confirmed on both builds by hooking the successor (commit 526d09c, findings-inventory.md section 12)",
+   "notRequired": "bdsx binds the 1.26 successor instead and no longer names this decoration; it left the required set when the event shipped (2026-09-25)"
+  },
+  "?readfromJSON@FreezeOnHitSubcomponent@@": {
+   "class": "moved",
+   "target": "1.26.51.1: SharedTypes::v1_26_50::FreezeOnHitSubcomponentDefinition (its reader 0x240d400 parses size/snap_to_block/shape); the subcomponent copies from the definition in slot 1 (0x240d3e0)",
+   "evidence": "1.26.40.8 still has 2024's readfromJSON (slot 1 of 0xa649b30, shipped, executed: icprobe freeze reads 1/2.5/1 then 0/0.75/0). On 1.26.51.1 slot 1 of the same-shaped table 0xa79fc00 copies +0xc/+0x10/+0x8 from a definition object and no function reads the JSON into the subcomponent; bdsx's readfromJSON throws there (executed, the object untouched). docs/findings-nbt.md section 22"
+  },
+  "?getInputMode@PlayerMovement@@": {
+   "class": "unknown",
+   "notGone": "no existence signal names the class (type lists, pretty_function, mangled names, tables, Endstone), but \"PlayerMovement\" appears 28/29 times in the 1.26 images and input modes exist. docs/findings-inventory.md section 12 (the gone sweep)"
+  },
+  "?terminate@details@gsl@@": {
+   "class": "unknown",
+   "notGone": "no existence signal names the class (type lists, pretty_function, mangled names, tables, Endstone), but gsl contract failures still end in a terminate; 2024 calls it from hundreds of bodies (0xd3cf0). docs/findings-inventory.md section 12 (the gone sweep)"
+  },
+  "??0ConsoleInputReader@@QEAA@XZ": {
+   "class": "absorbed",
+   "impl": "call",
+   "evidence": "inlined into DedicatedServer::start (Endstone windows.h: 40 0x7a760 / 51 0x7a770), which leas the reader-thread body (40 0xf3810 / 51 0xf3580: GetConsoleMode, _setmode, std::wcin) straight into _beginthreadex -- 2024 had it out of line at 0xb7c10, called from start. No out-of-line constructor to patch; the Endstone route is to close stdin before start and feed ConsoleInputReader::console_input_ (SPSCQueue<std::string>, Endstone console_input_reader.h). docs/findings-inventory.md section 13"
+  },
+  "??1ConsoleInputReader@@QEAA@XZ": {
+   "class": "unknown",
+   "notGone": "the console reader lives (its thread body is 40 0xf3810 / 51 0xf3580), but its constructor is inlined into DedicatedServer::start, and 2024 getLine had no direct caller (a try_dequeue on the SPSCQueue). bdsx cannot take over stdin by patching these four; until the Endstone-style queue route exists, BDS keeps its own reader and console commands work as they do. docs/findings-inventory.md section 13"
+  },
+  "?getLine@ConsoleInputReader@@": {
+   "class": "unknown",
+   "notGone": "the console reader lives (its thread body is 40 0xf3810 / 51 0xf3580), but its constructor is inlined into DedicatedServer::start, and 2024 getLine had no direct caller (a try_dequeue on the SPSCQueue). bdsx cannot take over stdin by patching these four; until the Endstone-style queue route exists, BDS keeps its own reader and console commands work as they do. docs/findings-inventory.md section 13"
+  },
+  "?unblockReading@ConsoleInputReader@@": {
+   "class": "unknown",
+   "notGone": "the console reader lives (its thread body is 40 0xf3810 / 51 0xf3580), but its constructor is inlined into DedicatedServer::start, and 2024 getLine had no direct caller (a try_dequeue on the SPSCQueue). bdsx cannot take over stdin by patching these four; until the Endstone-style queue route exists, BDS keeps its own reader and console commands work as they do. docs/findings-inventory.md section 13"
+  },
+  "??0SerializedSkin@@QEAA@AEBV0@@Z": {
+   "class": "gone",
+   "evidence": "the 1.26 engine never copies or moves a skin: SerializedSkin is SerializedSkinImpl behind SerializedSkinRef (shared_ptr<ThreadOwner<SerializedSkinImpl>>, Endstone serialized_skin.h), and on both builds every Impl is constructed at one of 19 make_shared sites (the stores of its control-block vftable, 40 0xa621b20 / 51 0xa79f500), each calling one of four constructors -- the default one and three login-request forms -- whose caller lists are exactly those 19 sites; none takes an Impl. The only Impl-shaped destructor is the control block's _Destroy, so no Impl lives anywhere else. A skin is shared instead (PlayerListEntry's constructor copies the Player's shared_ptr). bdsx's ctor_copy/ctor_move throw \"not available on BDS 1.26\" (executed on both builds, skin40/skin51). docs/findings-layouts.md \"SerializedSkin\"",
+   "notRequired": "dropped 2026-09-28 (data/dropped.json): skin.ts no longer names it"
+  },
+  "??0SerializedSkin@@QEAA@$$QEAV0@@Z": {
+   "class": "gone",
+   "evidence": "the 1.26 engine never copies or moves a skin: SerializedSkin is SerializedSkinImpl behind SerializedSkinRef (shared_ptr<ThreadOwner<SerializedSkinImpl>>, Endstone serialized_skin.h), and on both builds every Impl is constructed at one of 19 make_shared sites (the stores of its control-block vftable, 40 0xa621b20 / 51 0xa79f500), each calling one of four constructors -- the default one and three login-request forms -- whose caller lists are exactly those 19 sites; none takes an Impl. The only Impl-shaped destructor is the control block's _Destroy, so no Impl lives anywhere else. A skin is shared instead (PlayerListEntry's constructor copies the Player's shared_ptr). bdsx's ctor_copy/ctor_move throw \"not available on BDS 1.26\" (executed on both builds, skin40/skin51). docs/findings-layouts.md \"SerializedSkin\"",
+   "notRequired": "dropped 2026-09-28 (data/dropped.json): skin.ts no longer names it"
+  },
+  "?getCreativeCategory@Item@@": {
+   "class": "absorbed",
+   "impl": "layout",
+   "target": "engine/item.ts itemCreativeCategory: creative_category_ (+0x180, one byte) on both builds",
+   "evidence": "2024 body reads 4 bytes at +464 (0x1d0); 1.26 has no out-of-line copy. The Item constructor (40 0x24cb9c0 / 51 0x1a790c0) stores movb $0x4 at +0x180 right after block_type_ (+0x178), and the inlined creative-group add (40 0x37520c0 / 51 0x36ea0c0) compares it with Undefined (6). derived() and executed on both builds 2026-09-28 (ccat40/51: sword Equipment, oak_planks Construction, stone/dirt Nature, diamond Items). docs/findings-containers.md section 17"
+  },
+  "?tryFindAction@ItemStackRequestData@@QEBAPEBVItemStackRequestAction@@W4ItemStackRequestActionType@@@Z": {
+   "class": "absorbed",
+   "impl": "layout",
+   "evidence": "2024 0x1aa0860 scanned unique_ptr<Action> at +0x30/+0x38 for the type byte at +8. 1.26 inlines that loop into its one caller (ServerPlayerBlockUseHandler::onBeforeMovementSimulation, 40 0xaa3290 / 51 0x13e5680, `cmpb $0xb,0x8(%rdx)`), on a legacy object the PlayerAuthInput path builds. The ItemStackRequestPacket's request is the other layout (actions by value at +0x10, 0x60-byte variants, index byte at +0x58). Done as derived() over that layout, executed on both builds 2026-10-01 (ukh40/51, 26 PASS); docs/findings-inventory.md section 26",
+   "target": "bds/packets.ts ItemStackRequestAction.type (+0x58) / implements.ts getActions"
+  },
+  "?sendBlockDestructionStarted@BlockEventCoordinator@@": {
+   "class": "moved",
+   "target": "?onStartDestroyBlock@ServerPlayerBlockUseHandler@@ (its only sender; 1.26 inlined the send, which gained an int)",
+   "evidence": "the lambda scope ?sendBlockDestructionStarted@...AEBVBlock@@EH@Z is built only in onStartDestroyBlock (40 0xaa2ad0 / 51 0x13e4ec0, tools/lambda-owner.mjs), whose callers are the auth-input block actions and SimulatedPlayer's preAiStep. Executed on both builds 2026-10-02 (simp bds: one blockDestructionStart per survival dig by a simulated player). docs/findings-slots.md \"Q7 through a simulated player\""
+  }
+ }
+}

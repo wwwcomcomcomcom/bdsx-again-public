@@ -1,0 +1,174 @@
+{
+ "_comment": "Static const data members shipped as bytes, not addresses (tools/extract-constants.mjs, docs/findings-layouts.md). Build-independent: the value of Vec3::ONE is (1,1,1) in every build, and the compiler no longer keeps storage for these in 1.26.",
+ "generatedFrom": "work/bin/1.21.3.01/bedrock_server.exe (BDS 1.21.3.01, the last build with a PDB)",
+ "generatedAt": "2026-09-18T03:25:47.647Z",
+ "constants": {
+  "?ZERO@Vec3@@2V1@B": {
+   "bytes": "000000000000000000000000",
+   "size": 12,
+   "type": "Vec3",
+   "value": "0, 0, 0",
+   "via": "zero-filled by the loader (0x3496458 is past the raw data of its section)",
+   "site": "bdsx/bds/blockpos.ts",
+   "required": true
+  },
+  "?ONE@Vec3@@2V1@B": {
+   "bytes": "0000803f0000803f0000803f",
+   "size": 12,
+   "type": "Vec3",
+   "value": "1, 1, 1",
+   "via": "read at RVA 0x2eef3c8 of BDS 1.21.3.01",
+   "site": "bdsx/bds/blockpos.ts",
+   "required": true
+  },
+  "?TWO@Vec3@@2V1@B": {
+   "bytes": "000000400000004000000040",
+   "size": 12,
+   "type": "Vec3",
+   "value": "2, 2, 2",
+   "via": "read at RVA 0x2eef3d8 of BDS 1.21.3.01",
+   "site": "bdsx/bds/blockpos.ts",
+   "required": true
+  },
+  "?HALF@Vec3@@2V1@B": {
+   "bytes": "0000003f0000003f0000003f",
+   "size": 12,
+   "type": "Vec3",
+   "value": "0.5, 0.5, 0.5",
+   "via": "read at RVA 0x2eef3e8 of BDS 1.21.3.01",
+   "site": "bdsx/bds/blockpos.ts",
+   "required": true
+  },
+  "?MIN@Vec3@@2V1@B": {
+   "bytes": "ffff7fffffff7fffffff7fff",
+   "size": 12,
+   "type": "Vec3",
+   "value": "-3.4028234663852886e+38, -3.4028234663852886e+38, -3.4028234663852886e+38",
+   "via": "read at RVA 0x2eef468 of BDS 1.21.3.01",
+   "site": "bdsx/bds/blockpos.ts",
+   "required": true
+  },
+  "?MAX@Vec3@@2V1@B": {
+   "bytes": "ffff7f7fffff7f7fffff7f7f",
+   "size": 12,
+   "type": "Vec3",
+   "value": "3.4028234663852886e+38, 3.4028234663852886e+38, 3.4028234663852886e+38",
+   "via": "read at RVA 0x2eef458 of BDS 1.21.3.01",
+   "site": "bdsx/bds/blockpos.ts",
+   "required": true
+  },
+  "?UNIT_X@Vec3@@2V1@B": {
+   "bytes": "0000803f0000000000000000",
+   "size": 12,
+   "type": "Vec3",
+   "value": "1, 0, 0",
+   "via": "read at RVA 0x2eef3f8 of BDS 1.21.3.01",
+   "site": "bdsx/bds/blockpos.ts",
+   "required": true
+  },
+  "?UNIT_Y@Vec3@@2V1@B": {
+   "bytes": "000000000000803f00000000",
+   "size": 12,
+   "type": "Vec3",
+   "value": "0, 1, 0",
+   "via": "read at RVA 0x2eef418 of BDS 1.21.3.01",
+   "site": "bdsx/bds/blockpos.ts",
+   "required": true
+  },
+  "?UNIT_Z@Vec3@@2V1@B": {
+   "bytes": "00000000000000000000803f",
+   "size": 12,
+   "type": "Vec3",
+   "value": "0, 0, 1",
+   "via": "read at RVA 0x2eef438 of BDS 1.21.3.01",
+   "site": "bdsx/bds/blockpos.ts",
+   "required": true
+  },
+  "?NEG_UNIT_X@Vec3@@2V1@B": {
+   "bytes": "000080bf0000000000000000",
+   "size": 12,
+   "type": "Vec3",
+   "value": "-1, 0, 0",
+   "via": "read at RVA 0x2eef408 of BDS 1.21.3.01",
+   "site": "bdsx/bds/blockpos.ts",
+   "required": true
+  },
+  "?NEG_UNIT_Y@Vec3@@2V1@B": {
+   "bytes": "00000000000080bf00000000",
+   "size": 12,
+   "type": "Vec3",
+   "value": "0, -1, 0",
+   "via": "read at RVA 0x2eef428 of BDS 1.21.3.01",
+   "site": "bdsx/bds/blockpos.ts",
+   "required": true
+  },
+  "?NEG_UNIT_Z@Vec3@@2V1@B": {
+   "bytes": "0000000000000000000080bf",
+   "size": 12,
+   "type": "Vec3",
+   "value": "0, 0, -1",
+   "via": "read at RVA 0x2eef448 of BDS 1.21.3.01",
+   "site": "bdsx/bds/blockpos.ts",
+   "required": true
+  },
+  "?ZERO@BlockPos@@2V1@B": {
+   "bytes": "000000000000000000000000",
+   "size": 12,
+   "type": "BlockPos",
+   "value": "0, 0, 0",
+   "via": "read at RVA 0x2dc7440 of BDS 1.21.3.01",
+   "site": "bdsx/bds/blockpos.ts",
+   "required": true
+  },
+  "?ONE@BlockPos@@2V1@B": {
+   "bytes": "010000000100000001000000",
+   "size": 12,
+   "type": "BlockPos",
+   "value": "1, 1, 1",
+   "via": "read at RVA 0x2dc7430 of BDS 1.21.3.01",
+   "site": "bdsx/bds/blockpos.ts",
+   "required": true
+  },
+  "?MIN@BlockPos@@2V1@B": {
+   "bytes": "000000800000008000000080",
+   "size": 12,
+   "type": "BlockPos",
+   "value": "-2147483648, -2147483648, -2147483648",
+   "via": "read at RVA 0x2dc7410 of BDS 1.21.3.01",
+   "site": "bdsx/bds/blockpos.ts",
+   "required": true
+  },
+  "?MAX@BlockPos@@2V1@B": {
+   "bytes": "ffffff7fffffff7fffffff7f",
+   "size": 12,
+   "type": "BlockPos",
+   "value": "2147483647, 2147483647, 2147483647",
+   "via": "read at RVA 0x2dc7420 of BDS 1.21.3.01",
+   "site": "bdsx/bds/blockpos.ts",
+   "required": true
+  },
+  "?INVALID_ID@ActorUniqueID@@2U1@B": {
+   "bytes": "ffffffffffffffff",
+   "size": 8,
+   "type": "ActorUniqueID",
+   "value": "0xffffffffffffffff",
+   "via": "read at RVA 0x333beb0 of BDS 1.21.3.01",
+   "site": "bdsx/bds/actor.ts",
+   "required": true
+  },
+  "?INVALID@ScoreboardId@@2U1@A": {
+   "bytes": "ffffffffffffffff0000000000000000",
+   "size": 16,
+   "type": "ScoreboardId",
+   "value": "id 0xffffffffffffffff, identityDef 0x0000000000000000",
+   "via": "read at RVA 0x333ee50 of BDS 1.21.3.01",
+   "site": "bdsx/bds/scoreboard.ts",
+   "required": true
+  }
+ },
+ "rejected": {
+  "?EMPTY_ITEM@ItemStack@@2V1@B": "holds a relocated address at +0: build-specific, not a value",
+  "?Invalid@IdentityDefinition@@2V1@B": "no relocation in the first 64 bytes, but bdsx's width for it is not established; left out",
+  "?INVALID_ABILITY@Abilities@@2VAbility@@A": "no relocation in the first 32 bytes, but bdsx's width for it is not established; left out"
+ }
+}

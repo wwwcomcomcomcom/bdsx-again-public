@@ -1,0 +1,14 @@
+{
+  "name": "bdsx-again",
+  "private": true,
+  "version": "1.0.0",
+  "description": "How bdsx was revived on PDB-less Bedrock Dedicated Server: the agent harness, the offline symbol-table tooling, and the automated and live-client verification",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}

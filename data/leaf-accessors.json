@@ -1,0 +1,1043 @@
+{
+ "_comment": "Required non-virtual members whose 2024 baseline body is a field access with no .pdata entry (tools/leaf-accessors.mjs): kind get/lea/set/get-hidden, width in bytes, off = the BASELINE offset (a prior). Target offsets live in data/candidates-instances-<v>.json accessors, read from live objects.",
+ "accessors": {
+  "?_getEntityId@EntityContext@@IEBA?AVEntityId@@XZ": {
+   "cls": "EntityContext",
+   "kind": "get-hidden",
+   "width": 4,
+   "off": 16,
+   "baselineRva": 41061088,
+   "sites": 1
+  },
+  "?_hasValue@StackResultStorageEntity@@IEBA_NXZ": {
+   "cls": "StackResultStorageEntity",
+   "kind": "get",
+   "width": 1,
+   "off": 24,
+   "zx": true,
+   "baselineRva": 5075696,
+   "sites": 1
+  },
+  "?_registry@EntityContext@@QEBAAEAVEntityRegistry@@XZ": {
+   "cls": "EntityContext",
+   "kind": "get",
+   "width": 8,
+   "off": 0,
+   "baselineRva": 5729648,
+   "sites": 1
+  },
+  "?getAmplifier@MobEffectInstance@@QEBAHXZ": {
+   "cls": "MobEffectInstance",
+   "kind": "get",
+   "width": 4,
+   "off": 20,
+   "baselineRva": 25880016,
+   "sites": 1
+  },
+  "?getAnimationMode@StructureSettings@@QEBA?AW4AnimationMode@@XZ": {
+   "cls": "StructureSettings",
+   "kind": "get",
+   "width": 1,
+   "off": 90,
+   "zx": true,
+   "baselineRva": 35314704,
+   "sites": 1
+  },
+  "?getAnimationSeconds@StructureSettings@@QEBAMXZ": {
+   "cls": "StructureSettings",
+   "kind": "get",
+   "width": 4,
+   "off": 92,
+   "float": true,
+   "baselineRva": 35314720,
+   "sites": 1
+  },
+  "?getAreas@TickingAreaListBase@@QEBAAEBV?$vector@V?$shared_ptr@VITickingArea@@@std@@V?$allocator@V?$shared_ptr@VITickingArea@@@std@@@2@@std@@XZ": {
+   "cls": "TickingAreaListBase",
+   "kind": "lea",
+   "width": 8,
+   "off": 8,
+   "baselineRva": 830976,
+   "sites": 2
+  },
+  "?getAttachedBlocks@PistonBlockActor@@QEBAAEBV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@XZ": {
+   "cls": "PistonBlockActor",
+   "kind": "lea",
+   "width": 8,
+   "off": 224,
+   "baselineRva": 5091088,
+   "sites": 2
+  },
+  "?getAvoidSun@NavigationComponent@@QEBA_NXZ": {
+   "cls": "NavigationComponent",
+   "kind": "get",
+   "width": 1,
+   "off": 2,
+   "zx": true,
+   "baselineRva": 6171136,
+   "sites": 1
+  },
+  "?getBlockEntityType@BlockLegacy@@QEBA?AW4BlockActorType@@XZ": {
+   "cls": "BlockLegacy",
+   "kind": "get",
+   "width": 4,
+   "off": 268,
+   "baselineRva": 29281120,
+   "sites": 1
+  },
+  "?getBlockSourceFromMainChunkSource@Dimension@@QEBAAEAVBlockSource@@XZ": {
+   "cls": "Dimension",
+   "kind": "get",
+   "width": 8,
+   "off": 208,
+   "baselineRva": 32811056,
+   "sites": 1
+  },
+  "?getBool@GameRule@@QEBA_NXZ": {
+   "cls": "GameRule",
+   "kind": "get",
+   "width": 1,
+   "off": 4,
+   "zx": true,
+   "baselineRva": 5664320,
+   "sites": 1
+  },
+  "?getCanFloat@NavigationComponent@@QEBA_NXZ": {
+   "cls": "NavigationComponent",
+   "kind": "get",
+   "width": 1,
+   "off": 5,
+   "zx": true,
+   "baselineRva": 5663680,
+   "sites": 1
+  },
+  "?getCanPathOverLava@NavigationComponent@@QEBA_NXZ": {
+   "cls": "NavigationComponent",
+   "kind": "get",
+   "width": 1,
+   "off": 6,
+   "zx": true,
+   "baselineRva": 5663696,
+   "sites": 1
+  },
+  "?getCertificate@ConnectionRequest@@QEBAPEBVCertificate@@XZ": {
+   "cls": "ConnectionRequest",
+   "kind": "get",
+   "width": 8,
+   "off": 8,
+   "baselineRva": 4821184,
+   "sites": 1
+  },
+  "?getChunkEntities@LevelChunk@@QEAAAEAV?$vector@VWeakEntityRef@@V?$allocator@VWeakEntityRef@@@std@@@std@@XZ": {
+   "cls": "LevelChunk",
+   "kind": "lea",
+   "width": 8,
+   "off": 4136,
+   "baselineRva": 35122544,
+   "sites": 2
+  },
+  "?getChunkSource@Dimension@@QEBAAEAVChunkSource@@XZ": {
+   "cls": "Dimension",
+   "kind": "get",
+   "width": 8,
+   "off": 416,
+   "baselineRva": 9553104,
+   "sites": 1
+  },
+  "?getCommandPermissions@LayeredAbilities@@QEBA?AW4CommandPermissionLevel@@XZ": {
+   "cls": "LayeredAbilities",
+   "kind": "get",
+   "width": 1,
+   "off": 0,
+   "zx": true,
+   "baselineRva": 5664336,
+   "sites": 1
+  },
+  "?getCommands@Minecraft@@QEAAAEAVMinecraftCommands@@XZ": {
+   "cls": "Minecraft",
+   "kind": "get",
+   "width": 8,
+   "off": 184,
+   "baselineRva": 25099872,
+   "sites": 2
+  },
+  "?getContainerType@Container@@QEBA?AW4ContainerType@@XZ": {
+   "cls": "Container",
+   "kind": "get",
+   "width": 1,
+   "off": 8,
+   "zx": true,
+   "baselineRva": 6171152,
+   "sites": 1
+  },
+  "?getCreativeCategory@BlockLegacy@@QEBA?AW4CreativeItemCategory@@XZ": {
+   "cls": "BlockLegacy",
+   "kind": "get",
+   "width": 4,
+   "off": 312,
+   "baselineRva": 29286704,
+   "sites": 1
+  },
+  "?getCreativeCategory@Item@@QEBA?AW4CreativeItemCategory@@XZ": {
+   "cls": "Item",
+   "kind": "get",
+   "width": 4,
+   "off": 464,
+   "baselineRva": 30062480,
+   "sites": 1
+  },
+  "?getDefaultState@BlockLegacy@@QEBAAEBVBlock@@XZ": {
+   "cls": "BlockLegacy",
+   "kind": "get",
+   "width": 8,
+   "off": 792,
+   "baselineRva": 29287584,
+   "sites": 1
+  },
+  "?getDestroySpeed@Block@@QEBAMXZ": {
+   "cls": "Block",
+   "kind": "get",
+   "width": 4,
+   "off": 128,
+   "float": true,
+   "baselineRva": 27640048,
+   "sites": 1
+  },
+  "?getDisplayName@Objective@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "cls": "Objective",
+   "kind": "lea",
+   "width": 8,
+   "off": 120,
+   "baselineRva": 25135648,
+   "sites": 1
+  },
+  "?getEntityData@Actor@@QEBAAEBVSynchedActorDataEntityWrapper@@XZ": {
+   "cls": "Actor",
+   "kind": "lea",
+   "width": 8,
+   "off": 400,
+   "baselineRva": 26943744,
+   "sites": 1
+  },
+  "?getEntityId@IdentityDefinition@@QEBAAEBUActorUniqueID@@XZ": {
+   "cls": "IdentityDefinition",
+   "kind": "lea",
+   "width": 8,
+   "off": 32,
+   "baselineRva": 1006544,
+   "sites": 1
+  },
+  "?getErrorMessage@Parser@CommandRegistry@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "cls": "CommandRegistry",
+   "kind": "lea",
+   "width": 8,
+   "off": 128,
+   "baselineRva": 5091056,
+   "sites": 2
+  },
+  "?getExplosionResistance@Block@@QEBAMXZ": {
+   "cls": "Block",
+   "kind": "get",
+   "width": 4,
+   "off": 112,
+   "float": true,
+   "baselineRva": 29026544,
+   "sites": 1
+  },
+  "?getFakePlayerName@IdentityDefinition@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "cls": "IdentityDefinition",
+   "kind": "lea",
+   "width": 8,
+   "off": 40,
+   "baselineRva": 2661712,
+   "sites": 2
+  },
+  "?getFloat@GameRule@@QEBAMXZ": {
+   "cls": "GameRule",
+   "kind": "get",
+   "width": 4,
+   "off": 4,
+   "float": true,
+   "baselineRva": 2655264,
+   "sites": 1
+  },
+  "?getGameDifficulty@LevelData@@QEBA?AW4Difficulty@@XZ": {
+   "cls": "LevelData",
+   "kind": "get",
+   "width": 4,
+   "off": 1248,
+   "baselineRva": 32548048,
+   "sites": 1
+  },
+  "?getGameMode@Player@@QEBAAEAVGameMode@@XZ": {
+   "cls": "Player",
+   "kind": "get",
+   "width": 8,
+   "off": 3784,
+   "baselineRva": 27126320,
+   "sites": 1
+  },
+  "?getHeight@Dimension@@QEBAFXZ": {
+   "cls": "Dimension",
+   "kind": "get",
+   "width": 2,
+   "off": 202,
+   "zx": true,
+   "baselineRva": 32812416,
+   "sites": 1
+  },
+  "?getId@MobEffect@@QEBAIXZ": {
+   "cls": "MobEffect",
+   "kind": "get",
+   "width": 4,
+   "off": 8,
+   "baselineRva": 2522112,
+   "sites": 1
+  },
+  "?getIdentityType@IdentityDefinition@@QEBA?AW4Type@1@XZ": {
+   "cls": "IdentityDefinition",
+   "kind": "get",
+   "width": 1,
+   "off": 72,
+   "zx": true,
+   "baselineRva": 33039760,
+   "sites": 1
+  },
+  "?getIgnoreBlocks@StructureSettings@@QEBA_NXZ": {
+   "cls": "StructureSettings",
+   "kind": "get",
+   "width": 1,
+   "off": 34,
+   "zx": true,
+   "baselineRva": 34282928,
+   "sites": 1
+  },
+  "?getIgnoreEntities@StructureSettings@@QEBA_NXZ": {
+   "cls": "StructureSettings",
+   "kind": "get",
+   "width": 1,
+   "off": 32,
+   "zx": true,
+   "baselineRva": 5084560,
+   "sites": 1
+  },
+  "?getInt@GameRule@@QEBAHXZ": {
+   "cls": "GameRule",
+   "kind": "get",
+   "width": 4,
+   "off": 4,
+   "baselineRva": 3091456,
+   "sites": 1
+  },
+  "?getIntegritySeed@StructureSettings@@QEBAIXZ": {
+   "cls": "StructureSettings",
+   "kind": "get",
+   "width": 4,
+   "off": 100,
+   "baselineRva": 25099952,
+   "sites": 1
+  },
+  "?getIntegrityValue@StructureSettings@@QEBAMXZ": {
+   "cls": "StructureSettings",
+   "kind": "get",
+   "width": 4,
+   "off": 96,
+   "float": true,
+   "baselineRva": 5664672,
+   "sites": 1
+  },
+  "?getLastHurtByMobTime@Actor@@QEAAHXZ": {
+   "cls": "Actor",
+   "kind": "get",
+   "width": 4,
+   "off": 972,
+   "baselineRva": 26950640,
+   "sites": 1
+  },
+  "?getLastHurtByMobTimestamp@Actor@@QEAAHXZ": {
+   "cls": "Actor",
+   "kind": "get",
+   "width": 4,
+   "off": 976,
+   "baselineRva": 26950656,
+   "sites": 1
+  },
+  "?getLastHurtCause@Actor@@QEBA?AW4ActorDamageCause@@XZ": {
+   "cls": "Actor",
+   "kind": "get",
+   "width": 4,
+   "off": 984,
+   "baselineRva": 26950768,
+   "sites": 1
+  },
+  "?getLastHurtDamage@Actor@@QEBAMXZ": {
+   "cls": "Actor",
+   "kind": "get",
+   "width": 4,
+   "off": 980,
+   "float": true,
+   "baselineRva": 26950784,
+   "sites": 1
+  },
+  "?getLastHurtMobTimestamp@Actor@@QEAAHXZ": {
+   "cls": "Actor",
+   "kind": "get",
+   "width": 4,
+   "off": 968,
+   "baselineRva": 26950880,
+   "sites": 1
+  },
+  "?getLastHurtTimestamp@Actor@@QEBA_KXZ": {
+   "cls": "Actor",
+   "kind": "get",
+   "width": 8,
+   "off": 992,
+   "baselineRva": 26950896,
+   "sites": 1
+  },
+  "?getLevel@Actor@@QEAAAEAVLevel@@XZ": {
+   "cls": "Actor",
+   "kind": "get",
+   "width": 8,
+   "off": 592,
+   "baselineRva": 26947760,
+   "sites": 1
+  },
+  "?getLevel@ChunkSource@@QEBAAEAVLevel@@XZ": {
+   "cls": "ChunkSource",
+   "kind": "get",
+   "width": 8,
+   "off": 32,
+   "baselineRva": 7219520,
+   "sites": 1
+  },
+  "?getLevel@LevelChunk@@QEBAAEAVLevel@@XZ": {
+   "cls": "LevelChunk",
+   "kind": "get",
+   "width": 8,
+   "off": 80,
+   "baselineRva": 9564800,
+   "sites": 1
+  },
+  "?getLightningLevel@LevelData@@QEBAMXZ": {
+   "cls": "LevelData",
+   "kind": "get",
+   "width": 4,
+   "off": 1180,
+   "float": true,
+   "baselineRva": 32552256,
+   "sites": 1
+  },
+  "?getLightningTime@LevelData@@QEBAHXZ": {
+   "cls": "LevelData",
+   "kind": "get",
+   "width": 4,
+   "off": 1184,
+   "baselineRva": 32552272,
+   "sites": 1
+  },
+  "?getMax@LevelChunk@@QEBAAEBVBlockPos@@XZ": {
+   "cls": "LevelChunk",
+   "kind": "lea",
+   "width": 8,
+   "off": 108,
+   "baselineRva": 35125104,
+   "sites": 1
+  },
+  "?getMessageId@CommandOutputMessage@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "cls": "CommandOutputMessage",
+   "kind": "lea",
+   "width": 8,
+   "off": 8,
+   "baselineRva": 830976,
+   "sites": 2
+  },
+  "?getMin@LevelChunk@@QEBAAEBVBlockPos@@XZ": {
+   "cls": "LevelChunk",
+   "kind": "lea",
+   "width": 8,
+   "off": 96,
+   "baselineRva": 1006640,
+   "sites": 1
+  },
+  "?getMinHeight@Dimension@@QEBAFXZ": {
+   "cls": "Dimension",
+   "kind": "get",
+   "width": 2,
+   "off": 200,
+   "zx": true,
+   "baselineRva": 32812480,
+   "sites": 1
+  },
+  "?getMirror@StructureSettings@@QEBA?AW4Mirror@@XZ": {
+   "cls": "StructureSettings",
+   "kind": "get",
+   "width": 1,
+   "off": 89,
+   "zx": true,
+   "baselineRva": 28525792,
+   "sites": 1
+  },
+  "?getName@Objective@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "cls": "Objective",
+   "kind": "lea",
+   "width": 8,
+   "off": 88,
+   "baselineRva": 8659136,
+   "sites": 1
+  },
+  "?getName@Player@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "cls": "Player",
+   "kind": "lea",
+   "width": 8,
+   "off": 7472,
+   "baselineRva": 27128480,
+   "sites": 1
+  },
+  "?getPairedChestPosition@ChestBlockActor@@QEAAAEBVBlockPos@@XZ": {
+   "cls": "ChestBlockActor",
+   "kind": "lea",
+   "width": 8,
+   "off": 680,
+   "baselineRva": 32545872,
+   "sites": 1
+  },
+  "?getParams@CommandOutputMessage@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ": {
+   "cls": "CommandOutputMessage",
+   "kind": "lea",
+   "width": 8,
+   "off": 40,
+   "baselineRva": 2661712,
+   "sites": 2
+  },
+  "?getPivot@StructureSettings@@QEBAAEBVVec3@@XZ": {
+   "cls": "StructureSettings",
+   "kind": "lea",
+   "width": 8,
+   "off": 64,
+   "baselineRva": 1006560,
+   "sites": 1
+  },
+  "?getPlatform@Player@@QEBA?AW4BuildPlatform@@XZ": {
+   "cls": "Player",
+   "kind": "get",
+   "width": 4,
+   "off": 1580,
+   "baselineRva": 27129536,
+   "sites": 1
+  },
+  "?getPlayerId@IdentityDefinition@@QEBAAEBUPlayerScoreboardId@@XZ": {
+   "cls": "IdentityDefinition",
+   "kind": "lea",
+   "width": 8,
+   "off": 24,
+   "baselineRva": 4985536,
+   "sites": 1
+  },
+  "?getPlayerPermissions@LayeredAbilities@@QEBA?AW4PlayerPermissionLevel@@XZ": {
+   "cls": "LayeredAbilities",
+   "kind": "get",
+   "width": 1,
+   "off": 1,
+   "zx": true,
+   "baselineRva": 5664352,
+   "sites": 1
+  },
+  "?getPosition@BlockActor@@QEBAAEBVBlockPos@@XZ": {
+   "cls": "BlockActor",
+   "kind": "lea",
+   "width": 8,
+   "off": 44,
+   "baselineRva": 34538784,
+   "sites": 2
+  },
+  "?getPosition@LevelChunk@@QEBAAEBVChunkPos@@XZ": {
+   "cls": "LevelChunk",
+   "kind": "lea",
+   "width": 8,
+   "off": 120,
+   "baselineRva": 25135648,
+   "sites": 1
+  },
+  "?getRainLevel@LevelData@@QEBAMXZ": {
+   "cls": "LevelData",
+   "kind": "get",
+   "width": 4,
+   "off": 1172,
+   "float": true,
+   "baselineRva": 32553760,
+   "sites": 1
+  },
+  "?getRainTime@LevelData@@QEBAHXZ": {
+   "cls": "LevelData",
+   "kind": "get",
+   "width": 4,
+   "off": 1176,
+   "baselineRva": 32553776,
+   "sites": 1
+  },
+  "?getRegistry@MinecraftCommands@@QEAAAEAVCommandRegistry@@XZ": {
+   "cls": "MinecraftCommands",
+   "kind": "get",
+   "width": 8,
+   "off": 16,
+   "baselineRva": 4823248,
+   "sites": 2
+  },
+  "?getRotation@StructureSettings@@QEBA?AW4Rotation@@XZ": {
+   "cls": "StructureSettings",
+   "kind": "get",
+   "width": 1,
+   "off": 88,
+   "zx": true,
+   "baselineRva": 5483968,
+   "sites": 1
+  },
+  "?getRuntimeId@Block@@QEBAAEBIXZ": {
+   "cls": "Block",
+   "kind": "lea",
+   "width": 8,
+   "off": 196,
+   "baselineRva": 29031664,
+   "sites": 1
+  },
+  "?getScoreboardId@ScoreboardIdentityRef@@QEBAAEBUScoreboardId@@XZ": {
+   "cls": "ScoreboardIdentityRef",
+   "kind": "lea",
+   "width": 8,
+   "off": 8,
+   "baselineRva": 830976,
+   "sites": 2
+  },
+  "?getSerializationId@Block@@QEBAAEBVCompoundTag@@XZ": {
+   "cls": "Block",
+   "kind": "lea",
+   "width": 8,
+   "off": 160,
+   "baselineRva": 26496592,
+   "sites": 1
+  },
+  "?getSize@StructureTemplate@@QEBAAEBVBlockPos@@XZ": {
+   "cls": "StructureTemplate",
+   "kind": "lea",
+   "width": 8,
+   "off": 52,
+   "baselineRva": 5671120,
+   "sites": 1
+  },
+  "?getSkin@Player@@QEAAAEAVSerializedSkin@@XZ": {
+   "cls": "Player",
+   "kind": "lea",
+   "width": 8,
+   "off": 1920,
+   "baselineRva": 27130176,
+   "sites": 1
+  },
+  "?getSpawnDimension@Player@@QEBA?AV?$AutomaticID@VDimension@@H@@XZ": {
+   "cls": "Player",
+   "kind": "get-hidden",
+   "width": 4,
+   "off": 6536,
+   "baselineRva": 27130688,
+   "sites": 1
+  },
+  "?getSpawnPosition@Player@@QEBAAEBVBlockPos@@XZ": {
+   "cls": "Player",
+   "kind": "lea",
+   "width": 8,
+   "off": 6524,
+   "baselineRva": 27130704,
+   "sites": 1
+  },
+  "?getSpeed@NavigationComponent@@QEBAMXZ": {
+   "cls": "NavigationComponent",
+   "kind": "get",
+   "width": 4,
+   "off": 36,
+   "float": true,
+   "baselineRva": 5664656,
+   "sites": 1
+  },
+  "?getStructureOffset@StructureSettings@@QEBAAEBVBlockPos@@XZ": {
+   "cls": "StructureSettings",
+   "kind": "lea",
+   "width": 8,
+   "off": 52,
+   "baselineRva": 5671120,
+   "sites": 1
+  },
+  "?getStructureSize@StructureSettings@@QEBAAEBVBlockPos@@XZ": {
+   "cls": "StructureSettings",
+   "kind": "lea",
+   "width": 8,
+   "off": 40,
+   "baselineRva": 2661712,
+   "sites": 1
+  },
+  "?getSuccessCount@CommandOutput@@QEBAHXZ": {
+   "cls": "CommandOutput",
+   "kind": "get",
+   "width": 4,
+   "off": 40,
+   "baselineRva": 6520144,
+   "sites": 1
+  },
+  "?getSupplies@Player@@QEAAAEAVPlayerInventory@@XZ": {
+   "cls": "Player",
+   "kind": "get",
+   "width": 8,
+   "off": 1888,
+   "baselineRva": 27130784,
+   "sites": 1
+  },
+  "?getTicking@CommandBlockComponent@@QEBA_NXZ": {
+   "cls": "CommandBlockComponent",
+   "kind": "get",
+   "width": 1,
+   "off": 156,
+   "zx": true,
+   "baselineRva": 5731424,
+   "sites": 1
+  },
+  "?getType@BlockActor@@QEBAAEBW4BlockActorType@@XZ": {
+   "cls": "BlockActor",
+   "kind": "lea",
+   "width": 8,
+   "off": 80,
+   "baselineRva": 8289984,
+   "sites": 1
+  },
+  "?getType@CommandOutput@@QEBA?AW4CommandOutputType@@XZ": {
+   "cls": "CommandOutput",
+   "kind": "get",
+   "width": 4,
+   "off": 0,
+   "baselineRva": 3091440,
+   "sites": 1
+  },
+  "?getType@CommandOutputMessage@@QEBA?AW4CommandOutputMessageType@@XZ": {
+   "cls": "CommandOutputMessage",
+   "kind": "get",
+   "width": 4,
+   "off": 0,
+   "baselineRva": 3091440,
+   "sites": 1
+  },
+  "?getUserData@ItemStackBase@@QEAAPEAVCompoundTag@@XZ": {
+   "cls": "ItemStackBase",
+   "kind": "get",
+   "width": 8,
+   "off": 16,
+   "baselineRva": 4823248,
+   "sites": 1
+  },
+  "?isFatal@DamageSensorComponent@@QEBA_NXZ": {
+   "cls": "DamageSensorComponent",
+   "kind": "get",
+   "width": 1,
+   "off": 4,
+   "zx": true,
+   "baselineRva": 5664320,
+   "sites": 1
+  },
+  "?isSpawned@Player@@QEBA_NXZ": {
+   "cls": "Player",
+   "kind": "get",
+   "width": 1,
+   "off": 2904,
+   "zx": true,
+   "baselineRva": 27140288,
+   "sites": 1
+  },
+  "?isSuccess@MCRESULT@@QEBA_NXZ": {
+   "cls": "MCRESULT",
+   "kind": "get",
+   "width": 1,
+   "off": 0,
+   "zx": true,
+   "baselineRva": 5664336,
+   "sites": 1
+  },
+  "?setAnimationMode@StructureSettings@@QEAAXW4AnimationMode@@@Z": {
+   "cls": "StructureSettings",
+   "kind": "set",
+   "width": 1,
+   "off": 90,
+   "baselineRva": 35358656,
+   "sites": 1
+  },
+  "?setAnimationSeconds@StructureSettings@@QEAAXM@Z": {
+   "cls": "StructureSettings",
+   "kind": "set",
+   "width": 4,
+   "off": 92,
+   "float": true,
+   "baselineRva": 35358672,
+   "sites": 1
+  },
+  "?setAvoidSun@NavigationComponent@@QEAAX_N@Z": {
+   "cls": "NavigationComponent",
+   "kind": "set",
+   "width": 1,
+   "off": 2,
+   "baselineRva": 6206608,
+   "sites": 1
+  },
+  "?setAvoidWater@NavigationComponent@@QEAAX_N@Z": {
+   "cls": "NavigationComponent",
+   "kind": "set",
+   "width": 1,
+   "off": 3,
+   "baselineRva": 6008656,
+   "sites": 1
+  },
+  "?setCanFloat@NavigationComponent@@QEAAX_N@Z": {
+   "cls": "NavigationComponent",
+   "kind": "set",
+   "width": 1,
+   "off": 5,
+   "baselineRva": 6206624,
+   "sites": 1
+  },
+  "?setCause@ActorDamageSource@@QEAAXW4ActorDamageCause@@@Z": {
+   "cls": "ActorDamageSource",
+   "kind": "set",
+   "width": 4,
+   "off": 8,
+   "baselineRva": 6008048,
+   "sites": 1
+  },
+  "?setCommandPermissions@LayeredAbilities@@QEAAXW4CommandPermissionLevel@@@Z": {
+   "cls": "LayeredAbilities",
+   "kind": "set",
+   "width": 1,
+   "off": 0,
+   "baselineRva": 5696400,
+   "sites": 2
+  },
+  "?setGameDifficulty@LevelData@@QEAAXW4Difficulty@@@Z": {
+   "cls": "LevelData",
+   "kind": "set",
+   "width": 4,
+   "off": 1248,
+   "baselineRva": 32597232,
+   "sites": 1
+  },
+  "?setIgnoreBlocks@StructureSettings@@QEAAX_N@Z": {
+   "cls": "StructureSettings",
+   "kind": "set",
+   "width": 1,
+   "off": 34,
+   "baselineRva": 35359424,
+   "sites": 1
+  },
+  "?setIgnoreEntities@StructureSettings@@QEAAX_N@Z": {
+   "cls": "StructureSettings",
+   "kind": "set",
+   "width": 1,
+   "off": 32,
+   "baselineRva": 5084544,
+   "sites": 1
+  },
+  "?setIgnoreJigsawBlocks@StructureSettings@@QEAAX_N@Z": {
+   "cls": "StructureSettings",
+   "kind": "set",
+   "width": 1,
+   "off": 36,
+   "baselineRva": 35359440,
+   "sites": 2
+  },
+  "?setIntegritySeed@StructureSettings@@QEAAXI@Z": {
+   "cls": "StructureSettings",
+   "kind": "set",
+   "width": 4,
+   "off": 100,
+   "baselineRva": 35359456,
+   "sites": 1
+  },
+  "?setLightningLevel@LevelData@@QEAAXM@Z": {
+   "cls": "LevelData",
+   "kind": "set",
+   "width": 4,
+   "off": 1180,
+   "float": true,
+   "baselineRva": 32599248,
+   "sites": 1
+  },
+  "?setLightningTime@LevelData@@QEAAXH@Z": {
+   "cls": "LevelData",
+   "kind": "set",
+   "width": 4,
+   "off": 1184,
+   "baselineRva": 32599264,
+   "sites": 1
+  },
+  "?setMirror@StructureSettings@@QEAAXW4Mirror@@@Z": {
+   "cls": "StructureSettings",
+   "kind": "set",
+   "width": 1,
+   "off": 89,
+   "baselineRva": 35359536,
+   "sites": 1
+  },
+  "?setOwnerId@ProjectileComponent@@QEAAXUActorUniqueID@@@Z": {
+   "cls": "ProjectileComponent",
+   "kind": "set",
+   "width": 8,
+   "off": 8,
+   "baselineRva": 6210496,
+   "sites": 2
+  },
+  "?setRainLevel@LevelData@@QEAAXM@Z": {
+   "cls": "LevelData",
+   "kind": "set",
+   "width": 4,
+   "off": 1172,
+   "float": true,
+   "baselineRva": 32600224,
+   "sites": 1
+  },
+  "?setRainTime@LevelData@@QEAAXH@Z": {
+   "cls": "LevelData",
+   "kind": "set",
+   "width": 4,
+   "off": 1176,
+   "baselineRva": 32600240,
+   "sites": 1
+  },
+  "?setReloadActorEquipment@StructureSettings@@QEAAX_N@Z": {
+   "cls": "StructureSettings",
+   "kind": "set",
+   "width": 1,
+   "off": 33,
+   "baselineRva": 35359664,
+   "sites": 2
+  },
+  "?setRotation@StructureSettings@@QEAAXW4Rotation@@@Z": {
+   "cls": "StructureSettings",
+   "kind": "set",
+   "width": 1,
+   "off": 88,
+   "baselineRva": 10677472,
+   "sites": 1
+  },
+  "?setSpeed@NavigationComponent@@QEAAXM@Z": {
+   "cls": "NavigationComponent",
+   "kind": "set",
+   "width": 4,
+   "off": 36,
+   "float": true,
+   "baselineRva": 6211952,
+   "sites": 1
+  }
+ },
+ "otherLeaves": {
+  "?_getLaunchPower@ThrowableItemComponent@@AEBAMHHH@Z": "cmpb\t$0, 36(%rcx) ; movss\t16182000(%rip), %xmm3 ; je\t57",
+  "?_nextContainerCounter@ServerPlayer@@AEAA?AW4ContainerID@@XZ": "movzbl\t7744(%rcx), %eax ; incb\t%al ; movb\t%al, 7744(%rcx)",
+  "?add@ItemStackBase@@QEAAXH@Z": "movl\t%edx, %eax ; movzbl\t34(%rcx), %edx ; addl\t%eax, %edx",
+  "?add@PlayerInventory@@QEAA_NAEAVItemStack@@_N@Z": "movq\t192(%rcx), %rcx ; movq\t(%rcx), %rax ; movq\t328(%rax), %rax",
+  "?canAdd@PlayerInventory@@QEBA_NAEBVItemStack@@@Z": "movq\t192(%rcx), %rcx ; movq\t(%rcx), %rax ; movq\t336(%rax), %rax",
+  "?clear@CompoundTag@@QEAAXXZ": "addq\t$8, %rcx ; jmp\t-249 ; int3",
+  "?clearSlot@PlayerInventory@@QEAAXHW4ContainerID@@@Z": "testb\t%r8b, %r8b ; jne\t24 ; movq\t192(%rcx), %rcx",
+  "?destroyBlock@Level@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z": "movq\t8280(%rcx), %rcx ; testq\t%rcx, %rcx ; jne\t3",
+  "?equalsTypeData@NetworkIdentifier@@AEBA_NAEBV1@@Z": "movl\t152(%rcx), %r8d ; testl\t%r8d, %r8d ; je\t102",
+  "?error@CommandOutput@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VCommandOutputParameter@@V?$allocator@VCommandOutputParameter@@@std@@@3@@Z": "cmpl\t$0, (%rcx) ; je\t11 ; movl\t$1, %r9d",
+  "?getAbility@LayeredAbilities@@QEAAAEAVAbility@@W4AbilitiesLayer@@W4AbilitiesIndex@@@Z": "cmpw\t$5, %dx ; jae\t19 ; movzwl\t%dx, %eax",
+  "?getAbility@LayeredAbilities@@QEBAAEBVAbility@@W4AbilitiesIndex@@@Z": "leaq\t1144(%rcx), %rax ; movsbq\t%dl, %r8 ; leaq\t4(%rcx), %r9",
+  "?getActiveGameplayUsers@GameplayUserManager@@QEBAAEBV?$vector@VWeakEntityRef@@V?$allocator@VWeakEntityRef@@@std@@@std@@XZ": "movq\t%rcx, %rax ; retq ; int3",
+  "?getAnimationTicks@StructureSettings@@QEBAIXZ": "movss\t92(%rcx), %xmm0 ; mulss\t10665963(%rip), %xmm0 ; jmp\t5775854",
+  "?getAttackDamage@ItemStackBase@@QEBAHXZ": "movq\t8(%rcx), %rax ; testq\t%rax, %rax ; je\t25",
+  "?getAuxValue@ItemStackBase@@QEBAFXZ": "movq\t24(%rcx), %rax ; testq\t%rax, %rax ; je\t16",
+  "?getBlockItemId@BlockLegacy@@QEBAFXZ": "movzwl\t422(%rcx), %edx ; movl\t$256, %eax ; cmpw\t%ax, %dx",
+  "?getBool@Abilities@@QEBA_NW4AbilitiesIndex@@@Z": "cmpb\t$18, %dl ; ja\t14 ; movsbq\t%dl, %rax",
+  "?getBool@Ability@@QEBA_NXZ": "cmpb\t$1, (%rcx) ; jne\t3 ; xorb\t%al, %al",
+  "?getBool@LayeredAbilities@@QEBA_NW4AbilitiesIndex@@@Z": "leaq\t1144(%rcx), %rax ; movsbq\t%dl, %r8 ; leaq\t4(%rcx), %r9",
+  "?getComponentName@MobEffectInstance@@QEBAAEBVHashedString@@XZ": "movl\t(%rcx), %eax ; cmpl\t$37, %eax ; jae\t23",
+  "?getContainerSize@PlayerInventory@@QEBAHW4ContainerID@@@Z": "testb\t%dl, %dl ; jne\t24 ; movq\t192(%rcx), %rcx",
+  "?getDamageValue@ItemStackBase@@QEBAFXZ": "movq\t8(%rcx), %rax ; testq\t%rax, %rax ; je\t20",
+  "?getEmptySlotsCount@ContainerComponent@@QEBAHXZ": "movq\t16(%rcx), %rax ; addq\t$16, %rcx ; movq\t208(%rax), %rax",
+  "?getEnchantValue@ItemStackBase@@QEBAHXZ": "movq\t8(%rcx), %rax ; testq\t%rax, %rax ; je\t25",
+  "?getFirstEmptySlot@PlayerInventory@@QEBAHXZ": "movq\t192(%rcx), %rcx ; movq\t(%rcx), %rax ; movq\t368(%rax), %rax",
+  "?getFloat@Abilities@@QEBAMW4AbilitiesIndex@@@Z": "cmpb\t$18, %dl ; ja\t14 ; movsbq\t%dl, %rax",
+  "?getFloat@Ability@@QEBAMXZ": "cmpb\t$1, (%rcx) ; jne\t4 ; xorps\t%xmm0, %xmm0",
+  "?getFullCode@MCRESULT@@QEBAHXZ": "xorl\t%eax, %eax ; movl\t$32768, %edx ; cmpb\t%al, (%rcx)",
+  "?getHealth@Actor@@QEBAHXZ": "addq\t$8, %rcx ; jmp\t-1343465 ; int3",
+  "?getHotbarSize@PlayerInventory@@QEBAHXZ": "movq\t192(%rcx), %rcx ; jmp\t-14955628 ; int3",
+  "?getId@ItemStackBase@@QEBAFXZ": "cmpb\t$0, 35(%rcx) ; jne\t6 ; movl\t$4294967295, %eax",
+  "?getInput@PlayerAuthInputPacket@@QEBA_NW4InputData@1@@Z": "movslq\t%edx, %r8 ; movzbl\t%r8b, %eax ; shrq\t$6, %r8",
+  "?getInputMode@PlayerMovement@@YA?AW4InputMode@@AEBVEntityContext@@@Z": "movq\t8(%rcx), %r10 ; movl\t$4168838547, %r11d ; movl\t16(%rcx), %eax",
+  "?getItem@ItemStackBase@@QEBAPEBVItem@@XZ": "movq\t8(%rcx), %rax ; testq\t%rax, %rax ; je\t4",
+  "?getItem@PlayerInventory@@QEBAAEBVItemStack@@HW4ContainerID@@@Z": "testb\t%r8b, %r8b ; jne\t21 ; movq\t192(%rcx), %rcx",
+  "?getLastStuckCheckPosition@NavigationComponent@@QEBA?AVVec3@@XZ": "movl\t52(%rcx), %eax ; movsd\t44(%rcx), %xmm0 ; movsd\t%xmm0, (%rdx)",
+  "?getLayer@LayeredAbilities@@QEAAAEAVAbilities@@W4AbilitiesLayer@@@Z": "cmpw\t$5, %dx ; jae\t18 ; movzwl\t%dx, %eax",
+  "?getLine@ConsoleInputReader@@QEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z": "jmp\t-3605 ; int3 ; int3",
+  "?getMaxDamage@ItemStackBase@@QEBAFXZ": "movq\t8(%rcx), %rax ; testq\t%rax, %rax ; je\t25",
+  "?getMaxHealth@Actor@@QEBAHXZ": "addq\t$8, %rcx ; jmp\t-1346185 ; int3",
+  "?getMoonPhase@Dimension@@QEBAHXZ": "movq\t192(%rcx), %rcx ; jmp\t-4765084 ; int3",
+  "?getMutableInstance@BaseAttributeMap@@QEAAPEAVAttributeInstance@@I@Z": "movq\t%rcx, %r9 ; movl\t%edx, 16(%rsp) ; movabsq\t$1099511628211, %rcx",
+  "?getNameTag@Actor@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": "movl\t$4, %edx ; addq\t$400, %rcx ; jmp\t-170753",
+  "?getPlayerUIItem@Player@@QEAAAEBVItemStack@@W4PlayerUISlot@@@Z": "addq\t$3352, %rcx ; movq\t(%rcx), %rax ; movq\t56(%rax), %rax",
+  "?getRule@GameRules@@QEBAPEBVGameRule@@UGameRuleId@@@Z": "movslq\t(%rdx), %r8 ; testl\t%r8d, %r8d ; js\t52",
+  "?getSelectedItem@Player@@QEBAAEBVItemStack@@XZ": "movq\t1888(%rcx), %rcx ; jmp\t-1515388 ; int3",
+  "?getSelectedItem@PlayerInventory@@QEBAAEBVItemStack@@XZ": "cmpb\t$0, 184(%rcx) ; movq\t%rcx, %rdx ; jne\t24",
+  "?getSlotWithItem@PlayerInventory@@QEBAHAEBVItemStack@@_N1@Z": "movq\t192(%rcx), %rcx ; jmp\t888100 ; int3",
+  "?getVariant@Actor@@QEBAHXZ": "movl\t$2, %edx ; addq\t$400, %rcx ; jmp\t-178369",
+  "?hasName@CommandSelectorBase@@QEBA_NXZ": "movq\t16(%rcx), %rax ; movq\t24(%rcx), %rdx ; cmpq\t%rdx, %rax",
+  "?hasOpenContainer@Player@@QEBA_NXZ": "cmpq\t$0, 1872(%rcx) ; setne\t%al ; retq",
+  "?hasRespawnPosition@Player@@QEBA_NXZ": "movl\t20869802(%rip), %eax ; cmpl\t%eax, 6524(%rcx) ; jne\t28",
+  "?hasRule@GameRules@@QEBA_NUGameRuleId@@@Z": "movl\t(%rdx), %r8d ; movq\t%rcx, %rax ; testl\t%r8d, %r8d",
+  "?isAngry@Actor@@QEBA_NXZ": "movq\t(%rcx), %rax ; movl\t$25, %edx ; movq\t(%rax), %rax",
+  "?isBaby@Actor@@QEBA_NXZ": "movq\t(%rcx), %rax ; movl\t$11, %edx ; movq\t(%rax), %rax",
+  "?isExplodable@ItemStackBase@@QEBA_NXZ": "movq\t8(%rcx), %rax ; testq\t%rax, %rax ; je\t12",
+  "?isFireResistant@ItemStackBase@@QEBA_NXZ": "movq\t8(%rcx), %rax ; testq\t%rax, %rax ; je\t12",
+  "?isFullyLoaded@LevelChunk@@QEBA_NXZ": "movzbl\t216(%rcx), %eax ; movzbl\t4538(%rcx), %edx ; nop",
+  "?isGlint@ItemStackBase@@QEBA_NXZ": "movq\t8(%rcx), %rax ; movq\t%rcx, %rdx ; testq\t%rax, %rax",
+  "?isInLove@Actor@@QEBA_NXZ": "movq\t(%rcx), %rax ; movl\t$7, %edx ; movq\t(%rax), %rax",
+  "?isInScaffolding@Actor@@QEBA_NXZ": "movq\t(%rcx), %rax ; movl\t$69, %edx ; movq\t(%rax), %rax",
+  "?isInWater@Actor@@QEBA_NXZ": "addq\t$8, %rcx ; jmp\t-1369657 ; int3",
+  "?isJumping@Actor@@QEBA_NXZ": "addq\t$8, %rcx ; jmp\t-1352681 ; int3",
+  "?isLargeChest@ChestBlockActor@@QEBA_NXZ": "cmpq\t$0, 672(%rcx) ; setne\t%al ; retq",
+  "?isMoving@Actor@@QEBA_NXZ": "movq\t(%rcx), %rax ; movl\t$34, %edx ; movq\t(%rax), %rax",
+  "?isPattern@ItemStackBase@@QEBA_NXZ": "movq\t8(%rcx), %rax ; testq\t%rax, %rax ; je\t25",
+  "?isSneaking@Actor@@QEBA_NXZ": "movq\t(%rcx), %rax ; movl\t$1, %edx ; movq\t(%rax), %rax",
+  "?isSprinting@Mob@@QEBA_NXZ": "movq\t(%rcx), %rax ; movl\t$3, %edx ; movq\t(%rax), %rax",
+  "?isStuck@NavigationComponent@@QEBA_NH@Z": "movl\t20(%rcx), %eax ; subl\t28(%rcx), %eax ; cmpl\t%edx, %eax",
+  "?isSwimming@Actor@@QEBA_NXZ": "movq\t(%rcx), %rax ; movl\t$57, %edx ; movq\t(%rax), %rax",
+  "?isUnbreakable@Block@@QEBA_NXZ": "xorps\t%xmm0, %xmm0 ; comiss\t128(%rcx), %xmm0 ; seta\t%al",
+  "?isValid@ScoreboardId@@QEBA_NXZ": "movq\t19379209(%rip), %rax ; cmpq\t%rax, (%rcx) ; setne\t%al",
+  "?isWithinRange@CommandIntegerRange@@QEBA_NH@Z": "cmpb\t$0, 9(%rcx) ; movl\t(%rcx), %eax ; je\t18",
+  "?remove@ItemStackBase@@QEAAXH@Z": "movl\t%edx, %eax ; movzbl\t34(%rcx), %edx ; subl\t%eax, %edx",
+  "?resendAllChunks@Player@@QEAAXXZ": "movq\t3128(%rcx), %rcx ; testq\t%rcx, %rcx ; jne\t-13986064",
+  "?sendEvent@ServerInstanceEventCoordinator@@QEAAXAEBV?$EventRef@U?$ServerInstanceGameplayEvent@X@@@@@Z": "movq\t%rdx, %r8 ; movq\t112(%rcx), %rdx ; jmp\t-125436",
+  "?setAbility@Abilities@@QEAAXW4AbilitiesIndex@@_N@Z": "cmpb\t$18, %dl ; ja\t14 ; movsbq\t%dl, %rax",
+  "?setAbility@LayeredAbilities@@QEAAXW4AbilitiesIndex@@_N@Z": "cmpb\t$18, %dl ; ja\t18 ; movsbq\t%dl, %rax",
+  "?setAbility@LayeredAbilities@@QEAAXW4AbilitiesIndex@@M@Z": "cmpb\t$18, %dl ; ja\t18 ; movsbq\t%dl, %rax",
+  "?setAffectedByGravity@PhysicsComponent@@QEBAXAEAUActorDataFlagComponent@@AEAUActorDataDirtyFlagsComponent@@_N@Z": "movq\t%r8, %rax ; movq\t%rdx, %rcx ; movq\t%rax, %rdx",
+  "?setAllowOffhand@Item@@QEAAAEAV1@_N@Z": "movzbl\t330(%rcx), %eax ; andb\t$127, %al ; shlb\t$7, %dl",
+  "?setAuxValue@ItemStackBase@@QEAAXF@Z": "xorl\t%eax, %eax ; testw\t%dx, %dx ; cmovgw\t%dx, %ax",
+  "?setBool@Ability@@QEAAX_N@Z": "cmpb\t$1, (%rcx) ; jne\t7 ; movb\t$2, (%rcx)",
+  "?setChanged@BlockActor@@QEAAXXZ": "movb\t$1, 192(%rcx) ; retq ; int3",
+  "?setCursorSelectedItem@Player@@QEAAXAEBVItemStack@@@Z": "movq\t%rdx, %r8 ; xorl\t%edx, %edx ; jmp\t1830",
+  "?setDamageValue@ItemStackBase@@QEAAXF@Z": "movq\t8(%rcx), %rax ; movzwl\t%dx, %r8d ; movq\t%rcx, %rdx",
+  "?setDestroyTime@BlockLegacy@@QEAAAEAV1@M@Z": "movss\t%xmm1, 388(%rcx) ; movq\t%rcx, %rax ; movss\t%xmm1, 392(%rcx)",
+  "?setHasCollision@PhysicsComponent@@QEAAXAEAVActor@@_N@Z": "movq\t(%rdx), %rax ; movq\t%rdx, %rcx ; movl\t$48, %edx",
+  "?setIncludeDeadPlayers@CommandSelectorBase@@QEAAX_N@Z": "cmpb\t$0, 192(%rcx) ; movb\t%dl, 184(%rcx) ; je\t7",
+  "?setIntegrityValue@StructureSettings@@QEAAXM@Z": "xorps\t%xmm0, %xmm0 ; maxss\t%xmm0, %xmm1 ; minss\t10668749(%rip), %xmm1",
+  "?setLocalPlayerAsInitialized@ServerPlayer@@QEAAXXZ": "movb\t$1, 7754(%rcx) ; retq ; int3",
+  "?setNameTagVisible@Actor@@QEAAX_N@Z": "movq\t(%rcx), %rax ; movzbl\t%dl, %r8d ; movl\t$14, %edx",
+  "?setPlayerPermissions@LayeredAbilities@@QEAAXW4PlayerPermissionLevel@@@Z": "movzbl\t%dl, %r8d ; movzbl\t1(%rcx), %edx ; movb\t%r8b, 1(%rcx)",
+  "?setRespawnReady@Player@@QEAAXAEBVVec3@@@Z": "movl\t(%rdx), %eax ; movl\t%eax, 6604(%rcx) ; movl\t4(%rdx), %eax",
+  "?setScoreTag@Actor@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z": "movq\t%rdx, %r8 ; addq\t$400, %rcx ; movl\t$84, %edx",
+  "?setSelectedItem@PlayerInventory@@QEAAXAEBVItemStack@@@Z": "cmpb\t$0, 184(%rcx) ; movq\t%rcx, %r9 ; jne\t28",
+  "?setStructureOffset@StructureSettings@@QEAAXAEBVBlockPos@@@Z": "movsd\t(%rdx), %xmm0 ; movsd\t%xmm0, 52(%rcx) ; movl\t8(%rdx), %eax",
+  "?setStructureSize@StructureSettings@@QEAAXAEBVBlockPos@@@Z": "movsd\t(%rdx), %xmm0 ; movsd\t%xmm0, 40(%rcx) ; movl\t8(%rdx), %eax",
+  "?setType@CommandSelectorBase@@QEAAXW4CommandSelectionType@@@Z": "cmpb\t$0, 192(%rcx) ; movl\t%edx, 4(%rcx) ; je\t7",
+  "?size@ListTag@@QEBAHXZ": "movq\t16(%rcx), %rax ; subq\t8(%rcx), %rax ; sarq\t$3, %rax",
+  "?size@Value@Json@@QEBAIXZ": "movsbq\t8(%rcx), %rax ; cmpl\t$7, %eax ; ja\t44",
+  "?stop@NavigationComponent@@QEAAXAEAVMob@@@Z": "movq\t%rdx, %r8 ; movq\t%rcx, %rdx ; movq\t96(%rcx), %rcx",
+  "?success@CommandOutput@@QEAAXXZ": "incl\t40(%rcx) ; retq ; int3",
+  "?swapSlots@PlayerInventory@@QEAAXHH@Z": "movq\t192(%rcx), %rcx ; jmp\t847508 ; int3",
+  "?toWorldPos@LevelChunk@@QEBA?AVBlockPos@@AEBVChunkBlockPos@@@Z": "movzbl\t(%r8), %eax ; addl\t96(%rcx), %eax ; movl\t%eax, (%rdx)",
+  "?wasLastHitByPlayer@Actor@@QEAA_NXZ": "cmpl\t$0, 392(%rcx) ; setg\t%al ; retq"
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "_comment": "BDS 1.26.51.1. Constructors and destructors found from the vftable they store (tools/ctor-from-vftable.mjs, docs/findings-instances.md \"Constructors from held tables\"): every referencing function of a held table is a constructor, a destructor or a caller that inlined one, and the candidate is the one whose body matches the PDB-named 1.21.3.01 body instruction for instruction -- same field offsets, same constants, same callee shape -- with the alloc-failure path and, on 1.26.40.8, the UUID generation inlined. Never hook targets (merge-symbols.mjs does not trust this source for hooks). Names that also fired under a counter probe are in data/resolved-1.26.51.1.json instead.",
+ "generatedAt": "2026-09-18",
+ "symbols": {
+  "??0VirtualCommandOrigin@@QEAA@AEBVCommandOrigin@@AEAVActor@@AEBVCommandPositionFloat@@H@Z": 18927232,
+  "??0VirtualCommandOrigin@@QEAA@AEBVCommandOrigin@@0AEBVCommandPositionFloat@@H@Z": 18926784,
+  "??0CompoundTag@@QEAA@XZ": 42258480,
+  "??0CompoundTag@@QEAA@$$QEAV0@@Z": 42258592,
+  "??1CompoundTag@@UEAA@XZ": 42258784
+ },
+ "evidence": {
+  "??0VirtualCommandOrigin@@QEAA@AEBVCommandOrigin@@AEAVActor@@AEBVCommandPositionFloat@@H@Z": {
+   "rva": "0x120ce80",
+   "size": 435,
+   "callers": 1,
+   "evidence": "same as 1.26.40.8 (0x12eb9b0) with the CommandOrigin constructor out of line (0x1ccc540); its one caller 0x3a702c0 (3647B) is the pair of 40's 0x3cdc480 by shape; not executed."
+  },
+  "??0VirtualCommandOrigin@@QEAA@AEBVCommandOrigin@@0AEBVCommandPositionFloat@@H@Z": {
+   "rva": "0x120ccc0",
+   "size": 307,
+   "callers": 4,
+   "evidence": "called by the named ?clone@VirtualCommandOrigin@@ (0x120f260), as on 1.26.40.8 and in the baseline."
+  },
+  "??0CompoundTag@@QEAA@XZ": {
+   "rva": "0x284d030",
+   "size": 107,
+   "callers": 4,
+   "evidence": "cross-build pair of 1.26.40.8's 0x1bec220 (work/derived40to51/pairs.json), same body; its lea operand is the CompoundTag table on this build (0xa7b0e30, 11 slots in the scan), which the carry had not aligned."
+  },
+  "??0CompoundTag@@QEAA@$$QEAV0@@Z": {
+   "rva": "0x284d0a0",
+   "size": 152,
+   "callers": 1,
+   "evidence": "adjacent to the default constructor; the same head-allocate-and-swap body as 1.26.40.8's 0x1bec2c0."
+  },
+  "??1CompoundTag@@UEAA@XZ": {
+   "rva": "0x284d160",
+   "size": 57,
+   "callers": 346,
+   "evidence": "the 57-byte referencing function with 346 callers, same body as 1.26.40.8's 0x1bec3b0."
+  }
+ }
+}

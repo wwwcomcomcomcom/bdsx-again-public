@@ -1,0 +1,43 @@
+{
+ "_comment": "BDS 1.26.40.8. Constructors and destructors found from the vftable they store (tools/ctor-from-vftable.mjs, docs/findings-instances.md \"Constructors from held tables\"): every referencing function of a held table is a constructor, a destructor or a caller that inlined one, and the candidate is the one whose body matches the PDB-named 1.21.3.01 body instruction for instruction -- same field offsets, same constants, same callee shape -- with the alloc-failure path and, on 1.26.40.8, the UUID generation inlined. Never hook targets (merge-symbols.mjs does not trust this source for hooks). Names that also fired under a counter probe are in data/resolved-1.26.40.8.json instead.",
+ "generatedAt": "2026-09-18",
+ "symbols": {
+  "??0VirtualCommandOrigin@@QEAA@AEBVCommandOrigin@@AEAVActor@@AEBVCommandPositionFloat@@H@Z": 19839408,
+  "??0VirtualCommandOrigin@@QEAA@AEBVCommandOrigin@@0AEBVCommandPositionFloat@@H@Z": 19838720,
+  "??0CompoundTag@@QEAA@XZ": 29278752,
+  "??0CompoundTag@@QEAA@$$QEAV0@@Z": 29278912,
+  "??1CompoundTag@@UEAA@XZ": 29279152
+ },
+ "evidence": {
+  "??0VirtualCommandOrigin@@QEAA@AEBVCommandOrigin@@AEAVActor@@AEBVCommandPositionFloat@@H@Z": {
+   "rva": "0x12eb9b0",
+   "size": 1152,
+   "callers": 1,
+   "evidence": "stores the VirtualCommandOrigin table and, for the inner origin it builds from the actor, the ActorCommandOrigin table (the ActorCommandOrigin constructor is inlined in every 1.26 caller); body = baseline 0xcbc740: CommandOrigin base at +8, +24/+32/+40 zeroed, origin slot 10 called into +48, the CommandPositionFloat copied to +56, the 5th (stack) int to +72, then getEntityTypeId(actor)==319 (Player) picks a 40-byte ActorCommandOrigin/PlayerCommandOrigin; 1.26.51.1: 0x120ce80, identical. Not executed: its one caller (0x3cdc480, 3882B) did not run under `execute as @a run`, which 1.26 serves through the unique_ptr overload."
+  },
+  "??0VirtualCommandOrigin@@QEAA@AEBVCommandOrigin@@0AEBVCommandPositionFloat@@H@Z": {
+   "rva": "0x12eb700",
+   "size": 527,
+   "callers": 4,
+   "evidence": "the overload ?clone@VirtualCommandOrigin@@ (named, 0x12eef60) calls, as in the baseline (clone -> 0xcbc5f0); fired 1 then 2 under `execute as @a run ...` and `execute as @a at @s run summon` on 2026-09-18 (ctor40), alongside the unique_ptr overload (0x12ebf50: 1, 1); 1.26.51.1: 0x120ccc0 (called by the named clone 0x120f260)."
+  },
+  "??0CompoundTag@@QEAA@XZ": {
+   "rva": "0x1bec220",
+   "size": 152,
+   "callers": 5,
+   "evidence": "body = baseline 0x82f220 (88B) with the operator-new failure path inlined: store the table, zero +8..+24, allocate the 112-byte map head, self-link it, mov word 257 -> +24, store at +8, return this. Only 5 callers: the constructor is inlined almost everywhere (622 functions store the table on this build). Cross-build pair (string/propagation) with 1.26.51.1 0x284d030, same body. Did not fire under `save hold`/`save query`/`save resume` (ctor40)."
+  },
+  "??0CompoundTag@@QEAA@$$QEAV0@@Z": {
+   "rva": "0x1bec2c0",
+   "size": 200,
+   "callers": 1,
+   "evidence": "adjacent to the default constructor as in the baseline (0x82f1b0 / 0x82f220); body = baseline: allocate and self-link a fresh 112-byte head for the source, then swap +8 and +16 with rdx. Fired once at startup (ctor40). 1.26.51.1: 0x284d0a0 (adjacent to 0x284d030)."
+  },
+  "??1CompoundTag@@UEAA@XZ": {
+   "rva": "0x1bec3b0",
+   "size": 57,
+   "callers": 347,
+   "evidence": "body = baseline 0x830630 (44B): store the table, erase the tree from the head (0x1bfd240 with the head's parent), free the 112-byte head. 347 callers against the baseline's 217. Fired twice in the ctor40 run. 1.26.51.1: 0x284d160 (57B, 346 callers)."
+  }
+ }
+}

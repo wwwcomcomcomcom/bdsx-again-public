@@ -1,0 +1,19 @@
+# the lab: BDS installs, the bot's node_modules, run outputs (tools/host/setup-lab.mjs)
+/lab/
+
+# binaries, downloads, caches and intermediate outputs (tools/fetch-baseline.mjs, the pipelines)
+/work/
+
+# never commit Mojang binaries or anything derived closely enough to substitute for one
+*.exe
+*.pdb
+*.dll
+*.zip
+*.dmp
+bedrock_server/
+
+# regenerable from work/pdbcache-1.21.3.01.bin (tools/fetch-baseline.mjs), 151MB
+/data/baseline-symbols.json
+
+node_modules/
+.DS_Store

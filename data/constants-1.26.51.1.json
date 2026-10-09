@@ -1,0 +1,52 @@
+{
+ "_comment": "Per-build constants for BDS 1.26.51.1 (tools/version-constants.mjs, docs/findings-utils.md). Merged after data/constants.json, which is the build-independent set.",
+ "bdsVersion": "1.26.51.1",
+ "generatedAt": "2026-09-18T02:55:51.445Z",
+ "constants": {
+  "?MajorVersion@SharedConstants@@3HB": {
+   "bytes": "01000000",
+   "size": 4,
+   "type": "int",
+   "value": "1",
+   "via": "the build number this table is keyed to (1.26.51.1), which is what these four ints are",
+   "site": "bdsx/check.ts",
+   "required": true
+  },
+  "?MinorVersion@SharedConstants@@3HB": {
+   "bytes": "1a000000",
+   "size": 4,
+   "type": "int",
+   "value": "26",
+   "via": "the build number this table is keyed to (1.26.51.1), which is what these four ints are",
+   "site": "bdsx/check.ts",
+   "required": true
+  },
+  "?PatchVersion@SharedConstants@@3HB": {
+   "bytes": "33000000",
+   "size": 4,
+   "type": "int",
+   "value": "51",
+   "via": "the build number this table is keyed to (1.26.51.1), which is what these four ints are",
+   "site": "bdsx/check.ts",
+   "required": true
+  },
+  "?RevisionVersion@SharedConstants@@3HB": {
+   "bytes": "01000000",
+   "size": 4,
+   "type": "int",
+   "value": "1",
+   "via": "the build number this table is keyed to (1.26.51.1), which is what these four ints are",
+   "site": "bdsx/check.ts",
+   "required": true
+  },
+  "?NetworkProtocolVersion@SharedConstants@@3HB": {
+   "bytes": "91080000",
+   "size": 4,
+   "type": "int",
+   "value": "2193",
+   "via": "read from BDS 1.26.51.1's own answer to an unconnected RakNet ping (tools/ping-protocol.cjs)",
+   "site": "bdsx/bds/implements.ts",
+   "required": true
+  }
+ }
+}

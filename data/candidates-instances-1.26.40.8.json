@@ -1,0 +1,1374 @@
+{
+ "_comment": "vftables read from live instances on 1.26.40.8 by tools/instance-probe-launcher.js: *(void**)this inside resolved, execution-confirmed hooks. The address is exact; the name is the baseline table whose slot count and position match (ServerNetworkHandler: the object layout changed, the 253-slot NetEventCallback table sits at +0x10 where 1.21.3.01 had EnableQueueForMainThread, so only tables with a unique slot-count match are named). | 2026-09-17 reach probes: +28 vftables, see reach.",
+ "vftables": {
+  "??_7ServerLevel@@6BILevel@@@": 173973216,
+  "??_7ServerLevel@@6BBlockSourceListener@@@": 173976496,
+  "??_7ServerLevel@@6BIWorldRegistriesProvider@@@": 173976576,
+  "??_7MinecraftCommands@@6B@": 173927296,
+  "??_7ServerCommandOrigin@@6B@": 174220064,
+  "??_7DedicatedServer@@6BAppIsland@Bedrock@@@": 173196048,
+  "??_7ServerNetworkHandler@@6BNetEventCallback@@@": 174037312,
+  "??_7ServerNetworkHandler@@6BLevelListener@@@": 174039344,
+  "??_7Minecraft@@6B@": 173411584,
+  "??_7ServerInstance@@6BEnableNonOwnerReferences@Bedrock@@@": 173972888,
+  "??_7ServerInstance@@6BAppPlatformListener@@@": 173972896,
+  "??_7ServerInstance@@6BStorageAreaStateListener@Core@@@": 173973136,
+  "??_7ServerNetworkSystem@@6B@": 174039696,
+  "??_7ServerNetworkSystem@@6BConnectionCallbacks@RakNetConnector@@@": 174039712,
+  "??_7ServerNetworkSystem@@6BIPSupportInterface@RakPeerHelper@@@": 174039776,
+  "??_7ServerNetworkSystem@@6BNetworkEnableDisableListener@@@": 174039824,
+  "??_7RakNetConnector@@6BConnector@@@": 174063536,
+  "??_7RakNetConnector@@6BNetworkEnableDisableListener@@@": 174063712,
+  "??_7RakNetConnector@@6BEnableNonOwnerReferences@Bedrock@@@": 174063736,
+  "??_7RakPeer@RakNet@@6BRakPeerInterface@1@@": 174980880,
+  "??_7ActorFactory@@6B@": 174321408,
+  "??_7BlockPalette@@6B@": 174254384,
+  "??_7ServerScoreboard@@6B@": 173206464,
+  "??_7ServerPlayer@@6B@": 173976848,
+  "??_7OverworldDimension@@6BIDimension@@@": 176078160,
+  "??_7NetherDimension@@6BIDimension@@@": 176077520,
+  "??_7TheEndDimension@@6BIDimension@@@": 176078512,
+  "??_7BlockSource@@6B@": 174254432,
+  "??_7GameMode@@6B@": 174485472,
+  "??_7SurvivalMode@@6B@": 174485632,
+  "??_7Inventory@@6B@": 173240800,
+  "??_7ItemStack@@6B@": 173213488,
+  "??_7Block@@6B@": 174392032,
+  "??_7ChestBlock@@6B@": 175688784,
+  "??_7StoneBlock@@6B@": 175734176,
+  "??_7ButtonBlock@@6B@": 174454272,
+  "??_7StoneButtonBlock@@6B@": 174454272,
+  "??_7FarmBlock@@6B@": 176187216,
+  "??_7CampfireBlock@@6B@": 174460640,
+  "??_7SculkSensorBlock@@6B@": 175900032,
+  "??_7PistonBlock@@6B@": 175710864,
+  "??_7ChestBlockActor@@6BRandomizableBlockActorContainerBase@@@": 174720720,
+  "??_7CampfireBlockActor@@6B@": 174717904,
+  "??_7SculkSensorBlockActor@@6B@": 174717632,
+  "??_7PistonBlockActor@@6B@": 175525552,
+  "??_7Pig@@6B@": 175582544,
+  "??_7ItemActor@@6B@": 174837760,
+  "??_7Arrow@@6B@": 174194352,
+  "??_7EnderCrystal@@6B@": 174852800,
+  "??_7Actor@@6B@": 174117200,
+  "??_7BlockLegacy@@6B@": 174445664,
+  "??_7ItemStackBase@@6B@": 174397504,
+  "??_7ItemInstance@@6B@": 174396848,
+  "??_7CompoundTag@@6B@": 174409456,
+  "??_7Spawner@@6B@": 174253952
+ },
+ "instanceLayout": {
+  "ServerNetworkHandler": {
+   "+0x0": "0xa5f9910 (6 slots, unnamed)",
+   "+0x10": "0xa5f9940 NetEventCallback (253 slots; baseline 216)",
+   "+0x28": "0xa5fa130 LevelListener (31; baseline 28)",
+   "+0x30": "0xa5fa230 (6 slots)",
+   "+0x40": "0xa5fa260 (4 slots)"
+  },
+  "Level": {
+   "+0x0": "ILevel 409",
+   "+0x18": "BlockSourceListener 9",
+   "+0x20": "IWorldRegistriesProvider 22 (baseline 19)"
+  },
+  "CommandRegistry": {
+   "+0x0": "0xa561910 (6 slots; no CommandRegistry vftable in the baseline)",
+   "+0x40": "0xa6fb5b0"
+  },
+  "Minecraft": {
+   "+0x0": "0xa560d00 (7 slots = baseline)",
+   "+0xb8": "MinecraftCommands (owned)",
+   "+0xf8": "the 11-slot GameCallbacks object that ServerInstance holds at +0xd0 and ServerNetworkHandler at +0xe0",
+   "+0xe8": "0xa5fa290 (1 slot; ServerNetworkSystem candidate)"
+  },
+  "ServerInstance": {
+   "+0x0": "EnableNonOwnerReferences 1",
+   "+0x18": "AppPlatformListener 20",
+   "+0x38": "0xa5e9e40 10 slots (baseline had GameCallbacks 11 here; GameCallbacks is now a separate 11-slot object at +0xd0)",
+   "+0x40": "StorageAreaStateListener 5",
+   "+0xb8": "Minecraft (owned)",
+   "+0x240": "DedicatedServer as IMinecraftApp&"
+  },
+  "ServerNetworkSystem": {
+   "+0x0": "1 slot",
+   "+0x18": "ConnectionCallbacks 8",
+   "+0x20": "IPSupportInterface 5",
+   "+0x28": "NetworkEnableDisableListener 3"
+  },
+  "RakNetConnector": {
+   "+0x0": "Connector 22 slots (baseline 28)",
+   "+0x10": "NetworkEnableDisableListener 3",
+   "+0x38": "EnableNonOwnerReferences 1",
+   "note": "the object ServerNetworkSystem holds at +0xf0; its constructor (0xc18fc0) stores tables of sizes [1,1,3,3,4,10,22]"
+  },
+  "RakPeerHolder": {
+   "note": "the 14-slot object ServerNetworkSystem holds at +0xf8; holds the RakNetConnector at +0xe8 and the RakPeer at +0xf8 (88-slot table; walk B independently named it RakPeer::RakPeerInterface, baseline 93)"
+  }
+ },
+ "provenance": "work/vft/ip-run-1.26.40.8.txt",
+ "constructors": {
+  "_comment": "see data/resolved-1.26.40.8.json provenance; each is the non-destructor function storing the class vftable, confirmed by a counter probe firing once at startup",
+  "??0DedicatedServer": "0x78800",
+  "??0MinecraftCommands": "0x38e700",
+  "??0ServerNetworkHandler": "0xa58530",
+  "??0ServerLevel": "0x6a8ee0",
+  "??0Minecraft": "0x2e3170",
+  "??0ServerInstance": "0x66e6a0",
+  "??0ServerNetworkSystem": "0xa9fc10"
+ },
+ "offsets": {
+  "_comment": "object layouts read from live instances (member scan); consumed as `layouts` in symbols.json by launcher.ts when the getter symbol is missing NetworkIdentifier (2026-09-18): Endstone's header for this build (v0.11.7 / HEAD): NetherNet::NetworkID grew to a 24-byte variant, pushing RakNetGUID to +24, the sockaddr union to +40 and Type to +168, sizeof 176; consumed by bds/networkidentifier.ts (findings-instances.md, the client-join crash). Level.weatherManager (2026-09-19): the member ILevel slot 359/360 (updateWeather) loads before its tail jump, `mov rcx,[rcx+0x718]`, the same on both builds; consumed by bds/implements.ts to call WeatherManager::updateWeather without the 12-byte forwarder. GameRules (2026-09-19): the std::vector<GameRule> at +24 of the object Level::getGameRules returns, 280-byte elements (176 in 2024), the rule's name a std::string at element +16; 39 elements whose names are Endstone's GameRulesIndex in order. Consumed by bds/implements.ts for getRule, hasRule and nameToGameRuleIndex. BaseAttributeMap / AttributeInstance (2026-09-19): 1.26 replaced 2024's FNV-1a-64 hash map with a sorted std::vector<unsigned int> of attribute ids at +0..+8, binary-searched by equal_range, and an AttributeInstance array at +24. Read off the two out-of-line lookups that take an Attribute const& (1.26.40.8 0x2364500, 1.26.51.1 0x1ebcc60): `movq (%rcx),%r9; movq 8(%rcx),%rdx; sarq $2` is the id vector, and the element stride is the shift applied to the byte offset before `addq 24(%rcx)` -- `shlq $5` = 128 on 1.26.40.8, `shlq $5; leaq (%r9,%r8,2)` = 136 on 1.26.51.1. currentValue +124 and maxValue +120 are the two floats ActorAttribute::getHealth / getMaxHealth read (docs/findings-components.md); minValue and defaultValue were read from the live instance by attrprobe. Consumed by bds/attribute.ts for getMutableInstance and by the AttributeInstance field offsets. Block / BlockLegacy (2026-09-19): Block+0x68 is the BlockLegacy and BlockLegacy+0xe0 is the HashedString it names itself with, so Block::getName -- one line in 2024 and inlined away in 1.26 -- is a walk bdsx does itself (bds/implements.ts). findings-reach.md had read the *string* at BlockLegacy+0xe8; that is the std::string inside the HashedString, whose base is 8 bytes earlier, and the first blkprobe run showed exactly that (\"minecraft:dirt\" came back as \"t:dirt\", and the two names too long for the small-string buffer came back blank). With +0xe0 both builds read back what BDS own setblock wrote: diamond_block, stone, gold_block. Consumed as layouts.Block / layouts.BlockLegacy.",
+  "Minecraft": {
+   "commands": 184,
+   "gameCallbacks": 248,
+   "serverNetworkSystem": 232,
+   "gameSession": 192
+  },
+  "ServerInstance": {
+   "minecraft": 184,
+   "gameCallbacks": 208
+  },
+  "MinecraftCommands": {
+   "commandOutputSender": 24,
+   "note": "commandOutputSender (0x18): the unique_ptr<CommandOutputSender> handleOutput reads (mov 0x18(%rbx) before send and sendToAdmins); +8 is the context provider, +0x10 the registry (Endstone minecraft_commands.h). The 8 here before 2026-09-28 was 2024's offset and nothing read it: launcher.ts hard-coded 8, so bedrockServer.commandOutputSender was the context provider. docs/findings-scoreboard.md 15",
+   "registry": 16
+  },
+  "ServerNetworkSystem": {
+   "connector": 240,
+   "rakPeerHolder": 248
+  },
+  "RakPeerHolder": {
+   "rakPeer": 248
+  },
+  "Level": {
+   "structureManagerMember": 712,
+   "note": "getStructureManager reads +712; not used by the launcher (the symbol is) | serverNetworkHandler (+0x220): the NonOwnerPointer the Level holds { control +0x220, count block +0x228, object +0x230 }, which ILevel's virtual +0xa48 (0x73f520) copies out; the object points 0x10 into ServerNetworkHandler (layouts.ServerNetworkHandler.nonOwnerBase), as the GameTest caller's `lea -0x10(%rax)` shows. Consumed by engine/simulatedplayer.ts.",
+   "weatherManager": 1816,
+   "serverNetworkHandler": 544,
+   "gameplayUserManager": 1112,
+   "forceRemoveEntityFromWorldSlot": 242
+  },
+  "ServerLevel": {
+   "mServerPlayerSleepManager": 2176,
+   "note": "0x880 (2024 +0x22b0): getPlayerSleepManager()/getPlayerSleepManager() const virtual accessor pair, route 9 header+1, confirmed a second way by the constructor's own store of the manager's raw pointer at this offset (0x6aa92b). docs/findings-slots.md Q4."
+  },
+  "ServerPlayerSleepManager": {
+   "sendSleepMessage": 425,
+   "note": "0x1a9 (2024 +0x201): the manager's own out-of-line constructor (0x12cd920+0x258) writes the same `movw $0x100,` idiom right after the same four zeroed member slots as 2024's `movw $0x100, 0x200(%rdi)`; consumed by bds/implements.ts setShouldSendSleepMessage. Static only -- no console-driven way to make BDS read this flag back (Q7)."
+  },
+  "NetworkIdentifier": {
+   "size": 176,
+   "netherNetId": 0,
+   "guid": 24,
+   "sock": 40,
+   "type": 168
+  },
+  "GameRules": {
+   "rules": 24,
+   "ruleSize": 280,
+   "ruleName": 16
+  },
+  "BaseAttributeMap": {
+   "ids": 0,
+   "instances": 24,
+   "instanceSize": 128
+  },
+  "AttributeInstance": {
+   "defaultMinValue": 104,
+   "defaultMaxValue": 108,
+   "defaultValue": 112,
+   "minValue": 116,
+   "maxValue": 120,
+   "currentValue": 124
+  },
+  "SynchedActorData": {
+   "dirtyFlags": 24,
+   "idCount": 141,
+   "payload4": 12,
+   "payload8": 16
+  },
+  "Block": {
+   "blockLegacy": 104,
+   "note": "Block::data_ = 288 (2024 +40; next-steps Q1-B-2). ItemStackBase::getAuxValue (2024 0x1b5f320) returns `block_->data_` when the item is a block item and aux_ is not the 0x7FFF wildcard, and 1.26 keeps no copy of that function. Endstone 0.11.7 block.h moves DataID data_ out of its old place right behind components_ -- the `// DataID data_;` comment is still sitting there -- down to the tail after client_data_, and asserts sizeof(Block) == 296. ??_GBlock (40 0x1bb6360 / 51 0x2cfae90) confirms the tail on both builds: it frees the client_data_ unique_ptr at +280 and unwinds serialization_id_ at +240, so 280 client_data_ / 288 data_ / 290 has_runtime_id_ / 296 is the only packing that fits. | explosionResistance (+0xac) / friction (+0xb0) / destroySpeed (+0xb4), floats: Block::direct_data_ (Endstone BlockComponentDirectData, block.h puts direct_data_ after block_type_ +0x68 and the 8-byte cached_component_data_, so +0x78; five component pointers, four bools, light_emission/light/lava_flammable, flame_odds/burn_odds uint16 at +0xa8/+0xaa, then the three floats). destroy_speed at +0xb4 is the hardness confirmed on this build by getDestroyProgress' inlined `ucomiss 0xb4` (docs/findings-blocks.md section 12), so the two before it are counted from a confirmed neighbour; the Block constructor (0x1bb0460) zeroes 0xa8..0xb7 with one movups. 2024: getExplosionResistance@Block 0x1bae8f0 `movss 0x70`, getFriction 0x1a5c100 `movss 0x7c`, getDestroySpeed 0x1a5c0f0 `movss 0x80`, isUnbreakable 0x1bb2090 `0 > +0x80`. | runtimeId (+0x114 = 276, uint32): Block::network_id_ (BlockRuntimeId). The Block constructor stores movabsq $0xffffffff00000000 at +0x110 (serialization_id_hash_for_network_ 0, network_id_ -1) before client_data_ (+0x118) and data_ (+0x120, confirmed); the runtime-id assignment (0x14f16c8) is `movl %ecx,0x114(%rdx); movb $0x1,0x122(%rdx)` (has_runtime_id_), choosing 0xfffffffe by the block type's full-name hash (BlockType+0xe0). 2024: getRuntimeId@Block 0x1bafcf0 `lea 0xc4(%rcx)`. Consumed by engine/blocktype.ts. | useExtraByte (0): whether bdsx:Block::use (2024's Block::use, 40 0x1bb2b50 / 51 0x2ceb030 -- shipped until 2026-09-30 as bdsx:ItemStack::useOn, a misnomer: GameMode::useItemOn passes a Block* in rcx and the GameTest interactWithBlock binding passes BlockSource::getBlock's result) takes a byte before its optional<Vec3> -- 1.26.40.8's passes the optional at [rsp+0x20] (docs/findings-slots.md \"itemUseOnBlock\"). | miningComponent (+0xd0 = 208, pointer): the destructible-by-mining component pointer the engine's hardness helper reads (`[+0xd0]+0` is the hardness when non-null, findings-blocks.md section 12). Consumed by engine/blocktype.ts blockSetDestroyTime (BlockLegacy::setDestroyTime; docs/findings-blocks.md \"Block leftovers\").",
+   "data": 288,
+   "explosionResistance": 172,
+   "friction": 176,
+   "destroySpeed": 180,
+   "runtimeId": 276,
+   "useExtraByte": 0,
+   "miningComponent": 208
+  },
+  "BlockLegacy": {
+   "name": 224,
+   "requiresCorrectToolForDrops": 357,
+   "id": 382,
+   "note": "requiresCorrectToolForDrops (+357 = 0x165, bit mask 4): BlockType::requires_correct_tool_for_drops_, the 1.26 successor of 2024's Material::isAlwaysDestroyable (inverted). Endstone block_type.h puts the bitfields right after render_layer_ (+354), and full_name at NameInfo +144 +80 = 224 agrees with the execution-confirmed name offset. A .text scan for `testb $imm, 0x165(reg)` gives exactly three `$0x4` sites on this build; 0x1a61b20 (the progress helper) and 0x1f46540 (block-break drop gate) both read it as `!(bit) || item vft[0x108](block)` -- 2024's canDestroy OR. Consumed by bdsx's derived Player::canDestroy (docs/findings-blocks.md 12, 4th session). | id (+382 = 0x17e, uint16): BlockType::id_ (NewBlockID; Endstone block_type.h +382; 2024 +0x1a6). The inlined getBlockItemId reads it in the branchless form `movzwl 0x17e(reg); mov $0xff; sub; cmovae` (0x154aa38 in 0x154a8d0; 49 sites of that form on this build) = 2024 0x1becc10 (id < 0x100 ? id : 0xff - id). Consumed by bdsx's derived BlockLegacy::getBlockItemId (engine/blocktype.ts; docs/findings-blocks.md \"The block type registry on 1.26\"). | creativeCategory (+352 = 0x160, one byte): BlockType::creative_category_ (SharedTypes::CreativeItemCategory, std::uint8_t in 1.26: All 0, Construction 1, Nature 2, Equipment 3, Items 4, ItemCommandOnly 5, Undefined 6). 2024 +0x138, four bytes: ?getCreativeCategory@BlockLegacy@@ 0x1bee130 is `movl 0x138(%rcx),%eax; ret` and setCategory 0x1bf37d0 `movl %edx,0x138(%rcx); mov %rcx,%rax; ret`. Endstone block_type.h (0.11.7 and HEAD) puts it at +352, after creative_group_ (+312) and the thickness/translucency floats, and the same count gives name 224, the +357 bitfields and id_ +382 already confirmed here. This build: the BlockType constructor (0x1ee72c0, stores ??_7BlockLegacy@@6B@, friction 0.6f at 0x178, id_ at 0x17e) writes `movl $0x80050000,0x160(%rcx)` at 0x1ee73f4 -- the category byte 0 (All), 2024's default (the high half of its movq at 0x134), right after creative_group_'s SSO stores at 0x138..0x150 and the zeroed floats at 0x158; the block-item registration (0x154a8d0, the function that also reads id_ in the getBlockItemId form) copies the block type's creative_group_ (+0x138) into the item's (+0x190) and then does `movzbl 0x160(%rsi),%ecx; movb %cl,0x180(%rax)` at 0x154b572: BlockType::creative_category_ into the confirmed Item::creative_category_ (layouts.Item.creativeCategory), 2024 Item::setCategory's block-category check made a plain copy. No out-of-line reader or setter on either build (no leaf `movzbl 0x160(%rcx),%eax; ret` or `movb %dl,0x160(%rcx); mov %rcx,%rax; ret` in .text). Consumed by engine/blocktype.ts (derived BlockLegacy::getCreativeCategory; docs/findings-containers.md section 18). | thickness (+344 = 0x158) / translucency (+348 = 0x15c), floats: BlockType::thickness_ and translucency_ (Endstone block_type.h), the only two fields between creative_group_ (a std::string at +0x138, whose data/size/capacity the block-item registration copies into the item's +0x190) and creative_category_ (+0x160), both confirmed on this build. The BlockType constructor (0x1ee72c0) zeroes them with movq $0x0,0x158(%rcx); block constructors store translucency immediates at +0x15c: 82 x 1.0 and 46 x 0.8 (e.g. 0x1b93dfc), the same spread on both builds. 2024: getThickness@BlockLegacy 0x1bf0050 `movss 0x118(%rcx)`, getTranslucency@Block 0x1bafeb0 `movss 0x16c` of the legacy. Consumed by engine/blocktype.ts (derived Block::getThickness / getTranslucency; docs/findings-blocks.md \"BlockType and Block fields on 1.26\"). | rawName (+0x90 = 144, HashedString): BlockType::name_info_.raw_name, the first member of name_info_ (Endstone block_type.h +144), whose full_name at +80 (= 224) is confirmed as layouts.BlockLegacy.name; 2024 getRawNameId@BlockLegacy 0x1bef940 `add $0x48,%rcx`. Consumed by engine/item.ts (derived ItemStackBase::getRawNameId). | asItemInstanceSlot (77): BlockType::asItemInstance(Block const&, BlockActor const*)'s vftable slot. The base table's slot 77 is 0x1eeb770 (vftable 0xa65d460, the named ??_7BlockLegacy@@6B@): it builds an ItemInstance of default_state_ (+0x240, Endstone +576) with count 1 and no tag into the return slot (rdx) and never reads r8/r9 -- 2024's BlockLegacy::asItemInstance 0x1be8270, ItemInstance(mDefaultState, 1, nullptr). Endstone block_type.h counts it 76 from the top; slot 76 here reads rdx+0x1d0 and is something else. Consumed by bds/implements.ts (derived BlockLegacy::asItemInstance; docs/findings-blocks.md \"asItemInstance\"). | hasComparatorSignalSlot 90 / getComparatorSignalSlot 91 / getVariantSlot 102: the BlockType virtuals Block forwarded to in 2024 (slots 111, 112, 129). JukeboxBlock 0xa6c34c0 and ChestBlock 0xa78cc50 override 90 (return true) and 91; 102 is movzwl 0x120(%rdx) in StoneBlock 0xa797da0 and the rest. Endstone block_type.h counts the same three. isSignalSourceSlot 35 / getDirectSignalSlot 43 (2024: 47, 54, the only two virtuals 2024's Block::isSignalSource and getDirectSignal forwarded to): Endstone's 34 and 42 plus one -- the same +1 its count carries at isLeverBlock (32, overridden only by LeverBlock) and onFillBlock (42: the base's is `ret`, LeverBlock's passes r9 on as a Block pointer; calling 42 as getDirectSignal killed the server, sig240/51 2026-09-29). The engine's inlined forwards name both: calculateGoldenRailSpeedIncrease (0x2cf3df0) does the material's solid-blocking checks and then `!type->vf[0x118]()` (2024 Block::isSolidBlockingBlockAndNotSignalSource 0x1bb1d60, called from RailMovementUtility::calculateGoldenRailSpeedIncrease), and DiodeBlock::getAlternateSignalAt (0x8e77a40) tail-calls `type->vf[0x158](type, region, pos, dir)` (2024 0x1c13bd0 -> Block::getDirectSignal). RepeaterBlock 0xa71e7f0 (slot 43 0x1b9da40): its 43 forwards to its own slot 132 (+0x420, DiodeBlock::getSignal, the first slot past the base's 132), 2024's DiodeBlock::getDirectSignal forwarding to its first own slot 163 (+0x518). ComparatorBlock 0xa81ed00 (slot 43 0x8e88650) overrides 43 too; repeater, comparator and daylight detector override 35 with the image's return-true, LeverBlock (0xa6c4e00 on 40) and ButtonBlock do not. Consumed by engine/blocktype.ts BLOCK_TYPE_SLOTS. | isThinFenceBlockSlot 27 / isWallBlockSlot 28 (2024: 36, 37): ThinFenceBlock's table returns true at 27 (return-true image body) and WallBlock's at 28, every other diffed table returns false; Endstone counts 26/27. Consumed by engine/blocktype.ts BLOCK_TYPE_SLOTS (BlockUtils::isThinFenceOrWallBlock). | tags (+416 = 0x1a0): BlockType::tags_, a std::vector<HashedString> (0x30-byte elements, the string at +8). Read off live wheat/carrots/beetroot ([minecraft:crop]), poppy ([fertilize_area]), stone, oak_log on both builds (blkutil40/51, 2026-09-30); Endstone block_type.h +416. Consumed by engine/blockutils.ts blockTypeHasTag (Block::isCropBlock). | permutations (+552 = 0x228): BlockType::block_permutations_, a std::vector<std::unique_ptr<Block>> (Endstone block_type.h +552). Read off Block.create objects on both builds 2026-09-30 (bhurt40/51): stone n=1, lever n=16, every first entry's +0x68 points back at the type (40 chest n=4). Consumed by engine/blocktype.ts blockTypePermutations (BlockLegacy::setDestroyTime).",
+   "creativeCategory": 352,
+   "thickness": 344,
+   "translucency": 348,
+   "rawName": 144,
+   "asItemInstanceSlot": 77,
+   "hasComparatorSignalSlot": 90,
+   "getComparatorSignalSlot": 91,
+   "getVariantSlot": 102,
+   "isSignalSourceSlot": 35,
+   "getDirectSignalSlot": 43,
+   "isThinFenceBlockSlot": 27,
+   "isWallBlockSlot": 28,
+   "tags": 416,
+   "permutations": 552,
+   "buildDescriptionIdSlot": 97
+  },
+  "Actor": {
+   "note": "Actor's last-hurt block. The three actor references are ActorUniqueIDs, not pointers, so the getters are one Level::fetchEntity over the id; wasLastHitByPlayer is a countdown > 0. Read from Mob::doHurtTarget (+800 with +840), Actor::setLastHurtByMob (+808 with +844/+848, and $0x190 into +276 in the player branch) and Actor::baseTick, which pairs +808 with +844 and +816 with +276 exactly as the 2024 bodies pair +952/+972 and +960/+392. The 2024 offsets are 944 / 952 / 960 / 392: the block was reordered, so no constant delta carries it. Execution-confirmed on both builds 2026-09-20: +800 and +840, which no player action writes, were read off the *attacker* in a golem-vs-zombie session (`hurtprobe mob`) and the attacker's +800 fetched back the very actor the entityHurt hook had just named as the victim, by pointer identity, with +840 nonzero while the victim's own +840 stayed 0. -- stateVector (+536) is the same pointer the execution-confirmed ?getPosition@Actor@@ accessor returns (`get`, width 8, off 536, identical on both builds); Endstone's state_vector_component.h declares pos +0, pos_prev +12, pos_delta +24, which is 2024's layout at Actor+656 unchanged. getSpeedInMetersPerSecond is |pos - pos_prev| * 20 over it. -- added (+138, 2024 +233) and removed (+617, 2024 +737), the two bytes ?isInWorld@Actor@@ tests around hasDimension: `tools/field-offset.mjs move e9` gives 138 at support 2/2 and `move 2e1` gives 617 at 3/3 on both builds, each unique at that support; Endstone actor.h declares `bool added` right after the entity context/init block and `changed_, removed_` as bytes 616/617. dimensionRef (+456, control block +464): WeakRef<Dimension>, the live-confirmed ?getDimension@Actor@@ accessor; ?hasDimension@Actor@@ is 2024's weak_ptr lock test on +576/+584 (null control block or zero use count -> false, else pointer non-null). | categoryFlags (+0x210, byte; bit 2 = the Mob category, 2024 hasCategory(2)): read from the fetchNearestAttackablePlayer predicate lambda (40 0x179d510, 51 0x188aec0: `testb $2, 0x210(%mob)` after `cmpb $0, 0x269(%mob)`, the removed byte), the same offset on both builds. Consumed by engine/attackable.ts.",
+   "lastHurtMobId": 800,
+   "lastHurtByMobId": 808,
+   "lastHurtByPlayerId": 816,
+   "lastHitByPlayerTime": 276,
+   "enttRegistry": 16,
+   "entityId": 24,
+   "stateVector": 536,
+   "added": 138,
+   "removed": 617,
+   "dimensionRef": 456,
+   "aabbComponent": 544,
+   "categoryFlags": 528
+  },
+  "SynchedActorDataEntityWrapper": {
+   "note": "embedded at Actor+0x128; its constructor (40 0x2420140 / 51 0x2cb5460) stores SynchedActorDataComponent at +0, ActorDataFlagComponent at +8 and ActorDataDirtyFlagsComponent at +16, which is Endstone synched_actor_data.h order (docs/findings-synched.md)",
+   "flagData": 8,
+   "dirtyFlags": 16
+  },
+  "PlayerInventory": {
+   "container": 184,
+   "note": "PlayerInventory::selected_container_id_ = 176 (2024 +184) and selected_ = 16 -- 1.26`s Player::getSelectedItem (40 0x2329a0 / 51 0x2bdb30) inlines `cmpb $0,176(%rax); movq 184(%rax),%rcx; movl 16(%rax),%edx` (docs/findings-containers.md 7). The PlayerInventory forwarders bdsx now carries need the first of these to reproduce their ContainerID guard.",
+   "selectedContainerId": 176,
+   "selected": 16
+  },
+  "ItemStackBase": {
+   "note": "ItemStackBase's tail, read out of the binary on both 1.26 builds (next-steps Q1-B-1, docs/findings-containers.md 10). 1.26 moved show_pick_up_/was_picked_up_ into the padding at +36/+37, ahead of pick_up_time_ rather than behind it, and everything after closed up by eight: can_place_on_ +56->+48 (its hash +80->+72), can_destroy_ +88->+80 (hash +112->+104), blocking_tick_ +120->+112, charged_item_ +128->+120, sizeof 136->128, and every ItemStack by value 160->152. Two binary routes plus one header: (a) every function that stores ??_7ItemStackBase@@6B@ and is not the destructor -- the constructors -- opens `movups %xmm0,8(%rcx); movups %xmm0,19(%rcx); movw $0x101,35(%rcx); movb $0,37(%rcx)` and hands `lea 48(%rcx)` / `lea 80(%rcx)` to its unwind frame as the two vectors (2024's ??0ItemStackBase@@IEAA@XZ 0x1b493c0 writes `movl $0x01000000,32(%rcx)` then `movw $1,48(%rcx)`); (b) vftable slot 0, the deleting destructor, sized-deletes $128 (40 0x1bdf000 / 51 0x1a726b0; 2024 0x1b4e340 deletes $136) and ItemStack's slot 0 deletes $152 (40 0x15b010 / 51 0x1ceb80; 2024 $160), while the real destructor (40 0x1bba1b0 / 51 0x1a50dd0) frees +120 and walks 80/88/96 then 48/56/64 where 2024's (0x1b4d2ac) frees +128 and walks 88/96/104 then 56/64/72; (c) Endstone HEAD item_stack_base.h declares that order and asserts sizeof 128 (its v0.11.7 copy declares the same members but its trailing offset comments are 2024's and sum to 136, contradicting its own assert -- the comments are stale, the declarations are not).",
+   "size": 128,
+   "showPickup": 36,
+   "pickupTime": 40,
+   "canPlaceOn": 48,
+   "canDestroy": 80
+  },
+  "ItemStack": {
+   "note": "sizeof(ItemStack) is 152 on both 1.26 builds (2024: 160) -- see offsets.ItemStackBase. SimpleContainer::getItem indexes with `imulq $152` and ItemStack's deleting destructor sized-deletes $152.",
+   "size": 152
+  },
+  "Player": {
+   "note": "Player's respawn point (docs/findings-layouts.md, \"The respawn point\"). One struct, three fields: spawn_block_pos (the bed or respawn anchor), player_position (what getSpawnPosition returns) and the dimension. The unset sentinel is INT_MIN in each of the six ints and 3 (Undefined) in the dimension -- 2024 loads those from globals, 1.26 spells INT_MIN as an overflow test (`xorl %eax,%eax; cmpl <field>,%eax; jno`) and the dimension as the immediate 3. Player::player_respawn_point_, read off Player::setRespawnPosition (40 0x233610 / 51 0x2be820) and Player::setSpawnBlockRespawnPosition (40 0x2332c0 / 51 0x2be4d0), which compare and store the same three fields the 2024 bodies compare and store at +6512 / +6524 / +6536 (a constant -3728). Endstone's player.h declares the struct in that order (PlayerSpawnPoint { BlockPos spawn_block_pos; BlockPos player_position; DimensionType dimension; } player_respawn_point_). -- containerManager (+1440, 2024 +1872) is the shared_ptr ?hasOpenContainer@Player@@ tests for null. Two routes: ?setContainerManager@Player@@ stores at 1440/1448/1456 on both builds where 2024's stores at 1872/1880, and ?canOpenContainerScreen@Player@@ opens with `cmpq $0,0x5a0(%rcx)` on both builds where 2024 opens with `cmpq $0,0x750(%rcx)` -- and that function's second step is the execution-confirmed ?isInsidePortal@Actor@@. -- respawnReady (+1800, 2024 +2864), respawningFromTheEnd (+1802, 2024 +2905) and respawnOriginalPosition (Vec3 +2904/+2908/+2912, 2024 +6604/+6608/+6612) are the three stores of ?setRespawnReady@Player@@ (2024 0x19e91b0: Vec3 store, movb $1,+2864, movb $0,+2905). 1.26 kept no copy, but inlined it whole into the successor of ?setRespawnPositionCandidate@Player@@ (40 0x56a6960 / 51 0x9109070): cvtsi2ss of the confirmed respawn position +2796/+2800/+2804 plus 0.5, stored to 2904/2908/2912, then movb $1,1800 and movb $0,1802 -- the same three stores in the same order. Second route: ?respawn@Player@@ takes `lea 2904` exactly where the 2024 body takes `lea 6604` (the position it hands to teleport). The bytes are the access kinds of Player::respawn (movb imm +1800) and changeDimensionWithCredits (movb imm +1802) around the confirmed isSpawned +1801. Endstone player.h puts respawn_original_position_ before respawn_message_ (+1768); that is not where 1.26 keeps it -- +1752 is a pointer and +1760 a byte in the respawn body. -- buildPlatform (+1164, 2024 +1580): both ServerNetworkHandler player creators (0xa8ae00 / 0xa9bfb0; 2024 createNewPlayer 0x883f80 / _createNewPlayer 0x86ef60) call ConnectionRequest::getDeviceOS -- the callee builds the key \"DeviceOS\" (movabsq 0x534F656369766544) -- and store eax to +1164 where 2024 stores it to +1580. -- skin (+2736, unique_ptr<SerializedSkinRef>; 2024 embedded a SerializedSkin at +1920): Player::getActorRendererId (0x23c110) loads `movq 2736(%rcx)` and passes it as rdx to the same Level virtual that 2024 passes `lea 1920(%rsi)`. SerializedSkinRef is a shared_ptr<ThreadOwner<SerializedSkinImpl>> (Endstone serialized_skin.h, sizeof 16) and ThreadOwner's release base is empty, so the impl -- whose members are 2024's SerializedSkin members in 2024's order -- is at the pointer's +0. The Player offsets here were also computed from Endstone player.h's declarations anchored on the confirmed ones (+1440 container manager -> build_platform +1164; +1800 respawn bytes ; +2784 respawn point -> skin_ +2736, respawn_position_candidate_ +2904, name_ +3008) and each lands where the binary says. -- enderChestContainer (+2064, unique_ptr<EnderChestContainer>; 2024 +3168): ?readAdditionalSaveData@Player@@ (0x220480) loads `movq 2064(%rcx)` right after looking up \"EnderChestInventory\" where 2024 (0x19e3b60) loads `movq 3168(%r14)`, and the save side (0x2239d0) reads the same member. playerUIContainer (+2232, the embedded PlayerUIContainer; 2024 +3352 = 0xd18): the same function looks up \"PlayerUIItems\" and calls PlayerUIContainer::load with `addq $2232,%rcx` where 2024 has `leaq 3352(%r14)`, then reads that container's items vector at +2648/+2656 (= 2232 + SimpleContainer::items_ +416, the offset ?getItem@SimpleContainer@@ uses); a third function (0x263c140) switches on ContainerID and for 124 (PlayerUIItems) takes `leaq 2232(%rsi)` and walks +2648 for 54 slots. Endstone player.h, counted from the confirmed skin_ +2736 backwards and from ender_chest_inventory_ forwards, agrees: cursor_selected_item_group_ +2096 (ItemInstance 128 + count; 2024's setCursorSelectedItem writes +3208/+3344, i.e. 2096/2224 here), player_ui_container_ +2232 (440 bytes), transaction_manager_ +2672 (the Player constructor takes `leaq 2672`). deviceId (+3208, std::string; 2024 +7552 = 0x1d80): the Player constructor (0x20be00) initialises, in 2024's order, name_ +3008, the three optional<string> (engaged bytes +3072/+3112/+3152), last_emote_played_ +3160, time_t +3192, uint +3200, then clears +3208 and reads the device-id argument string -- 2024 (0x19ce870) does 7472 .. 7536 / 7544 / 7552 the same way; Endstone declares device_id_ right there. -- networkChunkPublisher (+2024, NetworkChunkPublisher*, 2024 +3128 = 0xc38): the pointer `?resendAllChunks@Player@@` and `?suspendRegion@Player@@` both read before calling NetworkChunkPublisher::clearRegion(); read off suspendRegion's own 1.26 body (already a promoted symbol, vftable-walk on 40 / carry on 51), which opens `movq 0x7e8(%rcx),%rcx; testq; je; callq <clearRegion>` on both builds -- the exact 2024 shape at a moved offset. docs/next-steps.md Q1 0 C-2, resolved-<v>.json provenance for `?clearRegion@NetworkChunkPublisher@@QEAAXXZ`. | itemInUse (+1840): the ItemStack 2024's isUsingItem tests with isNull. Held back until both sides were seen: 2026-09-24 (sbow40/sbow51) a simulated player drawing a bow has it filled while the USINGITEM actor flag is set, and it is null before and on the connected bot (flag clear) -- on both builds (docs/findings-layouts.md \"Candidates held back\"). Consumed by the derived Player::isUsingItem.",
+   "respawnBlockPos": 2784,
+   "respawnPos": 2796,
+   "respawnDimension": 2808,
+   "containerManager": 1440,
+   "respawnReady": 1800,
+   "respawningFromTheEnd": 1802,
+   "respawnOriginalPosition": 2904,
+   "buildPlatform": 1164,
+   "skin": 2736,
+   "enderChestContainer": 2064,
+   "playerUIContainer": 2232,
+   "deviceId": 3208,
+   "networkChunkPublisher": 2024,
+   "itemInUse": 1840
+  },
+  "AttributeId": {
+   "note": "The id each attribute has in THIS build -- the name is bdsx's AttributeId member, the number is what the live BaseAttributeMap uses (docs/findings-layouts.md, \"The attribute ids are not the same in the two 1.26 builds\"). 1.26.40.8 matches bdsx's 2024 enum; 1.26.51.1 numbers the five player attributes one lower and has no id 6. Measured on a live player on both builds (tools/actor-layout-probe.ts, `attridprobe ids`): the id vector is 40 [2..15,17,18,19] and 51 [1..5,7..15,17,18,19], and each name is pinned by the min/max/default its instance carries, which do not change between the builds (hunger 0/20/20, saturation 0/20/5, exhaustion 0/20/0, level 0/24791/0, experience 0/1/0, health 0/20/20, follow_range 0/2048/16, knockback_resistance -2/1/0, attack_damage 1/1/1, absorption 0/16/0, luck -1024/1024/0). UnderwaterMovementSpeed and LavaMovementSpeed share a fingerprint (0/FLT_MAX/0.02); they keep their relative order, as every distinguishable neighbour from 8 to 15 does. JumpStrength is deliberately absent: a player has no instance of it, so it was not measured, and an absent name falls through to bdsx's own enum value.",
+   "PlayerHunger": 2,
+   "PlayerSaturation": 3,
+   "PlayerExhaustion": 4,
+   "PlayerLevel": 5,
+   "PlayerExperience": 6,
+   "Health": 7,
+   "FollowRange": 8,
+   "KnockbackResistance": 9,
+   "MovementSpeed": 10,
+   "UnderwaterMovementSpeed": 11,
+   "LavaMovementSpeed": 12,
+   "AttackDamage": 13,
+   "Absorption": 14,
+   "Luck": 15
+  },
+  "LayeredAbilities": {
+   "note": "1.26 body: the dynamic-index ability lookup (40 0x1324570 / 51 0x12b3e20, 141B in both) gates on `cmpb $19` (so 20 abilities), scales the index by 12 (`lea (%rdx,%rdx,2)` then `*4`) and walks the layer bases 1224/984/744/504/264/24, stopping at the first whose byte 0 is not 1 (Unset); the value byte is +4 (`setne %cl; andb 4(%rax),%cl` in 40 0x2df7fc0 / 51 0x2fb68c0). The AbilitiesComponent stride is 1464 in both builds (`imulq $1464` in getPlayerPermissionLevel 40 0x220120 and the permissions setter 40 0x220200) = 24 + 6*240. Endstone layered_abilities.h / abilities.h (Apache-2.0) declare the same thing: PermissionsHandler (24B: command byte 0, player byte 1, shared_ptr at 8), then array<Abilities,6>, Abilities = 20 * sizeof(Ability) = 240, Ability = 12 {type_ 0, value_ 4, options_ 8}. Baseline for contrast: 19 abilities, 5 layers at 4/232/460/688/916.",
+   "commandPermissions": 0,
+   "playerPermissions": 1,
+   "layers": 24,
+   "layerStride": 240,
+   "layerCount": 6,
+   "baseLayer": 1,
+   "size": 1464
+  },
+  "Abilities": {
+   "note": "see offsets.LayeredAbilities",
+   "abilityStride": 12,
+   "abilityCount": 20,
+   "size": 240
+  },
+  "Ability": {
+   "note": "see offsets.LayeredAbilities",
+   "type": 0,
+   "value": 4,
+   "options": 8,
+   "size": 12
+  },
+  "Mob": {
+   "note": "Mob's hurt-time countdown. 2024 kept it in SynchedActorData (Actor::setHurtTime 0x19c5fb0 is set<int>(entity_data, 11, time) and nothing else); 1.26 moved it into a MobHurtTimeComponent that the Mob holds by pointer, and the synched id is gone -- a sweep of getInt over ids 0..63 on a zombie one tick after a console `damage` finds only id 1 and id 55 non-zero and nothing moving over the next four ticks, on both builds. Three routes give the pointer: (1) live, both builds -- following every pointer-looking word in the Mob and reading the first eight dwords behind it one tick and five ticks after the hit, exactly one word counts down, Mob+0x428 [+0] 10 -> 6; (2) Endstone mob.h declares BuiltInMobComponents { death_ticking, mob_animation, mob_hurt_time } and built_in_mob_components_ in that order, so the hurt-time component is the third pointer of the triple; (3) static, both builds -- `mov rax,[reg+0x428]; movl $10,(%rax)` occurs where 2024 called setHurtTime(10) (two call sites with `movl $10,%edx` before them) and `movl $0,(%rax)` where it cleared it.",
+   "hurtTimeComponent": 1064,
+   "hurtTime": 0,
+   "sendArmorSlotVftableNote": "Mob::sendArmorSlot has no 1.26 out-of-line address on either build (Q3 follow-up (5), docs/findings-audit.md); its real body is inlined into ServerPlayer::setArmor right after the call to Player::setArmor (40 0x695620, 51 0x758d10, both 835B, byte-identical up to this point -- disas-exact): range-check slot<5, build a one-bit bitmask, one virtual call through this's own vtable. The slot number is NOT the same between the two builds (the drift this project has already seen for other virtuals, e.g. _hurt 134 -> 133), so it ships as this per-build offset rather than a literal in bds/implements.ts.",
+   "sendArmorSlotVftableOffset": 1264
+  },
+  "Item": {
+   "note": "Item::id_ (next-steps Q1-B-2, docs/findings-containers.md 11). 2024 +162, where ?getId@Item@@QEBAFXZ (0x1cad2e0) is the two-instruction leaf `movzwl 162(%rcx); retq`. 1.26 has no such leaf, but the whole of ItemStackBase::getId is inlined into ItemStackBase::toString (40 0x1bbfb40 / 51 0x1a52430) and the two builds are byte for byte the same there: `mov dx,0xffff; cmpb $1,35(%rsi); jne; mov rcx,[rsi+8]; test/je; mov rcx,[rcx]; test/je; movzwl 170(%rcx),%edx`. The instruction after it, `movswl 32(%rsi),%edx`, is the aux_ toString prints -- so toString`s \"Name(id)@aux\" is an independent compiled read of both fields and is what the itemprobe aux/blockaux steps check bdsx against. | blockType (+0x178) / blockTypeWeak (1): Item::block_type_, a WeakPtr<BlockType> (a pointer to the shared counter whose first word is the BlockType*; Endstone 0.11.7 item.h). This build's wearable-block test reads it so: 0x1bc3ad0 `add $0x178,%rsi; mov (%rsi),%rax; mov (%rax),%rcx; mov 0xe0(%rcx)` (docs/findings-audit.md \"isHumanoidWearableBlockItem\"; engine/item.ts). | canDestroyInCreativeSlot (48): Item::canDestroyInCreative's vftable slot (2024: 43). The component item's live table (0xa6dae40, the apple's; getComponentItem's cbprobe) holds ?canDestroyInCreative@ComponentItem@@ at slot 48: 0x33c5570 (movzbl 0x210(%rcx); and 2; shr), 2024's leaf (movzbl 0x258; shr; and 1) with the flags byte moved. bdsx's jsv needed ??_7ComponentItem@@6B@, which 1.26's tables do not name, so it threw inside the creative blockDestroy hook (docs/findings-slots.md \"SimulatedPlayer actions\"). Consumed by engine/item.ts. | fixupCommonSlot (107 = +0x358): Item::fixupCommon(ItemStackBase&)'s vftable slot (2024 +0x2e8, slot 93, called from Item::fixupOnLoad 0x1caa890). ItemStack::fromTag (0x1bbef90) calls +0x358 right after _loadItem with rdx = the stack, and the fromTag(tag, Level&) overload calls +0x350 with r8 = the level: fixupCommon's two overloads in MSVC's reverse declaration order. The same on both builds (docs/findings-nbt.md \"ItemStackBase\"). | fullName (+0x120): Item::full_name_, a HashedString (hash, then the std::string at +8, then the last-match pointer). 2024 +0x118: ?getFullItemName@Item@@ 0x1cacd80 is `add $0x118,%rcx; jmp HashedString::getString` and getFullNameHash 0x1cacd90 `lea 0x118(%rcx),%rax`. This build`s ItemStackBase::isNull (0x1bc2260; Endstone item_stack_base.cpp: item->getFullNameHash() == BedrockBlockNames::Air) compares the hash at Item+0x120 with the air global, then the last-match pointer at +0x148 and the string (data +0x128, size +0x138, capacity +0x140); the same instructions on both builds. Endstone item.h declares id_, description_id_, raw_name_id_, namespace_, full_name_ in that order, which puts it at 170 -> +0x120 given id_ at 170. Consumed by engine/item.ts (derived Item::getCommandNames, docs/findings-nbt.md \"Item names\"). | isValidAuxValueSlot (67): Item::isValidAuxValue(int)'s vftable slot (2024: 56, +0x1c0, the tail call in ItemStackBase::isValidAuxValue 0x1b657a0). Endstone item.h (0.11.7 and HEAD) counts it 67, between isComplex (66, the image's return false) and getDamageChance (68, HumanoidArmorItem's override); across this build's Item tables slot 67 holds the image's return true in ~60 and BlockItem/BoatItem/PotionItem/FireworkChargeItem/... overrides named isValidAuxValue in the rest. PotionItem's (40 0x2c983b0) returns false above 0x3f. Consumed by engine/item.ts (derived ItemStackBase::isValidAuxValue; 2026-09-27 agent-p, docs/findings-audit.md \"The next audit batch\"). | creativeCategory (+0x180, one byte): Item::creative_category_ (SharedTypes::CreativeItemCategory, std::uint8_t in 1.26: All 0 .. Items 4, ItemCommandOnly 5, Undefined 6). 2024 +0x1d0, four bytes: ?getCreativeCategory@Item@@ 0x1cab790 is `movl 0x1d0(%rcx),%eax; ret`. Endstone item.h (0.11.7 and HEAD) declares it right after block_type_ (+0x178, eight bytes on both builds), before crafting_remaining_item_ and creative_group_ (+400). This build: the Item constructor (0x24cb9c0, stores id_ at 0xaa) does `movq $0x0,0x178(%rcx); movb $0x4,0x180(%rcx); movups %xmm0,0x188(%rcx)` and the SSO capacity at 0x1a8 -- 2024 constructor 0x1c98a60 `movl $0x4,0x1d0(%r15)` between the same neighbours; the inlined creative-group add (0x37520c0) takes the ItemInstance item_ WeakPtr twice and does `cmpb $0x6,0x180(%rax); jne; movzbl 0x18(%rcx),%edx; movb %dl,0x180(%rax)` (2024 Item::addCreativeItem 0x1ca14b0: cmpl $0x6,0x1d0 then setCategory); a command item-name loop (inlined into 0x38eef0 at 0x392445) skips an item on `cmpb $0x6,0x180` after reading is_hidden_in_command_ at 0x1b8 and block_type_ at 0x178. Consumed by engine/item.ts (derived Item::getCreativeCategory; docs/findings-containers.md section 17). | rawNameId (+0xd0, HashedString): Item::raw_name_id_, counted back from the confirmed full_name_ (+0x120) over namespace_ (std::string, +0x100): Endstone item.h declares description_id_, raw_name_id_, namespace_, full_name_; 2024 getRawNameId@Item 0x1cae490 `add $0xc8,%rcx` -- the same +8 shift as full_name_ (0x118 -> 0x120). | flags (+0x152 = 338, one byte): the one-bit fields after max_damage_ (int16 +0x150, right after the 0x30-byte full_name_): is_glint_ 0x1, hand_equipped_ 0x2, is_stacked_by_data_ 0x4, requires_world_builder_ 0x8, explodable_ 0x10, fire_resistant_ 0x20, should_despawn_ 0x40, allow_offhand_ 0x80 (Endstone item.h), before max_use_duration_ (+0x154). 2024 +0x14a with the same bits (isExplodable@Item 0x1cb1cb0 shr 4, isFireResistant@Item 0x1cb1cc0 shr 5). This build: testb $0x10 / $0x20, 0x152(item) at 0x2d3b864 / 0x2d3b899 (in the item-entity hurt at 0x2d3b840..), the item entity's explosion / fire immunity (2024 ItemActor::_hurt). Consumed by engine/item.ts (docs/findings-containers.md section 19). | isHumanoidArmorSlot (10): Item::isHumanoidArmor's vftable slot (2024: 9, +0x48). This build keeps no isHumanoidWearableItem; two callers (0x8f66a50, 0x1bc7a90) inline its vftable +0x50 check before calling the wearable-block walk; HumanoidArmorItem's slot 10 is the image's return-true (docs/findings-audit.md \"isHumanoidWearableItem\"). Consumed by engine/item.ts. | buildDescriptionNameSlot (93): Item::buildDescriptionName(ItemStackBase const&)'s vftable slot (2024: 82, +0x290, called from ItemStackBase::getName 0x1b61950). PickaxeItem's slot 93 (0x24e8940) calls vftable +0x2f0 (slot 94, buildDescriptionId) and then the static I18n's +0x80 -- 2024's body; slot 92 does neither. Endstone item.h counts it 92 (one virtual more between isValidAuxValue 67 and it, as getMaxStackSize's 99 -> 100). Consumed by engine/item.ts (derived ItemStackBase::getName). | isStackedByDataSlot 35 / getMaxDamageSlot 36 / getAttackDamageSlot 37 / isGlintSlot 40 / isPatternSlot 41 / isLiquidClipItemSlot 50 / getEnchantValueSlot 57 (2024: 33, 34, 35, 38, 39, 45, 51; ItemStackBase forwarded to each). Endstone item.h's count, exact here: it matches the slots confirmed on this build (isHumanoidArmor 10, isDamageable 14, canDestroyInCreative 48, isValidAuxValue 67). PickaxeItem's table (0xa653a40): 35 movzbl 0x152; and $4; shr $2 (the flags byte's is_stacked_by_data_), 36 movzwl 0x150 (max_damage_), 37 the digger's damage field, 40 isGlint(stack), 41 and 50 return 0, 57 the tier pointer's +0x10. Consumed by engine/item.ts ITEM_SLOTS. | getDestroySpeedSlot (88): Item::getDestroySpeed(ItemStackBase const&, Block const&) (2024: 77, +0x268, called by ItemStack::getDestroySpeed 0x1b5ffe0). Slot 88 of a plain item's table is movss 1.0f; ret (MapItem 0xdff460, PickaxeItem 0x3759800); a digger's reads its tag at +0x218. Endstone item.h counts 88. Consumed by engine/item.ts itemDestroySpeed. | namespace (+0x100, std::string): Item::namespace_, the 0x20 bytes before the confirmed full_name_ (+0x120) in Endstone item.h's order (raw_name_id_, namespace_, full_name_); 2024 +0xf8 is the left half of ?getSerializedName@Item@@ 0x1cae4b0. Consumed by engine/item.ts (derived Item::getSerializedName; docs/findings-containers.md section 27). | allowOffhandState (0 = the flag byte's bit 0x80 is the storage; 0x210 = a two-bit state byte, 1 allowed / 2 not / 0 unset): the engine's reader is OffhandContainerValidation vftable slot 2 (40 0x8f48ce0: movzbl 0x152(item); shrb $7); 51's network item writer (0x20bb75d) writes allow_off_hand from the same state and no code reads bit 7 of +0x152 there. Consumed by engine/item.ts (derived Item::setAllowOffhand; docs/findings-containers.md section 27).",
+   "id": 170,
+   "blockType": 376,
+   "blockTypeWeak": 1,
+   "canDestroyInCreativeSlot": 48,
+   "fixupCommonSlot": 107,
+   "fullName": 288,
+   "isValidAuxValueSlot": 67,
+   "creativeCategory": 384,
+   "rawNameId": 208,
+   "flags": 338,
+   "isHumanoidArmorSlot": 10,
+   "tags": 504,
+   "buildDescriptionNameSlot": 93,
+   "isStackedByDataSlot": 35,
+   "getMaxDamageSlot": 36,
+   "getAttackDamageSlot": 37,
+   "isGlintSlot": 40,
+   "isPatternSlot": 41,
+   "isLiquidClipItemSlot": 50,
+   "getEnchantValueSlot": 57,
+   "getDestroySpeedSlot": 88,
+   "namespace": 256,
+   "allowOffhandState": 0,
+   "getCooldownTypeSlot": 103
+  },
+  "EnTTRegistry": {
+   "note": "The EnTT registry a 1.26 Actor holds at +16 (the entity id is the dword at +24). Every inlined component lookup in the build walks it with the same instructions -- Actor::getEntityTypeId, Actor::getRuntimeID and Player::getAbilities are identical up to the component's size, on both builds -- so these are the offsets bdsx needs to do the lookup itself for the names 1.26 kept no out-of-line copy of (docs/findings-riding.md). poolsBegin/poolsEnd are the bucket array of the open-addressed map from entt::type_hash to storage; nodes/nodesEnd are its node array (32-byte nodes: next index at +0, the hash at +8, the storage pointer at +16, and nodesEnd is the end sentinel a hit is compared against); sparseBegin/sparseEnd are the storage's sparse pages and packed is its element pages at +80. entityBits 18 is the index half of an entt::entity, sparsePageBits 11 is 2048 entries per sparse page, packedPageBits 7 is 128 elements per packed page -- the same three constants for a 4-byte component (ActorTypeComponent), an 8-byte one (RuntimeIDComponent) and a 1464-byte one (AbilitiesComponent). entitySparseBegin/End (0xe0/0xe8) are the registry`s entity storage sparse page vector, what `registry.valid(entity)` walks: 2024's 0x2728b20 reads the same offsets, and a runtime scan of the live registry on both 1.26 builds finds exactly one (begin,end) pair that is a page vector holding the bot's id with the right version and rejecting a bumped version: +0xe0 (docs/findings-inventory.md section 16, ukscan). The 0x110/0x118 loads that look like it in the binary belong to another class.",
+   "poolsBegin": 72,
+   "poolsEnd": 80,
+   "nodes": 104,
+   "nodesEnd": 112,
+   "nodeStride": 32,
+   "nodeHash": 8,
+   "nodeStorage": 16,
+   "sparseBegin": 8,
+   "sparseEnd": 16,
+   "packed": 80,
+   "entityBits": 18,
+   "sparsePageBits": 11,
+   "packedPageBits": 7,
+   "entitySparseBegin": 224,
+   "entitySparseEnd": 232
+  },
+  "NetworkSystem": {
+   "note": "NetworkSystem::connections_ (std::vector<std::unique_ptr<NetworkConnection>>). The inlined getPeerForUser at 0xbfd6f0 (163B; Endstone network_system.cpp spells the same body) loads begin/end from this+0xa0/+0xa8, compares each connection's NetworkIdentifier type at +0xa8 before the equality call, rejects a connection whose should_close_connection_ (+0x199) is set and returns connection->peer (+0x118). 2024's _getConnectionFromId (0x810b60) had the vector at +0x40.",
+   "connections": 160
+  },
+  "NetworkConnection": {
+   "note": "NetworkConnection, Endstone network_connection.h order with the 176-byte 1.26 NetworkIdentifier: id +0, type +176, six weak_ptrs from +184 (recorder, encrypted, compressed, batched +232, latency, packet trace), peer +280. Pinned by the binary: peer +0x118 and should_close_connection_ +0x199 in 0xbfd6f0, and 0xbfe5f0 locks the weak_ptr at +0xe8/+0xf0 and sets a byte on the BatchedNetworkPeer it holds. Endstone's `// +377` comment on should_close_connection_ is stale (it is +409). packetevent.ts finds a BatchedNetworkPeer's connection by batchedPeer to give packetRaw its NetworkIdentifier (docs/findings-packets.md).",
+   "id": 0,
+   "batchedPeer": 232,
+   "peer": 280,
+   "shouldClose": 409
+  },
+  "UserEntityIdentifierComponent": {
+   "note": "Endstone user_entity_identifier_component.h (0.11.7 and HEAD, byte-identical): NetworkIdentifier network_id_ (176B) / SubClientId client_sub_id_ (uint8_t, 1B) / mce::UUID client_uuid_ (16B, align 8) / PlayerAuthenticationType authentication_type_ (int, 4B) / PlayerAuthenticationInfo trusted_player_info_ (align 8). client_sub_id_ pads client_uuid_ to +184 (0xb8) -- confirmed independently by ??0PlayerListEntry@@QEAA@AEBVPlayer@@@Z, which reads uuid from this same offset (docs/findings-containers.md 14, offsets.PlayerListEntry.uuid note) and whose output the bot decodes correctly on the wire. trusted_player_info_ starts at +208 (0xd0): 208 + sizeof(PlayerAuthenticationInfo) 384 (ten 32B std::strings, an 8B int64 permissions field, a string, a UUID, two bools, padded to a multiple of 8) = 592, exactly the component's independently-confirmed stride. There is no Certificate* anywhere in the struct (2024's +0xd8 fell inside network_id_'s own bytes) -- 1.26 replaced the certificate-object indirection with the auth info held by value, whose first field is the XUID string. UserEntityIdentifierComponent.certificate removed; Player.getCertificate() returns null on 1.26. Player.getXuid() already reaches the same XUID through a resolved native call, unaffected. Q5-5, docs/findings-packets.md.",
+   "size": 592,
+   "networkIdentifier": 0,
+   "uuid": 184
+  },
+  "PassengerComponent": {
+   "note": "Endstone's passenger_component.h: one StrictActorIDEntityContextPair (the vehicle), 8 bytes of StrictEntityContext then the ActorUniqueID. 2024's ?getVehicleID@ActorRiding@@ (0x186c4a0) returns *(component + 8), which is that id; Actor::getVehicle is that id through Level::fetchEntity.",
+   "size": 16,
+   "vehicleEntity": 0,
+   "vehicleActorId": 8
+  },
+  "VehicleComponent": {
+   "note": "Endstone's vehicle_component.h: a std::vector<StrictActorIDEntityContextPair> of passengers, static_assert(sizeof == 24). 2024's ?isPassenger@Actor@@ walks exactly this vector comparing the argument's Actor::getOrCreateUniqueID against each pair's id at +8.",
+   "size": 24,
+   "passengers": 0,
+   "passengerStride": 16,
+   "passengerActorId": 8
+  },
+  "ServerPlayer": {
+   "note": "?setLocalPlayerAsInitialized@ServerPlayer@@ is one byte store (2024 0xcd4920: `movb $1,7754(%rcx); retq`) and 1.26 has no copy of it. The offset comes from ?isPlayerInitialized@ServerPlayer@@, which this table resolves on both builds: 2024's (0xccbad0, 65B) is four steps -- cmpb +2904, cmpb +7752, a component check on this+8, cmpb +7754 -- and 1.26's is the same four in the same order with the component check inlined: cmpb +1801 (the execution-confirmed isSpawned, which is 2024's +2904), cmpb +3508, the EnTT lookup, then `movzbl` of this field as the return value. It is the only offset here that differs between the two builds (3510 on 1.26.40.8, 3511 on 1.26.51.1).",
+   "localPlayerInitialized": 3510,
+   "containerCounter": 3480
+  },
+  "PlayerListEntry": {
+   "note": "1.26's PlayerListEntry, read off its constructor ??0PlayerListEntry@@QEAA@AEBVPlayer@@@Z (0x1248e60): id +0 (getOrCreateUniqueID), uuid +8 (UserEntityIdentifierComponent 0xb845379, element stride 592, uuid at +184), name +24 (Player+3008), xuid +56 (Player vft +1848, sret), platformOnlineId +88 (Player+1560), buildPlatform +120 (Player+1164), skin +128 = shared_ptr (pointer +128, control +136; taken from the SerializedSkinRef at Player+2736 -- 2024 held a SerializedSkin by value at +128), color +144 (16 bytes from a table indexed by synched entry 27), isTeacher +160 (Player vft +1784), isHost +161 (Player+3242), isSubClient +162. 168 bytes: ServerLevel's add path (0x2e27020) keeps it at -80(%rbp) with the next object at +88(%rbp). The same offsets on both builds; the destructor (0x12498c0) releases +136 and the strings at +88/+56/+24. docs/findings-containers.md 14.",
+   "size": 168,
+   "id": 0,
+   "uuid": 8,
+   "name": 24,
+   "xuid": 56,
+   "platformOnlineId": 88,
+   "buildPlatform": 120,
+   "skin": 128,
+   "color": 144,
+   "isTeacher": 160,
+   "isHost": 161,
+   "isSubClient": 162
+  },
+  "PlayerListPacket": {
+   "note": "1.26's PlayerListPacket (80 bytes, as in 2024): the vector at +48 holds 184-byte std::variant elements with the index byte at +176 -- the packet's deleting destructor (0xb04370) walks them with addq $184 and skips index -1/0 (movsbq 176; incq; cmpq $2; jb), calling the alternative-1 destructor (0x1f53390) otherwise. +72 is not 2024's action byte: every one of the packet's constructors (ServerLevel's add 0x2e27020 and remove 0x2e279f0 paths, the factory 0xc053c0) writes the constant 5 there. docs/findings-containers.md 14.",
+   "entries": 48,
+   "elementSize": 184,
+   "elementIndex": 176,
+   "mode": 72
+  },
+  "PlayerListPacketAddEntry": {
+   "note": "Alternative 1 of the PlayerListPacket element, as ServerLevel's add path (0x2e27020) builds it from a PlayerListEntry by moving each member: action byte +0 = 0 (the remove path 0x2e279f0 writes alternative 0 = {action 1 at +0, uuid at +8}, index 0), uuid +8, id +24, name +32, xuid +64, platformOnlineId +96, buildPlatform +128, skin shared_ptr +136/+144, isTeacher/isHost/isSubClient +152/+153/+154, color +156; index +176 = 1. The alternative's destructor (0x1f53390) releases +144 and the strings at +96/+64/+32. docs/findings-containers.md 14.",
+   "action": 0,
+   "uuid": 8,
+   "id": 24,
+   "name": 32,
+   "xuid": 64,
+   "platformOnlineId": 96,
+   "buildPlatform": 128,
+   "skin": 136,
+   "isTeacher": 152,
+   "isHost": 153,
+   "isSubClient": 154,
+   "color": 156
+  },
+  "InventoryTransactionPacket": {
+   "note": "InventoryTransactionPacket.transaction (unique_ptr<ComplexInventoryTransaction>), Q5-3/Q5-4. 1.26 wraps the old flat unique_ptr in a new std::variant<NormalTransactionData,InventoryMismatchData,ItemUseInventoryTransaction,ItemUseOnActorInventoryTransaction,ItemReleaseInventoryTransaction> variant_transaction placed BEFORE it (Endstone inventory_transaction_packet.h, v0.11.7=1.26.40.8, HEAD=1.26.51.1): variant_transaction sits at payload+0x28 = packet+0x58, exactly where bdsx used to read the unique_ptr (reading the variant tag+union bytes as a ComplexInventoryTransaction* -- the bug this fixes). The real transaction unique_ptr moved to payload+312=0x138 (packet+0x168) on 1.26.40.8, payload+320=0x140 (packet+0x170) on 1.26.51.1 (8 bytes later because HEAD adds a HandSlot hand_ field to the ItemUseInventoryTransaction alternative). Confirmed on both exes by disassembling InventoryTransactionPacketPayload::~InventoryTransactionPacketPayload() (the call target of the packet dtor, 40 0x241a80 / 51 0x2da460): movq 0x138(%rcx),%rcx / 0x140(%rcx),%rcx then the standard unique_ptr null-check + vft[0](1) delete. The packet dtor itself (40 0x241af0 / 51 0x2da4d0) sized-deletes movl $0x180,%edx / $0x188,%edx, matching Endstone BEDROCK_STATIC_ASSERT_SIZE(InventoryTransactionPacket, 384,...) / (392,...) exactly, and payload starts at packet+0x30 in both (addq $0x30,%rcx before the call). Static only -- no live InventoryTransaction packet has been read through this offset; the bot cannot synthesize one without disconnecting (docs/findings-packets.md 7). docs/findings-packets.md 11.",
+   "transaction": 360
+  },
+  "UpdateAbilitiesPacket": {
+   "note": "Endstone update_abilities_packet.h / serialized_abilities_data.h (Apache-2.0) give the layout; the 1.26 move constructor UpdateAbilitiesPacket(SerializedAbilitiesData&&) (0x31ab8c0, 216B, the same instruction sequence on both builds) reads and writes exactly it: Packet header +8..+0x2b, vftable +0, then payload +0x30 = ActorUniqueID from src+0, u16 permissions +0x38 from src+8, the vector begin/end/cap +0x40/+0x48/+0x50 from src+0x10/+0x18/+0x20, and `movl $1, 0x58` = SerializationMode::SideBySide_LogOnMismatch. Used by the engine layer (bdsx/bds/engine/abilities.ts) to build the packet, since 1.26 has no out-of-line UpdateAbilitiesPacket(ActorUniqueID, LayeredAbilities const&).",
+   "payload": 48,
+   "serializationMode": 88,
+   "size": 96
+  },
+  "SerializedAbilitiesData": {
+   "note": "see UpdateAbilitiesPacket. SerializedLayer is 24 bytes: layer u16 +0, abilities_set u32 +4, ability_values u32 +8, fly_speed +12, vertical_fly_speed +16, walk_speed +20 (Endstone serialized_abilities_data.h).",
+   "targetPlayer": 0,
+   "commandPermissions": 8,
+   "playerPermissions": 9,
+   "layers": 16,
+   "layerSize": 24,
+   "size": 40
+  },
+  "PistonBlockActor": {
+   "state": 247,
+   "attachedBlocks": 256,
+   "note": "2026-09-24 (docs/findings-blocks.md section 16): state_ (bdsx's PistonBlockActor.action, 2024 +0xd7) is the byte _onUpdatePacket reads before the update and compares after it (0x5ee3f90), one below new_state_ (0xf8, which _checkAttachedBlocks and _spawnMovingBlocks test against 3 = Retracting); attached_blocks_ is the std::vector<BlockPos> _checkAttachedBlocks clears and the walker searches (0x100, 2024 +0xe0; getAttachedBlocks was an ICF-shared leaf returning it). Order matches Endstone's piston_block_actor.h member list (sticky_, progress_, last_progress_, two bools, old_state_, state_, new_state_, ...)."
+  },
+  "ChestBlockActor": {
+   "paired": 760,
+   "pairedPosition": 768,
+   "openBySlot": 29,
+   "note": "2026-09-24 (docs/findings-blocks.md section 17): the two fields pairWith (0x2915bc0) writes -- the partner pointer and, right after it, the partner's BlockPos -- which 2024's one-line isLargeChest (partner != null, +0x2a0) and getPairedChestPosition (&+0x2a8) read."
+  },
+  "BlockEntityFallOnEvent": {
+   "pos": 8,
+   "region": 24,
+   "actor": 32,
+   "fallDistance": 40,
+   "note": "2026-09-24 (docs/findings-blocks.md section 19): the struct Actor::checkFallDamage (0xdf5e50) builds on the stack for the inlined Block::onFallOn -- BlockPos at +8 (x,y then z), the BlockSource at +0x18, the Actor at +0x20, the fall distance float at +0x28 -- and onFallOnBase (0x1eef370) reads at the same offsets. Same on both builds."
+  },
+  "Scoreboard": {
+   "displayObjectives": 16,
+   "identityPlayers": 80,
+   "identityEntities": 144,
+   "identityFakes": 208,
+   "identityRefs": 336,
+   "objectives": 408,
+   "criteria": 536,
+   "onPlayerScoreRemovedSlot": 9,
+   "note": "2026-09-24 (docs/findings-scoreboard.md section 6): Endstone scoreboard.h (Apache-2.0) member order counted from vptr+registry (16 bytes), each std::unordered_map 64 bytes and IdentityDictionary four of them; the 1.26 bodies read identity_refs_ at +0x150/+0x158 (removeFromObjective, the bulk removal, the reset loop), objectives_ at +0x198 (+0x1a0 list head), the UI flag at +0x190 and the event coordinator at +0x258, IdentityDictionary at +0x50 (clearIdentity) -- identical on both builds. onPlayerScoreRemoved is ServerScoreboard vftable slot 9 (every inlined reset calls vtable+0x48)."
+  },
+  "Objective": {
+   "scores": 24,
+   "note": "2026-09-24: Objective::scores_ (ScoreboardId -> int) at +0x18 (Endstone objective.h; every reset copy looks the id up in objective+0x18); name_ +0x58 / display_name_ +0x78 / criteria_ +0x98 are bdsx's own 2024 field offsets, unchanged (removeObjective reads the name at +0x58)."
+  },
+  "IdentityDefinition": {
+   "playerId": 24,
+   "entityId": 32,
+   "identityType": 72,
+   "note": "2026-09-24: Endstone identity_definition.h: scoreboard_id_ +0, is_hidden_fake_player_ +16, player_id_ +24, entity_id_ +32, player_name_ +40, identity_type_ +72."
+  },
+  "HealthAttributeDelegate": {
+   "mob": 24,
+   "note": "2026-09-24: HealthAttributeDelegate::change reads the owning Mob at +0x18 (then Mob+0x1d8, the level) on both builds; 2024 +0x20. The delegate itself is AttributeInstance+0x58 (Endstone attribute_instance.h)."
+  },
+  "EntityRegistry": {
+   "registry": 48,
+   "note": "2026-09-24 (regprobe, both builds): an actor holds its EntityRegistry* at +8 and the entt registry at +16; the difference is 0x30 on both builds (Endstone entity_registry.h: enable_shared_from_this, is_viewing_, debug_name_, then registry_)."
+  },
+  "HitResult": {
+   "entity": 56,
+   "note": "2026-09-24: ProjectileComponent::onHit copies the HitResult's WeakEntityRef from +0x38 (registry), +0x40 (count block), +0x48 (EntityId), on both builds; Endstone hit_result.h puts entity_ after start_pos_, ray_dir_, type_, facing_, block_, pos_. | block (+0x20): the BlockPos ProjectileComponent::onHit reads to call the block type's onProjectileHit (BlockLegacy slot 15, inlined Block::onProjectileHit), both 1.26 builds and 2024 (findings-blocks.md section 21).",
+   "block": 32
+  },
+  "Dimension": {
+   "getCloudHeightSlot": 24,
+   "note": "getCloudHeightSlot: Dimension::getCloudHeight's vftable slot. Endstone dimension.h: IDimension's 15 virtuals, then Dimension's own, getCloudHeight the tenth -> 24 (2024: 21). Read live (2026-09-24, dim40/dim51, tools/block-probe.ts dimprobe) off the player's dimension in each of the three: slot 24 is overworld 0x8117e10 / nether 0x178bd40 / the_end 0x811fba0 (vftables 0xa7ebd50 / 0xa7ebad0 / 0xa7ebeb0) -- the nether's `mov ax,0x80; ret`, the End's `mov ax,8; ret`, the overworld's 192 (128 behind an old-world version gate); slot 23 copies its Color argument into the sret (getBrightnessDependentFogColor), as Endstone orders them. Consumed by engine/dimension.ts (Actor::isInClouds, derived). | villageManager (+0x5e0): the VillageManager unique_ptr, read by 40's out-of-line isInRaid 0x234b80 (`mov 0x5e0(%rbx),%rdi` after locking the dimension). tickingAreas (2026-09-27): the TickingAreaList pointer ServerPlayer::moveView walks (2024 getTickingAreas: +0x2d8) -- docs/findings-blocks.md \"Ticking areas\". | skyDarken (+0x1a9 = 425, one byte): Dimension::sky_darken_ (Brightness). Endstone dimension.h: ultra_warm_ +422, has_ceiling_, has_skylight_, sky_darken_, then dispatcher_ +432. 2024 isDay@Dimension 0x1f4bd30 `cmpb $0x4, 0x170(%rcx); setb %al`; this build inlines it as `cmpb $0x4, 0x1a9(reg)` at 0x215163 (in 0x214c20) and 0x2186ee. Consumed by engine/dimension.ts (derived Dimension::isDay; docs/findings-layouts.md \"Dimension::isDay\"). | getTimeOfDaySlot (30): Dimension::getTimeOfDay(int time, float alpha)'s vftable slot (2024: +0xe8, 29). OverworldDimension's slot 30 (0x178f880) is time % 24000 (imul $0x5dc0) plus alpha, folded into [0, 1), then the cosine easing; its slot 32 (0x178bd60) checks DoDaylightCycle, reads the level time and calls +0xf0 -- 2024's Dimension::getTimeOfDay(float). Consumed by engine/dimension.ts (derived Dimension::getTimeOfDay / getSunAngle).",
+   "villageManager": 1504,
+   "tickingAreas": 768,
+   "skyDarken": 425,
+   "getTimeOfDaySlot": 30,
+   "sendPacketForPositionSlot": 3
+  },
+  "ServerNetworkHandler": {
+   "nonOwnerBase": 16,
+   "note": "nonOwnerBase: the offset inside ServerNetworkHandler of the base the Level's NonOwnerPointer (+0x230) points at; both GameTest callers of the SimulatedPlayer wrapper subtract 0x10 from it before passing the handler (docs/findings-slots.md \"SimulatedPlayer\"). maxNumPlayers/app (2026-09-27): max_num_players_ and the IMinecraftApp& app_ SetMaxPlayersCommand::execute (the inlined setMaxNumPlayers) and ListCommand read and write; 2024 +0x320/+0x1c0 (docs/findings-packets.md \"setMaxNumPlayers\"). serverName (2026-09-27): the announced name allowIncomingConnections stores and updateServerAnnouncement passes to the locator (skipping the announcement while it is empty); 2024 +0x2c8 (docs/findings-packets.md \"getMotd\").",
+   "maxNumPlayers": 952,
+   "app": 648,
+   "serverName": 920,
+   "clientsList": 88,
+   "clientNodeValue": 192
+  },
+  "Explosion": {
+   "pos": 0,
+   "power": 12,
+   "fire": 80,
+   "breaking": 81,
+   "allowUnderwater": 82,
+   "sourceId": 96,
+   "region": 104,
+   "maxResistance": 112,
+   "note": "The Explosion the nine-argument Level::explode (0x739e80) builds on its stack before calling the explosion routine: the position copied from its Vec3 argument to +0, the power (5th argument) to +0xc, fire/breaking/allowUnderwater (6th/7th/9th) to +0x50/+0x51/+0x52, the source's ActorUniqueID to +0x60 (default the invalid id), the BlockSource* to +0x68, the maximum resistance (8th) to +0x70 (default FLT_MAX). The same instructions on both builds. Consumed by engine/explosion.ts (levelExplode through Level::explode(Explosion&))."
+  },
+  "GameMode": {
+   "useItemOnBoolFirst": 0,
+   "note": "useItemOnBoolFirst (0): bdsx:GameMode::useItemOn's eighth argument order -- (…, click, Block*, bool) on 1.26.40.8, read off the frame (docs/findings-slots.md \"itemUseOnBlock\"). | stopDestroyBlockSlot (4): GameMode::stopDestroyBlock(BlockPos const&), the table slot the inlined simulateStopDestroyingBlock calls through the player's GameMode (vftable +0x20 on 2024 and on both 1.26 builds; docs/findings-slots.md \"SimulatedPlayer: the five that were inlined\").",
+   "stopDestroyBlockSlot": 4
+  },
+  "BlockPlayerInteractEvent": {
+   "pos": 8,
+   "player": 24,
+   "note": "The event a block's interact handler (BlockType+0x340, type 4) receives: the bed's (40 0x1b9f3c0), the chest's and the button's handlers all read the BlockPos at +0x8 and the Player* at +0x18 and write the result bytes at +0x20/+0x21; none reads a face. The same on both builds. Consumed by engine/blockinteract.ts (chestOpen, buttonPress)."
+  },
+  "VillageManager": {
+   "getVillageSlot": 1,
+   "note": "getVillageSlot: the VillageManager virtual isInRaid calls with (sret weak_ptr<Village>, BlockPos const&, 32, -1) -- `mov 0x8(%rax)` on both builds, 2024's slot too."
+  },
+  "Village": {
+   "raid": 840,
+   "note": "raid: Village::hasRaid is `cmpq $0, 0x348(village)` in 2024 and in both 1.26 builds' isInRaid."
+  },
+  "ConnectionRequest": {
+   "gameServerToken": 144,
+   "authenticationType": 176,
+   "note": "BaseConnectionRequest (Endstone base_connection_request.h): the client-data WebToken (optional) at +0x8 (its payload JSON at +0x8+0x30), the RawGameServerToken string at +0x90 -- a JWT whose payload carries xid / xname / identity / cpk, 2024's certificate extraData XUID / displayName / identity -- and the PlayerAuthenticationType at +0xb0 (2 = SelfSigned for the offline bot). Read off live logins on both builds (loginprobe, login40/login51). clientDataJson +0x58 / clientDataEngaged +0x88: the optional WebToken at +0x8 is 0x80 bytes on Windows (Endstone web_token.h: header string, header Json::Value, data string, data Json::Value at +0x50, signature string), so its parsed payload is the Json::Value at +0x58 and std::optional's engaged byte follows at +0x88, right before the game server token at +0x90 (docs/findings-inventory.md section 29). Consumed by engine/identity.ts (ConnectionRequest.getCertificate / ExtendedCertificate).",
+   "clientDataJson": 88,
+   "clientDataEngaged": 136
+  },
+  "LightningBolt": {
+   "life": 948,
+   "note": "2026-09-24: LightningBolt::normalTick compares +0x3b4 with 2 and on that tick calls the block type's onLightningHit (BlockLegacy slot 16, inlined Block::onLightningHit) on the block at its floored position (+0x218, getPosition); same offset on both 1.26 builds, 2024 +0x44c (findings-blocks.md section 21)."
+  },
+  "MobEffectInstance": {
+   "note": "size (0x88): sizeof(MobEffectInstance), the stride of the engine's own vector<MobEffectInstance> push in 0x23b4110 (AreaEffectCloud, called with the instance MobEffectInstance::load built in readAdditionalSaveData 0x23b6c90): `addq $0x88, 0x3e0(%rcx)`. 2024: 0x80. The two 1.26 builds differ: 0x88 on 1.26.40.8, 0x90 on 1.26.51.1 (Endstone HEAD's unknown_40_). bdsx allocates one for MobEffectInstance.load (docs/findings-nbt.md \"MobEffectInstance\"). | factorData (+0x28): MobEffectInstance::factor_calculation_data_. The constructor is inlined where the engine builds an instance from JSON (0x2414720, the only function using both \"amplifier\" and \"display_on_screen_animation\"): id +0, duration +4, the optional difficulty durations' engaged flags +0xc/+0x14/+0x1c = 0, amplifier +0x20, display_on_screen_animation +0x24, is_counter_paused_this_tick_ +0x25 = 0, ambient +0x26, visible (AND the MobEffect's showParticles at +0xf0) +0x27, then the factor data: padding_duration 0, factor_start 0, factor_target 1.0f at 0x30, factor_current 0, a std::function whose impl pointer is 0x70, and two zeroed fields after it. Consumed by engine/mobeffect.ts (derived MobEffectInstance constructor; docs/findings-components.md \"MobEffectInstance's constructor on 1.26\").",
+   "size": 136,
+   "factorData": 40
+  },
+  "StructureTemplateData": {
+   "note": "StructureTemplateData members (docs/findings-nbt.md \"StructureTemplate\"). 1.26 added neighbor_aware_block_upgrade_version (an int, the static std::string key at +0xc's parser) at +0xc, so size moved 2024 +0xc -> +0x10 and structure_world_origin +0x18 -> +0x1c: save's writers 0x3bd0540 / 0x3bd0670 read and load's parsers store exactly those dwords. Same on both builds.",
+   "structureSize": 16,
+   "structureWorldOrigin": 28
+  },
+  "CommandBlockComponent": {
+   "note": "size (0xc8): the packed-page stride of the EnTT storage for hash 0x42d5de32 (fnv1a \"CommandBlockComponent\"), `imulq $0xc8` in MinecartCommandBlock::readAdditionalSaveData (0x2d3fe20), the lookup bdsx does itself for ??$tryGetComponent@VCommandBlockComponent@@@Actor@@ (no out-of-line copy). 2024: 0xa0 (lea (r8,r8,4); shl 5 in Actor::_serializeComponents). The same on both 1.26 builds; its save/load read Ticking at +0xc4 and CurrentTickCount at +0xc0 (docs/findings-nbt.md \"CommandBlockComponent\"). tickDelay/executeOnFirstTick (+0xb8/+0xbc) are BaseCommandBlock 2024 +0x90/+0x94 shifted by the same 0x28 as ticking/currentTick (+0xc4/+0xc0 from +0x9c/+0x98), read back after the engine`s own load (ukcb, docs/findings-inventory.md section 16).",
+   "size": 200,
+   "ticking": 196,
+   "currentTick": 192,
+   "tickDelay": 184,
+   "executeOnFirstTick": 188
+  },
+  "ComponentItem": {
+   "note": "reflectionCtx (0x290): the pointer to the engine's cereal::ReflectionCtx a ComponentItem holds -- the constructor stores its fourth argument there, and ComponentItem::buildNetworkTag (0x33c6a80) passes it in r8 to its per-component loop, which hands it to every networked component's buildNetworkTag (vftable +0x20). 1.26.40.8 +0x290, 1.26.51.1 +0x298, 2024 +0x2c0. Consumed by engine/item.ts (docs/findings-nbt.md \"Item components\").",
+   "reflectionCtx": 656
+  },
+  "SharedConstants": {
+   "networkDefaultMaxConnections": 40,
+   "note": "networkDefaultMaxConnections: the cap setMaxNumPlayers applies, a literal 40 (cmp $0x29 / mov $0x28) in the inlined copy on both builds; 2024 read SharedConstants::NetworkDefaultMaxConnections (40)."
+  },
+  "IMinecraftApp": {
+   "onNetworkMaxPlayersChangedSlot": 5,
+   "note": "onNetworkMaxPlayersChangedSlot: the slot setMaxNumPlayers calls on app_ with the new maximum (vtable +0x28 in the inlined copy on both builds, as 2024); DedicatedServer's entry is a bare ret."
+  },
+  "CommandSelectorBase": {
+   "defaultTrueFlag": 194,
+   "note": "defaultTrueFlag: a byte after isExplicitIdSelector (+0xc1) that every inlined CommandSelectorBase constructor on this build sets to 1 (movb $1 at selector+0xc2 in allocateCommand<TestForCommand> 0x3cba320 and <GetSpawnPointCommand> 0x11107a0); 51's constructors stop at +0xc1. The class is 0xc8 bytes on both builds (operator new 0xe8 = Command 0x20 + selector)."
+  },
+  "TickingAreaListBase": {
+   "areas": 8,
+   "note": "areas: the vector<shared_ptr<ITickingArea>> (+8 begin, +0x10 end, +0x18 capacity) moveView walks and the inlined add pushes to; 2024 getAreas was `lea 8(%rcx)` -- docs/findings-blocks.md \"Ticking areas\"."
+  },
+  "CommandOrigin": {
+   "getWorldPositionSlot": 4,
+   "note": "getWorldPositionSlot (4): CommandOrigin::getWorldPosition's vftable slot (Endstone command_origin.h: getBlockPosition 3, getWorldPosition 4; 2024 the same). bdsx found it with procHacker.jsv, which takes the FIRST slot of ??_7ServerCommandOrigin@@6B@ holding the address; on this build ServerCommandOrigin::getBlockPosition and ::getWorldPosition are one folded body (0xa10c60: movq %rdx,%rax; movl $0,8(%rdx); movq $0,(%rdx); ret) filling slots 3 and 4, so it resolved to 3 and a player origin's getWorldPosition called getBlockPosition. Consumed by engine/commandorigin.ts. docs/findings-audit.md \"Shared addresses\" (tools/shared-addr-audit.mjs --jsv). Executed 2026-09-27 (tools/softenum-probe.ts `seprobe origin`, driver wpos40, verify-pair, tsc 0, exit 0 + Quit correctly, 11 PASS / 0 FAIL; work/host-runs/wpos40-20260927-200805.txt): from the console both are (0,0,0); from `execute as @a at @s run seprobeorigin` after `tp @a 29.5 68 14.5` slot 4 gives (29.5, 68, 14.5) = the bot's x/z with y 1.62 under its eye, getBlockPosition (29, 68, 14), and the old first-match binding (4.06e-44, 9.53e-44, 1.96e-44) -- 29, 68, 14 as float bits; the same at (12.25, 70, -7.75)."
+  },
+  "CommandMessage": {
+   "size": 32,
+   "note": "size: sizeof(CommandMessage) on 1.26 -- 2024's vector<MessageComponent> (0x18) and a bool at +0x18 that generateMessage reads (an empty vector with it clear returns the empty result at once); every message command's allocateCommand zeroes 0x19 bytes from the message's offset (40 0x3d92450 +0xe8 in a 0x108-byte command, 51 0x3aa34d0 the same). docs/findings-scoreboard.md 11.5"
+  },
+  "ActorDamageByActorSource": {
+   "note": "size (0x70): the scalar deleting destructor 0x242900 (slot 0 of 0xa55d690) deletes 0x70 bytes; 2024 bdsx declared 0x50. bdsx allocates one in ActorDamageByActorSource.constructWith. docs/findings-audit.md \"Audit follow-ups\" (2026-09-27, agent-m).",
+   "size": 112
+  },
+  "ActorDamageByBlockSource": {
+   "note": "block (0x30): the Block* the inline construction stores after the base constructor (0xdede89 (in 0xded5d0)); 2024 bdsx's field followed a 0x10-byte base, and 1.26's base is 0x30. size (0x38): the scalar deleting destructor 0xea7b50. Consumed by bds/actor.ts. docs/findings-audit.md \"Audit follow-ups\" (2026-09-27, agent-m).",
+   "size": 56,
+   "block": 48
+  },
+  "ActorDamageByChildActorSource": {
+   "note": "size (0xa8): the scalar deleting destructor 0x6f9960 deletes 0xa8 bytes; 2024 bdsx declared 0x80. childId (0x78): the child actor's ActorUniqueID, written by the constructor 0xe5b3b0 from its first Actor argument and read by the table's slot 17; 2024 +0x58. Consumed by bds/actor.ts getChildEntityUniqueId. docs/findings-audit.md \"Audit follow-ups\" (2026-09-27, agent-m).",
+   "size": 168,
+   "childId": 120
+  },
+  "BlockTypeRegistry": {
+   "lookupResultIsWeakPtr": 1,
+   "note": "lookupResultIsWeakPtr = 1: the first member of _lookupByNameImpl's 16-byte result is 2024's WeakPtr<const BlockType> (a counter block { T* +0, strong +8, weak +0xc }): the out-of-line lookupByName 0x284b850 takes `lock incl 0xc(%rcx)` on it and resolveBlock 0x12e30c0 dereferences it (`movq (%rbx),%rcx`) before tryGetStateFromLegacyData. A miss returns WeakPtr::null() (0xc93bb60) with a weak ref taken. Consumed by engine/blocktype.ts, which gives the weak ref back."
+  },
+  "TeleportCommand": {
+   "applyTargetVersionArg": 0,
+   "note": "applyTargetVersionArg = 0: whether TeleportCommand::applyTarget (bdsx:TeleportCommand::applyTarget, 0x3c88370) takes the command version as its third argument -- 1.26.51.1's does (int r8d, compared with 0x33, the bool moved to r9b), 1.26.40.8's is 2024's (Actor&, TeleportTarget, bool). Consumed by engine/teleport.ts. docs/findings-layouts.md \"Actor.teleport\"."
+  },
+  "TeleportTarget": {
+   "size": 48,
+   "note": "size 0x30 as in 2024: computeTarget (0x3c88710) writes +0..+0x2f (rotation optional, TeleportData optional to +0x24, the ChangeDimensionRequest pointer at +0x28) and the tp lambda keeps it in 0x30 bytes below its stack cookie. engine/teleport.ts allocates it."
+  },
+  "FoodItemComponent": {
+   "note": "foodInterface (0x10): the IFoodItemComponent subobject of FoodItemComponent. ComponentItem::getFood (0x33c1060) looks the \"minecraft:food\" component up and returns `lea 0x10(%rax)` (null-guarded by cmovne); the component's destructor (0x3f7dc70) stores the IFoodItemComponent vptr at +0x10. 2024 the same (constructor 0x1da3f50). canAlwaysEat and the other IFoodItemComponent virtuals take this subobject as `this`. Consumed by engine/item.ts (agent-s 2026-09-28, docs/findings-audit.md \"Audit leftovers\"). | usingConvertsTo (0x20): the using_converts_to ItemDescriptor; the script API's usingConvertsTo getter (0x4f871a0) copies it inline (vptr, then impl_ +0x28 cloned), 2024's getUsingConvertsToItemDescriptor (0x1e050c0) copy-constructs from +0x20. Consumed by engine/itemcomponent.ts (agent-w 2026-09-28).",
+   "foodInterface": 16,
+   "usingConvertsTo": 32
+  },
+  "ThrowableItemComponent": {
+   "note": "ThrowableItemComponent's fields as its use/release callbacks read them (0x281e800 / 0x27cd1c0; 2024 _getLaunchPower 0x1c640c0 the same): +0x14 min_draw_duration, +0x18 max_draw_duration (both seconds, *20 for ticks), +0x1c launch_power_scale, +0x20 max_launch_power (floats), +0x24 scale_power_by_draw_duration, +0x25 do_swing_animation (bytes). Consumed by engine/itemcomponent.ts (agent-w 2026-09-28, docs/findings-nbt.md section 24).",
+   "maxDrawDuration": 24,
+   "launchPowerScale": 28,
+   "maxLaunchPower": 32,
+   "scalePowerByDrawDuration": 36
+  },
+  "SerializedSkin": {
+   "note": "SerializedSkinImpl, 1.26's SerializedSkin (the object behind SerializedSkinRef; bds/skin.ts). Read from its default constructor 0x1262bc0, its inlined destructor (the make_shared control block's _Destroy 0x1262590, members at block+0x10) and operator== 0x12511e0, which agree member for member on both builds: 2024's members in 2024's order up to geometryData (+0x118), then MinEngineVersion (0x20: a 24-byte SemVersion, CurrentCmdVersion +0x18, MolangVersion +0x1c) where 2024 had a 0x70 SemVersion, so every later member is 0x50 lower; armSizeType is a byte (persona::ArmSize::Type : uint8_t); overridesPlayerAppearance (login \"OverrideSkin\", the request constructor's store to +0x20d) and profileHash (login \"ProfileHash\", its store to +0x210) are new. size 0x230 = the memset make_shared does before the constructor. docs/findings-layouts.md \"SerializedSkin\" (agent-aa, 2026-09-28).",
+   "size": 560,
+   "geometryDataEngineVersion": 296,
+   "geometryDataMutable": 328,
+   "animationData": 344,
+   "capeId": 376,
+   "personaPieces": 408,
+   "armSizeType": 432,
+   "pieceTintColors": 440,
+   "skinColor": 504,
+   "isTrustedSkin": 520,
+   "isPremium": 521,
+   "isPersona": 522,
+   "isPersonaCapeOnClassicSkin": 523,
+   "isPrimaryUser": 524,
+   "overridesPlayerAppearance": 525,
+   "profileHash": 528
+  },
+  "PlayerSkinPacket": {
+   "note": "PlayerSkinPacket's payload after the 0x30-byte Packet: uuid +0x30, a SerializedSkinRef (shared_ptr: object +0x40, control block +0x48) where 2024 held a SerializedSkin by value, localizedNewSkinName +0x50, localizedOldSkinName +0x70, serialization mode +0x90. Read from the default constructor 0x1f5ad60 (a make_shared SerializedSkinImpl stored to +0x40/+0x48 beside the ??_7PlayerSkinPacket@@6B@ store; Endstone player_skin_packet.h agrees, 152 bytes). Consumed by bds/packets.ts (agent-aa, 2026-09-28).",
+   "skin": 64,
+   "localizedNewSkinName": 80,
+   "localizedOldSkinName": 112
+  },
+  "CommandRegistry::Parser": {
+   "size": 192,
+   "root": 120,
+   "errorMessage": 128,
+   "errorParams": 160,
+   "version": 184,
+   "note": "2024's layout, unchanged: the constructor (0x33e390) initialises +0..+0xbd exactly as 2024's; compileCommand/executeCommand pass root +0x78, version +0xb8, error message +0x80, error params +0xa0 to CommandRegistry::createCommand and keep the next local at parser+0xc0. docs/findings-scoreboard.md 12"
+  },
+  "CommandRegistry::getCommandName": {
+   "thisArgs": 0,
+   "note": "how many leading this arguments bdsx:CommandRegistry::getCommandName takes: 0 (the build dropped the unused this; callers pass rcx sret, rdx string). docs/findings-scoreboard.md 12"
+  },
+  "MobEffect": {
+   "id": 8,
+   "count": 38,
+   "note": "id (+8): MobEffect::mId -- 2024 getId is movl 8(%rcx),%eax, and Actor::getEffect(const MobEffect&) (shipped, 40 0xe1a9d0 / 51 0xd5acb0) indexes the effects vector with the key's +8 on both builds. count (38): the number of MobEffect::mMobEffects slots, the unsigned bound every inlined getById checks (cmpq $0x25; ja) on both builds, and Endstone mob_effect.h NUM_EFFECTS. 2024 had 37 (cmpl $0x24). docs/findings-components.md \"MobEffect::getById\". EXECUTED both builds 2026-09-28 (agent-ah; verify-pair.sh, drivers layout40/layout51, tools/actor-layout-probe.ts effidprobe + effprobe public lines, 36 PASS / 0 FAIL each, tsc 0, exit 0 + Quit correctly [work/host-runs/layout40-20260928-050239.txt, layout51-20260928-050239.txt]): the derived MobEffect.create over this address returns 37 distinct MobEffects for ids 1..37 whose getId (+8) and id field equal the id, the same object for Speed twice, a MobEffect with id 0 for slot 0, null for 38, 39, 1000, -1, 0x7fffffff; the public Actor.hasEffect/getEffect over it follow the console (effect @a speed 30 1 / 20 2: true, amplifier 1 then 2; after removeEffect and removeAllEffects: false/null), hasEffect(Haste) stays false, hasEffect(1000) false, getEffect(-1) null.",
+   "descriptionId": 128,
+   "icon": 160,
+   "durationModifier": 164,
+   "resourceName": 176,
+   "iconName": 208,
+   "showParticles": 240,
+   "componentName": 256,
+   "noteFields": "descriptionId 0x80, icon 0xa0, durationModifier 0xa4, resourceName 0xb0, iconName 0xd0, showParticles 0xf0, componentName 0x100: the MobEffect constructor (0x2c753d0, found as the only lea user of \"minecraft:mobspell_emitter\") stores them exactly where 2024's (1.21.3.01 0x189e390) does -- the fourth argument (a string) to +0x80, the icon int to +0xa0, 0.5 (harmful) or 1.0 to +0xa4, 0 to the byte +0xa8, the third argument (a string) to +0xb0, the stack string to +0xd0, the particles byte to +0xf0, and HashedString(\"minecraft:effect.\" + third argument) to +0x100. 2024's out-of-line getters name two of them: getDescriptionId is leaq 0x80(%rcx), getResourceName leaq 0xb0(%rcx). Readers on this build: Mob::hasComponent (0x23f79e0) inlines getComponentName (mMobEffects[id] + 0x100, else HashedString::defaultErrorValue) over the effects vector (stride 0x88); 0x2c7f3a0 reads mMobEffects[id] + 0x80 and hands it to I18n. bdsx's earlier 0x20/0x50/0x98 predate 2024. docs/findings-components.md \"MobEffect's fields and getComponentName\". EXECUTED both builds 2026-09-28 (agent-aj; verify-pair.sh, drivers layout40/layout51, tools/actor-layout-probe.ts effnameprobe dump/none/speed/new WindCharged, 41 PASS / 0 FAIL each, tsc 0, exit 0 + Quit correctly [work/host-runs/layout40-20260928-085816.txt, layout51-20260928-085816.txt]; the run before it, 085128, was the same but for one FAIL that was the probe's own wrong expectation of durationModifier): all 37 registered MobEffects read resourceName at +0xb0 = speed, slowness, ... darkness, trial_omen, wind_charged, weaving, oozing, infested, raid_omen, breath_of_the_nautilus (distinct), componentName at +0x100 = 'minecraft:effect.' + that name with its FNV-1 hash for every one, descriptionId at +0x80 = potion.moveSpeed for Speed, effect.* for 28..37, iconName at +0xd0 empty except fatal_poison 'poison', showParticles +0xf0 false only for bad_omen and darkness, icon +0xa0 varies (-1 for the instant ones), durationModifier +0xa4 0.5 for the harmful and 1 otherwise except haste 1.5 and nausea/regeneration/blindness/poison/wither/fatal_poison 0.25 (set after construction). The zeroed byte +0xa8 (bdsx's `disabled`) read false for all 38, one side only, so it is not in this table (bdsx keeps the 2024 offset as its fallback)."
+  },
+  "CommandOutputSender::send": {
+   "logCall": 327,
+   "logCallForm": 1,
+   "text": 24,
+   "note": "where launcher.ts's hook-command-output patch goes: logCall (0x147) is the BedrockLog::log call both output paths of send (0x12f23f0) join at, logCallForm 1 its 21 bytes (31 c9 / ba 01 00 00 00 / 45 31 c0 / 41 b9 0c 00 00 00 / e8 rel32, read from the file; 2024's form 0 is 20 bytes at +0xb8), text (0x18) the rbp displacement of the joined std::string (rbp+7 in 2024). docs/findings-scoreboard.md 15"
+  },
+  "LevelChunk": {
+   "note": "min (+0x60) / max (+0x6c) / position (+0x78): Endstone level_chunk.h (0.11.7 and HEAD) declares block_entity_access_lock_, level_, dimension_, min_, max_, position_; level_ is +0x50 on this build (getLevel@LevelChunk 0x741e40, which ships: movq 0x50(%rcx),%rax), so dimension_ +0x58, min_/max_ (BlockPos) +0x60/+0x6c, position_ (ChunkPos) +0x78 -- 2024's offsets (getMin 0xf5c30 lea 0x60, getMax 0x217f770 lea 0x6c, getPosition 0x17f8a20 lea 0x78). This build's inlined toWorldPos (0xba1532 (in 0xba1510)) adds the ChunkBlockPos bytes to +0x60/+0x64/+0x68, 2024's 0x218cb50 instruction for instruction. Consumed by engine/chunk.ts (docs/findings-layouts.md \"LevelChunk and BlockActor on 1.26\"). | entities (+0x1360): the std::vector<WeakEntityRef> of the chunk's actors (2024 +0x1028, getChunkEntities lea 0x1028). The same 471-byte function walks it by 0x18 on both builds (0xba5840: movq 0x1360(%rcx),%rbx; movq 0x1368(%rcx),%r14; cmp; each element's entity id at +0x10), the only such loop at this offset in each image; a live chunk's +0x1360 held exactly the pig summoned in it (itemprobe chunkents, chent40 2026-09-29). Consumed by engine/chunk.ts (derived LevelChunk::getChunkEntities). | loadState (+0xf0) / stateLoaded (13) / fullyLoadedFlag (+0x1526) / redstoneSetUp (+0x10d1): 2024's leaf isFullyLoaded (0x2180b80: movzbl 0xd8 state; movzbl 0x11ba flag; cmpb $9; jb -> true; flag -> true; else movzbl 0xde4) is inlined at ten sites in this image, all the same shape (0xb969bd 0x105759a 0x13f9c9a 0x14f60a5 0x23cd2de 0x23cd32b 0x23cd378 0x4582302 0x45824e5 0x458258e: movzbl 0x1526; movzbl 0xf0; cmpb $0xd; jb -> true; test flag -> true; cmpb 0x10d1), one of them in BlockSource's non-virtual areChunksFullyLoaded(BlockPos,BlockPos), which vftable slot 55 (areChunksFullyLoaded(BlockPos,int)) wraps. 13 is ChunkState::Loaded in Endstone 0.11.7 chunk_state.h, the value the ticking-area view compares +0xf0 against (findings-blocks.md). +0x10d1 has two writers, a move-assign and one store of 1 (2024 +0xde4: the move-assign and the end of setupRedstoneCircuit). Consumed by engine/chunk.ts (derived LevelChunk::isFullyLoaded; docs/findings-layouts.md \"isFullyLoaded\"). | biomeStorages (+0x358) / biomeGetElementSlot (3): the vector of unique_ptr<SubChunkStorage<Biome>> (2024 +0x168, asked through vftable slot 3) found live (2026-09-30, uke40/51 ukbio scan): one entry per sub-chunk (24 overworld, 8 nether, 16 end), each a storage object whose slot 3 is getElement(uint16) returning the Biome (uniform class `mov 0x8(%rcx),%rax`; 1-bit and 2-bit paletted classes index a palette kept inline); the index (x*16+z)*16+y was picked by edge continuity against uniform neighbours (274 mismatches of 26432, next best 4045). Consumed by engine/biome.ts (derived LevelChunk::getBiome; docs/findings-inventory.md section 21).",
+   "min": 96,
+   "max": 108,
+   "position": 120,
+   "entities": 4960,
+   "loadState": 240,
+   "stateLoaded": 13,
+   "fullyLoadedFlag": 5414,
+   "redstoneSetUp": 4305,
+   "biomeStorages": 856,
+   "biomeGetElementSlot": 3
+  },
+  "BlockActor": {
+   "note": "type (+20 = 0x14, BlockActorType, one byte): Endstone block_actor.h puts type_ at +20 in 0.11.7 and HEAD, right after position_ (a BlockPos at +8, the getPosition accessor, execution-confirmed on both builds), and before dynamic_properties_ (+24). 2024: getType@BlockActor 0x7e7ec0 lea 0x50. Consumed by engine/blocktype.ts (docs/findings-layouts.md \"LevelChunk and BlockActor on 1.26\"). properties (+68 = 0x44, one byte, Changed = bit 0): VanillaBlockActor::properties_ (Endstone vanilla_block_actor.h 0.11.7 +68, BlockActor 40 bytes + three interface vptrs + tick_count_). Static: the out-of-line setChanged at slot 22 of all 31 IVanillaMainBlockActorComponent vftables is `orb $1, 0x1c(%rcx); ret` (0x4614200; the interface sub-object is at +40, and 40+0x1c = 68), and inlined writers `orb $1, 0x44(%rcx)` (0x290aaac and about 120 more). 2024: setChanged@BlockActor movb $1, 0xc0(%rcx). Consumed by engine/blocktype.ts (docs/findings-layouts.md \"BlockActor::setChanged\").",
+   "type": 20,
+   "properties": 68,
+   "mainInterface": 40,
+   "getContainerSlot": 3,
+   "hasCustomNameSlot": 8,
+   "getCustomNameSlot": 9,
+   "setCustomNameSlot": 10
+  },
+  "ContainerComponent": {
+   "note": "size (0x200) and container (+0x10): the EnTT packed-page stride of hash 0x1779e2c7 (fnv1a \"ContainerComponent\"), `shll $9` in Actor::setNameTag (40 0xe0e800 / 51 0xd4e6f0) and in the caller of Container::addItem (40 0xdfe720 / 51 0xd3e7f0), which passes component+0x10 to Container::addItem. Same on both builds. docs/findings-containers.md section 23.",
+   "size": 512,
+   "container": 16
+  },
+  "ItemActor": {
+   "note": "itemStack (+0x3b0): ItemActor::_hurt (40 0x2d3b864 / 51 0x5989c54) reads `movq 0x3b8(%rdi)` then `movq (%rax)` and `testb $0x10, 0x152(item)`: 0x3b8 is the stack's item_ (ItemStackBase +8), so the ItemStack starts at +0x3b0. 2024 +0x448 (bdsx's own). docs/findings-containers.md section 23.",
+   "itemStack": 944
+  },
+  "ProjectileComponent": {
+   "note": "size (0x300): the packed-page stride of the EnTT storage for fnv1a \"ProjectileComponent\", the multiply after the sparse lookup in leaq (r,r,2); shll $8 = 0x300 in ProjectileComponent users: 40 0x1ac7480/0x93b7a90/0x12542d0/0x3756790/0x12543e0, 51 0x1ccd8d0/0x9bcded0/0x1ccf050/0x36ee860/0x24af410. Same on both 1.26 builds. Used by the tryGetComponent derived() (docs/findings-components.md \"tryGetComponent: the EnTT components\"). ownerId (+8): ProjectileComponent's ActorUniqueID, what the 2024 setOwnerId wrote (mov %rdx,8(%rcx)) and 1.26's inlined copy writes (40 0x12542d0 / 51 0x1ccf050: getOrCreateUniqueID then movq to 0x8(component)).",
+   "size": 768,
+   "ownerId": 8
+  },
+  "RideableComponent": {
+   "note": "size (0xa8): the packed-page stride of the EnTT storage for fnv1a \"RideableComponent\", the multiply after the sparse lookup in imulq $0xa8: 40 0xf92150/0xe10670/0xe10570, 51 0xeae9a0/0xd50710/0xd50610. Same on both 1.26 builds. Used by the tryGetComponent derived() (docs/findings-components.md \"tryGetComponent: the EnTT components\"). seatCount (+0): an int32, what 40 0x1aff9d0 (canAddPassenger's core) reads with movslq (%rsi) against the passenger vector's size.",
+   "size": 168,
+   "seatCount": 0
+  },
+  "NpcComponent": {
+   "note": "size (0x178): the packed-page stride of the EnTT storage for fnv1a \"NpcComponent\", the multiply after the sparse lookup in imulq $0x178: 40 0xf883b0/0x1f6c30/0x9258400/0xf885d0/0x183e200/0xf886e0, 51 0xea6100/0x29a2f50/0x9304ea0/0xea6320/0x1945140/0xea6430. Same on both 1.26 builds. Used by the tryGetComponent derived() (docs/findings-components.md \"tryGetComponent: the EnTT components\").",
+   "size": 376
+  },
+  "NameableComponent": {
+   "note": "size (0x2): the packed-page stride of the EnTT storage for fnv1a \"NameableComponent\", the multiply after the sparse lookup in leaq (base,idx,2) / addl idx,idx: 40 0xf86d70/0x183dd00/0x3f77080/0x1961250/0x389520. Same on both 1.26 builds. Used by the tryGetComponent derived() (docs/findings-components.md \"tryGetComponent: the EnTT components\").",
+   "size": 2
+  },
+  "DamageSensorComponent": {
+   "note": "size (0x28): the packed-page stride of the EnTT storage for fnv1a \"DamageSensorComponent\", the multiply after the sparse lookup in leaq (r,r,4) then *8: 40 0x2405380/0xf506f0/0x89fa710/0x89f9b20/0xdf9db0, 51 0x29ecd80/0xe7d8d0/0x71f06a0/0x71efab0/0xd397e0. Same on both 1.26 builds. Used by the tryGetComponent derived() (docs/findings-components.md \"tryGetComponent: the EnTT components\"). fatal (+4): a byte, damage_is_fatal_ in Endstone damage_sensor_component.h (int damage_amount_ +0, bool damage_is_fatal_ +4, int damage_cause_ +8, vector triggers_ +0x10 = 0x28 with padding), and 2024 isFatal `movzbl 4(%rcx)`.",
+   "size": 40,
+   "fatal": 4
+  },
+  "ShooterComponent": {
+   "note": "size (0xe0): the packed-page stride of the EnTT storage for fnv1a \"ShooterComponent\", the multiply after the sparse lookup in imulq $0xe0: 40 0x9edf0f0, 51 0x9fe7270. Same on both 1.26 builds. Used by the tryGetComponent derived() (docs/findings-components.md \"tryGetComponent: the EnTT components\").",
+   "size": 224
+  },
+  "ConditionalBandwidthOptimizationComponent": {
+   "note": "size (0xd0): the packed-page stride of the EnTT storage for fnv1a \"ConditionalBandwidthOptimizationComponent\", the multiply after the sparse lookup in imulq $0xd0: 40 0xaa53c0/0xf4c8a0/0x2d3a080/0xaa54f0, 51 0x13e7600/0xe7af60/0x5988400/0x13e7730. Same on both 1.26 builds. Used by the tryGetComponent derived() (docs/findings-components.md \"tryGetComponent: the EnTT components\").",
+   "size": 208
+  },
+  "NavigationComponent": {
+   "note": "2026-09-30 (navprobe, both builds; docs/findings-components.md, section NavigationComponent). The EnTT element is 0x60 bytes on both builds (2024: 0x70): every user of hash 0xbb725ebe (fnv1a \"NavigationComponent\") indexes `leaq (r,r,2); shll $5`. Fields read off live mobs and matched to the behaviour packs' JSON. flags (+0x00, u16): bit 2 avoid_sun (skeleton only), bit 3 avoid_water (pig, skeleton, strider), bit 5 can_path_over_water = bdsx's canFloat (pig, chicken, spider), bit 6 can_path_over_lava (strider only); 2024 kept the bit numbers as byte offsets +2 +3 +5 +6. The fields after the word moved 0x10 closer: speed +0x14 (2024 +0x24), tick +4 and stuckTick +0xc (2024 +0x14 / +0x1c, isStuck = tick - stuckTick > t), lastStuckPosition +0x1c (2024 +0x2c; a zombie's read back as its own position), navigation +0x50 (2024 +0x60; the PathNavigation object), path +0x58 (2024 +0x68; the owned Path).",
+   "size": 96,
+   "flags": 0,
+   "tick": 4,
+   "stuckTick": 12,
+   "speed": 20,
+   "lastStuckPosition": 28,
+   "navigation": 80,
+   "path": 88
+  },
+  "PathNavigation": {
+   "note": "2026-09-30: slots of the object at NavigationComponent+0x50 (GroundPathNavigation vptr 40 0xa626fb0 / 51 0xa746c20, a spider's ClimbPathNavigation 40 0xa6c2e60 / 51 0xa79b890; the three slots are shared or shaped alike). 9 = stop(NavigationComponent&, Mob&) (40 0x254a820 / 51 0x5974a90: `path = null; delete old` over rdx+0x58, then one entt lookup); 4 = createPath(Mob&, Actor&) and 5 = createPath(Mob&, Vec3 const&) (40 0x254a7b0 / 0x254a6f0, 51 0x5974a00 / 0x59748b0: slot 11 test, then the Mob's own navigation). 2024: 9 / 4 / 5 too (NavigationComponent::stop/createPath were `vft[9]/[4]/[5]` of +0x60).",
+   "stopSlot": 9,
+   "createPathActorSlot": 4,
+   "createPathVec3Slot": 5
+  },
+  "StructureSettings": {
+   "note": "StructureSettings members on 1.26 (docs/findings-structure.md). The class is 0x68 bytes and the fields were reordered against 2024 (whose values are engineLayout's fallbacks). Read from StructureTemplate::fillFromWorld, placeInWorld and tryPlaceStructureInWorld and the inline construction the /structure save command writes; the same on both builds. mirror/rotation: see the findings doc.",
+   "paletteName": 0,
+   "ignoreEntities": 32,
+   "reloadActorEquipment": 33,
+   "ignoreBlocks": 34,
+   "ignoreJigsawBlocks": 36,
+   "lastTouchedByPlayerId": 40,
+   "structureSize": 48,
+   "structureOffset": 60,
+   "pivot": 72,
+   "mirror": 84,
+   "rotation": 85,
+   "animationMode": 86,
+   "animationSeconds": 88,
+   "integrityValue": 92,
+   "integritySeed": 96,
+   "size": 104
+  },
+  "StructureTemplate": {
+   "note": "StructureTemplate: the NonOwnerPointer<IUnknownBlockTypeRegistry> the inlined tryGetBlockAtPos copies (24 bytes { ptr, count block, object }): the constraint constructors read it at outer+0x200 (40) / +0x278 (51) with the template at outer+0x120 / +0x190. The template is 0x118 bytes on 40 and 0x120 on 51 (findings-nbt.md 13).",
+   "unknownBlockTypeRegistry": 224
+  },
+  "SimulatedPlayer": {
+   "note": "SimulatedPlayer's block-breaking state, read off the three inlined copies of simulateStopDestroyingBlock (the \"stopBreakingBlock\" binding, preAiStep, simulateDestroyBlock; docs/findings-slots.md \"SimulatedPlayer: the five that were inlined\"). breakState (+0xcb0): a pointer to a state object -- bytes at +1 and +8 cleared, the int64 at +0x10 set to 0xffffffff, and the owned polymorphic pointer at +0x20 released through virtual slot breakStateDtorSlot (the deleting destructor, edx 1). blockTask (+0xb22): a byte cleared. destroying / destroyPos / destroyActive: the byte the copies compare with 1, the BlockPos handed to GameMode's stopDestroyBlock (slot 4), and the byte cleared last.",
+   "breakState": 3248,
+   "breakStateDtorSlot": 16,
+   "blockTask": 2850,
+   "destroying": 3956,
+   "destroyPos": 3944,
+   "destroyActive": 3961
+  },
+  "PushableByEntityComponent": {
+   "note": "size (0x28): the packed-page stride of the EnTT storage for fnv1a \"PushableByEntityComponent\" (0xe0f57b82) in its emplace-from-definition (0x1a416a0: leaq (r,r,4); shll 3, one lookup), the same in push(Actor&,Actor&,bool)'s lookup of the other actor. Same on both 1.26 builds. PushableByBlockComponent (0xdc5e610) is an empty tag (its get_or_emplace 0xf8c860 passes no payload): no size. Used by bdsx/bds/engine/pushable.ts (docs/findings-components.md \"Pushable: the 1.26 split\").",
+   "size": 40
+  },
+  "EntityContext": {
+   "note": "EntityContext (0x18) and the optional-shaped entity storages (0x20, OwnerStorageEntity / StackResultStorageEntity): EntityRegistry& +0, the entt registry +8 (= EntityRegistry + 0x30), the entt::entity id +0x10, and in a storage the engaged flag +0x18. 2024 bodies: _registry 0x576d70, _getEntityId 0x2728ae0, isValid 0x2728b20, _getStackRef 0x1046820 (optional::value), _hasValue 0x4d72f0. Executed on both builds 2026-09-30 (docs/findings-inventory.md section 16, ukctx).",
+   "entityRegistry": 0,
+   "enttRegistry": 8,
+   "entityId": 16,
+   "storageEngaged": 24
+  },
+  "ChunkSource": {
+   "level": 32,
+   "note": "EnableNonOwnerReferences base 0x18, chunk_side_ +0x18, level_ +0x20 (Endstone chunk_source.h); 2024 getLevel 0x6e2940 is `mov 0x20(%rcx),%rax` | dimension (+0x28): the Dimension* a ChunkViewSource keeps; 2024 CommandArea::getDimensionBlockSource (0xcc7a40) is `mov 0x28(%rcx),%rax` of the view source, then Dimension::getBlockSourceFromMainChunkSource. Consumed by bds/commandarea.ts.",
+   "dimension": 40
+  },
+  "GameSession": {
+   "levelEntityEngaged": 40,
+   "level": 48,
+   "levelObject": 16,
+   "note": "GameSession: network_ +0, level_entity_ (OwnerPtr<EntityContext>) +16 (engaged flag +0x18 of it), level_ NonOwnerPointer<Level> +48 (24 bytes on 1.26: control +0, count +8, the Level at +16, so +0x40). Minecraft.gameSession is Minecraft.commands + 8 (Endstone member order; 2024 0x17f8550 read +0xc0 with commands at +0xb8)"
+  },
+  "GameplayUserManager": {
+   "activeUsers": 8,
+   "note": "the vector<WeakEntityRef> Level::getActiveUsers returns sits 8 bytes into the manager (the vtable first); Level+0x458 holds the manager pointer. 2024's body was mov rax,rcx (vector first). docs/findings-inventory.md section 19"
+  },
+  "PlayerInputModeComponent": {
+   "size": 8,
+   "note": "element size of the entt storage: PlayerMovement::getInputMode's 2024 reader indexes (page,idx*8) and 1.26's reader 0x1f357e0 (40) does `cmpl $2,(%rsi,%rdi,8)`; the int at +0 is the InputMode. findings-inventory.md section 19"
+  },
+  "Packet": {
+   "reliability": 12
+  },
+  "Biome": {
+   "note": "id (+0x168, u16) / name (+0x198, std::string) / components (+0x170, BiomeComponentStorage: vector of 16-byte (typeid_t, unique_ptr<component>)) / vanillaTypeAttributesTypeId (67 on this build): read off live Biome objects (2026-09-30, uke40/51 ukbio scan): ids 1 plains, 2 desert, 4 forest, 7 river, 8 hell, 9 the_end, 21 jungle, 23 jungle_edge, 48 bamboo_jungle, 187 lush_caves next to their names; the component whose first int is 1 (desert), 11 (plains), 12 (river), 4 (forest), 7 (jungle family), 5 (hell), 17 (the_end) and absent from lush_caves is VanillaBiomeTypeAttributes. Its typeid is the engine counter (67 on 40, 69 on 51). Consumed by engine/biome.ts (derived Biome::getBiomeType).",
+   "id": 360,
+   "name": 408,
+   "components": 368,
+   "vanillaTypeAttributesTypeId": 67
+  },
+  "BlockPalette": {
+   "getBlockSlot": 3
+  },
+  "DedicatedServer": {
+   "stopThis": 0,
+   "note": "DedicatedServer::stop (0x7a400) takes the object itself: the constructor (0x78800) stores one vftable, ??_7DedicatedServer@@6BAppIsland@Bedrock@@@, at +0, and the live this of stop carried that table (docs/findings-instances.md). 2024 called it at +8, AppIsland's base behind IMinecraftApp's vptr; bdsx's +8 on 1.26 set +0x50 instead of the stop flag at +0x48 and the server died (rel40, docs/findings-inventory.md section 29). Consumed by launcher.ts bedrockServer.stop()"
+  },
+  "NetherNetNetworkID": {
+   "size": 24,
+   "index": 16,
+   "note": "NetherNet::NetworkID is std::variant<monostate, P2P::NetworkID (u64), Realms::NetworkID (UUID)>: 16 bytes of storage and the index byte at +16 (Endstone v0.11.7 network_id.h; ReceiveFromSignalingChannel switches on movzbl 0x10(%rdx) on 1.26.51.1). Only the active alternative is defined: a live P2P id carried non-zero bytes after its 8 (nn51, 2026-10-03). Consumed by bds/engine/nethernetid.ts for NetworkIdentifier equals/hash and the address lookup."
+  },
+  "WebRtcCandidate": {
+   "ipFamily": 144,
+   "ip": 148,
+   "port": 168,
+   "username": 192,
+   "note": "webrtc::Candidate per Endstone HEAD candidate.h (1.26.51; v0.11.7 for this build has no webrtc headers: the same libwebrtc layout, SwitchSelectedConnectionInternal's body and member offsets being identical to 1.26.51.1's) on MSVC (std::string 32 bytes): address_ (SocketAddress) at +104 = { hostname_ +104, ip_ IPAddress { vftable +136, family_ +144, u_ +148 }, port_ +168 }, username_ +192. Consumed by bds/engine/nethernet.ts, which copies the remote candidate in its hook of SwitchSelectedConnectionInternal."
+  },
+  "WebRtcConnection": {
+   "remoteCandidateSlot": 2,
+   "note": "remote_candidate() is slot 2 (+0x10) of webrtc::Connection's table (CandidatePairInterface: dtor, local_candidate, remote_candidate): SwitchSelectedConnectionInternal (0xa23c6f0 here) calls [vftable+0x10] on this+0x528 and passes the result to SignalRouteChange as the Candidate&. Consumed by bds/engine/nethernet.ts."
+  }
+ },
+ "reach": {
+  "_comment": "vftables read by tools/reach-probe-launcher.js on 2026-09-17 (docs/findings-reach.md). Exact by reach: the vptr of an object that a captured actor or player holds at the member Endstone declares, that a getter called by its Endstone slot returned, or that carries its own minecraft: name at +0xe8 (BlockLegacy). Structural: agreed by independent structural routes, no live vptr.",
+  "exactByReach": {
+   "OverworldDimension/NetherDimension/TheEndDimension IDimension": "Player/Actor +0x1c8 (WeakRef<Dimension>, before Level* at +0x1d8); the player table swapped as it was teleported to the nether and the end, in that order",
+   "BlockSource": "IDimension slot 12 (Endstone getBlockSourceFromMainChunkSource) on the live Dimension; the table has 66 slots, exactly the 66 Endstone lays out; holds Level +0x20, ChunkSource +0x28, Dimension +0x30",
+   "GameMode/SurvivalMode": "Player +0xaa0; the object was replaced by gamemode creative and its table changed from 0xa667080 to 0xa666fe0 (adjacent 20-slot tables, differing at 14 slots incl. destroyBlock); Endstone lays out 20",
+   "Inventory": "Player +0x5b8 (unique_ptr<PlayerInventory>) +0xb8; 55 slots = Endstone Container+FillingContainer+Inventory; the walk agrees",
+   "ItemStack": "first element of Inventory item vector (+0x198); 1310 constructor references",
+   "Block": "IConstBlockSource slot 2 getBlock(BlockPos) on placed blocks; 1 slot",
+   "*Block legacy tables": "Block +0x68 -> BlockLegacy whose HashedString at +0xe8 reads minecraft:chest / stone / stone_button / farmland / campfire / sculk_sensor / piston; the walk agreed on button, farm, campfire, sculk_sensor and piston, had no name for chest and stone",
+   "ChestBlockActor/CampfireBlockActor/SculkSensorBlockActor": "IConstBlockSource slot 3 getBlockEntity(BlockPos) at the placed block; 35 = 27+8 as baseline 51 = 43+8",
+   "PistonBlockActor": "IConstBlockSource slot 3 getBlockEntity(BlockPos) at a placed piston (2026-09-23, agent-z, work/host-runs/piston40-20260923-090323.txt): 0xa764eb0, 27 slots, refs 2 -- exactly BlockActor's shrunk 27 (baseline PistonBlockActor is single-inheritance, unsuffixed, 43 slots = plain BlockActor, no extra virtuals of its own), consistent with the ChestBlockActor/Campfire pattern above. Re-captured via Actor::teleportTo(rcx)+0x1c8 -> BlockSource (slot 12) -> getBlockEntity(pos) (slot 3), the same chain that re-confirmed 0xa6a06d0/35 for the chest in the same run. 1.26.51.1: not captured this session -- the bot disconnected 5s after joining before any console command ran (work/host-runs/piston51-20260923-090323.txt, unrelated to this method); next-steps.md Q1-A 4 carries the retry.",
+   "Pig/ItemActor/Arrow/EnderCrystal": "rcx of Mob::_hurt (console damage) and of Actor::teleportTo (console tp of a summoned entity); the walk had named all four",
+   "CompoundTag": "the 11-slot object every Block holds inline at +0xf0 (its serialization id); rp5, chest and piston blocks"
+  },
+  "structural": {
+   "Actor": "0xa60d150: slot-wise consensus of the 17 plain-actor tables (135/137), the ItemActor constructor calls its constructor 0xdd66c0 (47 callers; its destructor 0xddaf60 has 71), resolved teleportTo at slot 21, and a destroyed pig read one tick later carried this table as its vptr (the last base destructor writes it)",
+   "BlockLegacy": "0xa65d460: equals the slot-wise consensus of all 268 block tables at 132/132 and has 9 constructor/destructor references, the most of any",
+   "ItemStackBase": "0xa651840: three purecall stubs at slots 1-3, shares slots 0 and 4-6 with 0xa6515b0",
+   "ItemInstance": "0xa6515b0: the third 7-slot table of the family, 395 references, pointed to from GameMode +0x2a8"
+  },
+  "refuted": {
+   "BlockSource::getBlockEntity (propagation, 0xba6b00)": "returned null at the chest where slot 3 returned the block actor",
+   "Player +0x810 (53 slots, 0xa667350)": "is not the BlockSource"
+  }
+ },
+ "accessors": {
+  "?getBlockSourceFromMainChunkSource@Dimension@@QEBAAEAVBlockSource@@XZ": {
+   "kind": "get",
+   "width": 8,
+   "off": 240,
+   "baselineOff": 208,
+   "evidence": "live: the BlockSource returned by IDimension slot 12 is the object at Dimension+0xf0 (rp4/rp5); Endstone dimension.h: block_source_ // +240"
+  },
+  "?getChunkSource@Dimension@@QEBAAEAVChunkSource@@XZ": {
+   "kind": "get",
+   "width": 8,
+   "off": 472,
+   "baselineOff": 416,
+   "evidence": "live: Dimension+0x1d8 holds the 41-slot object that BlockSource+0x28 (chunk_source_ in Endstone order) also holds"
+  },
+  "?getCommandPermissions@LayeredAbilities@@QEBA?AW4CommandPermissionLevel@@XZ": {
+   "kind": "get",
+   "width": 1,
+   "off": 0,
+   "zx": true,
+   "baselineOff": 0,
+   "evidence": "Endstone layered_abilities.h: PermissionsHandler permissions_ first; command permissions byte 0 == baseline"
+  },
+  "?getCommands@Minecraft@@QEAAAEAVMinecraftCommands@@XZ": {
+   "kind": "get",
+   "width": 8,
+   "off": 184,
+   "baselineOff": 184,
+   "evidence": "live: layouts Minecraft.commands, read from the instance and used by launcher.ts since the instances job"
+  },
+  "?getContainerType@Container@@QEBA?AW4ContainerType@@XZ": {
+   "kind": "get",
+   "width": 1,
+   "off": 8,
+   "zx": true,
+   "baselineOff": 8,
+   "evidence": "Endstone container.h: container_type_ is the first member after the vptr == baseline"
+  },
+  "?getDisplayName@Objective@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "kind": "lea",
+   "width": 8,
+   "off": 120,
+   "baselineOff": 120,
+   "evidence": "Endstone objective.h display_name_ // +120 == baseline"
+  },
+  "?getEntityId@IdentityDefinition@@QEBAAEBUActorUniqueID@@XZ": {
+   "kind": "lea",
+   "width": 8,
+   "off": 32,
+   "baselineOff": 32,
+   "evidence": "Endstone order: entity_id_ +0x20 == baseline"
+  },
+  "?getFakePlayerName@IdentityDefinition@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "kind": "lea",
+   "width": 8,
+   "off": 40,
+   "baselineOff": 40,
+   "evidence": "Endstone identity_definition.h: ScoreboardId (16), bool, PlayerScoreboardId, ActorUniqueID, then player_name_, with identity_type_ // +72 -- the string at +0x28, as 2024's leaf (lea 0x28). The sibling accessors getPlayerId +24 / getEntityId +32 / getIdentityType +72 already ship on this layout. 2026-09-27 agent-p, docs/findings-audit.md \"The next audit batch\"."
+  },
+  "?getGameMode@Player@@QEBAAEAVGameMode@@XZ": {
+   "kind": "get",
+   "width": 8,
+   "off": 2720,
+   "baselineOff": 3784,
+   "evidence": "live: the object at +0xaa0 was replaced by gamemode creative and its table changed from SurvivalMode to GameMode (rp1, rp3, rp5)"
+  },
+  "?getIdentityType@IdentityDefinition@@QEBA?AW4Type@1@XZ": {
+   "kind": "get",
+   "width": 1,
+   "off": 72,
+   "zx": true,
+   "baselineOff": 72,
+   "evidence": "Endstone identity_type_ // +72 == baseline"
+  },
+  "?getLevel@Actor@@QEAAAEAVLevel@@XZ": {
+   "kind": "get",
+   "width": 8,
+   "off": 472,
+   "baselineOff": 592,
+   "evidence": "live: the Level pointer at +0x1d8 of the pig and the player (rp1, rp5); Endstone: level_ follows dimension_ (WeakRef at +0x1c8, control block at +0x1d0)"
+  },
+  "?getMessageId@CommandOutputMessage@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "kind": "lea",
+   "width": 8,
+   "off": 8,
+   "baselineOff": 8,
+   "evidence": "Endstone message_id_ // +8 == baseline"
+  },
+  "?getName@Objective@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "kind": "lea",
+   "width": 8,
+   "off": 88,
+   "baselineOff": 88,
+   "evidence": "Endstone objective.h name_ // +88 == baseline"
+  },
+  "?getParams@CommandOutputMessage@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ": {
+   "kind": "lea",
+   "width": 8,
+   "off": 40,
+   "baselineOff": 40,
+   "evidence": "Endstone command_output.h `params_ // +40` == baseline (2024 lea 0x28); getType +0 and getMessageId +8 already ship on this layout. 2026-09-27 agent-p, docs/findings-audit.md \"The next audit batch\"."
+  },
+  "?getPlayerId@IdentityDefinition@@QEBAAEBUPlayerScoreboardId@@XZ": {
+   "kind": "lea",
+   "width": 8,
+   "off": 24,
+   "baselineOff": 24,
+   "evidence": "Endstone identity_definition.h field order from the vptr: scoreboard_id_ +8, is_hidden +0x10, player_id_ +0x18 == baseline"
+  },
+  "?getPlayerPermissions@LayeredAbilities@@QEBA?AW4PlayerPermissionLevel@@XZ": {
+   "kind": "get",
+   "width": 1,
+   "off": 1,
+   "zx": true,
+   "baselineOff": 1,
+   "evidence": "Endstone: player permissions byte 1 of PermissionsHandler == baseline"
+  },
+  "?getScoreboardId@ScoreboardIdentityRef@@QEBAAEBUScoreboardId@@XZ": {
+   "kind": "lea",
+   "width": 8,
+   "off": 8,
+   "baselineOff": 8,
+   "evidence": "Endstone: objective_references_ (u32) then scoreboard_id_ at +8 == baseline"
+  },
+  "?getSerializationId@Block@@QEBAAEBVCompoundTag@@XZ": {
+   "kind": "lea",
+   "width": 8,
+   "off": 240,
+   "baselineOff": 160,
+   "evidence": "live: every Block carries an inline 11-slot object at +0xf0 (rp5, chest and piston); baseline: a CompoundTag returned by address; 11 slots is the Tag family"
+  },
+  "?getSuccessCount@CommandOutput@@QEBAHXZ": {
+   "kind": "get",
+   "width": 4,
+   "off": 40,
+   "baselineOff": 40,
+   "evidence": "Endstone command_output.h success_count_ // +40 == baseline +0x28"
+  },
+  "?getSupplies@Player@@QEAAAEAVPlayerInventory@@XZ": {
+   "kind": "get",
+   "width": 8,
+   "off": 1464,
+   "baselineOff": 1888,
+   "evidence": "2024's ?getSupplies@Player@@ (0x19dfba0) is `movq 1888(%rcx),%rax; retq` -- the whole function. 1.26's ?getSelectedItem@Player@@ (40 0x2329a0 / 51 0x2bdb30, byte-identical on the two builds) opens `movq 1464(%rcx),%rax` and then inlines PlayerInventory::getSelectedItem, whose 2024 out-of-line copy (0x186c1d0) opens `movq 1888(%rcx),%rcx` from the same member -- so +1464 is Player::inventory_ (Endstone player.h: std::unique_ptr<PlayerInventory> inventory_). docs/findings-containers.md"
+  },
+  "?getType@CommandOutput@@QEBA?AW4CommandOutputType@@XZ": {
+   "kind": "get",
+   "width": 4,
+   "off": 0,
+   "baselineOff": 0,
+   "evidence": "Endstone command_output.h // +0 == baseline"
+  },
+  "?getType@CommandOutputMessage@@QEBA?AW4CommandOutputMessageType@@XZ": {
+   "kind": "get",
+   "width": 4,
+   "off": 0,
+   "baselineOff": 0,
+   "evidence": "Endstone // +0 == baseline"
+  },
+  "?getUserData@ItemStackBase@@QEAAPEAVCompoundTag@@XZ": {
+   "kind": "get",
+   "width": 8,
+   "off": 16,
+   "baselineOff": 16,
+   "evidence": "Endstone item_stack_base.h user_data_ // +16 == baseline"
+  },
+  "?setCommandPermissions@LayeredAbilities@@QEAAXW4CommandPermissionLevel@@@Z": {
+   "kind": "set",
+   "width": 1,
+   "off": 0,
+   "baselineOff": 0,
+   "evidence": "Endstone layered_abilities.h: PermissionsHandler permissions_ first; command permissions byte 0 == baseline"
+  },
+  "?getHeight@Dimension@@QEBAFXZ": {
+   "kind": "get",
+   "width": 2,
+   "off": 202,
+   "zx": true,
+   "baselineOff": 202,
+   "evidence": "live: int16 320 at +0xca beside -64 at +0xc8 == baseline"
+  },
+  "?getMinHeight@Dimension@@QEBAFXZ": {
+   "kind": "get",
+   "width": 2,
+   "off": 200,
+   "zx": true,
+   "baselineOff": 200,
+   "evidence": "live: the overworld Dimension holds int16 -64 at +0xc8 and 320 at +0xca (rp6 dump) == baseline +0xc8/+0xca"
+  },
+  "?getName@Player@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "kind": "lea",
+   "width": 8,
+   "off": 3008,
+   "baselineOff": 7472,
+   "evidence": "live: the only \"bdsxprobe\" in the player object is a std::string at +0xbc0 (size 9 at +0xbd0, capacity 15 at +0xbd8; rp6 dump)"
+  },
+  "?getPosition@BlockActor@@QEBAAEBVBlockPos@@XZ": {
+   "kind": "lea",
+   "width": 8,
+   "off": 8,
+   "baselineOff": 44,
+   "evidence": "live: the chest block actor holds (29,68,20) at +0x8 (rp6 dump); Endstone block_actor.h position_ // +8"
+  },
+  "?getGameDifficulty@LevelData@@QEBA?AW4Difficulty@@XZ": {
+   "kind": "get",
+   "width": 4,
+   "off": 952,
+   "baselineOff": 1248,
+   "evidence": "execution: rp7 watch of the LevelData object under console commands -- +0x3b8 went 1>0 (peaceful), 0>3 (hard), 3>2 (normal), 2>1 (easy); the float at +0x36c rose 0>0.17>0.57>0.97>1.0 after `weather rain` and fell after `weather clear`; +0x370 was reset to a countdown at rain and decreases 40 per 40 ticks; +0x374 rose the same way after `weather thunder`; +0x378 is its countdown. The four weather fields keep the baseline order rainLevel, rainTime, lightningLevel, lightningTime (baseline +0x494..+0x4a0)"
+  },
+  "?getLightningLevel@LevelData@@QEBAMXZ": {
+   "kind": "get",
+   "width": 4,
+   "off": 884,
+   "float": true,
+   "baselineOff": 1180,
+   "evidence": "execution: rp7 watch of the LevelData object under console commands -- +0x3b8 went 1>0 (peaceful), 0>3 (hard), 3>2 (normal), 2>1 (easy); the float at +0x36c rose 0>0.17>0.57>0.97>1.0 after `weather rain` and fell after `weather clear`; +0x370 was reset to a countdown at rain and decreases 40 per 40 ticks; +0x374 rose the same way after `weather thunder`; +0x378 is its countdown. The four weather fields keep the baseline order rainLevel, rainTime, lightningLevel, lightningTime (baseline +0x494..+0x4a0)"
+  },
+  "?getLightningTime@LevelData@@QEBAHXZ": {
+   "kind": "get",
+   "width": 4,
+   "off": 888,
+   "baselineOff": 1184,
+   "evidence": "execution: rp7 watch of the LevelData object under console commands -- +0x3b8 went 1>0 (peaceful), 0>3 (hard), 3>2 (normal), 2>1 (easy); the float at +0x36c rose 0>0.17>0.57>0.97>1.0 after `weather rain` and fell after `weather clear`; +0x370 was reset to a countdown at rain and decreases 40 per 40 ticks; +0x374 rose the same way after `weather thunder`; +0x378 is its countdown. The four weather fields keep the baseline order rainLevel, rainTime, lightningLevel, lightningTime (baseline +0x494..+0x4a0)"
+  },
+  "?getRainLevel@LevelData@@QEBAMXZ": {
+   "kind": "get",
+   "width": 4,
+   "off": 876,
+   "float": true,
+   "baselineOff": 1172,
+   "evidence": "execution: rp7 watch of the LevelData object under console commands -- +0x3b8 went 1>0 (peaceful), 0>3 (hard), 3>2 (normal), 2>1 (easy); the float at +0x36c rose 0>0.17>0.57>0.97>1.0 after `weather rain` and fell after `weather clear`; +0x370 was reset to a countdown at rain and decreases 40 per 40 ticks; +0x374 rose the same way after `weather thunder`; +0x378 is its countdown. The four weather fields keep the baseline order rainLevel, rainTime, lightningLevel, lightningTime (baseline +0x494..+0x4a0)"
+  },
+  "?getRainTime@LevelData@@QEBAHXZ": {
+   "kind": "get",
+   "width": 4,
+   "off": 880,
+   "baselineOff": 1176,
+   "evidence": "execution: rp7 watch of the LevelData object under console commands -- +0x3b8 went 1>0 (peaceful), 0>3 (hard), 3>2 (normal), 2>1 (easy); the float at +0x36c rose 0>0.17>0.57>0.97>1.0 after `weather rain` and fell after `weather clear`; +0x370 was reset to a countdown at rain and decreases 40 per 40 ticks; +0x374 rose the same way after `weather thunder`; +0x378 is its countdown. The four weather fields keep the baseline order rainLevel, rainTime, lightningLevel, lightningTime (baseline +0x494..+0x4a0)"
+  },
+  "?setGameDifficulty@LevelData@@QEAAXW4Difficulty@@@Z": {
+   "kind": "set",
+   "width": 4,
+   "off": 952,
+   "baselineOff": 1248,
+   "evidence": "execution: rp7 watch of the LevelData object under console commands -- +0x3b8 went 1>0 (peaceful), 0>3 (hard), 3>2 (normal), 2>1 (easy); the float at +0x36c rose 0>0.17>0.57>0.97>1.0 after `weather rain` and fell after `weather clear`; +0x370 was reset to a countdown at rain and decreases 40 per 40 ticks; +0x374 rose the same way after `weather thunder`; +0x378 is its countdown. The four weather fields keep the baseline order rainLevel, rainTime, lightningLevel, lightningTime (baseline +0x494..+0x4a0)"
+  },
+  "?setLightningLevel@LevelData@@QEAAXM@Z": {
+   "kind": "set",
+   "width": 4,
+   "off": 884,
+   "float": true,
+   "baselineOff": 1180,
+   "evidence": "execution: rp7 watch of the LevelData object under console commands -- +0x3b8 went 1>0 (peaceful), 0>3 (hard), 3>2 (normal), 2>1 (easy); the float at +0x36c rose 0>0.17>0.57>0.97>1.0 after `weather rain` and fell after `weather clear`; +0x370 was reset to a countdown at rain and decreases 40 per 40 ticks; +0x374 rose the same way after `weather thunder`; +0x378 is its countdown. The four weather fields keep the baseline order rainLevel, rainTime, lightningLevel, lightningTime (baseline +0x494..+0x4a0)"
+  },
+  "?setLightningTime@LevelData@@QEAAXH@Z": {
+   "kind": "set",
+   "width": 4,
+   "off": 888,
+   "baselineOff": 1184,
+   "evidence": "execution: rp7 watch of the LevelData object under console commands -- +0x3b8 went 1>0 (peaceful), 0>3 (hard), 3>2 (normal), 2>1 (easy); the float at +0x36c rose 0>0.17>0.57>0.97>1.0 after `weather rain` and fell after `weather clear`; +0x370 was reset to a countdown at rain and decreases 40 per 40 ticks; +0x374 rose the same way after `weather thunder`; +0x378 is its countdown. The four weather fields keep the baseline order rainLevel, rainTime, lightningLevel, lightningTime (baseline +0x494..+0x4a0)"
+  },
+  "?setRainLevel@LevelData@@QEAAXM@Z": {
+   "kind": "set",
+   "width": 4,
+   "off": 876,
+   "float": true,
+   "baselineOff": 1172,
+   "evidence": "execution: rp7 watch of the LevelData object under console commands -- +0x3b8 went 1>0 (peaceful), 0>3 (hard), 3>2 (normal), 2>1 (easy); the float at +0x36c rose 0>0.17>0.57>0.97>1.0 after `weather rain` and fell after `weather clear`; +0x370 was reset to a countdown at rain and decreases 40 per 40 ticks; +0x374 rose the same way after `weather thunder`; +0x378 is its countdown. The four weather fields keep the baseline order rainLevel, rainTime, lightningLevel, lightningTime (baseline +0x494..+0x4a0)"
+  },
+  "?setRainTime@LevelData@@QEAAXH@Z": {
+   "kind": "set",
+   "width": 4,
+   "off": 880,
+   "baselineOff": 1176,
+   "evidence": "execution: rp7 watch of the LevelData object under console commands -- +0x3b8 went 1>0 (peaceful), 0>3 (hard), 3>2 (normal), 2>1 (easy); the float at +0x36c rose 0>0.17>0.57>0.97>1.0 after `weather rain` and fell after `weather clear`; +0x370 was reset to a countdown at rain and decreases 40 per 40 ticks; +0x374 rose the same way after `weather thunder`; +0x378 is its countdown. The four weather fields keep the baseline order rainLevel, rainTime, lightningLevel, lightningTime (baseline +0x494..+0x4a0)"
+  },
+  "?getDimension@Actor@@QEBAAEAVDimension@@XZ": {
+   "kind": "get",
+   "width": 8,
+   "off": 456,
+   "baselineOff": 584,
+   "evidence": "live (rp1/rp5): the qword at Actor+0x1c8 points at the object whose table is the dimension's IDimension table, and it swapped as the player was teleported to the nether and the end; Endstone: WeakRef<Dimension> dimension_ at +0x1c8, a std::weak_ptr whose first word is the pointer (MSVC _Ptr before _Rep); the 2024 body unwraps the same reference at +584 through its control block; a dead reference reads as null where the binary's unwrap would too"
+  },
+  "?getBool@GameRule@@QEBA_NXZ": {
+   "kind": "get",
+   "width": 1,
+   "off": 4,
+   "baselineOff": 4,
+   "zx": true,
+   "evidence": "live (levelraw2, 2026-09-19): the 39 elements of the vector Level::getGameRules' object holds at +0x18, 280 bytes each; the dword at +4 reads 65535 for maxCommandChainLength (rule 23), 1 for randomTickSpeed (26), 10000 for functionCommandLimit (29), 10 for spawnRadius (30), 100 for playersSleepingPercentage (36); its low byte is 1 for the rules a fresh world has on and 0 for keepInventory and showCoordinates; type at +1 is 1 (bool) or 2 (int) accordingly; Endstone game_rules.h: should_save_, type_, value_ in that order; the 2024 offset is the same"
+  },
+  "?getInt@GameRule@@QEBAHXZ": {
+   "kind": "get",
+   "width": 4,
+   "off": 4,
+   "baselineOff": 4,
+   "evidence": "live (levelraw2, 2026-09-19): the 39 elements of the vector Level::getGameRules' object holds at +0x18, 280 bytes each; the dword at +4 reads 65535 for maxCommandChainLength (rule 23), 1 for randomTickSpeed (26), 10000 for functionCommandLimit (29), 10 for spawnRadius (30), 100 for playersSleepingPercentage (36); its low byte is 1 for the rules a fresh world has on and 0 for keepInventory and showCoordinates; type at +1 is 1 (bool) or 2 (int) accordingly; Endstone game_rules.h: should_save_, type_, value_ in that order; the 2024 offset is the same"
+  },
+  "?getFloat@GameRule@@QEBAMXZ": {
+   "kind": "get",
+   "width": 4,
+   "off": 4,
+   "baselineOff": 4,
+   "float": true,
+   "evidence": "live (levelraw2, 2026-09-19): the 39 elements of the vector Level::getGameRules' object holds at +0x18, 280 bytes each; the dword at +4 reads 65535 for maxCommandChainLength (rule 23), 1 for randomTickSpeed (26), 10000 for functionCommandLimit (29), 10 for spawnRadius (30), 100 for playersSleepingPercentage (36); its low byte is 1 for the rules a fresh world has on and 0 for keepInventory and showCoordinates; type at +1 is 1 (bool) or 2 (int) accordingly; Endstone game_rules.h: should_save_, type_, value_ in that order; the 2024 offset is the same (no float rule exists in a vanilla world to read; the union shares the offset)"
+  },
+  "?getPosition@Actor@@QEBAAEBVVec3@@XZ": {
+   "kind": "get",
+   "width": 8,
+   "off": 536,
+   "baselineOff": null,
+   "evidence": "live (layout40, 2026-09-19, tools/actor-layout-probe.ts): after `tp @a 29.5 68 14.5` the only pointer in the player's first 0x600 bytes that leads to (29.5, 69.62, 14.5) is at +0x218 -- followed there by the same position again and a zero delta (StateVectorComponent: pos, pos_prev, pos_delta); the next pointer leads to the box 29.2 68 14.2 .. 29.8 69.8 14.8 and the one after to the rotation. Endstone actor.h: BuiltInActorComponents { state_vector, aabb_shape, actor_rotation } in that order. The 2024 getter was an inline field read of the same kind; the component's first member is the position, so its address is the Vec3 const& the getter returns"
+  },
+  "?getRotation@Actor@@QEBAAEBVVec2@@XZ": {
+   "kind": "get",
+   "width": 8,
+   "off": 552,
+   "baselineOff": null,
+   "evidence": "live (layout40, 2026-09-19, tools/actor-layout-probe.ts): after `tp @a 29.5 68 14.5` the only pointer in the player's first 0x600 bytes that leads to (29.5, 69.62, 14.5) is at +0x218 -- followed there by the same position again and a zero delta (StateVectorComponent: pos, pos_prev, pos_delta); the next pointer leads to the box 29.2 68 14.2 .. 29.8 69.8 14.8 and the one after to the rotation. Endstone actor.h: BuiltInActorComponents { state_vector, aabb_shape, actor_rotation } in that order. The 2024 getter was an inline field read of the same kind; after `tp @a 29.5 68 14.5 90 45` the two floats behind +0x228 read 45, 90 (pitch, yaw) on 1.26.40.8"
+  },
+  "?getEntityData@Actor@@QEBAAEBVSynchedActorDataEntityWrapper@@XZ": {
+   "kind": "lea",
+   "width": 8,
+   "off": 296,
+   "baselineOff": 400,
+   "evidence": "Actor::entity_data moved from +400 to +0x128: two independent members read the DataItem vector through `296(%rcx)` and then index it exactly as the wrapper's own getters index wrapper+0 -- getNameTag (index 4, 0xe080a0 / 0xd47ff0) and getLeashHolder (index 37, 0xdddab0 / 0xd1dc70). The wrapper is embedded, not pointed to, so the accessor is a lea. Executed on both builds: getEntityData().getString(4) equals Actor::getNameTag and getEntityData().getInt(2) equals Actor::getVariant."
+  },
+  "?getLastHurtTimestamp@Actor@@QEBA_KXZ": {
+   "kind": "get",
+   "width": 8,
+   "off": 824,
+   "baselineOff": 992,
+   "evidence": "the 8-byte last-hurt timestamp. 1.26 keeps no getter; the field is written by Mob::hurtEffects (40 0x23fb9ec / 51 0x29e6792: the level's tick pointer through its own virtual, then `movq %rax, 0x338(%rsi)`), exactly where the 2024 body of the same function writes +992 (0x1914f35). 2024's getter is `movq 992(%rcx),%rax; ret`."
+  },
+  "?getLastHurtCause@Actor@@QEBA?AW4ActorDamageCause@@XZ": {
+   "kind": "get",
+   "width": 4,
+   "off": 832,
+   "baselineOff": 984,
+   "evidence": "Mob::hurtEffects writes the damage source's cause here (40 0x23fb9cc / 51 0x29e6772: `movl 0x8(%rbx),%eax; movl %eax,0x340(%rsi)`), one instruction after the damage and in the same order as the 2024 body (+984, 0x1914f0e). 2024's getter is `movl 984(%rcx),%eax; ret`."
+  },
+  "?getLastHurtDamage@Actor@@QEBAMXZ": {
+   "kind": "get",
+   "width": 4,
+   "float": true,
+   "off": 836,
+   "baselineOff": 980,
+   "evidence": "float, not int: the decorated name ends in `M`, 2024's getter is `movss 980(%rcx),%xmm0; ret`, and 1.26's writer in Mob::hurtEffects is `addss 0x344(%rsi),%xmm0` / `movss %xmm0,0x344(%rsi)` (40 0x23fb9b9 / 51 0x29e675f) under the same `hurtTime > 0` test as 2024 (+980)."
+  },
+  "?getLastHurtMobTimestamp@Actor@@QEAAHXZ": {
+   "kind": "get",
+   "width": 4,
+   "off": 840,
+   "baselineOff": 968,
+   "evidence": "Actor::setLastHurtMob, which 1.26 inlines into Mob::doHurtTarget (40 0x240a04b / 51 0x29f1d6e): `movq <uniqueID>,0x320(%rsi); movl 0x198(%rsi),%eax; movl %eax,0x348(%rsi)` -- the same pair, in the same order, as the 2024 out-of-line body at 0x19c66b0 (+944 and +968)."
+  },
+  "?getLastHurtByMobTime@Actor@@QEAAHXZ": {
+   "kind": "get",
+   "width": 4,
+   "off": 844,
+   "baselineOff": 972,
+   "evidence": "Actor::setLastHurtByMob (40 0xdeee90 / 51 0xd2eca0) sets it to 60 (`movl $0x3c, 0x34c(%rsi)`) beside the id at +808, as 2024 does at +972 beside +952; Actor::baseTick (40 0xdee586/0xdee677) tests and decrements the same word and clears +808 when it reaches zero, as 2024 does with +0x3cc and +0x3b8."
+  },
+  "?getLastHurtByMobTimestamp@Actor@@QEAAHXZ": {
+   "kind": "get",
+   "width": 4,
+   "off": 848,
+   "baselineOff": 976,
+   "evidence": "Actor::setLastHurtByMob reads the actor's tick counter and stores it here (`movl 0x198(%rsi),%eax; movl %eax,0x350(%rsi)`), the same instruction pair as 2024's `movl 0x208(%rdi),%eax; movl %eax,0x3d0(%rdi)` (+976)."
+  },
+  "?getSpawnPosition@Player@@QEBAAEBVBlockPos@@XZ": {
+   "kind": "lea",
+   "width": 8,
+   "off": 2796,
+   "baselineOff": 6524,
+   "evidence": "2024's body is `leaq 6524(%rcx),%rax; retq` -- player_respawn_point_.player_position by reference. 1.26 has no out-of-line copy. Player::player_respawn_point_, read off Player::setRespawnPosition (40 0x233610 / 51 0x2be820) and Player::setSpawnBlockRespawnPosition (40 0x2332c0 / 51 0x2be4d0), which compare and store the same three fields the 2024 bodies compare and store at +6512 / +6524 / +6536 (a constant -3728). Endstone's player.h declares the struct in that order (PlayerSpawnPoint { BlockPos spawn_block_pos; BlockPos player_position; DimensionType dimension; } player_respawn_point_)."
+  },
+  "?getSpawnDimension@Player@@QEBA?AV?$AutomaticID@VDimension@@H@@XZ": {
+   "kind": "get-hidden",
+   "width": 4,
+   "off": 2808,
+   "baselineOff": 6536,
+   "evidence": "2024's body is `movl 6536(%rcx),%eax; movl %eax,(%rdx); movq %rdx,%rax; retq` -- AutomaticID returned through the hidden pointer, which is why bdsx declares structureReturn. Player::player_respawn_point_, read off Player::setRespawnPosition (40 0x233610 / 51 0x2be820) and Player::setSpawnBlockRespawnPosition (40 0x2332c0 / 51 0x2be4d0), which compare and store the same three fields the 2024 bodies compare and store at +6512 / +6524 / +6536 (a constant -3728). Endstone's player.h declares the struct in that order (PlayerSpawnPoint { BlockPos spawn_block_pos; BlockPos player_position; DimensionType dimension; } player_respawn_point_)."
+  },
+  "?setPlayerPermissions@LayeredAbilities@@QEAAXW4PlayerPermissionLevel@@@Z": {
+   "kind": "set",
+   "width": 1,
+   "off": 1,
+   "baselineOff": 1,
+   "evidence": "baseline 0x179eb50 is `movzbl %dl,%r8d; movzbl 1(%rcx),%edx; movb %r8b,1(%rcx); jmp <notify>` -- the stored byte is PermissionsHandler+1, the same byte ?getPlayerPermissions@LayeredAbilities@@ already ships as an accessor. The tail call that tells the client is not reproduced, exactly as for ?setCommandPermissions@LayeredAbilities@@."
+  },
+  "?isSpawned@Player@@QEBA_NXZ": {
+   "kind": "get",
+   "width": 1,
+   "off": 1801,
+   "zx": true,
+   "baselineOff": 2904,
+   "evidence": "the 2024 getter is `movzbl 2904(%rcx),%eax; retq` (0x19e20c0) and 1.26 keeps no copy of it. The offset is read from the functions that share the field: in 2024 exactly one byte displacement is touched by both Player::_hurt (0x19d49b0) and Player::respawn (0x19e7100), and it is 2904; in 1.26.40.8 the same pair (Player::_hurt 0x226fa0, Player::respawn 0x2310c0) touches exactly one, 1801 (0x709), and 1.26.51.1 (0x2b5fe0 / 0x2bc2f0) gives the same 1801. The access sets correspond as wholes: 2024 has Player::_hurt, Player::_shouldProvideFeedbackOnArmorSet (at its first instruction), Player::respawn (twice), ServerPlayer::isPlayerInitialized and exactly one `movb imm8` writer (ServerPlayer::doInitialSpawn); both 1.26 builds have 12 functions at +0x709 with exactly one `movb imm8` writer and the same named readers, _shouldProvideFeedbackOnArmorSet again reading it at its first instruction"
+  },
+  "?getPlatform@Player@@QEBA?AW4BuildPlatform@@XZ": {
+   "kind": "get",
+   "width": 4,
+   "off": 1164,
+   "baselineOff": 1580,
+   "evidence": "2024's body is `movl 1580(%rcx),%eax; retq`. 1.26 kept no copy. Player::build_platform: both ServerNetworkHandler player creators (0xa8ae00 / 0xa9bfb0) store ConnectionRequest::getDeviceOS() there, where 2024's two creators store it at +1580."
+  }
+ },
+ "vftableNotes": {
+  "??_7Spawner@@6B@": "live (levelraw2, 2026-09-19): the first qword of the object Level::getSpawner (ILevel slot 21) returns; 21 slots for the 21 virtuals Endstone's spawner.h declares. Spawner had no vftable in 2024, so this is not a baseline name"
+ },
+ "retracted": {
+  "??_7ResourcePackRepository@@6B@": "the vftable walk (and the carry from it) gave this name to the table that a live Level::getSpawner() object carries: 21 slots, Endstone's Spawner. Not required by bdsx",
+  "?hurt@Actor@@QEAA_NAEBVActorDamageSource@@M_N1@Z": "0xdf7c20 (call-edge propagation, once promoted to resolved on a call count) is a constructor, not Actor::hurt; and the 2024 prototype no longer fits the real one, which returns ActorHurtResult through a hidden pointer. See `bdsx:Actor::hurt` in data/resolved",
+  "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@M_N1@Z": "the address is right but the 2024 prototype is not (hidden ActorHurtResult return): hooking it with bdsx's old prototype crashes on the first hit. Shipped as `bdsx:Mob::_hurt` in data/resolved, with the prototype read from the body",
+  "?getRotation@Actor@@QEBAAEBVVec2@@XZ": "call-edge propagation gave 0x163ac0: 651 bytes for what was a 27-byte getter in 2024. The rotation is a field read (accessors)",
+  "?hasEffect@Actor@@QEBA_NAEBVMobEffect@@@Z": "0xe1ab10 (call-edge propagation) is the getEffect(unsigned int) overload, not hasEffect: it takes the effect id in edx and returns the MobEffectInstance* (`cmovneq %rdx, %rax`), so read as a bool it would report the low byte of a pointer. It is the exact body of the getEffect(const MobEffect&) beside it (0xe1a9d0) with the id taken as an int instead of read from the argument's +8. 1.26 keeps no out-of-line hasEffect -- the 20-byte 2024 thunk (call getEffect; setne) was inlined away -- so bdsx derives it (data/derived.json)",
+  "??$set@H@SynchedActorDataEntityWrapper@@QEAAXGAEBH@Z": "call-edge propagation gave 0x2497790, and it is not the wrapper’s set<int>. 768 bytes, and the shape is wrong in the first ten instructions: it takes rcx alone, calls a helper and keeps the result in edi, then reaches the wrapper the long way round through this+24 -> +0x128 before indexing a data item -- set<int>(unsigned short, int const&) would take the id in dx and a pointer in r8 and touch nothing else. The body is a trade function that inlined a getInt of its own. 1.26 keeps no out-of-line copy of set<int>: every <=340-byte function that sets the dirty bit is a caller, and the wrapper-self scan finds only getters. It has to become derived() (next-steps.md Q1 1f).",
+  "?getInt@SynchedActorDataEntityWrapper@@QEBAHG@Z": "call-edge propagation gave 0x23f4ca0, which is an EnTT sparse-set lookup, not the wrapper’s getInt: 673 bytes, `movl $0x966A4DD4, %edx` (a component type hash) passed to the storage helper, then `andl $0x3FFFF` / `shrl $11` page indexing, and it tests `dl` as a bool where getInt(unsigned short) would zero-extend dx as an id. The real one is 90 bytes and reads the data item vector by id directly (next-steps.md Q1 1b).",
+  "?getDimensionBlockSource@Actor@@QEBAAEAVBlockSource@@XZ": "the address that was shipping (1.26.40.8 0x113ac0, 1.26.51.1 0x113aa0; cross-build on 40, call-edge propagation on 51) is a throw helper, not Actor::getDimensionBlockSource: 1,564 direct callers in .text, and its whole body builds a stack object with the vftable at 0xa52d960, calls one function and falls into int3 -- it never returns, let alone a BlockSource. The 2024 body (0x19b1f30) is one line, getDimension() then a tail jump to Dimension::getBlockSourceFromMainChunkSource, and both of those ship as live-read accessors on both builds (Actor+0x1c8, Dimension+0xf0), so bdsx derives it instead (bds/implements.ts).",
+  "?isDamageableItem@ItemStackBase@@QEBA_NXZ": "1.26.40.8 was shipping 0x1ed330-adjacent call-edge propagation's 0xed330, which is not a const no-argument predicate at all: 432 bytes, it reads rdx/r8/r9, and it carries `movabsq $0x666666666666667` -- std::vector's max_size guard for a 40-byte element -- so it is a vector growth helper. 2024's (0x1b64780) is 52 bytes: item_ at +8, deref the WeakPtr, tail-call Item's vtable slot 13. 1.26 has no function of that shape left (a scan of both builds for the `sub rsp,40; mov rax,[rcx+8]; test rax,rax` prologue finds the 2024 cluster of 52-byte predicates and nothing like it in 1.26 -- the inliner took them), so the name goes back to unresolved on both builds rather than ship a wrong address.",
+  "?getMaxStackSize@ItemStackBase@@QEBAEXZ": "1.26.40.8 was shipping call-edge propagation's 0x1bc1d60. The body is an ItemStackBase member -- it reads block_ at +24 and compares aux_ at +32 against the 0x7FFF sentinel -- but it takes a second pointer in rdx and calls through it, so it is not `uint8 getMaxStackSize() const`, which takes no argument and returns in al. (2024's 0x1b61820 builds an ItemDescriptor on the stack and calls Item's vtable slot 87.) Unresolved on both builds until the real one is found.",
+  "?startRiding@Actor@@UEAA_NAEAV1@@Z": "1.26's Actor::startRiding takes a third argument (testb %r8b,%r8b before the canAddPassenger virtual call; 2024's 0x19c8d00 reads no third register), so the address is right but the 2024 decoration is not the prototype. It ships as ?startRiding@Actor@@UEAA_NAEAV1@_N@Z in data/resolved-<v>.json instead, and bdsx calls and hooks that name. docs/findings-riding.md.",
+  "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z": "Q3 audit (2026-09-22): the endstone-slots/vftable-walk candidate (0x2295e0, slot 52 of Actor via Player's table, \"AGREE with vftable-walk\") is 34 bytes against 2024's 1,984, and shape() shows it reading only rdx where 2024 reads r8,rdx. Endstone declares attack virtual on Actor in 1.26 (`virtual ActorHurtResult attack(Actor&, ActorDamageCause const&) = 0`), so the hidden ActorHurtResult return pointer shifts every argument register by one -- the same trap as Actor::hurt / Mob::_hurt (see those entries above). The address is a real vtable slot 52 target but not this prototype and not this function's combat logic (five-instruction stub, no attack resolution). bdsx hooks this name for events.playerAttack; nothing currently installs the hook (Q7, needs a real client), but the address must not ship until the real ActorHurtResult-returning body is read and reshipped as bdsx:Actor::attack, the same way Actor::hurt was. docs/findings-audit.md.",
+  "?getIdentifier@FuelItemComponent@@SAAEBVHashedString@@XZ": "Q3 audit (2026-09-22): the propagation candidate (0x7795a40) reads rcx/rdx/r8/r9 and builds/compares strings across several hundred bytes; the real function is a zero-argument static magic-statics accessor returning a fixed HashedString(\"minecraft:fuel\") (2024 0x1e01d80, ~60B, no arguments read). The string \"minecraft:fuel\" is inlined directly into the CoalItem constructor in 1.26.40.8 (0x7791a70) rather than called out to a standalone getIdentifier, so 1.26 likely keeps no out-of-line copy at all. Unresolved on both builds until a real one is found or (more likely, since this is a compile-time-fixed value) it ships as derived() -- see docs/findings-audit.md for the whole getIdentifier@*ItemComponent family this generalizes to (15 more names, never resolved, same fix).",
+  "?getDefaultBiome@NetherDimension@@UEBA?AVHashedString@@XZ": "Q3 audit (2026-09-22): the endstone-slots candidate (0x8111670, byte-identical on both builds) is an 8-byte function -- `movq %rdx,%rax; movw $0x8,(%rdx); retq` -- that writes a bare 16-bit immediate into the sret buffer and returns, never touching any biome name, hash or global constant. 2024's body (0x2883f0) copy-constructs a HashedString from the global VanillaBiomeNames::Hell through a real constructor call. The vftable slot walk lined this up by position, not content -- same failure mode as the nine new Level slots (next-steps.md). Not required for boot. docs/findings-audit.md.",
+  "?isHumanoidWearableItem@ItemStackBase@@QEBA_NXZ": "Q1-B 4 / Q3 audit (2026-09-22): the propagation candidate 0x1bc3ad0 (272B) is only the tag-walk half of 2024's isHumanoidArmorItem() || isHumanoidWearableBlockItem(); it has no vtable+0x50 call at all, and its 11 callers match isHumanoidWearableBlockItem's caller shape (2024: 4 callers), not isHumanoidWearableItem's (2024: 2). Two callers (0x8f66a50, 0x1bc7a90) inline the missing vtable check themselves and call 0x1bc3ad0 as a plain fallback, so isHumanoidWearableItem itself has no standalone copy on 1.26.40.8 -- it is inlined at every call site, same fate as getIdentifier@FuelItemComponent above. 0x1bc3ad0 is a strong single-route candidate for isHumanoidWearableBlockItem@ItemStackBase (never resolved on either build) but is not promoted -- one static route only, no execution. 1.26.51.1's address (0x1a59d80) is correct (both checks present, plausible caller count) and is kept. docs/findings-audit.md, docs/findings-containers.md section 10. Q3 next-steps (3), 2026-09-22: 0x1bc3ad0 has since been promoted to isHumanoidWearableBlockItem@ItemStackBase in data/resolved-1.26.40.8.json (two static routes: the body's element+0xe0 membership walk, and the two callers of this wrapper -- ArmorStand::getInteraction 0x23b8330, ArmorContainerValidation::isItemAllowedInSlot 0x8f66a50 -- both independently reconstructing 2024's `vtable_slot10() || isHumanoidWearableBlockItem()` OR pattern with 0x1bc3ad0 as the fallback call).",
+  "?sendArmorSlot@Mob@@QEAAXW4ArmorSlot@@@Z": "Q3 next-steps (5), 2026-09-22, static -- retracted. Was shipping call-edge propagation's 0x23eb40 (jump table indexed directly by rcx: `leaq <table>(%rip),%rax; movslq (%rax,%rcx,4),%rcx; addq %rax,%rcx; jmpq *%rcx`; case bodies read r8, not rdx). 2024's sendArmorSlot (0x191a360, this=rcx, ArmorSlot slot=rdx) is a 2-argument member: it range-checks slot<4, builds a 1-bit std::bitset<32> with bit `slot` set on the stack, then tail-jumps to a *virtual* call at this->vftable[0x560/8=172] with (this, bitmask) -- no jump table anywhere in it. The caller-identity route settles it: 2024's only caller among the 5 direct callers of sendArmorSlot that has a resolved 1.26 counterpart is ServerPlayer::setArmor (2024 0xcd3c30, calls sendArmorSlot with rcx=this, edx=slot straight from its own edx argument); its 1.26.40.8 counterpart (0x695620, resolved via a different route) does call 0x23eb40 at the equivalent point in its body, but with THREE arguments set up right before the call -- `movsbq 0x118(%rbp),%rcx; incq %rcx` (a slot-derived index, incremented by one -- purely a jump-table selector, matching that the case bodies never read rcx again), `leaq 0x120(%rbp),%rdx` (a pointer into the ServerPlayer/Player object, likely `&armor_container[slot]` as an ItemStack const*), `leaq -0x60(%rbp),%r8` (the address of a ~0x180-byte LOCAL variable on setArmor's own stack frame, not `this` -- and it is this r8 the case bodies read at +0x18/+0x20/+0x30/+0x38/+0xb8/+0x150/+0x160/+0x170, writing `??_7ItemStack@@6B@` into +0x20 in one branch, consistent with constructing/copying a local ItemStack rather than reading Mob state). This is a 3-argument helper with a local-buffer third argument, not `void Mob::sendArmorSlot(ArmorSlot)`, and it cannot be called through the declared 2-argument prototype (there is no `this` in the call at all under this reading). 1.26.51.1 carries the byte-identical shape at 0x2d7470, called from the byte-identical position in ServerPlayer::setArmor (0x758d10) -- the same wrong pairing on both builds, from the same propagation/pairs.json edge. Not hooked (bdsx/bdsx/bds/implements.ts:1891, procHacker.js only). Retracted on both builds; sendArmorSlot goes back to fully unresolved. The real function was not found in this pass -- next step is reading what 1.26.40.8's setArmor@ServerPlayer does in the ~140 bytes before this call (it no longer calls a resolved Player::setArmor the way 2024 does; the call right before this one, 0x1284d70/0x11a85c0, is a std::_Visit over a PlayerSkinLoadedClientEvent variant, suggesting 1.26 restructured setArmor's body substantially) to see whether sendArmorSlot's bitset-and-virtual-call got inlined rather than staying out-of-line.",
+  "?getBlockEntity@BlockSource@@QEAAPEAVBlockActor@@AEBVBlockPos@@@Z": "0xba6b00 (call-edge propagation) is not BlockSource::getBlockEntity: it is a hash-map find keyed by a 4-byte chunk-local position (x&15, z&15, y) -- the lookup 1.26.51.1's real getBlockEntity calls as a helper (0x38cd630) -- and findings-reach.md had already seen it return null at a chest where IConstBlockSource slot 3 returned the block actor. bdsx now binds the 1.26 virtual ?getBlockEntity@BlockSource@@UEBAPEBVBlockActor@@AEBVBlockPos@@@Z (slot 3). docs/findings-blocks.md section 17.",
+  "?addAdditionalSaveData@Arrow@@MEBAXAEAVCompoundTag@@@Z": "the vftable route put this name one slot early on Arrow's table: 0x12572f0 is Arrow::readAdditionalSaveData, read off the body (docs/findings-slots.md \"projectileShoot\"). Arrow slots 135/136/137 (0x12572f0/0x1256b80/0x1255770) are readAdditionalSaveData (calls AbstractArrow's) / addAdditionalSaveData (writes OwnerID, isCreative, enchantPower, mobEffects, auxValue) / shoot (ProjectileComponent lookup, then the six-argument shoot); the table had them as addAdditionalSaveData / shoot / _getPickupItem. Not required by bdsx.",
+  "?shoot@Arrow@@UEAAXAEBVVec3@@MM0@Z": "the vftable route put this name one slot early on Arrow's table: 0x1256b80 is Arrow::addAdditionalSaveData, read off the body (docs/findings-slots.md \"projectileShoot\"). Arrow slots 135/136/137 (0x12572f0/0x1256b80/0x1255770) are readAdditionalSaveData (calls AbstractArrow's) / addAdditionalSaveData (writes OwnerID, isCreative, enchantPower, mobEffects, auxValue) / shoot (ProjectileComponent lookup, then the six-argument shoot); the table had them as addAdditionalSaveData / shoot / _getPickupItem. Not required by bdsx.",
+  "?_getPickupItem@Arrow@@MEBA?AVItemStack@@XZ": "the vftable route put this name one slot early on Arrow's table: 0x1255770 is Arrow::shoot, read off the body (docs/findings-slots.md \"projectileShoot\"). Arrow slots 135/136/137 (0x12572f0/0x1256b80/0x1255770) are readAdditionalSaveData (calls AbstractArrow's) / addAdditionalSaveData (writes OwnerID, isCreative, enchantPower, mobEffects, auxValue) / shoot (ProjectileComponent lookup, then the six-argument shoot); the table had them as addAdditionalSaveData / shoot / _getPickupItem. Not required by bdsx.",
+  "?getItemCooldownLeft@Player@@QEBAHAEBVHashedString@@@Z": "0x2399f0 (propagation) takes the category's hash by value, not a HashedString const& -- it compares the argument register with each node's stored hash; bdsx passes a pointer, so every call missed and returned 0 (cd40/cd51 2026-09-24: 0 right after startCooldown, while the component dump showed minecraft:goat_horn stored). Shipped as bdsx:Player::getItemCooldownLeft instead. docs/findings-slots.md \"startCooldown\".",
+  "?_crit@Player@@UEAAXAEAVActor@@@Z": "0x235970 is Player::_crit, but with a third int argument (r8d, written as a float into the AnimatePacket) that 2024's signature does not have; a hook with the 2024 prototype drops it. Shipped as bdsx:Player::_crit. docs/findings-slots.md \"SimulatedPlayer actions\".",
+  "?useItemOn@GameMode@@UEAA?AVInteractionResult@@AEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z": "0x1f380c0 is GameMode::useItemOn with one more bool argument than 2024's (after the Block*); a hook with 2024's seven arguments dropped it -- 51 then refused to place anything. Shipped as bdsx:GameMode::useItemOn. docs/findings-slots.md \"itemUseOnBlock\".",
+  "??_7LoopbackPacketSender@@6B@": "2026-09-24, static: 0xa534480 (a live table given this name by shape, docs/findings-slots.md 3) is not LoopbackPacketSender's: its slots are not packet senders (slot 5 a two-instruction getter, slot 7 a weak_ptr swap). The real table is 0xa62c2e0, stored by its own destructor in slot 0 and holding sendToClient/sendToClients (data/resolved-1.26.40.8.json, docs/findings-packets.md \"packetSend for recipient-list broadcasts\").",
+  "?setCustomName@ItemStackBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z": "0xe07bd0 (call-edge propagation) is an Actor function, not ItemStackBase::setCustomName: it reads this+0x128 (Actor::entity_data), takes SynchedActorData item 4 (the name tag) when its type is 4 (string), and writes a string into an rdx return slot; Actor::save (0xe00c70) and the ActorDamageByActorSource constructor (0xe15020) call it. Called on an item stack with a string argument it wrote into the argument and the server died (nbt pair 2026-09-24). bdsx carries setCustomName as derived() (docs/findings-nbt.md \"setCustomName\").",
+  "?getArmor@Actor@@QEBAAEBVItemStack@@W4ArmorSlot@@@Z": "Q8, 2026-09-27 (agent-h) -- retracted, now derived(). Propagation shipped 0x1acb8e0, which is ActorEquipment::getArmorContainer(const EntityContext&) itself (the same address the table carries for that name): an EnTT get of ActorEquipmentComponent (hash 0xb06141a9) reading the registry at rcx+8 and the id at rcx+0x10, returning the armor container, fail path call 0xbb1d0. 2024 getArmor (0x19b0680) is `addq $8,%rcx; call getArmorContainer; jmp [vft+0x38]` with the slot; 1.26 inlines it (ServerPlayer::sendArmor 0x68df09: `leaq 0x8(%rsi),%rcx; call 0x1acb8e0`, then vft+0x38 with the slot). Called as getArmor(this=Actor, slot) it walked the pools from Actor+8 and killed the server -- the itemprobe sendarmor crash once blamed on sendArmorSlot. docs/findings-audit.md \"sendArmor: the crash was getArmor\".",
+  "?success@CommandOutput@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VCommandOutputParameter@@V?$allocator@VCommandOutputParameter@@@std@@@3@@Z": "0x12f19e0 (call-edge propagation) is CommandOutput::addMessage, not success: it reads rdx as a {data,size} string_view, clears the messages when the type is LastOutput and appends one message typed by r9d; ListCommand::execute calls it with r9d=0 behind cmp [output],0 (2024's forceOutput). success(id, params) is inlined on 1.26 (docs/findings-scoreboard.md 10.1). Shipped as bdsx:CommandOutput::addMessage.",
+  "?getMemberNames@Value@Json@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ": "2026-09-27 (agent-k), static: 0x9b8990 (call-edge propagation) is not Json::Value::getMemberNames: it moves an unordered_map-like object (copies a dword, allocates a 0x40 list head and a 0x80 bucket array of 8 head pointers, then swaps the members with rdx) and never reads a Json::Value's type byte. bdsx reads the members by layout (derived(), bdsx/bds/engine/json.ts). docs/findings-scoreboard.md 11.3",
+  "?lookupByName@BlockTypeRegistry@@SA?AV?$WeakPtr@VBlockLegacy@@@@AEBVHashedString@@_N@Z": "2026-09-27 (agent-k), static: 0x3ebf690 (cross-build) is not BlockTypeRegistry::lookupByName: it writes no WeakPtr through an rdx return slot and returns an int in eax (it copies a vector of 0x30-byte entries from rcx, calls 0x3ebdf50 on each and ORs the results). 2024 lookupByName (0x2043c30) calls _lookupByNameImpl and stores the WeakPtr through rcx (the sret). Block.create, which calls it, stays unavailable (docs/findings-scoreboard.md 11.6).",
+  "?getOwner@Actor@@QEBAPEAVMob@@XZ": "0xde9c30 (call-edge propagation) is Actor::getOwnerId, not getOwner: it writes the owner ActorUniqueID into rdx and returns rdx, so bdsx's getOwner(this) wrote 8 bytes through an uninitialised rdx and read the id back as a Mob*. Now derived() over the shipped getOwnerId. docs/findings-audit.md \"Audit follow-ups\" (2026-09-27, agent-m).",
+  "?setVariant@Actor@@QEAAXH@Z": "0x2493810 (call-edge propagation) is not setVariant(int): it reads rdx as an Actor (+0x98, the definition list), copies a HashedString into rcx+8 and calls through r8. 2024's setVariant is SynchedActorData::set<int>(Variant=2), which bdsx already carries as a derived() (SynchedActorDataEntityWrapper.setInt, findings-synched.md); setVariant is now derived() over it. docs/findings-audit.md \"Audit follow-ups\" (2026-09-27, agent-m).",
+  "??1NetworkItemStackDescriptor@@UEAA@XZ": "0x263d6c0 (call-edge propagation) is InventorySlotPacket's constructor (it stores ??_7InventorySlotPacket@@6B@ as the vptr and initialises the packet header), not a destructor. docs/findings-audit.md \"Audit follow-ups\" (2026-09-27, agent-m).",
+  "?isValidAuxValue@ItemStackBase@@QEBA_NH@Z": "0x1bba0d0 (call-edge propagation) never reads edx: it is ItemStackBase::getMaxStackSize out of line (default 0xff, getDescriptor 0x1bc1d60 into a local ItemDescriptor, Item vftable slot 100 (+0x320), then the descriptor's destructor) -- the very body bdsx's getMaxStackSize derived() reimplements. isValidAuxValue itself has no address. docs/findings-audit.md \"Audit follow-ups\" (2026-09-27, agent-m).",
+  "?isHiddenFrom@Player@@QEBA_NAEAVMob@@@Z": "0x2a02680 (call-edge propagation) takes an ActorType in edx, not a Mob&: it compares edx with the five mob type ids 2024's isHiddenFrom got from getEntityTypeId(mob) and then reads the player's head armor, so bdsx passing a Mob* compared a pointer with type ids. The 1.26 function takes the type; bdsx has no binding for that shape yet. docs/findings-audit.md \"Audit follow-ups\" (2026-09-27, agent-m).",
+  "?resetPlayerLevel@Player@@QEAAXXZ": "0xdf4e30 (call-edge propagation) is a float setter: an EnTT get of component hash 0xce6b34f6 followed by `movss %xmm1,(%rax,%rdx,8)`, so resetExperienceLevels() wrote whatever was in xmm1 into that component. 2024's resetPlayerLevel reset the LEVEL and EXPERIENCE attributes to their minimum and cleared three Player fields. docs/findings-audit.md \"Audit follow-ups\" (2026-09-27, agent-m).",
+  "??0ActorDefinitionIdentifier@@QEAA@W4ActorType@@@Z": "2026-09-27 (agent-q), static + execution -- not shipped. Call-edge propagation offered 0x18ffd00, which merge-symbols already vetoed by argument shape. The address is an ActorDefinitionIdentifier constructor, but ActorDefinitionIdentifier(ActorType, std::string initEvent) with the string by value in r8 (moved into +0x40, destroyed on return): 2024's one-argument constructor is gone. It ships as bdsx:ActorDefinitionIdentifier::ActorDefinitionIdentifier(ActorType,std::string), called with an empty init event (engine/actordefinition.ts); the string constructor is 0x18ffbe0. summon40/summon51: constructWith(ActorType.Pig) reads back \"minecraft:pig\" and summonAt spawns the pig. docs/findings-layouts.md \"ActorDefinitionIdentifier and spawnEntityAt\".",
+  "?canAlwaysEat@FoodItemComponent@@UEBA_NXZ": "2026-09-27 agent-p, docs/findings-audit.md \"The next audit batch\": 0x176570 is `movzbl 0x28(%rcx); ret`, found only in AppPlatform/ServerScoreboard tables (2024's canAlwaysEat 0x4d9590 folded with StructureSettings::getIgnoreEntities and an AppPlatform virtual; the walk named the AppPlatform slot). No FoodItemComponent table on this build holds it; the component's own table (??_7FoodItemComponent@@6B?$NetworkedItemComponent...) is in neither table.",
+  "?getTagRegistry@Level@@UEAAAEAV?$TagRegistry@U?$IDType@ULevelTagIDType@@@@U?$IDType@ULevelTagSetIDType@@@@@@XZ": "2026-09-27 agent-p, docs/findings-audit.md \"The next audit batch\": 0xbcaf30 (`lea 0x100(%rcx)`) is 2024's fold of getTagRegistry with IdentityDefinition::getFakePlayerName and CommandOutputMessage::getParams, found by the walk in other classes' tables, not in Level's. In ??_7ServerLevel@@6BILevel@@@ 2024's order (getCapabilities, getTagRegistry, getPlayerMovementSettings, setPlayerMovementSettings) sits at slots 302-305: slot 303 is 0x743cd0 `mov rax,[rcx+0x48]; ret` -- a candidate, not shipped (nothing in bdsx reads a TagRegistry; no execution check).",
+  "?getFakePlayerName@IdentityDefinition@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": "2026-09-27 agent-p, docs/findings-audit.md \"The next audit batch\": 0xbcaf30 is `lea 0x100(%rcx); ret`; IdentityDefinition's player_name_ is at +0x28 (Endstone identity_definition.h, identity_type_ // +72; 2024 0x289d50 `lea 0x28`). Shipped as an accessor (lea +0x28) instead.",
+  "?getParams@CommandOutputMessage@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ": "2026-09-27 agent-p, docs/findings-audit.md \"The next audit batch\": 0xbcaf30 is `lea 0x100(%rcx); ret`; CommandOutputMessage's params_ is at +40 (Endstone command_output.h `params_ // +40`, 2024 `lea 0x28`). Shipped as an accessor (lea +0x28) instead.",
+  "?setIgnoreEntities@StructureSettings@@QEAAX_N@Z": "2026-09-27 agent-p, docs/findings-audit.md \"The next audit batch\": 0x176580 `movb %dl,0x28(%rcx)` is named by folding only (2024's 0x4d9580 is also an AppPlatform virtual; the walk read that table). 1.26's StructureSettings layout has no route here, and this build's other walk names for it contradict each other (getRotation +0x32, setRotation +0x56). ??0StructureSettings has no address, so bdsx cannot build one anyway.",
+  "?setRotation@StructureSettings@@QEAAXW4Rotation@@@Z": "2026-09-27 agent-p, docs/findings-audit.md \"The next audit batch\": 0x1bb86d0 `movb %dl,0x56(%rcx)` is named by folding only (2024's 0xa2ece0 `movb %dl,0x58(%rcx)` is also a PistonConsumer/TransporterComponent virtual); the walk's getRotation@StructureSettings reads +0x32, so the two cannot both be StructureSettings' rotation. No layout route.",
+  "?appendFormattedHovertext@HumanoidArmorItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z": "2026-09-27 agent-p, docs/findings-audit.md \"The next audit batch\": named one slot late by the walk/carry, like getArmorValue/getToughnessValue (see those names in data/resolved): Endstone item.h counts appendFormattedHovertext 54, isValidRepairItem 55, getEnchantSlot 56, getEnchantValue 57, and the bodies agree (56 reads the armour-slot field, 57 the material's +0x18 as 2024's getEnchantValue did).",
+  "?isValidRepairItem@HumanoidArmorItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z": "2026-09-27 agent-p, docs/findings-audit.md \"The next audit batch\": named one slot late by the walk/carry, like getArmorValue/getToughnessValue (see those names in data/resolved): Endstone item.h counts appendFormattedHovertext 54, isValidRepairItem 55, getEnchantSlot 56, getEnchantValue 57, and the bodies agree (56 reads the armour-slot field, 57 the material's +0x18 as 2024's getEnchantValue did).",
+  "?getEnchantSlot@HumanoidArmorItem@@UEBAHXZ": "2026-09-27 agent-p, docs/findings-audit.md \"The next audit batch\": named one slot late by the walk/carry, like getArmorValue/getToughnessValue (see those names in data/resolved): Endstone item.h counts appendFormattedHovertext 54, isValidRepairItem 55, getEnchantSlot 56, getEnchantValue 57, and the bodies agree (56 reads the armour-slot field, 57 the material's +0x18 as 2024's getEnchantValue did).",
+  "?getEnchantValue@HumanoidArmorItem@@UEBAHXZ": "2026-09-27 agent-p, docs/findings-audit.md \"The next audit batch\": named one slot late by the walk/carry, like getArmorValue/getToughnessValue (see those names in data/resolved): Endstone item.h counts appendFormattedHovertext 54, isValidRepairItem 55, getEnchantSlot 56, getEnchantValue 57, and the bodies agree (56 reads the armour-slot field, 57 the material's +0x18 as 2024's getEnchantValue did).",
+  "??_7ScriptActorCommandOrigin@@6B@": "2026-09-28 agent-s, docs/findings-audit.md \"Audit leftovers\": 0xa6fe280 (vftable-walk) is FoodItemComponent's IFoodItemComponent table: its slots 1-3 are getNutrition/getSaturationModifier/canAlwaysEat's leaves, and FoodItemComponent's destructor stores it at +0x10 next to the NetworkedItemComponent<FoodItemComponent> table. Not a command origin; bdsx never used the name.",
+  "?getStructureSize@StructureSettings@@QEBAAEBVBlockPos@@XZ": "the address is another function's fold: the body is a bare `lea`/`movzbl` at a 2024 offset (or 0x100 for the StructureAnimationData::getStructureSettings it folds with), and 1.26's StructureSettings has its fields at different offsets (docs/findings-structure.md). bdsx does not call it (its accessors are derived over the layout, engine/structuresettings.ts)",
+  "?getIgnoreEntities@StructureSettings@@QEBA_NXZ": "the address is another function's fold: the body is a bare `lea`/`movzbl` at a 2024 offset (or 0x100 for the StructureAnimationData::getStructureSettings it folds with), and 1.26's StructureSettings has its fields at different offsets (docs/findings-structure.md). bdsx does not call it (its accessors are derived over the layout, engine/structuresettings.ts)",
+  "?getRotation@StructureSettings@@QEBA?AW4Rotation@@XZ": "the address is another function's fold: the body is a bare `lea`/`movzbl` at a 2024 offset (or 0x100 for the StructureAnimationData::getStructureSettings it folds with), and 1.26's StructureSettings has its fields at different offsets (docs/findings-structure.md). bdsx does not call it (its accessors are derived over the layout, engine/structuresettings.ts)"
+ }
+}

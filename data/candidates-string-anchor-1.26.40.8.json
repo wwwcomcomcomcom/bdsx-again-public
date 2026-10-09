@@ -1,0 +1,55 @@
+{
+ "_comment": "Unconfirmed. Produced by tools/string-anchor-match.mjs from the 1.21.3.01 baseline; mutual-best on shared unique string literals. Of the seven it produced, two agreed with the resolved table and one more was confirmed by execution -- three for three where a check existed. The four left here were never exercised by the test run, which is not evidence against them.",
+ "method": "string-literal anchoring, >=2 shared unique literals, winner ahead by >=1",
+ "baseline": "work/bin/1.21.3.01/bedrock_server.exe",
+ "target": "work/bin/1.26.40.8/bedrock_server.exe",
+ "bdsVersion": "1.26.40.8",
+ "confirmedAgainstResolvedTable": {
+  "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@AEAVCommandContext@@_N@Z": {
+   "rva": 3716464,
+   "sharedLiterals": 4,
+   "runnerUp": 3,
+   "baselineLiterals": 4,
+   "agreesWithResolvedTable": true
+  },
+  "?run@Command@@QEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z": {
+   "rva": 19772480,
+   "sharedLiterals": 5,
+   "runnerUp": 3,
+   "baselineLiterals": 6,
+   "agreesWithResolvedTable": true
+  }
+ },
+ "candidates": {
+  "?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z": {
+   "rva": 10944096,
+   "sharedLiterals": 4,
+   "runnerUp": 0,
+   "baselineLiterals": 5
+  },
+  "?createInstance@CommandItem@@QEBA?AV?$optional@VItemInstance@@@std@@HHAEAVCommandOutput@@_N@Z": {
+   "rva": 19788960,
+   "sharedLiterals": 2,
+   "runnerUp": 1,
+   "baselineLiterals": 2
+  },
+  "?toDebugString@ItemStackBase@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "rva": 29098112,
+   "sharedLiterals": 9,
+   "runnerUp": 0,
+   "baselineLiterals": 9
+  },
+  "?write@LoginPacket@@UEBAXAEAVBinaryStream@@@Z": {
+   "rva": 44704832,
+   "sharedLiterals": 2,
+   "runnerUp": 1,
+   "baselineLiterals": 3
+  }
+ },
+ "confirmedByExecution": {
+  "?stop@DedicatedServer@@UEAA_NXZ": {
+   "rva": 500736,
+   "how": "fired exactly once, immediately after a console stop; promoted into data/resolved-1.26.40.8.json"
+  }
+ }
+}

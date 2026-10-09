@@ -1,0 +1,124 @@
+{
+ "_comment": "Each entry was produced by at least two independent routes that agree on the address: the 9-hop version chain (tools/chain-match.mjs), direct call-edge propagation (tools/propagate-match.mjs), and string-literal anchoring (tools/string-anchor-match.mjs). On the four that the resolved table can check, two-path agreement is 4/4 and single-path is 0/1 -- the one single-path error being CommandRegistry::registerAlias, which the chain placed at 0x32f5d0 against the known 0x36b060. Still candidates: corroboration is not confirmation, and the checkable sample is four.",
+ "bdsVersion": "1.26.40.8",
+ "agreeingWithResolvedTable": {
+  "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@AEAVCommandContext@@_N@Z": {
+   "rva": 3716464,
+   "paths": [
+    "chain",
+    "propagate",
+    "stringAnchor"
+   ]
+  },
+  "?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z": {
+   "rva": 3570416,
+   "paths": [
+    "chain",
+    "propagate"
+   ]
+  },
+  "?run@Command@@QEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z": {
+   "rva": 19772480,
+   "paths": [
+    "chain",
+    "propagate",
+    "stringAnchor"
+   ]
+  },
+  "?stop@DedicatedServer@@UEAA_NXZ": {
+   "rva": 500736,
+   "paths": [
+    "propagate",
+    "stringAnchor"
+   ]
+  }
+ },
+ "candidates": {
+  "?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z": {
+   "rva": 10944096,
+   "paths": [
+    "chain",
+    "propagate",
+    "stringAnchor"
+   ]
+  },
+  "??0Value@Json@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z": {
+   "rva": 167615088,
+   "paths": [
+    "chain",
+    "propagate"
+   ]
+  },
+  "??0Value@Json@@QEAA@W4ValueType@1@@Z": {
+   "rva": 167614512,
+   "paths": [
+    "chain",
+    "propagate"
+   ]
+  },
+  "??1Value@Json@@QEAA@XZ": {
+   "rva": 167615840,
+   "paths": [
+    "chain",
+    "propagate"
+   ]
+  },
+  "?createInstance@CommandItem@@QEBA?AV?$optional@VItemInstance@@@std@@HHAEAVCommandOutput@@_N@Z": {
+   "rva": 19788960,
+   "paths": [
+    "chain",
+    "propagate",
+    "stringAnchor"
+   ]
+  },
+  "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z": {
+   "rva": 37735472,
+   "paths": [
+    "chain",
+    "propagate"
+   ]
+  },
+  "?load@Actor@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z": {
+   "rva": 25556016,
+   "paths": [
+    "chain",
+    "propagate"
+   ]
+  },
+  "?terminate@details@gsl@@YAXXZ": {
+   "rva": 766416,
+   "paths": [
+    "chain",
+    "propagate"
+   ]
+  },
+  "?toDebugString@ItemStackBase@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ": {
+   "rva": 29098112,
+   "paths": [
+    "chain",
+    "propagate",
+    "stringAnchor"
+   ]
+  },
+  "?write@LoginPacket@@UEBAXAEAVBinaryStream@@@Z": {
+   "rva": 44704832,
+   "paths": [
+    "chain",
+    "propagate",
+    "stringAnchor"
+   ]
+  }
+ },
+ "conflicts": {
+  "?isMember@Value@Json@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z": {
+   "chain": 167616240,
+   "propagate": 167621984,
+   "note": "routes disagree; at most one is right and nothing here says which"
+  },
+  "?load@StructureTemplateData@@QEAA_NAEBVCompoundTag@@@Z": {
+   "propagate": 62673920,
+   "chain": 62714160,
+   "note": "routes disagree"
+  }
+ }
+}
